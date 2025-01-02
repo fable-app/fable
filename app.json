@@ -19,7 +19,7 @@
     ],
     "android": {
       "icon": "./assets/images/app-icon-android-legacy.png",
-      "package": "com.fable",
+      "package": "com.anbuu.fable",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/app-icon-android-adaptive-foreground.png",
         "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
@@ -28,7 +28,7 @@
     "ios": {
       "icon": "./assets/images/app-icon-ios.png",
       "supportsTablet": true,
-      "bundleIdentifier": "com.fable"
+      "bundleIdentifier": "com.anbuu.fable"
     },
     "web": {
       "favicon": "./assets/images/app-icon-web-favicon.png",
@@ -49,6 +49,11 @@
     ],
     "experiments": {
       "tsconfigPaths": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "204584cb-526e-44d3-a4b3-ae9eae98c17d"
+      }
     }
   },
   "ignite": {

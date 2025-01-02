@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -47,19 +47,16 @@ jobs:
   publish_to_play_store:
     needs: build_and_tag
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: 🏗 Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: 🏗 Set up Node
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18.x
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: npm install --legacy-peer-deps
 
       - name: Install EAS CLI
