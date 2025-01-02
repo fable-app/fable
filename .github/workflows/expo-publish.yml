@@ -26,67 +26,51 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   publish_for_testing:
-    needs: generate_tag_and_changelog
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
         with:
-          fetch-depth: 0
+          node-version: 18.x
+          cache: yarn
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
         with:
-          node-version: '18'
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+      - name: 📦 Install dependencies
+        run: yarn install
 
-      - name: Log in to Expo
-        run: npx expo login -u ${{ secrets.EXPO_CLI_USERNAME }} -p ${{ secrets.EXPO_CLI_PASSWORD }}
-
-      - name: Build Android app
-        run: npx expo build:android --type app-bundle --non-interactive
-
-      - name: Install EAS CLI
-        run: npm install -g eas-cli
-
-      - name: Submit to Google Play Store for internal testing
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: |
-          eas submit --platform android --path $(ls ./android/app/build/outputs/bundle/release/*.aab) --type app-bundle --track internal
+      - name: 🚀 Create preview
+        uses: expo/expo-github-action/preview@v8
+        with:
+          command: eas update --autoe
 
   publish_to_play_store:
-    needs: publish_for_testing
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18.x
+          cache: yarn
 
-      - name: Install dependencies
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Log in to Expo
-        run: npx expo login -u ${{ secrets.EXPO_CLI_USERNAME }} -p ${{ secrets.EXPO_CLI_PASSWORD }}
-
-      - name: Build Android app
-        run: npx expo build:android --type app-bundle --non-interactive
-
-      - name: Install EAS CLI
-        run: npm install -g eas-cli
-
-      - name: Submit to Google Play Store for production
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: |
-          eas submit --platform android --path $(ls ./android/app/build/outputs/bundle/release/*.aab) --type app-bundle --track production
+      - name: 🚀 Create update
+        run: eas update --auto --non-interactive
