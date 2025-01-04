@@ -1,5 +1,5 @@
 // npm install epub fs path jszip openai
-// npx tsc epub-generator.ts
+// npx tsc
 // node dist/epub-generator.js create-batch path/to/your/german.txt
 // node dist/epub-generator.js query-status batch_id batch_676bab635d6c819080610af3c916ecfa
 // node dist/epub-generator.js retrieve-results output_file_id
@@ -61,14 +61,15 @@ export async function prepareBatchFile(inputFilePath: string): Promise<string> {
                 },
                 { 
                     role: 'user', 
-                    content: `Take the following German text, translate the content into English sentence by sentence, and insert the English translation directly after each German sentence. Ensure the output keeps the German and English sentences paired together in an easily readable format.\n\nGerman text:\n\n${text}` 
+                    content: `Take the following German text, translate the content into English sentence by sentence, and insert the English translation directly after each German sentence. Ensure the output keeps the German and English sentences paired together in an easily readable format.\n\nGerman text:\n\n${chunk}` 
                 }
             ],
             max_tokens: 2000 // Adjust as needed for longer texts
         }
     }));
 
-    const batchFilePath = path.join(path.dirname(inputFilePath), 'batchinput.json1');
+    const filename = inputFilePath.substring(inputFilePath.lastIndexOf('/') + 1);
+    const batchFilePath = path.join(path.dirname(inputFilePath), `${filename}.json1`);
     fs.writeFileSync(batchFilePath, requests.map(req => JSON.stringify(req)).join('\n'), 'utf8');
     return batchFilePath;
 }
@@ -121,12 +122,34 @@ export async function retrieveBatchResults(outputFileId: string): Promise<void> 
     try {
         const fileResponse = await openai.files.content(outputFileId);
         const fileContents = await fileResponse.text();
+        console.log("Raw file contents:", fileContents);
 
-        console.log(`Translated text: ${fileContents}`);
-        generateEpub(fileContents, outputFileId);
-    } catch (error: any) {
-        console.error('Error retrieving batch results:', error.response ? error.response.data : error.message);
-        throw error;
+        // Split the file contents by lines
+        const lines = fileContents.split('\n');
+
+        // Initialize an empty string to store the result
+        let result = '';
+
+        // Iterate over each line and extract the content
+        for (const line of lines) {
+            if (line.trim() === '') continue; // Skip empty lines
+
+            let parsedLine;
+            try {
+                parsedLine = JSON.parse(line);
+            } catch (jsonError) {
+                console.error("Error parsing JSON:", jsonError);
+                continue;
+            }
+
+            // Append the content to the result
+            result += parsedLine.response.body.choices[0].message.content + '\n';
+        }
+
+        console.log(`Translated text: ${result}`);
+        generateEpub(result, outputFileId);
+    } catch (error) {
+        console.error('Error retrieving batch results:', error);
     }
 }
 
@@ -134,8 +157,11 @@ export async function generateEpub(text: string, inputFilePath: string): Promise
     const zip = new JSZip();
     const epubFileName = path.basename(inputFilePath, path.extname(inputFilePath)) + '-translated.epub';
 
+    const cleanedText = text.replace(/German Text:\n/gi, '')
+                            .replace(/English Translation:\n/gi, '');
+
     // Escape special characters and format text as valid XHTML
-    const escapedText = text.replace(/&/g, '&amp;')
+    const escapedText = cleanedText.replace(/&/g, '&amp;')
                             .replace(/</g, '&lt;')
                             .replace(/>/g, '&gt;')
                             .replace(/"/g, '&quot;')
