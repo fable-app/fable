@@ -74,9 +74,9 @@ buck-out/
 # Expo
 .expo/*
 bin/Exponent.app
-/android
-/ios
 expo-env.d.ts
+android/app/build
+android/build
 
 ## Secrets
 npm-debug.*

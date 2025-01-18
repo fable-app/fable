@@ -29,10 +29,10 @@ import { ComponentProps } from "react"
  *   https://reactnavigation.org/docs/typescript/#organizing-types
  */
 export type AppStackParamList = {
-  Welcome: undefined
   Login: undefined
   Reader: undefined
-  Demo: NavigatorScreenParams<TabParamList>
+  Library: NavigatorScreenParams<TabParamList>
+  TabNavigator: undefined
   // 🔥 Your screens go here
   // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
 }
@@ -69,19 +69,19 @@ const AppStack = observer(function AppStack() {
           backgroundColor: colors.background,
         },
       }}
-      initialRouteName={isAuthenticated ? "Welcome" : "Login"}
+      // initialRouteName={isAuthenticated ? "Library" : "Login"}
+      initialRouteName={"Library"}
     >
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? ( */}
         <>
-          <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
           <Stack.Screen name="Reader" component={Screens.ReaderScreen} />
-          <Stack.Screen name="Demo" component={TabNavigator} />
+          <Stack.Screen name="Library" component={TabNavigator} />
         </>
-      ) : (
+      {/* ) : (
         <>
           <Stack.Screen name="Login" component={Screens.LoginScreen} />
         </>
-      )}
+      )} */}
 
       {/** 🔥 Your screens go here */}
       {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
