@@ -69,18 +69,19 @@ const AppStack = observer(function AppStack() {
           backgroundColor: colors.background,
         },
       }}
-      initialRouteName={isAuthenticated ? "Library" : "Login"}
+      // initialRouteName={isAuthenticated ? "Library" : "Login"}
+      initialRouteName={"Library"}
     >
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? ( */}
         <>
           <Stack.Screen name="Reader" component={Screens.ReaderScreen} />
           <Stack.Screen name="Library" component={TabNavigator} />
         </>
-      ) : (
+      {/* ) : (
         <>
           <Stack.Screen name="Login" component={Screens.LoginScreen} />
         </>
-      )}
+      )} */}
 
       {/** 🔥 Your screens go here */}
       {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
