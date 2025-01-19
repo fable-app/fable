@@ -122,7 +122,6 @@ export async function retrieveBatchResults(outputFileId: string): Promise<void> 
     try {
         const fileResponse = await openai.files.content(outputFileId);
         const fileContents = await fileResponse.text();
-        console.log("Raw file contents:", fileContents);
 
         // Split the file contents by lines
         const lines = fileContents.split('\n');
@@ -146,7 +145,6 @@ export async function retrieveBatchResults(outputFileId: string): Promise<void> 
             result += parsedLine.response.body.choices[0].message.content + '\n';
         }
 
-        console.log(`Translated text: ${result}`);
         generateEpub(result, outputFileId);
     } catch (error) {
         console.error('Error retrieving batch results:', error);
@@ -157,8 +155,9 @@ export async function generateEpub(text: string, inputFilePath: string): Promise
     const zip = new JSZip();
     const epubFileName = path.basename(inputFilePath, path.extname(inputFilePath)) + '-translated.epub';
 
-    const cleanedText = text.replace(/German Text:\n/gi, '')
-                            .replace(/English Translation:\n/gi, '');
+    const cleanedText = text.replace(/German text:\s*\n/gi, '')
+                            .replace(/English translation:\s*\n/gi, '');
+    console.log(cleanedText);
 
     // Escape special characters and format text as valid XHTML
     const escapedText = cleanedText.replace(/&/g, '&amp;')
