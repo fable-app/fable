@@ -25,14 +25,15 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
-      - name: Log in to Expo
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: echo $EXPO_TOKEN | eas login --token --silent
+      - name: Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Build Android app
         run: eas build --platform android --auto-submit-with-profile=preview --non-interactive
-      
+
       - name: Get app version
         id: get_version
         run: echo "::set-output name=version::$(jq -r '.version' app.json)"
@@ -47,28 +48,31 @@ jobs:
   publish_to_play_store:
     needs: build_and_tag
     runs-on: ubuntu-latest
-    steps:
-      - name: 🏗 Checkout repository
-        uses: actions/checkout@v3
 
-      - name: 🏗 Set up Node
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: '18'
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: npm install --legacy-peer-deps
 
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
-      - name: Log in to Expo
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: echo $EXPO_TOKEN | eas login --token --silent
+      - name: Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Submit to Google Play Store for production
         env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: |
-          eas submit --platform android --latest --non-interactive
+          EAS_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        run: eas submit --platform android --latest --non-interactive
