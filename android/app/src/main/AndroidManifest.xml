@@ -25,7 +25,7 @@
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="fable"/>
-        <data android:scheme="com.fable"/>
+        <data android:scheme="com.anbuu.fable"/>
         <data android:scheme="exp+fable"/>
       </intent-filter>
     </activity>

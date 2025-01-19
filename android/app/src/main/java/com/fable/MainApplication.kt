@@ -1,4 +1,4 @@
-package com.fable
+package com.anbuu.fable
 
 import android.app.Application
 import android.content.res.Configuration
