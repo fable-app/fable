@@ -1,4 +1,4 @@
-package com.fable
+package com.anbuu.fable
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

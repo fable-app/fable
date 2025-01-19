@@ -28,7 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>fable</string>
-          <string>com.fable</string>
+          <string>com.anbuu.fable</string>
         </array>
       </dict>
       <dict>
