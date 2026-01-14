@@ -1,0 +1,60 @@
+{
+  "id": "story-10",
+  "titleGerman": "Zwischen den Welten",
+  "titleEnglish": "Between Worlds",
+  "author": "Original",
+  "wordCount": 158,
+  "difficulty": "C2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Die Ambivalenz ihres Daseins manifestierte sich in der Unvereinbarkeit zweier kultureller Identitäten.",
+      "english": "The ambivalence of her existence manifested itself in the incompatibility of two cultural identities."
+    },
+    {
+      "id": 2,
+      "german": "Leyla war in Deutschland geboren, doch ihre Wurzeln reichten tief in die anatolische Erde.",
+      "english": "Leyla was born in Germany, yet her roots reached deep into Anatolian soil."
+    },
+    {
+      "id": 3,
+      "german": "In der Schule war sie die Türkin, bei Verwandtenbesuchen in Istanbul die Deutsche.",
+      "english": "At school she was the Turk, during family visits in Istanbul the German."
+    },
+    {
+      "id": 4,
+      "german": "Diese doppelte Fremdheit hatte sie zunächst als Last empfunden, als unüberwindbare Dichotomie.",
+      "english": "This double foreignness she had initially felt as a burden, as an insurmountable dichotomy."
+    },
+    {
+      "id": 5,
+      "german": "Doch mit den Jahren wandelte sich ihre Perspektive in subtilen, kaum wahrnehmbaren Schritten.",
+      "english": "But over the years her perspective changed in subtle, barely perceptible steps."
+    },
+    {
+      "id": 6,
+      "german": "Sie erkannte, dass ihre vermeintliche Zerrissenheit eigentlich eine seltene Gabe war.",
+      "english": "She recognized that her supposed torn state was actually a rare gift."
+    },
+    {
+      "id": 7,
+      "german": "Sie besaß die Fähigkeit, zwischen Welten zu navigieren, Brücken zu bauen wo andere Mauern sahen.",
+      "english": "She possessed the ability to navigate between worlds, to build bridges where others saw walls."
+    },
+    {
+      "id": 8,
+      "german": "Ihre Mehrsprachigkeit war nicht nur linguistischer, sondern existenzieller Natur.",
+      "english": "Her multilingualism was not only linguistic but existential in nature."
+    },
+    {
+      "id": 9,
+      "german": "Sie verstand die Nuancen, die unausgesprochenen Codes beider Kulturen intuitiv.",
+      "english": "She intuitively understood the nuances, the unspoken codes of both cultures."
+    },
+    {
+      "id": 10,
+      "german": "In einer zunehmend fragmentierten Welt war ihre hybride Identität keine Schwäche, sondern eine Stärke.",
+      "english": "In an increasingly fragmented world, her hybrid identity was not a weakness but a strength."
+    }
+  ]
+}
