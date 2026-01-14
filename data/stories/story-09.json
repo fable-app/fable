@@ -1,0 +1,60 @@
+{
+  "id": "story-09",
+  "titleGerman": "Die Verlorene Zeit",
+  "titleEnglish": "The Lost Time",
+  "author": "Original",
+  "wordCount": 145,
+  "difficulty": "C1",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "In einer Gesellschaft, die von Effizienz und Produktivität besessen war, hatte Clara verlernt, innezuhalten.",
+      "english": "In a society obsessed with efficiency and productivity, Clara had forgotten how to pause."
+    },
+    {
+      "id": 2,
+      "german": "Jede Minute ihres Tages war durchgeplant, jede Sekunde einem Zweck untergeordnet.",
+      "english": "Every minute of her day was scheduled, every second subordinated to a purpose."
+    },
+    {
+      "id": 3,
+      "german": "Als sie eines Morgens aufwachte, bemerkte sie, dass etwas fehlte.",
+      "english": "When she woke up one morning, she noticed something was missing."
+    },
+    {
+      "id": 4,
+      "german": "Nicht etwas Materielles, sondern etwas Wesentliches in ihr selbst.",
+      "english": "Not something material, but something essential within herself."
+    },
+    {
+      "id": 5,
+      "german": "Sie konnte sich nicht mehr an den letzten Moment erinnern, in dem sie einfach nur existiert hatte.",
+      "english": "She could no longer remember the last moment when she had simply existed."
+    },
+    {
+      "id": 6,
+      "german": "Ohne Absicht, ohne Ziel, ohne die ständige Frage nach dem Warum.",
+      "english": "Without intention, without goal, without the constant question of why."
+    },
+    {
+      "id": 7,
+      "german": "An diesem Tag beschloss sie, eine Stunde ihrer Zeit zu 'verlieren'.",
+      "english": "On that day she decided to 'lose' an hour of her time."
+    },
+    {
+      "id": 8,
+      "german": "Sie saß im Park, beobachtete die Wolken und tat bewusst nichts.",
+      "english": "She sat in the park, watched the clouds and consciously did nothing."
+    },
+    {
+      "id": 9,
+      "german": "Zunächst war es unbequem, fast schmerzhaft, dann befreiend.",
+      "english": "At first it was uncomfortable, almost painful, then liberating."
+    },
+    {
+      "id": 10,
+      "german": "Sie hatte die verlorene Zeit wiedergefunden, indem sie aufhörte, sie zu jagen.",
+      "english": "She had found the lost time again by stopping chasing it."
+    }
+  ]
+}
