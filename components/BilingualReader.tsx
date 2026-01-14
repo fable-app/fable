@@ -101,10 +101,13 @@ export function BilingualReader({ story }: BilingualReaderProps) {
     // Speak with German voice
     Speech.speak(sentence.german, {
       language: 'de-DE',
-      rate: 0.85, // Slightly slower for learners
+      rate: 0.70, // Slightly slower for learners
       pitch: 1.0,
       onDone: () => {
-        playNextSentence();
+        // Add 0.5s pause between sentences
+        setTimeout(() => {
+          playNextSentence();
+        }, 500);
       },
       onStopped: () => {
         setIsPlaying(false);
