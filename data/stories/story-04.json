@@ -1,0 +1,60 @@
+{
+  "id": "story-04",
+  "titleGerman": "Das Geschenk",
+  "titleEnglish": "The Gift",
+  "author": "Original",
+  "wordCount": 95,
+  "difficulty": "A2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Anna hatte bald Geburtstag und wollte ihrer Mutter etwas Besonderes schenken.",
+      "english": "Anna's birthday was coming soon and she wanted to give her mother something special."
+    },
+    {
+      "id": 2,
+      "german": "Sie hatte nicht viel Geld, aber viele gute Ideen.",
+      "english": "She didn't have much money, but many good ideas."
+    },
+    {
+      "id": 3,
+      "german": "In der Schule lernte sie, wie man schöne Karten bastelt.",
+      "english": "At school she learned how to make beautiful cards."
+    },
+    {
+      "id": 4,
+      "german": "Sie sammelte bunte Blumen aus dem Garten.",
+      "english": "She collected colorful flowers from the garden."
+    },
+    {
+      "id": 5,
+      "german": "Mit viel Liebe malte sie ein Bild von ihrer Familie.",
+      "english": "With much love she painted a picture of her family."
+    },
+    {
+      "id": 6,
+      "german": "Am Abend vor dem Geburtstag war alles fertig.",
+      "english": "On the evening before her birthday everything was ready."
+    },
+    {
+      "id": 7,
+      "german": "Anna konnte vor Aufregung kaum schlafen.",
+      "english": "Anna could hardly sleep from excitement."
+    },
+    {
+      "id": 8,
+      "german": "Am nächsten Morgen gab sie ihrer Mutter das Geschenk.",
+      "english": "The next morning she gave her mother the gift."
+    },
+    {
+      "id": 9,
+      "german": "Ihre Mutter weinte vor Freude über das selbstgemachte Geschenk.",
+      "english": "Her mother cried with joy over the handmade gift."
+    },
+    {
+      "id": 10,
+      "german": "Es war das schönste Geschenk, das sie je bekommen hatte.",
+      "english": "It was the most beautiful gift she had ever received."
+    }
+  ]
+}

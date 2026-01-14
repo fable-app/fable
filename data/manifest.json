@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-14",
+  "stories": [
+    {
+      "id": "story-01",
+      "titleGerman": "Der Kleine Vogel",
+      "titleEnglish": "The Little Bird",
+      "author": "Traditional",
+      "wordCount": 69,
+      "difficulty": "A1",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-02",
+      "titleGerman": "Die Katze und die Maus",
+      "titleEnglish": "The Cat and the Mouse",
+      "author": "Traditional",
+      "wordCount": 79,
+      "difficulty": "A2",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-03",
+      "titleGerman": "Der Alte Garten",
+      "titleEnglish": "The Old Garden",
+      "author": "Traditional",
+      "wordCount": 87,
+      "difficulty": "B1",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-04",
+      "titleGerman": "Das Geschenk",
+      "titleEnglish": "The Gift",
+      "author": "Original",
+      "wordCount": 95,
+      "difficulty": "A2",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-05",
+      "titleGerman": "Der Erste Schnee",
+      "titleEnglish": "The First Snow",
+      "author": "Original",
+      "wordCount": 78,
+      "difficulty": "A1",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-06",
+      "titleGerman": "Die Reise nach Berlin",
+      "titleEnglish": "The Journey to Berlin",
+      "author": "Original",
+      "wordCount": 112,
+      "difficulty": "B1",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-07",
+      "titleGerman": "Der Nachbar",
+      "titleEnglish": "The Neighbor",
+      "author": "Original",
+      "wordCount": 88,
+      "difficulty": "A2",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-08",
+      "titleGerman": "Die Entscheidung",
+      "titleEnglish": "The Decision",
+      "author": "Original",
+      "wordCount": 128,
+      "difficulty": "B2",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-09",
+      "titleGerman": "Die Verlorene Zeit",
+      "titleEnglish": "The Lost Time",
+      "author": "Original",
+      "wordCount": 145,
+      "difficulty": "C1",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-10",
+      "titleGerman": "Zwischen den Welten",
+      "titleEnglish": "Between Worlds",
+      "author": "Original",
+      "wordCount": 158,
+      "difficulty": "C2",
+      "sentenceCount": 10
+    }
+  ]
+}

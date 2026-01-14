@@ -1,0 +1,60 @@
+{
+  "id": "story-08",
+  "titleGerman": "Die Entscheidung",
+  "titleEnglish": "The Decision",
+  "author": "Original",
+  "wordCount": 128,
+  "difficulty": "B2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Jonas stand vor der schwierigsten Entscheidung seines Lebens.",
+      "english": "Jonas faced the most difficult decision of his life."
+    },
+    {
+      "id": 2,
+      "german": "Er hatte zwei Jobangebote erhalten, die unterschiedlicher nicht sein konnten.",
+      "english": "He had received two job offers that couldn't be more different."
+    },
+    {
+      "id": 3,
+      "german": "Das erste war in einem etablierten Unternehmen mit hohem Gehalt und Sicherheit.",
+      "english": "The first was at an established company with high salary and security."
+    },
+    {
+      "id": 4,
+      "german": "Das zweite bei einem Start-up, riskant aber voller Möglichkeiten.",
+      "english": "The second at a startup, risky but full of possibilities."
+    },
+    {
+      "id": 5,
+      "german": "Seine Familie riet ihm zur Sicherheit, sein Herz zum Abenteuer.",
+      "english": "His family advised him to choose security, his heart toward adventure."
+    },
+    {
+      "id": 6,
+      "german": "Tagelang wälzte er die Argumente hin und her.",
+      "english": "For days he turned the arguments over and over."
+    },
+    {
+      "id": 7,
+      "german": "Schließlich erkannte er, dass es keine perfekte Wahl gab.",
+      "english": "Finally he realized that there was no perfect choice."
+    },
+    {
+      "id": 8,
+      "german": "Er entschied sich für das Start-up und nahm die Unsicherheit in Kauf.",
+      "english": "He decided on the startup and accepted the uncertainty."
+    },
+    {
+      "id": 9,
+      "german": "Jahre später blickte er auf diese Entscheidung als Wendepunkt zurück.",
+      "english": "Years later he looked back on this decision as a turning point."
+    },
+    {
+      "id": 10,
+      "german": "Nicht weil sie richtig war, sondern weil er sie selbst getroffen hatte.",
+      "english": "Not because it was right, but because he had made it himself."
+    }
+  ]
+}
