@@ -3,24 +3,18 @@ import { StatusBar } from 'expo-status-bar';
 import { useRouter } from 'expo-router';
 import { StoryCollection } from '@/components/StoryCollection';
 import { getAllStoryMetadata } from '@/services/story.service';
+import { useAllProgress } from '@/hooks';
 import type { StoryMetadata } from '@/types';
 
 export default function HomeScreen() {
   const router = useRouter();
   const storyMetadata = getAllStoryMetadata();
+  const { progressMap } = useAllProgress();
 
-  // Mock progress data for PR #3
-  // Real progress tracking will come in PR #4
-  const mockProgress: Record<string, number> = {
-    'story-01': 0,           // Not started
-    'story-02': 42,          // In progress
-    'story-03': 100,         // Completed
-  };
-
-  // Combine story metadata with mock progress
+  // Combine story metadata with real progress from SQLite
   const storiesWithProgress = storyMetadata.map((story: StoryMetadata) => ({
     ...story,
-    progress: mockProgress[story.id] || 0,
+    progress: progressMap[story.id]?.percentage || 0,
   }));
 
   const handleStoryPress = (storyId: string) => {

@@ -1,7 +1,9 @@
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { colors, typography, spacing } from '@/design-system';
+import { useStoryProgress } from '@/hooks';
 import { SentenceCard } from './SentenceCard';
 import type { Story } from '@/types';
 
@@ -11,6 +13,40 @@ interface BilingualReaderProps {
 
 export function BilingualReader({ story }: BilingualReaderProps) {
   const router = useRouter();
+  const scrollViewRef = useRef<ScrollView>(null);
+  const [currentSentence, setCurrentSentence] = useState(0);
+  const { progress, updateProgress } = useStoryProgress(story.id);
+
+  // Track card heights and positions
+  const cardPositions = useRef<number[]>([]);
+
+  // Save progress when sentence changes
+  useEffect(() => {
+    if (currentSentence > 0) {
+      updateProgress({
+        storyId: story.id,
+        sentenceIndex: currentSentence,
+        totalSentences: story.sentences.length,
+      });
+    }
+  }, [currentSentence, story.id, story.sentences.length, updateProgress]);
+
+  // Calculate which sentence is visible based on scroll position
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const scrollY = event.nativeEvent.contentOffset.y;
+
+    // Find which sentence card is currently visible
+    // Estimate: each card is ~150px, find approximate index
+    const estimatedIndex = Math.floor(scrollY / 150);
+    const clampedIndex = Math.min(
+      Math.max(0, estimatedIndex),
+      story.sentences.length - 1
+    );
+
+    if (clampedIndex !== currentSentence) {
+      setCurrentSentence(clampedIndex);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -35,9 +71,12 @@ export function BilingualReader({ story }: BilingualReaderProps) {
 
       {/* Scrollable Content */}
       <ScrollView
+        ref={scrollViewRef}
         style={styles.scrollView}
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={true}
+        onScroll={handleScroll}
+        scrollEventThrottle={400}
       >
         {story.sentences.map((sentence) => (
           <SentenceCard key={sentence.id} sentence={sentence} />
