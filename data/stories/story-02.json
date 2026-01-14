@@ -1,0 +1,60 @@
+{
+  "id": "story-02",
+  "titleGerman": "Die Katze und die Maus",
+  "titleEnglish": "The Cat and the Mouse",
+  "author": "Traditional",
+  "wordCount": 180,
+  "difficulty": "A2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "In einem alten Haus wohnte eine kluge Maus.",
+      "english": "In an old house lived a clever mouse."
+    },
+    {
+      "id": 2,
+      "german": "Sie hatte ein gemütliches Nest hinter der Wand.",
+      "english": "She had a cozy nest behind the wall."
+    },
+    {
+      "id": 3,
+      "german": "Jeden Tag suchte sie nach Essen in der Küche.",
+      "english": "Every day she looked for food in the kitchen."
+    },
+    {
+      "id": 4,
+      "german": "Aber eines Tages kam eine große Katze ins Haus.",
+      "english": "But one day a big cat came into the house."
+    },
+    {
+      "id": 5,
+      "german": "Die Katze wollte die Maus fangen.",
+      "english": "The cat wanted to catch the mouse."
+    },
+    {
+      "id": 6,
+      "german": "Die Maus musste sehr vorsichtig sein.",
+      "english": "The mouse had to be very careful."
+    },
+    {
+      "id": 7,
+      "german": "Sie beobachtete die Katze und lernte ihre Gewohnheiten.",
+      "english": "She watched the cat and learned its habits."
+    },
+    {
+      "id": 8,
+      "german": "Wenn die Katze schlief, ging die Maus auf Futtersuche.",
+      "english": "When the cat slept, the mouse went looking for food."
+    },
+    {
+      "id": 9,
+      "german": "So lebten sie zusammen im gleichen Haus.",
+      "english": "So they lived together in the same house."
+    },
+    {
+      "id": 10,
+      "german": "Die Maus war klug genug, um sicher zu bleiben.",
+      "english": "The mouse was clever enough to stay safe."
+    }
+  ]
+}

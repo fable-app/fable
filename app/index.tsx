@@ -1,8 +1,13 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { colors, typography, spacing } from '@/design-system';
+import { getAllStoryMetadata } from '@/services/story.service';
 
 export default function HomeScreen() {
+  const router = useRouter();
+  const stories = getAllStoryMetadata();
+
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
@@ -14,21 +19,31 @@ export default function HomeScreen() {
 
       {/* Content */}
       <ScrollView style={styles.content} contentContainerStyle={styles.contentContainer}>
-        <Text style={styles.welcomeText}>Welcome to Fable</Text>
-        <Text style={styles.subtitleText}>Learn German through beautiful stories</Text>
+        <Text style={styles.welcomeText}>German Stories</Text>
+        <Text style={styles.subtitleText}>
+          {stories.length} {stories.length === 1 ? 'story' : 'stories'} available
+        </Text>
 
-        <View style={styles.statusCard}>
-          <Text style={styles.statusTitle}>Phase 0: Foundation Complete! ✓</Text>
-          <Text style={styles.statusItem}>✓ Expo project initialized</Text>
-          <Text style={styles.statusItem}>✓ Design system implemented</Text>
-          <Text style={styles.statusItem}>✓ TypeScript configured</Text>
-          <Text style={styles.statusItem}>✓ Expo Router ready</Text>
-          <Text style={styles.statusItem}>⏳ Story content processing...</Text>
-        </View>
+        {stories.map((story) => (
+          <TouchableOpacity
+            key={story.id}
+            style={styles.storyCard}
+            onPress={() => router.push(`/reader/${story.id}`)}
+          >
+            <Text style={styles.storyTitleGerman}>{story.titleGerman}</Text>
+            <Text style={styles.storyTitleEnglish}>{story.titleEnglish}</Text>
+            <View style={styles.storyMeta}>
+              <Text style={styles.storyMetaText}>{story.author}</Text>
+              <Text style={styles.storyMetaText}> · </Text>
+              <Text style={styles.storyMetaText}>{story.wordCount} words</Text>
+              <Text style={styles.storyMetaText}> · </Text>
+              <Text style={styles.storyMetaText}>{story.difficulty}</Text>
+            </View>
+          </TouchableOpacity>
+        ))}
 
         <Text style={styles.infoText}>
-          This is a test screen to verify the app runs correctly.
-          The full story collection and reader will be built in Phase 1.
+          Tap any story to start reading. Full StoryCollection component with progress tracking coming in PR #3.
         </Text>
       </ScrollView>
     </View>
@@ -74,34 +89,43 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xl,
     lineHeight: typography.sizes.body * typography.lineHeights.relaxed,
   },
-  statusCard: {
+  storyCard: {
     backgroundColor: colors.background.elevated,
     padding: spacing.base + 4,
     borderRadius: spacing.md,
-    marginBottom: spacing.lg,
+    marginBottom: spacing.md,
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 1,
     shadowRadius: 8,
     elevation: 2,
   },
-  statusTitle: {
+  storyTitleGerman: {
     fontFamily: 'Inter_600SemiBold',
     fontSize: typography.sizes.heading,
     color: colors.text.primary,
-    marginBottom: spacing.md,
+    marginBottom: spacing.xs,
   },
-  statusItem: {
+  storyTitleEnglish: {
     fontFamily: 'Inter_400Regular',
     fontSize: typography.sizes.body,
     color: colors.text.secondary,
     marginBottom: spacing.sm,
-    lineHeight: typography.sizes.body * typography.lineHeights.relaxed,
+  },
+  storyMeta: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  storyMetaText: {
+    fontFamily: 'Inter_400Regular',
+    fontSize: typography.sizes.bodySmall,
+    color: colors.text.tertiary,
   },
   infoText: {
     fontFamily: 'Inter_400Regular',
     fontSize: typography.sizes.bodySmall,
     color: colors.text.tertiary,
     lineHeight: typography.sizes.bodySmall * typography.lineHeights.relaxed,
+    marginTop: spacing.lg,
   },
 });
