@@ -16,8 +16,13 @@ export function useStoryProgress(storyId: string | undefined) {
   useEffect(() => {
     if (!storyId) return;
 
-    const loadedProgress = getProgress(storyId);
-    setProgress(loadedProgress);
+    const loadProgress = async () => {
+      // Load from all progress to support both web and native
+      const allProgress = await getAllProgress();
+      setProgress(allProgress[storyId] || null);
+    };
+
+    loadProgress();
   }, [storyId]);
 
   const updateProgress = useCallback(
@@ -25,8 +30,8 @@ export function useStoryProgress(storyId: string | undefined) {
       const success = await saveProgress(update);
       if (success && storyId) {
         // Reload progress after save
-        const updatedProgress = getProgress(storyId);
-        setProgress(updatedProgress);
+        const allProgress = await getAllProgress();
+        setProgress(allProgress[storyId] || null);
       }
       return success;
     },
@@ -42,8 +47,8 @@ export function useStoryProgress(storyId: string | undefined) {
 export function useAllProgress() {
   const [progressMap, setProgressMap] = useState<Record<string, Progress>>({});
 
-  const loadProgress = useCallback(() => {
-    const allProgress = getAllProgress();
+  const loadProgress = useCallback(async () => {
+    const allProgress = await getAllProgress();
     setProgressMap(allProgress);
   }, []);
 

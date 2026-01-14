@@ -8,8 +8,34 @@ import type { Story, StoryMetadata } from '@/types';
 // Import manifest
 import manifestData from '@/data/manifest.json';
 
+// Static imports for all stories (required for Metro bundler)
+import story01 from '@/data/stories/story-01.json';
+import story02 from '@/data/stories/story-02.json';
+import story03 from '@/data/stories/story-03.json';
+import story04 from '@/data/stories/story-04.json';
+import story05 from '@/data/stories/story-05.json';
+import story06 from '@/data/stories/story-06.json';
+import story07 from '@/data/stories/story-07.json';
+import story08 from '@/data/stories/story-08.json';
+import story09 from '@/data/stories/story-09.json';
+import story10 from '@/data/stories/story-10.json';
+
 // Type-cast manifest to ensure proper types
 const manifest = manifestData as { version: string; lastUpdated: string; stories: StoryMetadata[] };
+
+// Story map for efficient lookup
+const storyMap: Record<string, Story> = {
+  'story-01': story01 as Story,
+  'story-02': story02 as Story,
+  'story-03': story03 as Story,
+  'story-04': story04 as Story,
+  'story-05': story05 as Story,
+  'story-06': story06 as Story,
+  'story-07': story07 as Story,
+  'story-08': story08 as Story,
+  'story-09': story09 as Story,
+  'story-10': story10 as Story,
+};
 
 // Cache for loaded stories
 const storyCache = new Map<string, Story>();
@@ -39,14 +65,18 @@ export async function loadStory(storyId: string): Promise<Story | null> {
   }
 
   try {
-    // Dynamically import the story
-    // In production, stories would be in data/stories/
-    const story = await import(`@/data/stories/${storyId}.json`);
+    // Get story from static imports
+    const story = storyMap[storyId];
+
+    if (!story) {
+      console.error(`Story not found: ${storyId}`);
+      return null;
+    }
 
     // Cache the story
-    storyCache.set(storyId, story.default);
+    storyCache.set(storyId, story);
 
-    return story.default;
+    return story;
   } catch (error) {
     console.error(`Failed to load story: ${storyId}`, error);
     return null;
