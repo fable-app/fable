@@ -1,0 +1,60 @@
+{
+  "id": "story-01",
+  "titleGerman": "Der Kleine Vogel",
+  "titleEnglish": "The Little Bird",
+  "author": "Traditional",
+  "wordCount": 150,
+  "difficulty": "A1",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Es war einmal ein kleiner Vogel.",
+      "english": "Once upon a time there was a little bird."
+    },
+    {
+      "id": 2,
+      "german": "Der Vogel lebte in einem großen Baum.",
+      "english": "The bird lived in a big tree."
+    },
+    {
+      "id": 3,
+      "german": "Jeden Morgen sang er ein schönes Lied.",
+      "english": "Every morning he sang a beautiful song."
+    },
+    {
+      "id": 4,
+      "german": "Die anderen Tiere hörten gerne zu.",
+      "english": "The other animals liked to listen."
+    },
+    {
+      "id": 5,
+      "german": "Eines Tages kam ein starker Wind.",
+      "english": "One day a strong wind came."
+    },
+    {
+      "id": 6,
+      "german": "Der Wind blies den kleinen Vogel weit weg.",
+      "english": "The wind blew the little bird far away."
+    },
+    {
+      "id": 7,
+      "german": "Der Vogel war traurig und allein.",
+      "english": "The bird was sad and alone."
+    },
+    {
+      "id": 8,
+      "german": "Aber er flog und flog, bis er nach Hause kam.",
+      "english": "But he flew and flew until he came home."
+    },
+    {
+      "id": 9,
+      "german": "Alle Tiere freuten sich sehr.",
+      "english": "All the animals were very happy."
+    },
+    {
+      "id": 10,
+      "german": "Und der kleine Vogel sang wieder sein Lied.",
+      "english": "And the little bird sang his song again."
+    }
+  ]
+}
