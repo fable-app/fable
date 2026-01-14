@@ -4,8 +4,7 @@ import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { colors, typography, spacing } from '@/design-system';
 import { useStoryProgress } from '@/hooks';
-import { SentenceCard } from './SentenceCard';
-import type { Story } from '@/types';
+import type { Story, Sentence } from '@/types';
 
 interface BilingualReaderProps {
   story: Story;
@@ -16,9 +15,26 @@ export function BilingualReader({ story }: BilingualReaderProps) {
   const scrollViewRef = useRef<ScrollView>(null);
   const [currentSentence, setCurrentSentence] = useState(0);
   const { progress, updateProgress } = useStoryProgress(story.id);
+  const sentenceRefs = useRef<Map<number, View>>(new Map());
+  const sentencePositions = useRef<Map<number, number>>(new Map());
+  const hasScrolledToProgress = useRef(false);
 
-  // Track card heights and positions
-  const cardPositions = useRef<number[]>([]);
+  // Scroll to last read position on mount
+  useEffect(() => {
+    if (progress && !hasScrolledToProgress.current && sentencePositions.current.size > 0) {
+      const lastIndex = progress.lastSentenceIndex;
+      const position = sentencePositions.current.get(lastIndex);
+
+      if (position !== undefined && scrollViewRef.current) {
+        // Delay to ensure layout is complete
+        setTimeout(() => {
+          scrollViewRef.current?.scrollTo({ y: position, animated: false });
+          setCurrentSentence(lastIndex);
+          hasScrolledToProgress.current = true;
+        }, 100);
+      }
+    }
+  }, [progress, sentencePositions.current.size]);
 
   // Save progress when sentence changes
   useEffect(() => {
@@ -31,21 +47,30 @@ export function BilingualReader({ story }: BilingualReaderProps) {
     }
   }, [currentSentence, story.id, story.sentences.length, updateProgress]);
 
-  // Calculate which sentence is visible based on scroll position
+  // Track which sentence is currently visible
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const scrollY = event.nativeEvent.contentOffset.y;
 
-    // Find which sentence card is currently visible
-    // Estimate: each card is ~150px, find approximate index
-    const estimatedIndex = Math.floor(scrollY / 150);
-    const clampedIndex = Math.min(
-      Math.max(0, estimatedIndex),
-      story.sentences.length - 1
-    );
+    // Find which sentence is currently at the top of the viewport
+    let closestIndex = 0;
+    let minDistance = Infinity;
 
-    if (clampedIndex !== currentSentence) {
-      setCurrentSentence(clampedIndex);
+    sentencePositions.current.forEach((position, index) => {
+      const distance = Math.abs(position - scrollY);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    if (closestIndex !== currentSentence) {
+      setCurrentSentence(closestIndex);
     }
+  };
+
+  // Measure sentence positions for accurate scroll tracking
+  const handleSentenceLayout = (index: number, y: number) => {
+    sentencePositions.current.set(index, y);
   };
 
   return (
@@ -76,10 +101,20 @@ export function BilingualReader({ story }: BilingualReaderProps) {
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={true}
         onScroll={handleScroll}
-        scrollEventThrottle={400}
+        scrollEventThrottle={200}
       >
-        {story.sentences.map((sentence) => (
-          <SentenceCard key={sentence.id} sentence={sentence} />
+        {story.sentences.map((sentence, index) => (
+          <View
+            key={sentence.id}
+            style={styles.sentencePair}
+            onLayout={(event) => {
+              const layout = event.nativeEvent.layout;
+              handleSentenceLayout(index, layout.y);
+            }}
+          >
+            <Text style={styles.germanText}>{sentence.german}</Text>
+            <Text style={styles.englishText}>{sentence.english}</Text>
+          </View>
         ))}
       </ScrollView>
     </View>
@@ -127,7 +162,24 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    padding: spacing.lg,
-    paddingBottom: spacing.xl,
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.xl,
+    paddingBottom: spacing.xl * 2,
+  },
+  sentencePair: {
+    marginBottom: spacing.xl,
+  },
+  germanText: {
+    fontFamily: 'Literata_400Regular',
+    fontSize: typography.sizes.bodyLarge,
+    lineHeight: typography.sizes.bodyLarge * typography.lineHeights.loose,
+    color: colors.text.primary,
+    marginBottom: spacing.sm,
+  },
+  englishText: {
+    fontFamily: 'Literata_400Regular',
+    fontSize: typography.sizes.body,
+    lineHeight: typography.sizes.body * typography.lineHeights.loose,
+    color: colors.text.secondary,
   },
 });
