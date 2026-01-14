@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import * as Speech from 'expo-speech';
 import { colors, typography, spacing } from '@/design-system';
 import { useStoryProgress } from '@/hooks';
 import type { Story, Sentence } from '@/types';
@@ -18,6 +19,11 @@ export function BilingualReader({ story }: BilingualReaderProps) {
   const sentenceRefs = useRef<Map<number, View>>(new Map());
   const sentencePositions = useRef<Map<number, number>>(new Map());
   const hasScrolledToProgress = useRef(false);
+
+  // Audio playback state
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [playingSentence, setPlayingSentence] = useState<number | null>(null);
+  const audioQueue = useRef<number[]>([]);
 
   // Scroll to last read position on mount
   useEffect(() => {
@@ -73,6 +79,75 @@ export function BilingualReader({ story }: BilingualReaderProps) {
     sentencePositions.current.set(index, y);
   };
 
+  // Play German audio sentence by sentence
+  const playNextSentence = () => {
+    if (audioQueue.current.length === 0) {
+      setIsPlaying(false);
+      setPlayingSentence(null);
+      return;
+    }
+
+    const nextIndex = audioQueue.current.shift()!;
+    const sentence = story.sentences[nextIndex];
+
+    setPlayingSentence(nextIndex);
+
+    // Scroll to the sentence being read
+    const position = sentencePositions.current.get(nextIndex);
+    if (position !== undefined && scrollViewRef.current) {
+      scrollViewRef.current.scrollTo({ y: position - 100, animated: true });
+    }
+
+    // Speak with German voice
+    Speech.speak(sentence.german, {
+      language: 'de-DE',
+      rate: 0.70, // Slightly slower for learners
+      pitch: 1.0,
+      onDone: () => {
+        // Add 0.5s pause between sentences
+        setTimeout(() => {
+          playNextSentence();
+        }, 500);
+      },
+      onStopped: () => {
+        setIsPlaying(false);
+        setPlayingSentence(null);
+        audioQueue.current = [];
+      },
+      onError: (error) => {
+        console.error('Speech error:', error);
+        setIsPlaying(false);
+        setPlayingSentence(null);
+        audioQueue.current = [];
+      },
+    });
+  };
+
+  const handlePlayPause = async () => {
+    if (isPlaying) {
+      // Pause/Stop
+      await Speech.stop();
+      setIsPlaying(false);
+      setPlayingSentence(null);
+      audioQueue.current = [];
+    } else {
+      // Start playing from current sentence
+      audioQueue.current = Array.from(
+        { length: story.sentences.length - currentSentence },
+        (_, i) => currentSentence + i
+      );
+      setIsPlaying(true);
+      playNextSentence();
+    }
+  };
+
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      Speech.stop();
+    };
+  }, []);
+
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
@@ -91,7 +166,13 @@ export function BilingualReader({ story }: BilingualReaderProps) {
           {story.titleGerman}
         </Text>
 
-        <View style={styles.placeholder} />
+        <TouchableOpacity
+          onPress={handlePlayPause}
+          style={styles.audioButton}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+        >
+          <Text style={styles.audioButtonText}>{isPlaying ? '⏸' : '▶'}</Text>
+        </TouchableOpacity>
       </View>
 
       {/* Scrollable Content */}
@@ -103,19 +184,33 @@ export function BilingualReader({ story }: BilingualReaderProps) {
         onScroll={handleScroll}
         scrollEventThrottle={200}
       >
-        {story.sentences.map((sentence, index) => (
-          <View
-            key={sentence.id}
-            style={styles.sentencePair}
-            onLayout={(event) => {
-              const layout = event.nativeEvent.layout;
-              handleSentenceLayout(index, layout.y);
-            }}
-          >
-            <Text style={styles.germanText}>{sentence.german}</Text>
-            <Text style={styles.englishText}>{sentence.english}</Text>
-          </View>
-        ))}
+        {story.sentences.map((sentence, index) => {
+          const isCurrentlyPlaying = playingSentence === index;
+
+          return (
+            <View
+              key={sentence.id}
+              style={[
+                styles.sentencePair,
+                isCurrentlyPlaying && styles.sentencePairHighlighted,
+              ]}
+              onLayout={(event) => {
+                const layout = event.nativeEvent.layout;
+                handleSentenceLayout(index, layout.y);
+              }}
+            >
+              <Text
+                style={[
+                  styles.germanText,
+                  isCurrentlyPlaying && styles.germanTextHighlighted,
+                ]}
+              >
+                {sentence.german}
+              </Text>
+              <Text style={styles.englishText}>{sentence.english}</Text>
+            </View>
+          );
+        })}
       </ScrollView>
     </View>
   );
@@ -155,8 +250,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginHorizontal: spacing.sm,
   },
-  placeholder: {
+  audioButton: {
     width: 48,
+    height: 48,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  audioButtonText: {
+    fontSize: 20,
+    color: colors.text.accent,
   },
   scrollView: {
     flex: 1,
@@ -168,6 +270,12 @@ const styles = StyleSheet.create({
   },
   sentencePair: {
     marginBottom: spacing.xl,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.xs,
+    borderRadius: 8,
+  },
+  sentencePairHighlighted: {
+    backgroundColor: colors.background.accent,
   },
   germanText: {
     fontFamily: 'Literata_400Regular',
@@ -175,6 +283,10 @@ const styles = StyleSheet.create({
     lineHeight: typography.sizes.bodyLarge * typography.lineHeights.loose,
     color: colors.text.primary,
     marginBottom: spacing.sm,
+  },
+  germanTextHighlighted: {
+    color: colors.text.accent,
+    fontWeight: '600',
   },
   englishText: {
     fontFamily: 'Literata_400Regular',
