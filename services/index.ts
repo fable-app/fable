@@ -3,3 +3,5 @@
  */
 
 export * from './story.service';
+export * from './storage.service';
+export * from './progress.service';

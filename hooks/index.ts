@@ -3,3 +3,4 @@
  */
 
 export * from './useStory';
+export * from './useProgress';
