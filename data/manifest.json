@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-14",
+  "stories": [
+    {
+      "id": "story-01",
+      "titleGerman": "Der Kleine Vogel",
+      "titleEnglish": "The Little Bird",
+      "author": "Traditional",
+      "wordCount": 150,
+      "difficulty": "A1",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-02",
+      "titleGerman": "Die Katze und die Maus",
+      "titleEnglish": "The Cat and the Mouse",
+      "author": "Traditional",
+      "wordCount": 180,
+      "difficulty": "A2",
+      "sentenceCount": 10
+    },
+    {
+      "id": "story-03",
+      "titleGerman": "Der Alte Garten",
+      "titleEnglish": "The Old Garden",
+      "author": "Traditional",
+      "wordCount": 220,
+      "difficulty": "B1",
+      "sentenceCount": 10
+    }
+  ]
+}

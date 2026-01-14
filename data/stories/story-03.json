@@ -1,0 +1,60 @@
+{
+  "id": "story-03",
+  "titleGerman": "Der Alte Garten",
+  "titleEnglish": "The Old Garden",
+  "author": "Traditional",
+  "wordCount": 220,
+  "difficulty": "B1",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Hinter dem verlassenen Haus lag ein alter, verwilderter Garten.",
+      "english": "Behind the abandoned house lay an old, overgrown garden."
+    },
+    {
+      "id": 2,
+      "german": "Niemand hatte ihn seit vielen Jahren gepflegt.",
+      "english": "No one had tended it for many years."
+    },
+    {
+      "id": 3,
+      "german": "Die Rosen waren wild gewachsen und bedeckten die alten Wege.",
+      "english": "The roses had grown wild and covered the old paths."
+    },
+    {
+      "id": 4,
+      "german": "Eines Sommertags entdeckte ein junges Mädchen diesen geheimen Ort.",
+      "english": "One summer day a young girl discovered this secret place."
+    },
+    {
+      "id": 5,
+      "german": "Sie war fasziniert von der wilden Schönheit des Gartens.",
+      "english": "She was fascinated by the wild beauty of the garden."
+    },
+    {
+      "id": 6,
+      "german": "Langsam begann sie, den Garten wieder zum Leben zu erwecken.",
+      "english": "Slowly she began to bring the garden back to life."
+    },
+    {
+      "id": 7,
+      "german": "Sie schnitt die Wege frei und pflanzte neue Blumen.",
+      "english": "She cleared the paths and planted new flowers."
+    },
+    {
+      "id": 8,
+      "german": "Mit der Zeit wurde der Garten wieder zu einem schönen Ort.",
+      "english": "Over time the garden became a beautiful place again."
+    },
+    {
+      "id": 9,
+      "german": "Vögel und Schmetterlinge kehrten zurück.",
+      "english": "Birds and butterflies returned."
+    },
+    {
+      "id": 10,
+      "german": "Der alte Garten hatte einen neuen Anfang gefunden.",
+      "english": "The old garden had found a new beginning."
+    }
+  ]
+}
