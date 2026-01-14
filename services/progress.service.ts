@@ -100,10 +100,10 @@ export function getProgress(storyId: string): Progress | null {
       return null;
     }
 
-    const result = db.getFirstSync<Progress>(
+    const result = db.getFirstSync(
       'SELECT * FROM progress WHERE storyId = ?',
       [storyId]
-    );
+    ) as Progress | null;
 
     return result || null;
   } catch (error) {
@@ -124,11 +124,11 @@ export async function getAllProgress(): Promise<Record<string, Progress>> {
     }
 
     // Native: Use SQLite
-    const results = db.getAllSync<Progress>('SELECT * FROM progress');
+    const results = db.getAllSync('SELECT * FROM progress') as Progress[];
 
     // Convert array to record keyed by storyId
     const progressMap: Record<string, Progress> = {};
-    results.forEach((progress) => {
+    results.forEach((progress: Progress) => {
       progressMap[progress.storyId] = progress;
     });
 
