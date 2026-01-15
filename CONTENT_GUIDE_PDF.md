@@ -60,8 +60,8 @@ For short stories (< 2,000 words):
   "difficulty": "A2",
   "isMultiChapter": false,
   "translate": true,
-  "translationProvider": "claude",
-  "claudeApiKey": "your-claude-api-key-here"
+  "translationProvider": "openai",
+  "openaiApiKey": "your-openai-api-key-here"
 }
 ```
 
@@ -78,8 +78,8 @@ For longer books split by page numbers:
   "difficulty": "C1",
   "isMultiChapter": true,
   "translate": true,
-  "translationProvider": "claude",
-  "claudeApiKey": "your-claude-api-key-here"
+  "translationProvider": "openai",
+  "openaiApiKey": "your-openai-api-key-here",
   "chapters": [
     {
       "titleGerman": "Teil I",
@@ -116,8 +116,8 @@ If PDF doesn't have clear page breaks, use text patterns:
   "difficulty": "B1",
   "isMultiChapter": true,
   "translate": true,
-  "translationProvider": "claude",
-  "claudeApiKey": "your-claude-api-key-here"
+  "translationProvider": "openai",
+  "openaiApiKey": "your-openai-api-key-here",
   "chapters": [
     {
       "titleGerman": "Der Froschkönig",
@@ -140,11 +140,19 @@ If PDF doesn't have clear page breaks, use text patterns:
 }
 ```
 
-### Translation API Key (Optional) - Claude Recommended
+### Translation API Key (Optional)
 
-To enable automatic translation, you have two options:
+To enable automatic translation, you have three options:
 
-**Option 1: Claude API (Recommended)**
+**Option 1: OpenAI API**
+- Uses GPT-4o for high-quality translations
+- Good for both literary and conversational German
+- Pay-as-you-go pricing
+1. Sign up at [https://platform.openai.com](https://platform.openai.com)
+2. Create an API key
+3. Add to config: `"translationProvider": "openai"` and `"openaiApiKey": "your-key-here"`
+
+**Option 2: Claude API**
 - More accurate for literary German content
 - Better context understanding for complex sentences
 - Free tier available with generous limits
@@ -152,15 +160,14 @@ To enable automatic translation, you have two options:
 2. Create an API key
 3. Add to config: `"translationProvider": "claude"` and `"claudeApiKey": "your-key-here"`
 
-**Option 2: DeepL API (Alternative)**
+**Option 3: DeepL API**
 - Good for simple translations
 - 500,000 characters/month free tier
 1. Sign up at [https://www.deepl.com/pro-api](https://www.deepl.com/pro-api)
 2. Get your API key
-  "translationProvider": "claude",
-  "claudeApiKey": "your-claude-api-key-here"
+3. Add to config: `"translationProvider": "deepl"` and `"deeplApiKey": "your-key-here"`
 
-If you skip both, you'll need to add translations manually.
+If you skip all options, you'll need to add translations manually.
 
 ---
 
@@ -328,8 +335,8 @@ cat > configs/kafka-config.json << 'EOF'
   "difficulty": "C1",
   "isMultiChapter": true,
   "translate": true,
-  "translationProvider": "claude",
-  "claudeApiKey": "your-claude-api-key-here"
+  "translationProvider": "openai",
+  "openaiApiKey": "your-openai-api-key-here",
   "chapters": [
     {
       "titleGerman": "Teil I",
@@ -470,7 +477,8 @@ Start the app and find "Die Verwandlung" in your library.
 ### Useful Resources
 
 - [Project Gutenberg German](https://www.gutenberg.org/browse/languages/de)
-- [Claude API Documentation](https://docs.anthropic.com/) - Recommended for translation
+- [OpenAI API Documentation](https://platform.openai.com/docs) - Translation with GPT-4o
+- [Claude API Documentation](https://docs.anthropic.com/) - Alternative translation service
 - [DeepL API Documentation](https://www.deepl.com/docs-api) - Alternative translation service
 - [German CEFR Levels](https://www.goethe.de/en/spr/kup/prf.html)
 
