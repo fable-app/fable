@@ -1,6 +1,7 @@
 /**
  * Story Processing Script
  * Processes raw German text into bilingual story JSON format
+ * Supports both single stories and multi-chapter books
  */
 
 import * as fs from 'fs';
@@ -188,11 +189,157 @@ export function updateManifest(story: ProcessedStory, manifestPath: string): voi
   }
 }
 
+/**
+ * Process a multi-chapter book
+ * Expects input JSON with chapters array, each containing germanText and translations
+ */
+export function processBook(inputPath: string, outputDir: string): void {
+  try {
+    // Read input file
+    const rawData = fs.readFileSync(inputPath, 'utf-8');
+    const input = JSON.parse(rawData);
+
+    // Validate input structure
+    if (!input.id || !input.titleGerman || !input.titleEnglish || !input.author || !input.chapters || !Array.isArray(input.chapters)) {
+      throw new Error('Invalid book format. Required fields: id, titleGerman, titleEnglish, author, chapters (array)');
+    }
+
+    console.log(`Processing book: ${input.titleGerman}`);
+    console.log(`Chapters: ${input.chapters.length}`);
+
+    const chapterMetadata: any[] = [];
+    let totalWordCount = 0;
+    let totalSentenceCount = 0;
+
+    // Process each chapter
+    input.chapters.forEach((chapter: any, index: number) => {
+      const chapterNumber = index + 1;
+      console.log(`\n  Processing Chapter ${chapterNumber}...`);
+
+      if (!chapter.titleGerman || !chapter.titleEnglish || !chapter.germanText || !chapter.translations) {
+        throw new Error(`Chapter ${chapterNumber} missing required fields: titleGerman, titleEnglish, germanText, translations`);
+      }
+
+      // Segment German text
+      const germanSentences = segmentSentences(chapter.germanText);
+      const translations = chapter.translations as string[];
+
+      // Ensure translation count matches
+      if (germanSentences.length !== translations.length) {
+        console.warn(`  Warning: Chapter ${chapterNumber} - German sentences (${germanSentences.length}) != translations (${translations.length})`);
+      }
+
+      // Build sentences array
+      const sentences = germanSentences.map((german, sentenceIndex) => ({
+        id: sentenceIndex + 1,
+        german,
+        english: translations[sentenceIndex] || '[Translation missing]',
+      }));
+
+      // Calculate metrics
+      const fullText = germanSentences.join(' ');
+      const wordCount = countWords(fullText);
+      const avgWordLength = fullText.replace(/\s/g, '').length / wordCount;
+
+      // Build chapter object
+      const chapterId = `${input.id}-ch${chapterNumber}`;
+      const chapterStory = {
+        id: chapterId,
+        titleGerman: chapter.titleGerman,
+        titleEnglish: chapter.titleEnglish,
+        author: input.author,
+        wordCount,
+        difficulty: input.difficulty || estimateDifficulty(wordCount, avgWordLength),
+        sentences,
+        bookId: input.id,
+        chapterNumber,
+      };
+
+      // Write chapter file
+      const chapterPath = path.join(outputDir, `${chapterId}.json`);
+      fs.writeFileSync(chapterPath, JSON.stringify(chapterStory, null, 2), 'utf-8');
+
+      console.log(`  ✓ Chapter ${chapterNumber}: ${sentences.length} sentences, ${wordCount} words`);
+
+      // Add to metadata
+      chapterMetadata.push({
+        id: chapterId,
+        chapterNumber,
+        titleGerman: chapter.titleGerman,
+        titleEnglish: chapter.titleEnglish,
+        wordCount,
+        sentenceCount: sentences.length,
+      });
+
+      totalWordCount += wordCount;
+      totalSentenceCount += sentences.length;
+    });
+
+    // Create book metadata file
+    const bookMetadata = {
+      id: input.id,
+      titleGerman: input.titleGerman,
+      titleEnglish: input.titleEnglish,
+      author: input.author,
+      wordCount: totalWordCount,
+      difficulty: input.difficulty || estimateDifficulty(totalWordCount / input.chapters.length, 7),
+      sentenceCount: totalSentenceCount,
+      isMultiChapter: true,
+      chapterCount: input.chapters.length,
+      chapters: chapterMetadata,
+    };
+
+    const bookPath = path.join(outputDir, `${input.id}.json`);
+    fs.writeFileSync(bookPath, JSON.stringify(bookMetadata, null, 2), 'utf-8');
+
+    console.log(`\n✓ Processed book: ${input.chapters.length} chapters, ${totalWordCount} words, ${input.difficulty || 'auto'} level`);
+    console.log(`  Book metadata: ${bookPath}`);
+  } catch (error) {
+    console.error(`✗ Failed to process book:`, error);
+    throw error;
+  }
+}
+
+/**
+ * Update manifest with multi-chapter book
+ */
+export function updateManifestWithBook(bookPath: string, manifestPath: string): void {
+  try {
+    // Read book metadata
+    const bookData = JSON.parse(fs.readFileSync(bookPath, 'utf-8'));
+
+    // Read existing manifest
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+
+    // Check if book already exists
+    const existingIndex = manifest.stories.findIndex((s: any) => s.id === bookData.id);
+
+    if (existingIndex >= 0) {
+      // Update existing
+      manifest.stories[existingIndex] = bookData;
+      console.log(`  Updated manifest entry for ${bookData.id}`);
+    } else {
+      // Add new
+      manifest.stories.push(bookData);
+      console.log(`  Added manifest entry for ${bookData.id}`);
+    }
+
+    // Update timestamp
+    manifest.lastUpdated = new Date().toISOString();
+
+    // Write manifest
+    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf-8');
+  } catch (error) {
+    console.error(`✗ Failed to update manifest:`, error);
+    throw error;
+  }
+}
+
 // CLI usage
 const args = process.argv.slice(2);
 
 if (args.length >= 2) {
-  const [inputPath, outputDir] = args;
+  const [inputPath, outputDir, mode] = args;
 
   if (!fs.existsSync(inputPath)) {
     console.error(`Error: Input file not found: ${inputPath}`);
@@ -203,22 +350,42 @@ if (args.length >= 2) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  console.log('Processing story...');
-  processStory(inputPath, outputDir);
+  // Detect if it's a book or single story
+  const inputData = JSON.parse(fs.readFileSync(inputPath, 'utf-8'));
+  const isBook = inputData.chapters && Array.isArray(inputData.chapters) || mode === '--book';
 
-  // Update manifest
-  const manifestPath = path.join(outputDir, '../manifest.json');
-  if (fs.existsSync(manifestPath)) {
-    const outputPath = path.join(outputDir, `${JSON.parse(fs.readFileSync(inputPath, 'utf-8')).id}.json`);
-    const story = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
-    updateManifest(story, manifestPath);
+  if (isBook) {
+    console.log('Processing multi-chapter book...\n');
+    processBook(inputPath, outputDir);
+
+    // Update manifest
+    const manifestPath = path.join(outputDir, '../manifest.json');
+    if (fs.existsSync(manifestPath)) {
+      const bookPath = path.join(outputDir, `${inputData.id}.json`);
+      updateManifestWithBook(bookPath, manifestPath);
+    }
+  } else {
+    console.log('Processing single story...');
+    processStory(inputPath, outputDir);
+
+    // Update manifest
+    const manifestPath = path.join(outputDir, '../manifest.json');
+    if (fs.existsSync(manifestPath)) {
+      const outputPath = path.join(outputDir, `${inputData.id}.json`);
+      const story = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
+      updateManifest(story, manifestPath);
+    }
   }
 
-  console.log('✓ Done!');
+  console.log('\n✓ Done!');
 } else {
-  console.log('Usage: npm run process <input-json> <output-dir>');
+  console.log('Usage: npm run process-story <input-json> <output-dir> [--book]');
   console.log('');
-  console.log('Example:');
-  console.log('  npm run process raw/story-04.json data/stories/');
+  console.log('Examples:');
+  console.log('  Single story:');
+  console.log('    npm run process-story raw/story-11.json data/stories/');
+  console.log('');
+  console.log('  Multi-chapter book:');
+  console.log('    npm run process-story raw/book-metamorphosis.json data/stories/ --book');
   process.exit(1);
 }

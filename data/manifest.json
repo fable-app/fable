@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-01-14",
+  "lastUpdated": "2026-01-15T06:51:20.256Z",
   "stories": [
     {
       "id": "story-01",
@@ -91,6 +91,35 @@
       "wordCount": 158,
       "difficulty": "C2",
       "sentenceCount": 10
+    },
+    {
+      "id": "book-kleine-geschichten",
+      "titleGerman": "Kleine Geschichten",
+      "titleEnglish": "Small Stories",
+      "author": "Original",
+      "wordCount": 109,
+      "difficulty": "A2",
+      "sentenceCount": 19,
+      "isMultiChapter": true,
+      "chapterCount": 2,
+      "chapters": [
+        {
+          "id": "book-kleine-geschichten-ch1",
+          "chapterNumber": 1,
+          "titleGerman": "Der Morgen",
+          "titleEnglish": "The Morning",
+          "wordCount": 50,
+          "sentenceCount": 9
+        },
+        {
+          "id": "book-kleine-geschichten-ch2",
+          "chapterNumber": 2,
+          "titleGerman": "Der Spaziergang",
+          "titleEnglish": "The Walk",
+          "wordCount": 59,
+          "sentenceCount": 10
+        }
+      ]
     }
   ]
 }

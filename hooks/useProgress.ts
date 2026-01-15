@@ -58,3 +58,25 @@ export function useAllProgress() {
 
   return { progressMap, refreshProgress: loadProgress };
 }
+
+/**
+ * Calculate overall progress for a multi-chapter book
+ * @param bookId - The book ID
+ * @param chapterIds - Array of chapter IDs
+ * @param progressMap - Map of all progress data
+ * @returns Average progress across all chapters (0-100)
+ */
+export function calculateBookProgress(
+  bookId: string,
+  chapterIds: string[],
+  progressMap: Record<string, Progress>
+): number {
+  if (chapterIds.length === 0) return 0;
+
+  const totalProgress = chapterIds.reduce((sum, chapterId) => {
+    const chapterProgress = progressMap[chapterId]?.percentage || 0;
+    return sum + chapterProgress;
+  }, 0);
+
+  return Math.round(totalProgress / chapterIds.length);
+}

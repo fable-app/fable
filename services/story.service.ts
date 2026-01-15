@@ -20,6 +20,11 @@ import story08 from '@/data/stories/story-08.json';
 import story09 from '@/data/stories/story-09.json';
 import story10 from '@/data/stories/story-10.json';
 
+// Multi-chapter book imports
+import bookKleineGeschichten from '@/data/stories/book-kleine-geschichten.json';
+import bookKleineGeschichtenCh1 from '@/data/stories/book-kleine-geschichten-ch1.json';
+import bookKleineGeschichtenCh2 from '@/data/stories/book-kleine-geschichten-ch2.json';
+
 // Type-cast manifest to ensure proper types
 const manifest = manifestData as { version: string; lastUpdated: string; stories: StoryMetadata[] };
 
@@ -35,6 +40,11 @@ const storyMap: Record<string, Story> = {
   'story-08': story08 as Story,
   'story-09': story09 as Story,
   'story-10': story10 as Story,
+  // Multi-chapter book (metadata only - no sentences)
+  'book-kleine-geschichten': bookKleineGeschichten as any,
+  // Individual chapters (with sentences)
+  'book-kleine-geschichten-ch1': bookKleineGeschichtenCh1 as Story,
+  'book-kleine-geschichten-ch2': bookKleineGeschichtenCh2 as Story,
 };
 
 // Cache for loaded stories

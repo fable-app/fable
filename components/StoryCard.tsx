@@ -25,10 +25,19 @@ export function StoryCard({ story, progress, onPress }: StoryCardProps) {
       ]}
       onPress={onPress}
     >
-      {/* German Title */}
-      <Text style={styles.titleGerman} numberOfLines={1}>
-        {story.titleGerman}
-      </Text>
+      {/* German Title with optional chapter badge */}
+      <View style={styles.titleRow}>
+        <Text style={styles.titleGerman} numberOfLines={1}>
+          {story.titleGerman}
+        </Text>
+        {story.isMultiChapter && (
+          <View style={styles.chapterBadge}>
+            <Text style={styles.chapterBadgeText}>
+              {story.chapterCount} chapters
+            </Text>
+          </View>
+        )}
+      </View>
 
       {/* English Title */}
       <Text style={styles.titleEnglish} numberOfLines={1}>
@@ -66,12 +75,31 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     transform: [{ scale: 0.98 }],
   },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+  },
   titleGerman: {
     fontFamily: 'Inter_600SemiBold',
     fontSize: typography.sizes.heading,
     lineHeight: typography.sizes.heading * typography.lineHeights.normal,
     color: colors.text.primary,
     letterSpacing: typography.letterSpacing.tight,
+    flex: 1,
+  },
+  chapterBadge: {
+    backgroundColor: colors.accent,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 10,
+  },
+  chapterBadgeText: {
+    fontFamily: 'Inter_500Medium',
+    fontSize: 10,
+    color: colors.background.primary,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
   titleEnglish: {
     fontFamily: 'Inter_400Regular',

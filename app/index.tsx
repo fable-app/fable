@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useRouter } from 'expo-router';
 import { StoryCollection } from '@/components/StoryCollection';
 import { getAllStoryMetadata } from '@/services/story.service';
-import { useAllProgress } from '@/hooks';
+import { useAllProgress, calculateBookProgress } from '@/hooks';
 import type { StoryMetadata } from '@/types';
 
 export default function HomeScreen() {
@@ -11,14 +11,37 @@ export default function HomeScreen() {
   const storyMetadata = getAllStoryMetadata();
   const { progressMap } = useAllProgress();
 
-  // Combine story metadata with real progress from SQLite
-  const storiesWithProgress = storyMetadata.map((story: StoryMetadata) => ({
-    ...story,
-    progress: progressMap[story.id]?.percentage || 0,
-  }));
+  // Combine story metadata with real progress
+  // For multi-chapter books, calculate average progress across all chapters
+  const storiesWithProgress = storyMetadata.map((story: StoryMetadata) => {
+    let progress = 0;
+
+    if (story.isMultiChapter && story.chapters) {
+      // Calculate average progress across all chapters
+      const chapterIds = story.chapters.map(ch => ch.id);
+      progress = calculateBookProgress(story.id, chapterIds, progressMap);
+    } else {
+      // Single story - get progress directly
+      progress = progressMap[story.id]?.percentage || 0;
+    }
+
+    return {
+      ...story,
+      progress,
+    };
+  });
 
   const handleStoryPress = (storyId: string) => {
-    router.push(`/reader/${storyId}`);
+    // Check if story is multi-chapter
+    const story = storyMetadata.find((s: StoryMetadata) => s.id === storyId);
+
+    if (story?.isMultiChapter) {
+      // Navigate to chapter list
+      router.push(`/chapters/${storyId}`);
+    } else {
+      // Navigate directly to reader
+      router.push(`/reader/${storyId}`);
+    }
   };
 
   return (

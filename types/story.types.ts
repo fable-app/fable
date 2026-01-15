@@ -16,6 +16,18 @@ export interface Story {
   wordCount: number;
   difficulty: DifficultyLevel;
   sentences: Sentence[];
+  // For multi-chapter books
+  bookId?: string;
+  chapterNumber?: number;
+}
+
+export interface ChapterMetadata {
+  id: string;
+  chapterNumber: number;
+  titleGerman: string;
+  titleEnglish: string;
+  wordCount: number;
+  sentenceCount: number;
 }
 
 export interface StoryMetadata {
@@ -26,6 +38,10 @@ export interface StoryMetadata {
   wordCount: number;
   difficulty: DifficultyLevel;
   sentenceCount: number;
+  // For multi-chapter books
+  isMultiChapter?: boolean;
+  chapterCount?: number;
+  chapters?: ChapterMetadata[];
 }
 
 export type DifficultyLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
