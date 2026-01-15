@@ -6,7 +6,8 @@
   "difficulty": "B2",
   "isMultiChapter": true,
   "translate": true,
-  "deeplApiKey": "YOUR_DEEPL_API_KEY_HERE",
+  "translationProvider": "claude",
+  "claudeApiKey": "YOUR_CLAUDE_API_KEY_HERE",
   "chapters": [
     {
       "titleGerman": "Erstes Kapitel",

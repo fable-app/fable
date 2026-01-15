@@ -1,13 +1,14 @@
 /**
  * PDF Extraction Script
  * Extracts German text from PDF files and prepares it for the story processor
- * Optionally translates using DeepL API
+ * Optionally translates using Claude API (recommended) or DeepL API
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
 import pdf from 'pdf-parse';
 import * as deepl from 'deepl-node';
+import Anthropic from '@anthropic-ai/sdk';
 
 interface ChapterConfig {
   titleGerman: string;
@@ -28,6 +29,8 @@ interface BookConfig {
   chapters?: ChapterConfig[];
   // Translation options
   translate?: boolean;
+  translationProvider?: 'claude' | 'deepl'; // Default: claude (recommended)
+  claudeApiKey?: string;
   deeplApiKey?: string;
 }
 
@@ -173,6 +176,84 @@ async function translateWithDeepL(
 }
 
 /**
+ * Translate text using Claude API
+ * More accurate and context-aware than DeepL, especially for literature
+ */
+async function translateWithClaude(
+  text: string,
+  apiKey: string
+): Promise<string[]> {
+  try {
+    const anthropic = new Anthropic({ apiKey });
+
+    // Split into sentences for better translation quality
+    const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+
+    console.log(`  Translating ${sentences.length} sentences with Claude...`);
+
+    // Translate in batches of 20 for optimal quality/speed
+    const batchSize = 20;
+    const translations: string[] = [];
+
+    for (let i = 0; i < sentences.length; i += batchSize) {
+      const batch = sentences.slice(i, i + batchSize);
+      console.log(`  Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(sentences.length / batchSize)}...`);
+
+      // Create prompt for batch translation
+      const prompt = `You are an expert German-to-English translator for language learning content.
+
+Translate the following German sentences to English. Requirements:
+- Maintain accuracy while being clear for English-speaking learners
+- Preserve the meaning and context of the original
+- Keep translations natural and readable
+- Return ONLY the translations, one per line, in the same order
+
+German sentences:
+${batch.map((s, idx) => `${idx + 1}. ${s.trim()}`).join('\n')}
+
+Provide the English translations:`;
+
+      const message = await anthropic.messages.create({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 4096,
+        messages: [{
+          role: 'user',
+          content: prompt
+        }]
+      });
+
+      // Extract translations from response
+      const responseText = message.content[0].type === 'text'
+        ? message.content[0].text
+        : '';
+
+      const batchTranslations = responseText
+        .split('\n')
+        .filter(line => line.trim())
+        .map(line => line.replace(/^\d+\.\s*/, '').trim())
+        .filter(line => line.length > 0);
+
+      if (batchTranslations.length !== batch.length) {
+        console.warn(`  Warning: Expected ${batch.length} translations, got ${batchTranslations.length}`);
+      }
+
+      translations.push(...batchTranslations);
+
+      // Small delay between batches to be respectful of API
+      if (i + batchSize < sentences.length) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+
+    console.log(`  ✓ Translated ${translations.length} sentences`);
+    return translations;
+  } catch (error) {
+    console.error('Claude translation failed:', error);
+    throw error;
+  }
+}
+
+/**
  * Extract and process PDF into raw JSON format
  */
 async function processPdf(
@@ -194,10 +275,19 @@ async function processPdf(
       const cleanedText = cleanText(fullText);
 
       let translations: string[] | undefined;
-      if (config.translate && config.deeplApiKey) {
-        translations = await translateWithDeepL(cleanedText, config.deeplApiKey);
+      if (config.translate) {
+        const provider = config.translationProvider || 'claude'; // Default to Claude
+
+        if (provider === 'claude' && config.claudeApiKey) {
+          translations = await translateWithClaude(cleanedText, config.claudeApiKey);
+        } else if (provider === 'deepl' && config.deeplApiKey) {
+          translations = await translateWithDeepL(cleanedText, config.deeplApiKey);
+        } else {
+          console.log(`\n⚠️  Skipping translation (no ${provider} API key provided)`);
+          console.log('You will need to add translations manually to the output file');
+        }
       } else {
-        console.log('\n⚠️  Skipping translation (no API key provided)');
+        console.log('\n⚠️  Translation disabled');
         console.log('You will need to add translations manually to the output file');
       }
 
@@ -263,8 +353,14 @@ async function processPdf(
         console.log(`  Extracted: ~${chapterText.split(/\s+/).length} words`);
 
         let translations: string[] | undefined;
-        if (config.translate && config.deeplApiKey) {
-          translations = await translateWithDeepL(chapterText, config.deeplApiKey);
+        if (config.translate) {
+          const provider = config.translationProvider || 'claude'; // Default to Claude
+
+          if (provider === 'claude' && config.claudeApiKey) {
+            translations = await translateWithClaude(chapterText, config.claudeApiKey);
+          } else if (provider === 'deepl' && config.deeplApiKey) {
+            translations = await translateWithDeepL(chapterText, config.deeplApiKey);
+          }
         }
 
         extractedChapters.push({
@@ -360,7 +456,8 @@ if (args.length >= 3) {
     difficulty: 'B2',
     isMultiChapter: false,
     translate: true,
-    deeplApiKey: 'your-deepl-api-key' // Optional
+    translationProvider: 'claude', // 'claude' (recommended) or 'deepl'
+    claudeApiKey: 'your-claude-api-key' // Get from console.anthropic.com
   }, null, 2));
   process.exit(1);
 }

@@ -14,7 +14,7 @@ The content pipeline has 3 steps:
 PDF File → [extract-pdf] → Raw JSON → [process-story] → Story JSON → App
 ```
 
-1. **PDF Extraction** (`extract-pdf`): Extract German text from PDF, optionally translate with DeepL
+1. **PDF Extraction** (`extract-pdf`): Extract German text from PDF, optionally translate with Claude (recommended) or DeepL
 2. **Story Processing** (`process-story`): Segment into sentences, pair with translations, create final format
 3. **App Integration**: Import into app and rebuild
 
@@ -60,7 +60,8 @@ For short stories (< 2,000 words):
   "difficulty": "A2",
   "isMultiChapter": false,
   "translate": true,
-  "deeplApiKey": "your-api-key-here"
+  "translationProvider": "claude",
+  "claudeApiKey": "your-claude-api-key-here"
 }
 ```
 
@@ -77,7 +78,8 @@ For longer books split by page numbers:
   "difficulty": "C1",
   "isMultiChapter": true,
   "translate": true,
-  "deeplApiKey": "your-api-key-here",
+  "translationProvider": "claude",
+  "claudeApiKey": "your-claude-api-key-here"
   "chapters": [
     {
       "titleGerman": "Teil I",
@@ -114,7 +116,8 @@ If PDF doesn't have clear page breaks, use text patterns:
   "difficulty": "B1",
   "isMultiChapter": true,
   "translate": true,
-  "deeplApiKey": "your-api-key-here",
+  "translationProvider": "claude",
+  "claudeApiKey": "your-claude-api-key-here"
   "chapters": [
     {
       "titleGerman": "Der Froschkönig",
@@ -137,14 +140,27 @@ If PDF doesn't have clear page breaks, use text patterns:
 }
 ```
 
-### DeepL API Key (Optional)
+### Translation API Key (Optional) - Claude Recommended
 
-To enable automatic translation:
+To enable automatic translation, you have two options:
+
+**Option 1: Claude API (Recommended)**
+- More accurate for literary German content
+- Better context understanding for complex sentences
+- Free tier available with generous limits
+1. Sign up at [https://console.anthropic.com](https://console.anthropic.com)
+2. Create an API key
+3. Add to config: `"translationProvider": "claude"` and `"claudeApiKey": "your-key-here"`
+
+**Option 2: DeepL API (Alternative)**
+- Good for simple translations
+- 500,000 characters/month free tier
 1. Sign up at [https://www.deepl.com/pro-api](https://www.deepl.com/pro-api)
-2. Get your API key (500,000 characters/month free)
-3. Add to config: `"deeplApiKey": "your-key-here"`
+2. Get your API key
+  "translationProvider": "claude",
+  "claudeApiKey": "your-claude-api-key-here"
 
-If you skip this, you'll need to add translations manually.
+If you skip both, you'll need to add translations manually.
 
 ---
 
@@ -161,7 +177,7 @@ npm run extract-pdf downloads/your-book.pdf configs/your-config.json data/raw/yo
 1. **Extracts text** from PDF
 2. **Cleans text** (removes page numbers, headers, excessive whitespace)
 3. **Splits chapters** (if multi-chapter)
-4. **Translates** (if DeepL API key provided)
+4. **Translates** (if Claude/DeepL API key provided)
 5. **Outputs** raw JSON file in `data/raw/`
 
 ### Example Output (Single Story):
@@ -312,7 +328,8 @@ cat > configs/kafka-config.json << 'EOF'
   "difficulty": "C1",
   "isMultiChapter": true,
   "translate": true,
-  "deeplApiKey": "YOUR_API_KEY",
+  "translationProvider": "claude",
+  "claudeApiKey": "your-claude-api-key-here"
   "chapters": [
     {
       "titleGerman": "Teil I",
@@ -453,7 +470,8 @@ Start the app and find "Die Verwandlung" in your library.
 ### Useful Resources
 
 - [Project Gutenberg German](https://www.gutenberg.org/browse/languages/de)
-- [DeepL API Documentation](https://www.deepl.com/docs-api)
+- [Claude API Documentation](https://docs.anthropic.com/) - Recommended for translation
+- [DeepL API Documentation](https://www.deepl.com/docs-api) - Alternative translation service
 - [German CEFR Levels](https://www.goethe.de/en/spr/kup/prf.html)
 
 ### File Locations
