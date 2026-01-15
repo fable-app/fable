@@ -6,8 +6,8 @@
   "difficulty": "B2",
   "isMultiChapter": true,
   "translate": true,
-  "translationProvider": "claude",
-  "claudeApiKey": "YOUR_CLAUDE_API_KEY_HERE",
+  "translationProvider": "openai",
+  "openaiApiKey": "YOUR_OPENAI_API_KEY_HERE",
   "chapters": [
     {
       "titleGerman": "Erstes Kapitel",

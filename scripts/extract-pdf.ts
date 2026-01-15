@@ -8,6 +8,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as deepl from 'deepl-node';
 import Anthropic from '@anthropic-ai/sdk';
+import OpenAI from 'openai';
 
 // Import pdf-parse - it exports an object with PDFParse as a named export
 const { PDFParse } = require('pdf-parse');
@@ -31,7 +32,8 @@ interface BookConfig {
   chapters?: ChapterConfig[];
   // Translation options
   translate?: boolean;
-  translationProvider?: 'claude' | 'deepl'; // Default: claude (recommended)
+  translationProvider?: 'openai' | 'claude' | 'deepl'; // Default: openai
+  openaiApiKey?: string;
   claudeApiKey?: string;
   deeplApiKey?: string;
 }
@@ -254,6 +256,82 @@ Provide the English translations:`;
 }
 
 /**
+ * Translate text using OpenAI API
+ * Good alternative with GPT-4 for accurate translations
+ */
+async function translateWithOpenAI(
+  text: string,
+  apiKey: string
+): Promise<string[]> {
+  try {
+    const openai = new OpenAI({ apiKey });
+
+    // Split into sentences for better translation quality
+    const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+
+    console.log(`  Translating ${sentences.length} sentences with OpenAI...`);
+
+    // Translate in batches of 20 for optimal quality/speed
+    const batchSize = 20;
+    const translations: string[] = [];
+
+    for (let i = 0; i < sentences.length; i += batchSize) {
+      const batch = sentences.slice(i, i + batchSize);
+      console.log(`  Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(sentences.length / batchSize)}...`);
+
+      // Create prompt for batch translation
+      const prompt = `You are an expert German-to-English translator for language learning content.
+
+Translate the following German sentences to English. Requirements:
+- Maintain accuracy while being clear for English-speaking learners
+- Preserve the meaning and context of the original
+- Keep translations natural and readable
+- Return ONLY the translations, one per line, in the same order
+
+German sentences:
+${batch.map((s, idx) => `${idx + 1}. ${s.trim()}`).join('\n')}
+
+Provide the English translations:`;
+
+      const completion = await openai.chat.completions.create({
+        model: 'gpt-4o',
+        messages: [{
+          role: 'user',
+          content: prompt
+        }],
+        temperature: 0.3,
+      });
+
+      // Extract translations from response
+      const responseText = completion.choices[0]?.message?.content || '';
+
+      const batchTranslations = responseText
+        .split('\n')
+        .filter(line => line.trim())
+        .map(line => line.replace(/^\d+\.\s*/, '').trim())
+        .filter(line => line.length > 0);
+
+      if (batchTranslations.length !== batch.length) {
+        console.warn(`  Warning: Expected ${batch.length} translations, got ${batchTranslations.length}`);
+      }
+
+      translations.push(...batchTranslations);
+
+      // Small delay between batches to be respectful of API
+      if (i + batchSize < sentences.length) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+
+    console.log(`  ✓ Translated ${translations.length} sentences`);
+    return translations;
+  } catch (error) {
+    console.error('OpenAI translation failed:', error);
+    throw error;
+  }
+}
+
+/**
  * Extract and process PDF into raw JSON format
  */
 async function processPdf(
@@ -276,9 +354,11 @@ async function processPdf(
 
       let translations: string[] | undefined;
       if (config.translate) {
-        const provider = config.translationProvider || 'claude'; // Default to Claude
+        const provider = config.translationProvider || 'openai'; // Default to OpenAI
 
-        if (provider === 'claude' && config.claudeApiKey) {
+        if (provider === 'openai' && config.openaiApiKey) {
+          translations = await translateWithOpenAI(cleanedText, config.openaiApiKey);
+        } else if (provider === 'claude' && config.claudeApiKey) {
           translations = await translateWithClaude(cleanedText, config.claudeApiKey);
         } else if (provider === 'deepl' && config.deeplApiKey) {
           translations = await translateWithDeepL(cleanedText, config.deeplApiKey);
@@ -354,9 +434,11 @@ async function processPdf(
 
         let translations: string[] | undefined;
         if (config.translate) {
-          const provider = config.translationProvider || 'claude'; // Default to Claude
+          const provider = config.translationProvider || 'openai'; // Default to OpenAI
 
-          if (provider === 'claude' && config.claudeApiKey) {
+          if (provider === 'openai' && config.openaiApiKey) {
+            translations = await translateWithOpenAI(chapterText, config.openaiApiKey);
+          } else if (provider === 'claude' && config.claudeApiKey) {
             translations = await translateWithClaude(chapterText, config.claudeApiKey);
           } else if (provider === 'deepl' && config.deeplApiKey) {
             translations = await translateWithDeepL(chapterText, config.deeplApiKey);
@@ -456,8 +538,8 @@ if (args.length >= 3) {
     difficulty: 'B2',
     isMultiChapter: false,
     translate: true,
-    translationProvider: 'claude', // 'claude' (recommended) or 'deepl'
-    claudeApiKey: 'your-claude-api-key' // Get from console.anthropic.com
+    translationProvider: 'openai', // 'openai', 'claude', or 'deepl'
+    openaiApiKey: 'your-openai-api-key' // Get from platform.openai.com
   }, null, 2));
   process.exit(1);
 }
