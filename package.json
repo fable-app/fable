@@ -7,6 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "extract-pdf": "tsx scripts/extract-pdf.ts",
     "process-story": "tsx scripts/process-story.ts",
     "validate-story": "tsx scripts/validate-story.ts"
   },
@@ -35,7 +36,10 @@
   },
   "devDependencies": {
     "@types/node": "^25.0.8",
+    "@types/pdf-parse": "^1.1.5",
     "@types/react": "~19.1.0",
+    "deepl-node": "^1.24.0",
+    "pdf-parse": "^2.4.5",
     "tsx": "^4.21.0",
     "typescript": "~5.9.2"
   },

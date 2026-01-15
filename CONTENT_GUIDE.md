@@ -4,12 +4,6 @@
 
 This guide explains how to add longer, more substantial German stories to your Fable app.
 
-## Current Content Stats
-
-- **10 stories** (69-158 words each)
-- **10 sentences per story**
-- **Total: ~1,000 words** across all stories
-
 ## Recommended Story Lengths
 
 For effective language learning, consider these lengths by CEFR level:
@@ -31,11 +25,6 @@ For effective language learning, consider these lengths by CEFR level:
 - [Project Gutenberg - German](https://www.gutenberg.org/browse/languages/de)
 - [Deutsches Textarchiv](http://www.deutschestextarchiv.de/)
 - Classic authors: Grimm, Kafka, Hesse, Mann
-
-**Option B: Original Stories**
-- Write age-appropriate content for learners
-- Use vocabulary suited to CEFR level
-- Keep sentences clear and grammatical
 
 ### 2. Prepare the Raw Story File
 

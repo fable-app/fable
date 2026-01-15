@@ -1,0 +1,10 @@
+{
+  "id": "story-example",
+  "titleGerman": "Beispiel Geschichte",
+  "titleEnglish": "Example Story",
+  "author": "Author Name",
+  "difficulty": "B1",
+  "isMultiChapter": false,
+  "translate": true,
+  "deeplApiKey": "YOUR_DEEPL_API_KEY_HERE"
+}

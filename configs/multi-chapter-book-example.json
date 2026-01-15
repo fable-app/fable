@@ -1,0 +1,30 @@
+{
+  "id": "book-example",
+  "titleGerman": "Beispiel Buch",
+  "titleEnglish": "Example Book",
+  "author": "Author Name",
+  "difficulty": "B2",
+  "isMultiChapter": true,
+  "translate": true,
+  "deeplApiKey": "YOUR_DEEPL_API_KEY_HERE",
+  "chapters": [
+    {
+      "titleGerman": "Erstes Kapitel",
+      "titleEnglish": "First Chapter",
+      "startPage": 1,
+      "endPage": 10
+    },
+    {
+      "titleGerman": "Zweites Kapitel",
+      "titleEnglish": "Second Chapter",
+      "startPage": 11,
+      "endPage": 20
+    },
+    {
+      "titleGerman": "Drittes Kapitel",
+      "titleEnglish": "Third Chapter",
+      "startPattern": "Kapitel 3",
+      "endPattern": "Kapitel 4"
+    }
+  ]
+}
