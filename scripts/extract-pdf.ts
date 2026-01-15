@@ -8,7 +8,9 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as deepl from 'deepl-node';
 import Anthropic from '@anthropic-ai/sdk';
-import PdfParse = require('pdf-parse');
+
+// Import pdf-parse - it exports an object with PDFParse as a named export
+const { PDFParse } = require('pdf-parse');
 
 interface ChapterConfig {
   titleGerman: string;
@@ -47,7 +49,7 @@ interface ExtractedChapter {
 async function extractPdfText(pdfPath: string): Promise<string> {
   try {
     const dataBuffer = fs.readFileSync(pdfPath);
-    const data = await PdfParse(dataBuffer);
+    const data = await PDFParse(dataBuffer);
     return data.text;
   } catch (error) {
     console.error('Failed to extract PDF text:', error);
@@ -86,7 +88,7 @@ async function extractChapterByPages(
   endPage: number
 ): Promise<string> {
   const dataBuffer = fs.readFileSync(pdfPath);
-  const data = await PdfParse(dataBuffer, {
+  const data = await PDFParse(dataBuffer, {
     max: endPage,
     pagerender: async (pageData: any) => {
       const pageNum = pageData.pageNumber;
