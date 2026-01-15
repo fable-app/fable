@@ -49,8 +49,10 @@ interface ExtractedChapter {
 async function extractPdfText(pdfPath: string): Promise<string> {
   try {
     const dataBuffer = fs.readFileSync(pdfPath);
-    const data = await PDFParse(dataBuffer);
-    return data.text;
+    const parser = new PDFParse({ data: dataBuffer });
+    const result = await parser.getText();
+    await parser.destroy();
+    return result.text;
   } catch (error) {
     console.error('Failed to extract PDF text:', error);
     throw error;
@@ -88,20 +90,16 @@ async function extractChapterByPages(
   endPage: number
 ): Promise<string> {
   const dataBuffer = fs.readFileSync(pdfPath);
-  const data = await PDFParse(dataBuffer, {
-    max: endPage,
-    pagerender: async (pageData: any) => {
-      const pageNum = pageData.pageNumber;
-      if (pageNum >= startPage && pageNum <= endPage) {
-        const textContent = await pageData.getTextContent();
-        const strings = textContent.items.map((item: any) => item.str);
-        return strings.join(' ');
-      }
-      return '';
-    }
+  const parser = new PDFParse({ data: dataBuffer });
+
+  // Use first/last parameters to extract a range
+  const result = await parser.getText({
+    first: startPage,
+    last: endPage
   });
 
-  return data.text;
+  await parser.destroy();
+  return result.text;
 }
 
 /**
