@@ -25,6 +25,20 @@ import bookKleineGeschichten from '@/data/stories/book-kleine-geschichten.json';
 import bookKleineGeschichtenCh1 from '@/data/stories/book-kleine-geschichten-ch1.json';
 import bookKleineGeschichtenCh2 from '@/data/stories/book-kleine-geschichten-ch2.json';
 
+import aliceImWunderland from '@/data/stories/alice-im-wunderland.json';
+import aliceImWunderlandCh1 from '@/data/stories/alice-im-wunderland-ch1.json';
+import aliceImWunderlandCh2 from '@/data/stories/alice-im-wunderland-ch2.json';
+import aliceImWunderlandCh3 from '@/data/stories/alice-im-wunderland-ch3.json';
+import aliceImWunderlandCh4 from '@/data/stories/alice-im-wunderland-ch4.json';
+import aliceImWunderlandCh5 from '@/data/stories/alice-im-wunderland-ch5.json';
+import aliceImWunderlandCh6 from '@/data/stories/alice-im-wunderland-ch6.json';
+import aliceImWunderlandCh7 from '@/data/stories/alice-im-wunderland-ch7.json';
+import aliceImWunderlandCh8 from '@/data/stories/alice-im-wunderland-ch8.json';
+import aliceImWunderlandCh9 from '@/data/stories/alice-im-wunderland-ch9.json';
+import aliceImWunderlandCh10 from '@/data/stories/alice-im-wunderland-ch10.json';
+import aliceImWunderlandCh11 from '@/data/stories/alice-im-wunderland-ch11.json';
+import aliceImWunderlandCh12 from '@/data/stories/alice-im-wunderland-ch12.json';
+
 // Type-cast manifest to ensure proper types
 const manifest = manifestData as { version: string; lastUpdated: string; stories: StoryMetadata[] };
 
@@ -45,6 +59,21 @@ const storyMap: Record<string, Story> = {
   // Individual chapters (with sentences)
   'book-kleine-geschichten-ch1': bookKleineGeschichtenCh1 as Story,
   'book-kleine-geschichten-ch2': bookKleineGeschichtenCh2 as Story,
+  // Alice in Wonderland (metadata only)
+  'alice-im-wunderland': aliceImWunderland as any,
+  // Alice chapters
+  'alice-im-wunderland-ch1': aliceImWunderlandCh1 as Story,
+  'alice-im-wunderland-ch2': aliceImWunderlandCh2 as Story,
+  'alice-im-wunderland-ch3': aliceImWunderlandCh3 as Story,
+  'alice-im-wunderland-ch4': aliceImWunderlandCh4 as Story,
+  'alice-im-wunderland-ch5': aliceImWunderlandCh5 as Story,
+  'alice-im-wunderland-ch6': aliceImWunderlandCh6 as Story,
+  'alice-im-wunderland-ch7': aliceImWunderlandCh7 as Story,
+  'alice-im-wunderland-ch8': aliceImWunderlandCh8 as Story,
+  'alice-im-wunderland-ch9': aliceImWunderlandCh9 as Story,
+  'alice-im-wunderland-ch10': aliceImWunderlandCh10 as Story,
+  'alice-im-wunderland-ch11': aliceImWunderlandCh11 as Story,
+  'alice-im-wunderland-ch12': aliceImWunderlandCh12 as Story,
 };
 
 // Cache for loaded stories
