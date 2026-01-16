@@ -32,7 +32,7 @@ interface BookConfig {
   chapters?: ChapterConfig[];
   // Translation options
   translate?: boolean;
-  translationProvider?: 'openai' | 'claude' | 'deepl'; // Default: openai
+  translationProvider?: 'deepl' | 'openai' | 'claude'; // Default: deepl
   openaiApiKey?: string;
   claudeApiKey?: string;
   deeplApiKey?: string;
@@ -145,27 +145,20 @@ async function translateWithDeepL(
     // Split into sentences for better translation quality
     const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
 
-    console.log(`  Translating ${sentences.length} sentences with DeepL...`);
+    console.log(`  Translating ${sentences.length} sentences with DeepL (this will take a while)...`);
 
-    // Translate in batches of 50 to avoid rate limits
-    const batchSize = 50;
+    // Translate sequentially with delays to avoid rate limits
     const translations: string[] = [];
 
-    for (let i = 0; i < sentences.length; i += batchSize) {
-      const batch = sentences.slice(i, i + batchSize);
-      console.log(`  Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(sentences.length / batchSize)}...`);
+    for (let i = 0; i < sentences.length; i++) {
+      console.log(`  Sentence ${i + 1}/${sentences.length}...`);
 
-      const results = await Promise.all(
-        batch.map(sentence =>
-          translator.translateText(sentence.trim(), 'de', 'en-US')
-        )
-      );
+      const result = await translator.translateText(sentences[i].trim(), 'de', 'en-US');
+      translations.push(result.text);
 
-      translations.push(...results.map(r => r.text));
-
-      // Small delay between batches
-      if (i + batchSize < sentences.length) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      // Delay between each sentence to avoid rate limits (2 seconds)
+      if (i + 1 < sentences.length) {
+        await new Promise(resolve => setTimeout(resolve, 2000));
       }
     }
 
@@ -354,7 +347,7 @@ async function processPdf(
 
       let translations: string[] | undefined;
       if (config.translate) {
-        const provider = config.translationProvider || 'openai'; // Default to OpenAI
+        const provider = config.translationProvider || 'deepl'; // Default to DeepL
 
         if (provider === 'openai' && config.openaiApiKey) {
           translations = await translateWithOpenAI(cleanedText, config.openaiApiKey);
@@ -434,7 +427,7 @@ async function processPdf(
 
         let translations: string[] | undefined;
         if (config.translate) {
-          const provider = config.translationProvider || 'openai'; // Default to OpenAI
+          const provider = config.translationProvider || 'deepl'; // Default to DeepL
 
           if (provider === 'openai' && config.openaiApiKey) {
             translations = await translateWithOpenAI(chapterText, config.openaiApiKey);
@@ -453,6 +446,12 @@ async function processPdf(
         });
 
         console.log('');
+
+        // Add delay between chapters to avoid rate limits
+        if (i + 1 < config.chapters.length) {
+          console.log('  Waiting 5 seconds before next chapter...');
+          await new Promise(resolve => setTimeout(resolve, 5000));
+        }
       }
 
       const output = {
@@ -538,7 +537,7 @@ if (args.length >= 3) {
     difficulty: 'B2',
     isMultiChapter: false,
     translate: true,
-    translationProvider: 'openai', // 'openai', 'claude', or 'deepl'
+    translationProvider: 'deepl', // 'openai', 'claude', or 'deepl'
     openaiApiKey: 'your-openai-api-key' // Get from platform.openai.com
   }, null, 2));
   process.exit(1);
