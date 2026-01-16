@@ -145,20 +145,28 @@ async function translateWithDeepL(
     // Split into sentences for better translation quality
     const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
 
-    console.log(`  Translating ${sentences.length} sentences with DeepL (this will take a while)...`);
+    console.log(`  Translating ${sentences.length} sentences with DeepL...`);
 
-    // Translate sequentially with delays to avoid rate limits
+    // Translate in batches of 10 (good for Pro tier)
+    const batchSize = 10;
     const translations: string[] = [];
 
-    for (let i = 0; i < sentences.length; i++) {
-      console.log(`  Sentence ${i + 1}/${sentences.length}...`);
+    for (let i = 0; i < sentences.length; i += batchSize) {
+      const batch = sentences.slice(i, i + batchSize);
+      console.log(`  Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(sentences.length / batchSize)}...`);
 
-      const result = await translator.translateText(sentences[i].trim(), 'de', 'en-US');
-      translations.push(result.text);
+      // Translate batch in parallel
+      const results = await Promise.all(
+        batch.map(sentence =>
+          translator.translateText(sentence.trim(), 'de', 'en-US')
+        )
+      );
 
-      // Delay between each sentence to avoid rate limits (2 seconds)
-      if (i + 1 < sentences.length) {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+      translations.push(...results.map(r => r.text));
+
+      // Small delay between batches (500ms for Pro tier)
+      if (i + batchSize < sentences.length) {
+        await new Promise(resolve => setTimeout(resolve, 500));
       }
     }
 
@@ -447,10 +455,10 @@ async function processPdf(
 
         console.log('');
 
-        // Add delay between chapters to avoid rate limits
+        // Small delay between chapters
         if (i + 1 < config.chapters.length) {
-          console.log('  Waiting 5 seconds before next chapter...');
-          await new Promise(resolve => setTimeout(resolve, 5000));
+          console.log('  Waiting 1 second before next chapter...');
+          await new Promise(resolve => setTimeout(resolve, 1000));
         }
       }
 
