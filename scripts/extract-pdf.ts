@@ -271,32 +271,19 @@ async function translateWithOpenAI(
     // Use shared segmentation to ensure alignment with process-story
     const sentences = segmentSentences(text);
 
-    console.log(`  Translating ${sentences.length} sentences with OpenAI...`);
+    console.log(`  Translating ${sentences.length} sentences with OpenAI (optimized for speed & cost)...`);
 
-    // Translate in batches of 20 for optimal quality/speed
-    const batchSize = 20;
-    const translations: string[] = [];
+    // Larger batches for faster processing (50 sentences per batch)
+    const batchSize = 50;
+    const parallelBatches = 3; // Process 3 batches in parallel
+    const translations: string[] = new Array(sentences.length);
 
-    for (let i = 0; i < sentences.length; i += batchSize) {
-      const batch = sentences.slice(i, i + batchSize);
-      console.log(`  Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(sentences.length / batchSize)}...`);
-
-      // Create prompt for batch translation
-      const prompt = `You are an expert German-to-English translator for language learning content.
-
-Translate the following German sentences to English. Requirements:
-- Maintain accuracy while being clear for English-speaking learners
-- Preserve the meaning and context of the original
-- Keep translations natural and readable
-- Return ONLY the translations, one per line, in the same order
-
-German sentences:
-${batch.map((s, idx) => `${idx + 1}. ${s.trim()}`).join('\n')}
-
-Provide the English translations:`;
+    // Helper function to translate a single batch
+    const translateBatch = async (batch: string[], startIndex: number, batchNum: number) => {
+      const prompt = `Translate these German sentences to English. Return only the translations, one per line, same order:\n\n${batch.map((s, idx) => `${idx + 1}. ${s.trim()}`).join('\n')}`;
 
       const completion = await openai.chat.completions.create({
-        model: 'gpt-4o',
+        model: 'gpt-4o-mini', // 60x cheaper than gpt-4o, excellent quality
         messages: [{
           role: 'user',
           content: prompt
@@ -304,9 +291,7 @@ Provide the English translations:`;
         temperature: 0.3,
       });
 
-      // Extract translations from response
       const responseText = completion.choices[0]?.message?.content || '';
-
       const batchTranslations = responseText
         .split('\n')
         .filter(line => line.trim())
@@ -314,19 +299,41 @@ Provide the English translations:`;
         .filter(line => line.length > 0);
 
       if (batchTranslations.length !== batch.length) {
-        console.warn(`  Warning: Expected ${batch.length} translations, got ${batchTranslations.length}`);
+        console.warn(`  Warning: Batch ${batchNum} - Expected ${batch.length}, got ${batchTranslations.length}`);
       }
 
-      translations.push(...batchTranslations);
+      // Place translations in correct position
+      batchTranslations.forEach((translation, idx) => {
+        translations[startIndex + idx] = translation;
+      });
+    };
 
-      // Small delay between batches to be respectful of API
-      if (i + batchSize < sentences.length) {
-        await new Promise(resolve => setTimeout(resolve, 500));
+    // Process batches in parallel groups
+    const totalBatches = Math.ceil(sentences.length / batchSize);
+    for (let i = 0; i < sentences.length; i += batchSize * parallelBatches) {
+      const parallelPromises: Promise<void>[] = [];
+
+      for (let j = 0; j < parallelBatches; j++) {
+        const batchStart = i + (j * batchSize);
+        if (batchStart >= sentences.length) break;
+
+        const batch = sentences.slice(batchStart, batchStart + batchSize);
+        const batchNum = Math.floor(batchStart / batchSize) + 1;
+
+        console.log(`  Starting batch ${batchNum}/${totalBatches} (${batch.length} sentences)...`);
+        parallelPromises.push(translateBatch(batch, batchStart, batchNum));
       }
+
+      // Wait for this group of parallel batches to complete
+      await Promise.all(parallelPromises);
+      console.log(`  ✓ Completed ${Math.min(i + batchSize * parallelBatches, sentences.length)}/${sentences.length} sentences`);
     }
 
-    console.log(`  ✓ Translated ${translations.length} sentences`);
-    return translations;
+    // Filter out any undefined values (shouldn't happen, but safety check)
+    const finalTranslations = translations.filter(t => t !== undefined);
+
+    console.log(`  ✓ Translated ${finalTranslations.length} sentences`);
+    return finalTranslations;
   } catch (error) {
     console.error('OpenAI translation failed:', error);
     throw error;
