@@ -9,6 +9,7 @@ import * as path from 'path';
 import * as deepl from 'deepl-node';
 import Anthropic from '@anthropic-ai/sdk';
 import OpenAI from 'openai';
+import { segmentSentences } from './process-story';
 
 // Import pdf-parse - it exports an object with PDFParse as a named export
 const { PDFParse } = require('pdf-parse');
@@ -142,8 +143,8 @@ async function translateWithDeepL(
   try {
     const translator = new deepl.Translator(apiKey);
 
-    // Split into sentences for better translation quality
-    const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+    // Use shared segmentation to ensure alignment with process-story
+    const sentences = segmentSentences(text);
 
     console.log(`  Translating ${sentences.length} sentences with DeepL...`);
 
@@ -189,8 +190,8 @@ async function translateWithClaude(
   try {
     const anthropic = new Anthropic({ apiKey });
 
-    // Split into sentences for better translation quality
-    const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+    // Use shared segmentation to ensure alignment with process-story
+    const sentences = segmentSentences(text);
 
     console.log(`  Translating ${sentences.length} sentences with Claude...`);
 
@@ -267,8 +268,8 @@ async function translateWithOpenAI(
   try {
     const openai = new OpenAI({ apiKey });
 
-    // Split into sentences for better translation quality
-    const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+    // Use shared segmentation to ensure alignment with process-story
+    const sentences = segmentSentences(text);
 
     console.log(`  Translating ${sentences.length} sentences with OpenAI...`);
 
