@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
-import { useRouter, useLocalSearchParams } from 'expo-router';
+import { useRouter, useLocalSearchParams, useFocusEffect } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { colors, typography, spacing } from '@/design-system';
 import { loadStory } from '@/services/story.service';
@@ -11,7 +11,14 @@ export default function ChapterListScreen() {
   const router = useRouter();
   const { bookId } = useLocalSearchParams<{ bookId: string }>();
   const [bookMetadata, setBookMetadata] = useState<StoryMetadata | null>(null);
-  const { progressMap } = useAllProgress();
+  const { progressMap, refreshProgress } = useAllProgress();
+
+  // Refresh progress when screen comes into focus (e.g., when returning from reader)
+  useFocusEffect(
+    useCallback(() => {
+      refreshProgress();
+    }, [refreshProgress])
+  );
 
   useEffect(() => {
     async function loadBookData() {
@@ -110,17 +117,15 @@ export default function ChapterListScreen() {
                 </View>
               </View>
 
-              {/* Progress bar */}
-              {chapterProgress > 0 && (
-                <View style={styles.progressBarContainer}>
-                  <View
-                    style={[
-                      styles.progressBarFill,
-                      { width: `${chapterProgress}%` },
-                    ]}
-                  />
-                </View>
-              )}
+              {/* Progress bar - always visible */}
+              <View style={styles.progressBarContainer}>
+                <View
+                  style={[
+                    styles.progressBarFill,
+                    { width: `${chapterProgress}%` },
+                  ]}
+                />
+              </View>
             </TouchableOpacity>
           );
         })}

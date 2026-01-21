@@ -335,57 +335,59 @@ export function updateManifestWithBook(bookPath: string, manifestPath: string): 
   }
 }
 
-// CLI usage
-const args = process.argv.slice(2);
+// CLI usage - only execute when this script is run directly
+if (require.main === module) {
+  const args = process.argv.slice(2);
 
-if (args.length >= 2) {
-  const [inputPath, outputDir, mode] = args;
+  if (args.length >= 2) {
+    const [inputPath, outputDir, mode] = args;
 
-  if (!fs.existsSync(inputPath)) {
-    console.error(`Error: Input file not found: ${inputPath}`);
+    if (!fs.existsSync(inputPath)) {
+      console.error(`Error: Input file not found: ${inputPath}`);
+      process.exit(1);
+    }
+
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+
+    // Detect if it's a book or single story
+    const inputData = JSON.parse(fs.readFileSync(inputPath, 'utf-8'));
+    const isBook = inputData.chapters && Array.isArray(inputData.chapters) || mode === '--book';
+
+    if (isBook) {
+      console.log('Processing multi-chapter book...\n');
+      processBook(inputPath, outputDir);
+
+      // Update manifest
+      const manifestPath = path.join(outputDir, '../manifest.json');
+      if (fs.existsSync(manifestPath)) {
+        const bookPath = path.join(outputDir, `${inputData.id}.json`);
+        updateManifestWithBook(bookPath, manifestPath);
+      }
+    } else {
+      console.log('Processing single story...');
+      processStory(inputPath, outputDir);
+
+      // Update manifest
+      const manifestPath = path.join(outputDir, '../manifest.json');
+      if (fs.existsSync(manifestPath)) {
+        const outputPath = path.join(outputDir, `${inputData.id}.json`);
+        const story = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
+        updateManifest(story, manifestPath);
+      }
+    }
+
+    console.log('\n✓ Done!');
+  } else {
+    console.log('Usage: npm run process-story <input-json> <output-dir> [--book]');
+    console.log('');
+    console.log('Examples:');
+    console.log('  Single story:');
+    console.log('    npm run process-story raw/story-11.json data/stories/');
+    console.log('');
+    console.log('  Multi-chapter book:');
+    console.log('    npm run process-story raw/book-metamorphosis.json data/stories/ --book');
     process.exit(1);
   }
-
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-
-  // Detect if it's a book or single story
-  const inputData = JSON.parse(fs.readFileSync(inputPath, 'utf-8'));
-  const isBook = inputData.chapters && Array.isArray(inputData.chapters) || mode === '--book';
-
-  if (isBook) {
-    console.log('Processing multi-chapter book...\n');
-    processBook(inputPath, outputDir);
-
-    // Update manifest
-    const manifestPath = path.join(outputDir, '../manifest.json');
-    if (fs.existsSync(manifestPath)) {
-      const bookPath = path.join(outputDir, `${inputData.id}.json`);
-      updateManifestWithBook(bookPath, manifestPath);
-    }
-  } else {
-    console.log('Processing single story...');
-    processStory(inputPath, outputDir);
-
-    // Update manifest
-    const manifestPath = path.join(outputDir, '../manifest.json');
-    if (fs.existsSync(manifestPath)) {
-      const outputPath = path.join(outputDir, `${inputData.id}.json`);
-      const story = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
-      updateManifest(story, manifestPath);
-    }
-  }
-
-  console.log('\n✓ Done!');
-} else {
-  console.log('Usage: npm run process-story <input-json> <output-dir> [--book]');
-  console.log('');
-  console.log('Examples:');
-  console.log('  Single story:');
-  console.log('    npm run process-story raw/story-11.json data/stories/');
-  console.log('');
-  console.log('  Multi-chapter book:');
-  console.log('    npm run process-story raw/book-metamorphosis.json data/stories/ --book');
-  process.exit(1);
 }

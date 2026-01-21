@@ -46,6 +46,19 @@ interface ExtractedChapter {
   translations?: string[];
 }
 
+interface TranslationIssue {
+  chapterNumber: number;
+  chapterTitle: string;
+  batchNumber: number;
+  sentenceIndices: number[]; // Global sentence indices in the chapter
+  issueType: 'missing_translation' | 'extra_translation' | 'placeholder_added' | 'short_translation' | 'repetition_detected';
+  details: string;
+  affectedSentences?: string[]; // First 100 chars of affected German sentences
+}
+
+// Global log for translation issues
+const translationIssues: TranslationIssue[] = [];
+
 /**
  * Extract text from PDF
  */
@@ -138,7 +151,8 @@ function extractChapterByPattern(
  */
 async function translateWithDeepL(
   text: string,
-  apiKey: string
+  apiKey: string,
+  chapterContext?: { chapterNumber: number; chapterTitle: string }
 ): Promise<string[]> {
   try {
     const translator = new deepl.Translator(apiKey);
@@ -151,19 +165,68 @@ async function translateWithDeepL(
     // Translate in batches of 10 (good for Pro tier)
     const batchSize = 10;
     const translations: string[] = [];
+    const MAX_RETRIES = 3;
 
     for (let i = 0; i < sentences.length; i += batchSize) {
       const batch = sentences.slice(i, i + batchSize);
-      console.log(`  Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(sentences.length / batchSize)}...`);
+      const batchNum = Math.floor(i / batchSize) + 1;
+      const totalBatches = Math.ceil(sentences.length / batchSize);
 
-      // Translate batch in parallel
-      const results = await Promise.all(
-        batch.map(sentence =>
-          translator.translateText(sentence.trim(), 'de', 'en-US')
-        )
-      );
+      let batchSuccess = false;
+      for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+        try {
+          if (attempt > 0) {
+            console.log(`  Retrying batch ${batchNum} (attempt ${attempt + 1}/${MAX_RETRIES})...`);
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2s before retry
+          } else {
+            console.log(`  Batch ${batchNum}/${totalBatches}...`);
+          }
 
-      translations.push(...results.map(r => r.text));
+          // Translate batch in parallel
+          const results = await Promise.all(
+            batch.map(sentence =>
+              translator.translateText(sentence.trim(), 'de', 'en-US')
+            )
+          );
+
+          const batchTranslations = results.map(r => r.text);
+
+          // Validate translation count
+          if (batchTranslations.length !== batch.length) {
+            throw new Error(`Expected ${batch.length} translations, got ${batchTranslations.length}`);
+          }
+
+          // Validate for suspicious repetitions
+          const uniqueTranslations = new Set(batchTranslations);
+          const uniqueRatio = uniqueTranslations.size / batchTranslations.length;
+          if (uniqueRatio < 0.7) {
+            throw new Error(`Too many repeated translations (${uniqueTranslations.size}/${batchTranslations.length} unique)`);
+          }
+
+          // Validate no translation is empty or too short
+          const tooShort = batchTranslations.filter(t => t.length < 3);
+          if (tooShort.length > 0) {
+            throw new Error(`Found ${tooShort.length} suspiciously short translations`);
+          }
+
+          // Success!
+          translations.push(...batchTranslations);
+          console.log(`  ✓ Batch ${batchNum} completed successfully`);
+          batchSuccess = true;
+          break; // Exit retry loop
+
+        } catch (error: any) {
+          const isLastAttempt = attempt === MAX_RETRIES - 1;
+          if (isLastAttempt) {
+            throw new Error(`Batch ${batchNum} failed after ${MAX_RETRIES} attempts: ${error.message}`);
+          }
+          console.warn(`  ⚠️  Batch ${batchNum} attempt ${attempt + 1} failed: ${error.message}`);
+        }
+      }
+
+      if (!batchSuccess) {
+        throw new Error(`Batch ${batchNum} failed to complete`);
+      }
 
       // Small delay between batches (500ms for Pro tier)
       if (i + batchSize < sentences.length) {
@@ -185,7 +248,8 @@ async function translateWithDeepL(
  */
 async function translateWithClaude(
   text: string,
-  apiKey: string
+  apiKey: string,
+  chapterContext?: { chapterNumber: number; chapterTitle: string }
 ): Promise<string[]> {
   try {
     const anthropic = new Anthropic({ apiKey });
@@ -198,13 +262,25 @@ async function translateWithClaude(
     // Translate in batches of 20 for optimal quality/speed
     const batchSize = 20;
     const translations: string[] = [];
+    const MAX_RETRIES = 3;
 
     for (let i = 0; i < sentences.length; i += batchSize) {
       const batch = sentences.slice(i, i + batchSize);
-      console.log(`  Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(sentences.length / batchSize)}...`);
+      const batchNum = Math.floor(i / batchSize) + 1;
+      const totalBatches = Math.ceil(sentences.length / batchSize);
 
-      // Create prompt for batch translation
-      const prompt = `You are an expert German-to-English translator for language learning content.
+      let batchSuccess = false;
+      for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+        try {
+          if (attempt > 0) {
+            console.log(`  Retrying batch ${batchNum} (attempt ${attempt + 1}/${MAX_RETRIES})...`);
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2s before retry
+          } else {
+            console.log(`  Batch ${batchNum}/${totalBatches}...`);
+          }
+
+          // Create prompt for batch translation
+          const prompt = `You are an expert German-to-English translator for language learning content.
 
 Translate the following German sentences to English. Requirements:
 - Maintain accuracy while being clear for English-speaking learners
@@ -217,31 +293,62 @@ ${batch.map((s, idx) => `${idx + 1}. ${s.trim()}`).join('\n')}
 
 Provide the English translations:`;
 
-      const message = await anthropic.messages.create({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 4096,
-        messages: [{
-          role: 'user',
-          content: prompt
-        }]
-      });
+          const message = await anthropic.messages.create({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 4096,
+            messages: [{
+              role: 'user',
+              content: prompt
+            }]
+          });
 
-      // Extract translations from response
-      const responseText = message.content[0].type === 'text'
-        ? message.content[0].text
-        : '';
+          // Extract translations from response
+          const responseText = message.content[0].type === 'text'
+            ? message.content[0].text
+            : '';
 
-      const batchTranslations = responseText
-        .split('\n')
-        .filter(line => line.trim())
-        .map(line => line.replace(/^\d+\.\s*/, '').trim())
-        .filter(line => line.length > 0);
+          const batchTranslations = responseText
+            .split('\n')
+            .filter(line => line.trim())
+            .map(line => line.replace(/^\d+\.\s*/, '').trim())
+            .filter(line => line.length > 0);
 
-      if (batchTranslations.length !== batch.length) {
-        console.warn(`  Warning: Expected ${batch.length} translations, got ${batchTranslations.length}`);
+          // Validate translation count
+          if (batchTranslations.length !== batch.length) {
+            throw new Error(`Expected ${batch.length} translations, got ${batchTranslations.length}`);
+          }
+
+          // Validate for suspicious repetitions
+          const uniqueTranslations = new Set(batchTranslations);
+          const uniqueRatio = uniqueTranslations.size / batchTranslations.length;
+          if (uniqueRatio < 0.7) {
+            throw new Error(`Too many repeated translations (${uniqueTranslations.size}/${batchTranslations.length} unique)`);
+          }
+
+          // Validate no translation is empty or too short
+          const tooShort = batchTranslations.filter(t => t.length < 3);
+          if (tooShort.length > 0) {
+            throw new Error(`Found ${tooShort.length} suspiciously short translations`);
+          }
+
+          // Success!
+          translations.push(...batchTranslations);
+          console.log(`  ✓ Batch ${batchNum} completed successfully`);
+          batchSuccess = true;
+          break; // Exit retry loop
+
+        } catch (error: any) {
+          const isLastAttempt = attempt === MAX_RETRIES - 1;
+          if (isLastAttempt) {
+            throw new Error(`Batch ${batchNum} failed after ${MAX_RETRIES} attempts: ${error.message}`);
+          }
+          console.warn(`  ⚠️  Batch ${batchNum} attempt ${attempt + 1} failed: ${error.message}`);
+        }
       }
 
-      translations.push(...batchTranslations);
+      if (!batchSuccess) {
+        throw new Error(`Batch ${batchNum} failed to complete`);
+      }
 
       // Small delay between batches to be respectful of API
       if (i + batchSize < sentences.length) {
@@ -263,7 +370,8 @@ Provide the English translations:`;
  */
 async function translateWithOpenAI(
   text: string,
-  apiKey: string
+  apiKey: string,
+  chapterContext?: { chapterNumber: number; chapterTitle: string }
 ): Promise<string[]> {
   try {
     const openai = new OpenAI({ apiKey });
@@ -271,41 +379,139 @@ async function translateWithOpenAI(
     // Use shared segmentation to ensure alignment with process-story
     const sentences = segmentSentences(text);
 
-    console.log(`  Translating ${sentences.length} sentences with OpenAI (optimized for speed & cost)...`);
+    console.log(`  Translating ${sentences.length} sentences with OpenAI (optimized for reliability)...`);
 
-    // Larger batches for faster processing (50 sentences per batch)
-    const batchSize = 50;
-    const parallelBatches = 3; // Process 3 batches in parallel
+    // Smaller batch size for better reliability (15 sentences per batch)
+    const batchSize = 15;
+    const parallelBatches = 2; // Process 2 batches in parallel to reduce API pressure
     const translations: string[] = new Array(sentences.length);
 
-    // Helper function to translate a single batch
+    // Helper function to translate a single batch with retry logic
     const translateBatch = async (batch: string[], startIndex: number, batchNum: number) => {
-      const prompt = `Translate these German sentences to English. Return only the translations, one per line, same order:\n\n${batch.map((s, idx) => `${idx + 1}. ${s.trim()}`).join('\n')}`;
+      const MAX_RETRIES = 3;
 
-      const completion = await openai.chat.completions.create({
-        model: 'gpt-4o-mini', // 60x cheaper than gpt-4o, excellent quality
-        messages: [{
-          role: 'user',
-          content: prompt
-        }],
-        temperature: 0.3,
-      });
+      for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+        try {
+          if (attempt > 0) {
+            console.log(`  Retrying batch ${batchNum} (attempt ${attempt + 1}/${MAX_RETRIES})...`);
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2s before retry
+          }
 
-      const responseText = completion.choices[0]?.message?.content || '';
-      const batchTranslations = responseText
-        .split('\n')
-        .filter(line => line.trim())
-        .map(line => line.replace(/^\d+\.\s*/, '').trim())
-        .filter(line => line.length > 0);
+          const prompt = `Translate these German sentences to English. Return only the translations, one per line, same order:\n\n${batch.map((s, idx) => `${idx + 1}. ${s.trim()}`).join('\n')}`;
 
-      if (batchTranslations.length !== batch.length) {
-        console.warn(`  Warning: Batch ${batchNum} - Expected ${batch.length}, got ${batchTranslations.length}`);
+          const completion = await openai.chat.completions.create({
+            model: 'gpt-4o-mini', // 60x cheaper than gpt-4o, excellent quality
+            messages: [{
+              role: 'user',
+              content: prompt
+            }],
+            temperature: 0.3,
+          });
+
+          const responseText = completion.choices[0]?.message?.content || '';
+          const batchTranslations = responseText
+            .split('\n')
+            .filter(line => line.trim())
+            .map(line => line.replace(/^\d+\.\s*/, '').trim())
+            .filter(line => line.length > 0);
+
+          // Debug logging on mismatch
+          if (batchTranslations.length !== batch.length) {
+            console.log(`  Debug: Expected ${batch.length} translations, got ${batchTranslations.length}`);
+            console.log(`  First 3 translations received:`);
+            batchTranslations.slice(0, 3).forEach((t, i) => console.log(`    ${i + 1}. ${t.substring(0, 80)}...`));
+            console.log(`  Last 3 translations received:`);
+            batchTranslations.slice(-3).forEach((t, i) => console.log(`    ${batchTranslations.length - 2 + i}. ${t.substring(0, 80)}...`));
+          }
+
+          // Validate translation count - allow slight mismatch for OpenAI quirks
+          const countDiff = Math.abs(batchTranslations.length - batch.length);
+          if (countDiff > 2) {
+            throw new Error(`Expected ${batch.length} translations, got ${batchTranslations.length} (difference too large: ${countDiff})`);
+          } else if (countDiff > 0) {
+            console.warn(`  ⚠️  Minor count mismatch: expected ${batch.length}, got ${batchTranslations.length} (accepting with warning)`);
+          }
+
+          // Validate for suspicious repetitions (only if we have enough translations)
+          if (batchTranslations.length > 0) {
+            const uniqueTranslations = new Set(batchTranslations);
+            const uniqueRatio = uniqueTranslations.size / batchTranslations.length;
+            if (uniqueRatio < 0.7) {
+              throw new Error(`Too many repeated translations (${uniqueTranslations.size}/${batchTranslations.length} unique)`);
+            }
+
+            // Validate no translation is empty or too short
+            const tooShort = batchTranslations.filter(t => t.length < 3);
+            if (tooShort.length > batch.length * 0.2) {
+              throw new Error(`Found ${tooShort.length} suspiciously short translations (> 20% of batch)`);
+            }
+          }
+
+          // Handle count mismatch by padding or truncating
+          let finalTranslations = batchTranslations;
+          if (batchTranslations.length < batch.length) {
+            // Pad with missing translations
+            const missing = batch.length - batchTranslations.length;
+            console.warn(`  ⚠️  Padding ${missing} missing translation(s) with placeholder(s)`);
+
+            // Log issue for manual review
+            if (chapterContext) {
+              const missingIndices = Array.from({ length: missing }, (_, i) => startIndex + batchTranslations.length + i);
+              translationIssues.push({
+                chapterNumber: chapterContext.chapterNumber,
+                chapterTitle: chapterContext.chapterTitle,
+                batchNumber: batchNum,
+                sentenceIndices: missingIndices,
+                issueType: 'missing_translation',
+                details: `OpenAI returned ${batchTranslations.length} translations instead of ${batch.length}. ${missing} placeholder(s) added.`,
+                affectedSentences: missingIndices.map(idx => {
+                  const sentenceIdx = idx - startIndex;
+                  return batch[sentenceIdx]?.substring(0, 100);
+                }).filter(Boolean)
+              });
+            }
+
+            finalTranslations = [
+              ...batchTranslations,
+              ...Array(missing).fill('[Translation incomplete - please review]')
+            ];
+          } else if (batchTranslations.length > batch.length) {
+            // Truncate extra translations
+            const extra = batchTranslations.length - batch.length;
+            console.warn(`  ⚠️  Truncating ${extra} extra translation(s)`);
+
+            // Log issue for manual review
+            if (chapterContext) {
+              translationIssues.push({
+                chapterNumber: chapterContext.chapterNumber,
+                chapterTitle: chapterContext.chapterTitle,
+                batchNumber: batchNum,
+                sentenceIndices: Array.from({ length: batch.length }, (_, i) => startIndex + i),
+                issueType: 'extra_translation',
+                details: `OpenAI returned ${batchTranslations.length} translations instead of ${batch.length}. Truncated ${extra} extra translation(s).`,
+                affectedSentences: batch.slice(0, 3).map(s => s.substring(0, 100))
+              });
+            }
+
+            finalTranslations = batchTranslations.slice(0, batch.length);
+          }
+
+          // Success! Place translations in correct position
+          finalTranslations.forEach((translation, idx) => {
+            translations[startIndex + idx] = translation;
+          });
+
+          console.log(`  ✓ Batch ${batchNum} completed successfully`);
+          return; // Success, exit retry loop
+
+        } catch (error: any) {
+          const isLastAttempt = attempt === MAX_RETRIES - 1;
+          if (isLastAttempt) {
+            throw new Error(`Batch ${batchNum} failed after ${MAX_RETRIES} attempts: ${error.message}`);
+          }
+          console.warn(`  ⚠️  Batch ${batchNum} attempt ${attempt + 1} failed: ${error.message}`);
+        }
       }
-
-      // Place translations in correct position
-      batchTranslations.forEach((translation, idx) => {
-        translations[startIndex + idx] = translation;
-      });
     };
 
     // Process batches in parallel groups
@@ -338,6 +544,43 @@ async function translateWithOpenAI(
     console.error('OpenAI translation failed:', error);
     throw error;
   }
+}
+
+/**
+ * Write translation issues log to file
+ */
+function writeTranslationIssuesLog(outputPath: string): void {
+  if (translationIssues.length === 0) {
+    console.log('\n✓ No translation issues detected');
+    return;
+  }
+
+  const logPath = outputPath.replace(/\.json$/, '-translation-issues.json');
+
+  const logData = {
+    timestamp: new Date().toISOString(),
+    totalIssues: translationIssues.length,
+    summary: {
+      missing_translation: translationIssues.filter(i => i.issueType === 'missing_translation').length,
+      extra_translation: translationIssues.filter(i => i.issueType === 'extra_translation').length,
+      placeholder_added: translationIssues.filter(i => i.issueType === 'placeholder_added').length,
+      short_translation: translationIssues.filter(i => i.issueType === 'short_translation').length,
+      repetition_detected: translationIssues.filter(i => i.issueType === 'repetition_detected').length,
+    },
+    issues: translationIssues
+  };
+
+  fs.writeFileSync(logPath, JSON.stringify(logData, null, 2), 'utf-8');
+
+  console.log(`\n⚠️  Translation Issues Detected: ${translationIssues.length}`);
+  console.log(`   Log saved to: ${logPath}`);
+  console.log(`\n   Summary:`);
+  Object.entries(logData.summary).forEach(([type, count]) => {
+    if (count > 0) {
+      console.log(`   - ${type}: ${count}`);
+    }
+  });
+  console.log(`\n   Please review and manually fix these translations in the output file.`);
 }
 
 /**
@@ -444,13 +687,17 @@ async function processPdf(
         let translations: string[] | undefined;
         if (config.translate) {
           const provider = config.translationProvider || 'deepl'; // Default to DeepL
+          const chapterContext = {
+            chapterNumber: chapterNum,
+            chapterTitle: chapterConfig.titleGerman
+          };
 
           if (provider === 'openai' && config.openaiApiKey) {
-            translations = await translateWithOpenAI(chapterText, config.openaiApiKey);
+            translations = await translateWithOpenAI(chapterText, config.openaiApiKey, chapterContext);
           } else if (provider === 'claude' && config.claudeApiKey) {
-            translations = await translateWithClaude(chapterText, config.claudeApiKey);
+            translations = await translateWithClaude(chapterText, config.claudeApiKey, chapterContext);
           } else if (provider === 'deepl' && config.deeplApiKey) {
-            translations = await translateWithDeepL(chapterText, config.deeplApiKey);
+            translations = await translateWithDeepL(chapterText, config.deeplApiKey, chapterContext);
           }
         }
 
@@ -489,6 +736,9 @@ async function processPdf(
         console.log('2. Run: npx tsx scripts/process-story.ts ' + outputPath + ' data/stories/');
       }
     }
+
+    // Write translation issues log
+    writeTranslationIssuesLog(outputPath);
 
     console.log('\n✓ PDF extraction complete!');
   } catch (error) {
