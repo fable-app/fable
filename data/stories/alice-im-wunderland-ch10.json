@@ -1,0 +1,517 @@
+{
+  "id": "alice-im-wunderland-ch10",
+  "titleGerman": "Die Hummer-Quadrille",
+  "titleEnglish": "The Lobster Quadrille",
+  "author": "Lewis Carroll",
+  "wordCount": 2021,
+  "difficulty": "B2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Die Falsche Suppenschildkröte seufzte tief und fuhr sich mit dem Rücken einer Flosse über die Augen.",
+      "english": "The Mock Turtle sighed deeply and wiped her eyes with the back of a flipper."
+    },
+    {
+      "id": 2,
+      "german": "Sie sah Alice an und versuchte zu sprechen, aber für einige Minuten wurde ihre Stimme von Schluchzen erstickt.",
+      "english": "She looked at Alice and tried to speak, but for a few minutes her voice was choked with sobs."
+    },
+    {
+      "id": 3,
+      "german": "„Genau so, als ob sie einen Knochen im Hals hätte,“ sagte der Greif, und er machte sich daran, sie zu schüt- teln und in den Rücken zu stoßen.",
+      "english": "\"Just like if she had a bone in her throat,\" said the Gryphon, and he began to shake her and poke her in the back."
+    },
+    {
+      "id": 4,
+      "german": "Schließlich gewann die Falsche Suppenschildkröte ihre Stimme wieder, und während ihr die Tränen herunterliefen, fuhr sie fort: – „Du hast vielleicht nicht lange im Meer gelebt –“ („Habe ich nicht,“ sagte Alice.) – „und vielleicht bist du noch niemals mit einem Hummer bekanntgemacht worden –“ (Alice wollte gerade sagen: „Ich habe einmal von einem gekostet –“, hielt aber hastig inne und sagte: „Nein, niemals“) „– deshalb kannst du keine Vorstel- lung davon haben, was für eine entzückende Sache eine Hummer-Quadrille ist!“ „Nein, in der Tat,“ sagte Alice.",
+      "english": "Finally, the Mock Turtle regained her voice, and while the tears ran down her cheeks, she continued: - \"You may not have lived long in the sea -\" (\"I haven't,\" said Alice.) - \"and perhaps you've never been introduced to a lobster -\" (Alice was just about to say: \"I once tasted one -\", but hastily stopped and said: \"No, never\") \"- so you can't have any idea what a delightful thing a Lobster Quadrille is!\" \"No, indeed,\" said Alice."
+    },
+    {
+      "id": 5,
+      "german": "„Was ist das für ein Tanz?“ „Also,“ sagte der Greif, „zuerst bildet man eine Reihe längs der Küste –“ „Zwei Reihen!“ schrie die Falsche Suppenschildkröte.",
+      "english": "\"What kind of dance is that?\" \"Well,\" said the Gryphon, \"first you form a line along the shore -\" \"Two lines!\" shouted the Mock Turtle."
+    },
+    {
+      "id": 6,
+      "german": "„Seehunde, Schildkröten, Lachse und so weiter; dann, wenn man alle Quallen aus dem Weg geräumt hat –“ „Das braucht gewöhnlich seine Zeit,“ unterbrach der Greif.",
+      "english": "\"Seals, turtles, salmon, and so on; then, when you've cleared all the jellyfish out of the way -\" \"That usually takes some time,\" interrupted the Gryphon."
+    },
+    {
+      "id": 7,
+      "german": "„– macht man zwei Schritte vor –“ „Jeder mit einem Hummer als Partner!“ schrie der Greif.",
+      "english": "\"- you take two steps forward -\" \"Each with a lobster as a partner!\" shouted the Gryphon."
+    },
+    {
+      "id": 8,
+      "german": "„Natürlich!“ sagte die Falsche Suppenschildkröte.",
+      "english": "\"Of course!\" said the Mock Turtle."
+    },
+    {
+      "id": 9,
+      "german": "„Zwei Schritte vor, den Partnern zuwenden –“ „– Hummer wechseln, und in gleicher Stellung zurück,“ ergänzte der Greif.",
+      "english": "\"Two steps forward, turn to your partners -\" \"- change lobsters, and return in the same position,\" added the Gryphon."
+    },
+    {
+      "id": 10,
+      "german": "„Dann, mußt du wissen,“ fuhr die Falsche Suppenschildkröte fort, „wirft man die –“ „Die Hummer!“ rief der Greif und machte einen Luftsprung.",
+      "english": "\"Then, you must know,\" continued the Mock Turtle, \"you throw the -\" \"The lobsters!\" cried the Gryphon and made a leap in the air."
+    },
+    {
+      "id": 11,
+      "german": "„– so weit wie man kann ins Meer –“ „Schwimmt hinterher!“ kreischte der Greif.",
+      "english": "\"- as far as you can into the sea -\" \"Swim after them!\" screeched the Gryphon."
+    },
+    {
+      "id": 12,
+      "german": "„Schlägt einen Purzelbaum im Meer!“ schrie die Falsche Suppenschildkröte und hüpfte wild umher.",
+      "english": "\"Do a somersault in the sea!\" shouted the Mock Turtle and hopped around wildly."
+    },
+    {
+      "id": 13,
+      "german": "„Wechselt erneut die Hummer!“ brüllte der Greif aus vollem Halse.",
+      "english": "\"Change lobsters again!\" bellowed the Gryphon at the top of his lungs."
+    },
+    {
+      "id": 14,
+      "german": "„Wieder zurück zum Land, und – das ist die ganze erste Figur,“ sagte die Falsche Suppenschildkröte, plötz- lich die Stimme senkend; und die beiden Geschöpfe, die die ganze Zeit über wie verrückt umhergesprungen waren, setzten sich wieder ganz traurig und still hin und sahen Alice an.",
+      "english": "\"Back to land again, and - that's the whole first figure,\" said the Mock Turtle, suddenly lowering her voice; and the two creatures, who had been jumping around like crazy the whole time, sat down again very sadly and quietly and looked at Alice."
+    },
+    {
+      "id": 15,
+      "german": "„Das muß ein sehr hübscher Tanz sein,“ sagte Alice zaghaft.",
+      "english": "\"That must be a very pretty dance,\" said Alice timidly."
+    },
+    {
+      "id": 16,
+      "german": "„Möchtest du ein bißchen davon sehen?“ fragte die Falsche Suppenschildkröte.",
+      "english": "\"Would you like to see a little bit of that?\" asked the Mock Turtle."
+    },
+    {
+      "id": 17,
+      "german": "„Wirklich sehr gern,“ sagte Alice.",
+      "english": "\"Really very much,\" said Alice."
+    },
+    {
+      "id": 18,
+      "german": "„Komm, wir wollen die erste Figur probieren!“ sagte die Falsche Suppenschildkröte zu dem Greif.",
+      "english": "\"Come, we want to try the first figure!\" said the Mock Turtle to the Griffin."
+    },
+    {
+      "id": 19,
+      "german": "„Wir kön- nen es auch ohne Hummer machen.",
+      "english": "\"We can also do it without lobsters."
+    },
+    {
+      "id": 20,
+      "german": "Wer soll singen?“ „Ach, sing du,“ sagte der Greif.",
+      "english": "Who should sing?\" \"Oh, you sing,\" said the Griffin."
+    },
+    {
+      "id": 21,
+      "german": "„Ich habe den Text vergessen.“ -- 59 of 161 -- - 57 - So begannen sie feierlich immer um Alice herumzutanzen, wobei sie ihr ab und zu auf die Zehen traten, wenn sie zu dicht an ihr vorbeikamen, und sie schwenkten ihre Vorderpfoten, um den Takt zu schlagen, wäh - rend die Falsche Suppenschildkröte sehr langsam und traurig dies sang: – „Geh' doch schneller!“ sprach ein Weißling und stieß eine Schnecke an.",
+      "english": "\"I've forgotten the text.\" -- 59 of 161 -- - 57 - So they began to dance solemnly around Alice, occasionally stepping on her toes when they came too close, and they waved their front paws to keep the beat, while the Mock Turtle sang this very slowly and sadly: - \"Go faster!\" said a White Thing and nudged a snail."
+    },
+    {
+      "id": 22,
+      "german": "„Hinter uns ist eine Grundel; sie kommt immer näher 'ran.",
+      "english": "\"Behind us is a goby; it's getting closer and closer."
+    },
+    {
+      "id": 23,
+      "german": "Glaubst du denn, es sei den Hummern und den Robben einerlei, Daß sie auf uns warten müssen – du bist doch beim Tanz dabei?",
+      "english": "Do you think the lobsters and the seals care that they have to wait for us - you're joining the dance, right?"
+    },
+    {
+      "id": 24,
+      "german": "Bist doch, bist nicht, bist doch, bist nicht, nicht beim Tanz dabei?",
+      "english": "You are, you aren't, you are, you aren't, not joining the dance?"
+    },
+    {
+      "id": 25,
+      "german": "Bist doch, bist nicht, bist doch, bist nicht, doch beim Tanz dabei?",
+      "english": "You are, you aren't, you are, you aren't, but you are joining the dance?"
+    },
+    {
+      "id": 26,
+      "german": "„Du hast sicher keine Ahnung, wieviel Spaß es allen macht, Wenn sie uns ins Wasser werfen, daß das Herz im Leibe lacht!“ Doch die Schnecke sprach: „Zu weit!",
+      "english": "\"You surely have no idea how much fun it is for everyone when they throw us into the water, that the heart in the body laughs!\" But the snail said: \"Too far!"
+    },
+    {
+      "id": 27,
+      "german": "Zu weit!",
+      "english": "Too far!"
+    },
+    {
+      "id": 28,
+      "german": "Und drum, mein Freund, verzeih'!“ Sie danke zwar dem Weißling, aber sie sei nicht beim Tanz dabei.",
+      "english": "And therefore, my friend, forgive me!\" She thanked the White Thing, but she was not joining the dance."
+    },
+    {
+      "id": 29,
+      "german": "Will nicht, kann nicht, will nicht, kann nicht sein beim Tanz dabei.",
+      "english": "Don't want to, can't be, don't want to, can't be joining the dance."
+    },
+    {
+      "id": 30,
+      "german": "Will nicht, kann nicht, will nicht, kann nicht sein beim Tanz dabei.",
+      "english": "Don't want to, can't be, don't want to, can't be joining the dance."
+    },
+    {
+      "id": 31,
+      "german": "„Was macht es denn, wie weit wir fliegen?Das ist nicht riskant!",
+      "english": "\"What does it matter how far we fly? It's not risky!\""
+    },
+    {
+      "id": 32,
+      "german": "Denn dort auf der andern Seite ist zum Glück ein weitrer Strand.“ Je weiter England weg sei, je näher Frankreich sei – „Krieg' keinen Schreck, geliebte Schneck', und sei beim Tanz dabei!",
+      "english": "\"Because over there on the other side, fortunately, there is a wide beach.\" The further England is away, the closer France is – \"Don't be scared, dear snail, and join in the dance!\""
+    },
+    {
+      "id": 33,
+      "german": "Bist doch, bist nicht, bist doch, bist nicht, doch beim Tanz dabei?",
+      "english": "\"You are, you are not, you are, you are not, but are you joining in the dance?\""
+    },
+    {
+      "id": 34,
+      "german": "Bist doch, bist nicht, bist doch, bist nicht, nicht beim Tanz dabei?“ Vielen Dank, das ist ein sehr interessanter Tanz zum Zuschauen,“ sagte Alice, recht froh, daß er endlich vor - über war, „und vor allem gefällt mir das seltsame Lied von dem Weißling!“ -- 60 of 161 -- - 58- „Ach, was die Weißlinge betrifft,“ sagte die Falsche Suppenschildkröte, „sie – du hast sie natürlich ge- sehen?“ „Ja,“ sagte Alice, „schon oft beim Mitta–“ Sie brach schnell ab.",
+      "english": "\"You are, you are not, you are, you are not, not joining in the dance?\" \"Thank you very much, that's a very interesting dance to watch,\" said Alice, quite glad that it was finally over, \"and above all, I like the strange song of the White Thing!\" -- 60 of 161 -- - 58- \"Oh, as for the White Things,\" said the False Turtle, \"you have, of course, seen them?\" \"Yes,\" said Alice, \"often at noon—\" She quickly broke off."
+    },
+    {
+      "id": 35,
+      "german": "„Ich weiß nicht, wo Mitta sein mag,“ sagte die Falsche Suppenschildkröte, „aber wenn du sie so oft gesehen hast, dann weißt du natürlich, wie sie beschaffen sind?“ „Ich glaube schon,“ erwiderte Alice nachdenklich.",
+      "english": "\"I don't know where noon might be,\" said the False Turtle, \"but if you have seen it so often, then you know, of course, what they are like?\" \"I think so,\" replied Alice thoughtfully."
+    },
+    {
+      "id": 36,
+      "german": "„Sie haben ihre Schwänze in den Mäulern und sind über und über mit Krümeln bedeckt.“ „Das mit den Krümeln ist falsch,“ sagte die Falsche Suppenschildkröte, „Krümel würden im Meer weg- gespült werden.",
+      "english": "\"They have their tails in their mouths and are covered all over with crumbs.\" \"The thing about the crumbs is wrong,\" said the False Turtle, \"crumbs would be washed away in the sea."
+    },
+    {
+      "id": 37,
+      "german": "Aber sie haben ihre Schwänze in den Mäulern; und der Grund ist –“ hier gähnte die Falsche Suppenschildkröte und schloß die Augen.",
+      "english": "But they have their tails in their mouths; and the reason is—\" here the False Turtle yawned and closed its eyes."
+    },
+    {
+      "id": 38,
+      "german": "„Nenn' ihr den Grund und das alles,“ sagte sie zu dem Greif.",
+      "english": "\"Tell her the reason and all that,\" she said to the Griffin."
+    },
+    {
+      "id": 39,
+      "german": "„Der Grund ist der,“ sagte der Greif, „daß sie mit den Hummern zum Tanz gehen wollten.",
+      "english": "\"The reason is,\" said the Griffin, \"that they wanted to go dancing with the lobsters."
+    },
+    {
+      "id": 40,
+      "german": "Deshalb wurden sie ins Meer geworfen.",
+      "english": "That's why they were thrown into the sea."
+    },
+    {
+      "id": 41,
+      "german": "Deshalb mußten sie sehr weit fliegen.",
+      "english": "That's why they had to fly very far."
+    },
+    {
+      "id": 42,
+      "german": "Deshalb nahmen sie ihre Schwänze fest in das Maul.",
+      "english": "That's why they held their tails tightly in their mouths."
+    },
+    {
+      "id": 43,
+      "german": "Deshalb konnten sie sie nicht wieder herauskriegen.",
+      "english": "That's why they couldn't get them out again."
+    },
+    {
+      "id": 44,
+      "german": "Das ist alles.“ „Danke schön,“ sagte Alice, „das ist sehr interessant.",
+      "english": "That's all.\" \"Thank you,\" said Alice, \"that's very interesting."
+    },
+    {
+      "id": 45,
+      "german": "Ich habe niemals zuvor soviel von dem Weißling gewußt.“ „Ich kann dir noch mehr erzählen, wenn du willst,“ sagte der Greif.",
+      "english": "I have never known so much about the White Thing before.\" \"I can tell you more if you want,\" said the Griffin."
+    },
+    {
+      "id": 46,
+      "german": "„Ist dir bekannt, weshalb er Weißling heißt?“ „Ich habe nie darüber nachgedacht,“ sagte Alice.",
+      "english": "\"Do you know why he is called Weißling?\" \"I never thought about it,\" said Alice."
+    },
+    {
+      "id": 47,
+      "german": "„Warum?“ „Weil er uns so manches weismacht,“ erwiderte der Greif sehr feierlich.",
+      "english": "\"Why?\" \"Because he makes us believe many things,\" replied the Gryphon very solemnly."
+    },
+    {
+      "id": 48,
+      "german": "„Was macht er Ihnen denn weiß?“ fragte Alice verwundert.",
+      "english": "\"What does he make you believe?\" asked Alice, astonished."
+    },
+    {
+      "id": 49,
+      "german": "„Zum Beispiel macht er uns weis, daß er etwas weiß,“ sagte der Greif.",
+      "english": "\"For example, he makes us believe that he knows something,\" said the Gryphon."
+    },
+    {
+      "id": 50,
+      "german": "„Und damit macht er Sie weiß?“ fragte Alice, die völlig verwirrt war.",
+      "english": "\"And that makes him wise?\" asked Alice, who was completely confused."
+    },
+    {
+      "id": 51,
+      "german": "Der Greif schüttelte ungeduldig den Kopf und sagte: „Er macht uns weis, daß er weiß, daß er weiß ist.",
+      "english": "The Gryphon shook his head impatiently and said: \"He makes us believe that he knows that he is wise.\""
+    },
+    {
+      "id": 52,
+      "german": "Des - halb heißt er Weißling, und es ist kein Zeichen von Weisheit, wenn man das nicht weiß.",
+      "english": "\"That's why he is called Weißling, and it is not a sign of wisdom if you don't know that.\""
+    },
+    {
+      "id": 53,
+      "german": "Jetzt weißt du es.“ „Wenn ich der Weißling gewesen wäre,“ sagte Alice, deren Gedanken immer noch bei dem Lied waren, „hät- te ich zu der Grundel gesagt: ,Bitte bleib zurück!",
+      "english": "\"Now you know it.\" \"If I had been the Weißling,\" said Alice, whose thoughts were still on the song, \"I would have said to the Grundel: 'Please stay back!"
+    },
+    {
+      "id": 54,
+      "german": "Dich wollen wir nicht mitnehmen!“ „Sie waren verpflichtet, sie mitzunehmen,“ sagte die Falsche Suppenschildkröte.",
+      "english": "We don't want to take you with us!'\" \"You were obliged to take her with you,\" said the Mock Turtle."
+    },
+    {
+      "id": 55,
+      "german": "„Kein vernünftiger Fisch würde irgendwohin ohne Grundel gehen.“ „Wirklich nicht?“ sagte Alice sehr überrascht.",
+      "english": "\"No sensible fish would go anywhere without a Grundel.\" \"Really not?\" said Alice very surprised."
+    },
+    {
+      "id": 56,
+      "german": "„Natürlich nicht,“ sagte die Falsche Suppenschildkröte.",
+      "english": "\"Of course not,\" said the Mock Turtle."
+    },
+    {
+      "id": 57,
+      "german": "„Denn wenn ein Fisch zu mir käme und mir erzählte, er werde eine Reise machen, würde ich fragen: ,Mit welcher Grundel´?“ „Meinen Sie nicht ,aus welchem Grund´?“ sagte Alice.",
+      "english": "\"Because if a fish came to me and told me he was going on a journey, I would ask: 'With which Grundel?'\" \"Don't you mean 'for what reason'?\" said Alice."
+    },
+    {
+      "id": 58,
+      "german": "„Ich meine, was ich sage,“ erwiderte die Falsche Suppenschildkröte beleidigt.",
+      "english": "\"I mean what I say,\" replied the Mock Turtle, offended."
+    },
+    {
+      "id": 59,
+      "german": "Und der Greif fügte hinzu: „Komm, laß uns einige deiner Abenteuer hören.“ „Ich könnte Ihnen meine Abenteuer erzählen – angefangen von heute morgen,“ sagte Alice ein bißchen zag - haft, „aber es hat keinen Zweck, bis gestern zurückzugehen, weil ich da eine andere Person war.“ „Erklär' das alles,“ sagte die Falsche Suppenschildkröte.",
+      "english": "And the Gryphon added: \"Come, let us hear some of your adventures.\" \"I could tell you my adventures - starting from this morning,\" said Alice a little hesitantly, \"but it is pointless to go back to yesterday because I was a different person then.\" \"Explain all that,\" said the Mock Turtle."
+    },
+    {
+      "id": 60,
+      "german": "-- 61 of 161 -- -59 - „Nein, nein!",
+      "english": "-- 61 of 161 -- -59 - \"No, no!"
+    },
+    {
+      "id": 61,
+      "german": "Erst die Abenteuer,“ sagte der Greif ungeduldig.",
+      "english": "\"First the adventures,\" said the Griffin impatiently."
+    },
+    {
+      "id": 62,
+      "german": "„Erklärungen brauchen so schrecklich viel Zeit.“ So begann Alice, ihnen ihre Abenteuer zu erzählen von dem Moment an, in dem sie als erstes das Weiße Kaninchen sah.",
+      "english": "\"Explanations take such an awful lot of time.\" So Alice began to tell them her adventures from the moment she first saw the White Rabbit."
+    },
+    {
+      "id": 63,
+      "german": "Zunächst war sie dabei ein wenig nervös, mit den beiden Geschöpfen dicht an ihrer Seite, die Augen und Mäuler sehr weit aufrissen, aber beim Weitererzählen faßte sie Mut.",
+      "english": "At first, she was a little nervous, with the two creatures close by her side, their eyes and mouths wide open, but as she continued to tell the story, she gained courage."
+    },
+    {
+      "id": 64,
+      "german": "Ihre Zuhörer waren völlig still, bis sie zu dem Teil kam, wo sie „Du bist alt, Vater William“ vor der Raupe aufsagte und die Worte alle anders herauskamen, und da holte die Falsche Suppenschildkröte tief Luft und sagte: „Das ist sehr merk- würdig!“ „Das ist alles so merkwürdig, wie es nur sein kann,“ sagte der Greif.",
+      "english": "Her listeners were completely silent until she reached the part where she recited \"You are old, Father William\" in front of the Caterpillar, and the words all came out differently, and then the Mock Turtle took a deep breath and said, \"That is very remarkable!\" \"That is as strange as it can possibly be,\" said the Griffin."
+    },
+    {
+      "id": 65,
+      "german": "„Alles kam anders heraus!“ wiederholte die Falsche Suppenschildkröte nachdenklich.",
+      "english": "\"Everything came out differently!\" the Mock Turtle repeated thoughtfully."
+    },
+    {
+      "id": 66,
+      "german": "„Ich möchte gern, daß sie es jetzt versucht und etwas aufsagt.",
+      "english": "\"I would like her to try it now and recite something."
+    },
+    {
+      "id": 67,
+      "german": "Sag' ihr, sie soll anfangen.“ Sie sah den Greif an, als dächte sie, er habe über Alice zu bestimmen.",
+      "english": "Tell her to start.\" She looked at the Griffin as if she thought he had authority over Alice."
+    },
+    {
+      "id": 68,
+      "german": "„Steh auf und trage ,Hör' die Stimme des Faulpelz´ vor,“ sagte der Greif.",
+      "english": "\"Get up and recite 'Hark! The voice of the Lazybones,'\" said the Griffin."
+    },
+    {
+      "id": 69,
+      "german": "„Wie die Geschöpfe einen herumkommandieren und Schulaufgaben abfragen!“ dachte Alice.",
+      "english": "\"How the creatures command you around and ask for homework!\" thought Alice."
+    },
+    {
+      "id": 70,
+      "german": "„Da könnte ich ja gleich in der Schule sein.“ Sie stand jedoch auf und fing an, es aufzusagen, aber ihr Kopf war so voll von der Hummer-Quadrille, daß sie kaum wußte, was sie sagte, und tatsächlich kam sehr Seltsames heraus: – „Hör' die Stimme des Hummers; er sagt klipp und klar: ,Ach, du brietst mich zu braun, ich muß zuckern mein Haar.´ Wie ein Huhn mit den Lidern, macht er mit der Nas' Seinen Gurt zu und ordnet die Zehen im Gras.",
+      "english": "\"I might as well be in school.\" However, she got up and began to recite, but her head was so full of the Lobster Quadrille that she hardly knew what she was saying, and indeed, very strange things came out: - \"Hark! The voice of the lobster; he says loud and clear: 'Oh, you roasted me too brown, I must sugar my hair.' Like a hen with its eyelids, he fastens his belt with his nose and arranges his toes in the grass."
+    },
+    {
+      "id": 71,
+      "german": "Wird die Sandbank ganz trocken, dann ist er voll Hohn Und spricht von dem Hai in verächtlichem Ton.",
+      "english": "When the sandbank is completely dry, then he is full of scorn and speaks of the shark in a contemptuous tone."
+    },
+    {
+      "id": 72,
+      "german": "Doch steigt die Flut, sieht er die Flosse des Hais, Und jetzt spricht er nur noch ganz schüchtern und leis.“ „Das ist anders als das, was ich aufgesagt habe, als ich ein Kind war,“ sagte der Greif.",
+      "english": "But when the tide rises, he sees the shark's fin, and now he speaks only very shyly and softly.\" \"That is different from what I recited when I was a child,\" said the Griffin."
+    },
+    {
+      "id": 73,
+      "german": "„Also ich habe es nie zuvor gehört,“ sagte die Falsche Sup- penschildkröte, „aber es klingt ungewöhnlich blödsinnig.“ Alice sagte nichts.",
+      "english": "\"Well, I've never heard it before,\" said the Mock Turtle, \"but it sounds unusually silly.\" Alice said nothing."
+    },
+    {
+      "id": 74,
+      "german": "Sie hatte sich hingesetzt, die Hände vors Gesicht geschlagen, und fragte sich, ob jemals wieder irgend etwas auf gewöhnliche Weise geschehen würde.",
+      "english": "She had sat down, her hands covering her face, and wondered if anything would ever happen in a normal way again."
+    },
+    {
+      "id": 75,
+      "german": "„Ich möchte es gern erklärt haben,“ sagte die Falsche Sup- penschildkröte.",
+      "english": "\"I would like it to be explained,\" said the Mock Turtle."
+    },
+    {
+      "id": 76,
+      "german": "„Sie kann es nicht erklären,“ sagte der Greif hastig.",
+      "english": "\"She can't explain it,\" said the Griffin hastily."
+    },
+    {
+      "id": 77,
+      "german": "„Mach weiter mit der nächsten Strophe.“ „Aber das mit seinen Zehen?“ insistierte die Falsche Suppen- schildkröte.",
+      "english": "\"Continue with the next stanza.\" \"But what about his toes?\" insisted the Mock Turtle."
+    },
+    {
+      "id": 78,
+      "german": "„Wie konnte er sie denn mit seiner Nase ordnen?“ -- 62 of 161 -- - 60 - „Es ist die erste Position beim Tanzen,“ sagte Alice, aber sie war von der ganzen Sache furchtbar verwirrt und sehnte sich danach, das Thema zu wechseln.",
+      "english": "\"How could he arrange her with his nose?\" -- 62 of 161 -- - 60 - \"It's the first position in dancing,\" said Alice, but she was terribly confused by the whole thing and longed to change the subject."
+    },
+    {
+      "id": 79,
+      "german": "„Mach weiter mit der nächsten Strophe,“ wiederholte der Greif.",
+      "english": "\"Continue with the next stanza,\" the Griffin repeated."
+    },
+    {
+      "id": 80,
+      "german": "„Sie beginnt ,Ich kam in den Garten´.“ Alice wagte nicht zu widersprechen, obwohl sie sicher war, daß alles falsch herauskommen würde, und sie fuhr mit zitternder Stimme fort: – „Ich kam in den Garten und sah dort verdutzt, Wie der Kauz mit dem Panther Pasteten verputzt: Fleisch, Kruste und Sauce aß der Panther schnell weg, Und dem Kauz hinterblieb nur das leere Gedeck.",
+      "english": "\"She begins, 'I came into the garden.'\" Alice did not dare to disagree, although she was sure that everything would turn out wrong, and she continued in a trembling voice: – \"I came into the garden and saw there, astonished, How the Owl and the Panther were eating pies: The Panther quickly devoured meat, crust, and sauce, And the Owl was left with only the empty plate."
+    },
+    {
+      "id": 81,
+      "german": "Die Pasteten war'n alle; dem Kauz, der erbost, Vermachte der Panther den Löffel zum Trost.",
+      "english": "The pies were all gone; to the Owl, who was furious, The Panther left the spoon as a consolation."
+    },
+    {
+      "id": 82,
+      "german": "Er selbst griff das Messer, und schließlich – mir graut's – Beschloß er voll Gier das Bankett mit –“ „Was hat es für einen Zweck, all dieses Zeug aufzusagen,“ unterbrach die Falsche Suppenschildkröte, „wenn du es nicht erklärst?",
+      "english": "He himself took the knife, and finally – I dread to think – He greedily decided to end the banquet with –\" \"What’s the point of reciting all this stuff,\" interrupted the Mock Turtle, \"if you don't explain it?"
+    },
+    {
+      "id": 83,
+      "german": "Es ist bei weitem das Konfuseste, was ich jemals gehört habe.“ „Ja, ich glaube, du hörst besser auf,“ sagte der Greif, und Alice war darüber nur zu froh.",
+      "english": "It is by far the most confusing thing I have ever heard.\" \"Yes, I think you should stop,\" said the Griffin, and Alice was only too glad about it."
+    },
+    {
+      "id": 84,
+      "german": "„Sollen wir eine andere Figur der Hummer-Quadrille probieren oder,“ fuhr der Greif fort, „möchtest du lie- ber, daß dir die Falsche Suppenschildkröte ein anderes Lied vorsingt?“ „Oh, ein Lied bitte, wenn die Falsche Suppenschildkröte so freundlich sein will,“ erwiderte Alice so eifrig, daß der Greif ziemlich beleidigt sagte: „Hm!",
+      "english": "\"Shall we try another figure of the Lobster Quadrille or,\" the Griffin continued, \"would you rather have the Mock Turtle sing you another song?\" \"Oh, a song please, if the Mock Turtle would be so kind,\" Alice replied so eagerly that the Griffin said rather offended: \"Hm!"
+    },
+    {
+      "id": 85,
+      "german": "Über Geschmack läßt sich nicht streiten!",
+      "english": "There's no arguing about taste!"
+    },
+    {
+      "id": 86,
+      "german": "Sing für sie ,Schild- krötensuppe´, willst du, Alte?“ Die Falsche Suppenschildkröte seufzte tief und begann mit tränenerstickter Stimme dies zu singen: – „Herrliche Suppe, fett und grün, läßt den Gaumen Wasser ziehn!",
+      "english": "Sing for her, 'Turtle Soup,' will you, old girl?\" The Mock Turtle sighed deeply and began to sing this with a voice choked with tears: – \"Glorious soup, rich and green, makes the palate water!"
+    },
+    {
+      "id": 87,
+      "german": "Wer gäbe dafür nicht was aus?",
+      "english": "Who wouldn't give anything for that?"
+    },
+    {
+      "id": 88,
+      "german": "Suppe des Abends, herrlicher Schmaus!",
+      "english": "Soup of the evening, glorious feast!"
+    },
+    {
+      "id": 89,
+      "german": "Suppe des Abends, herrlicher Schmaus!",
+      "english": "Soup of the evening, glorious feast!"
+    },
+    {
+      "id": 90,
+      "german": "Herr-rrlicher Schmaa-aus!",
+      "english": "Glor-rrious fea-aast!\""
+    },
+    {
+      "id": 91,
+      "german": "Herr-rrlicher Schmaa-aus!",
+      "english": "Wonderful feast!"
+    },
+    {
+      "id": 92,
+      "german": "Suu-uuppe des A-a-ahabends, Herrlicher, herrlicher Schmaus!",
+      "english": "Soup of the evening, wonderful, wonderful feast!"
+    },
+    {
+      "id": 93,
+      "german": "Herrliche Suppe!",
+      "english": "Wonderful soup!"
+    },
+    {
+      "id": 94,
+      "german": "Was soll Fisch Oder Wildpret auf dem Tisch?",
+      "english": "What should fish or game be doing on the table?"
+    },
+    {
+      "id": 95,
+      "german": "Wer von euch tauschte nicht ganz schlau s olches Zeug gegen den herrlichen Schmaus?",
+      "english": "Who among you wouldn't trade such stuff for the wonderful feast?"
+    },
+    {
+      "id": 96,
+      "german": "Solches Zeug gegen den herrlichen Schmaus?",
+      "english": "Such stuff for the wonderful feast?"
+    },
+    {
+      "id": 97,
+      "german": "Herr-rrlicher Schmaa-aus!",
+      "english": "Wonderful feast!"
+    },
+    {
+      "id": 98,
+      "german": "Herr-rrlicher Schmaa-aus!",
+      "english": "Wonderful feast!"
+    },
+    {
+      "id": 99,
+      "german": "Suu-uuppe des A-a-ahabends, Herrlicher, herrli-CHER SCHMAUS!“ „Den Refrain noch einmal!“ schrie der Greif, und die Falsche Suppenschildkröte hatte gerade begonnen, ihn zu wiederholen, als aus der Ferne der Ruf „Der Prozeß fängt an!“ zu hören war.",
+      "english": "\"Soup of the evening, wonderful, wonderful feast!\" \"Once more the refrain!\" shouted the Griffin, and the false turtle had just begun to repeat it when from afar the call \"The trial is starting!\" could be heard."
+    },
+    {
+      "id": 100,
+      "german": "-- 63 of 161 -- - 61 - „Los, komm!“ rief der Greif, und Alice bei der Hand nehmend eilte er davon, ohne auf das Ende des Liedes zu warten.",
+      "english": "\"Come on, let's go!\" cried the Griffin, and taking Alice by the hand, he hurried away without waiting for the end of the song."
+    },
+    {
+      "id": 101,
+      "german": "„Was ist das für ein Prozeß?“ keuchte Alice beim Rennen, aber der Greif antwortete nur: „Los, komm!“ und rannte noch schneller, während immer schwächer, von der Brise, die ihnen folgte, getragen, die melancholi- schen Worte ertönten: „Suu-uuppe des A-a-ahabends, Herrlicher, herrlicher Schmaus!“ -- 64 of 161 --",
+      "english": "\"What kind of trial is this?\" gasped Alice while running, but the Griffin only answered, \"Come on!\" and ran even faster, while the melancholic words, carried by the breeze that followed them, grew fainter: \"Soup of the evening, wonderful, wonderful feast!\""
+    }
+  ],
+  "bookId": "alice-im-wunderland",
+  "chapterNumber": 10
+}

@@ -1,0 +1,507 @@
+{
+  "id": "alice-im-wunderland-ch6",
+  "titleGerman": "Pfeffer und Schwein",
+  "titleEnglish": "Pig and Pepper",
+  "author": "Lewis Carroll",
+  "wordCount": 2589,
+  "difficulty": "B2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Ein paar Minuten stand sie da und sah zu dem Haus hinüber, indem sie überlegte, was sie als nächstes tun sollte, als plötzlich ein Lakai in Livree aus dem Wald herausgerannt kam – (sie hielt ihn für einen Lakai, weil er in Livree war, sonst hätte sie ihn, nur nach seinem Gesicht urteilend, einen Fisch genannt) – und laut an der Tür pochte.",
+      "english": "Pepper and Pig A few minutes she stood there and looked over at the house, considering what she should do next, when suddenly a footman in livery came running out of the woods – (she took him for a footman because he was in livery, otherwise she would have called him a fish just judging by his face) – and knocked loudly on the door."
+    },
+    {
+      "id": 2,
+      "german": "Sie wurde von einem anderen Lakai in Livree, mit rundem Gesicht und großen Augen wie ein Frosch, geöffnet, und beide Lakaien, bemerkte Alice, hatten gepudertes und auf dem ganzen Kopf in Locken gedrehtes Haar.",
+      "english": "She was opened by another footman in livery, with a round face and big eyes like a frog, and both footmen, Alice noticed, had powdered hair that was curled all over their heads."
+    },
+    {
+      "id": 3,
+      "german": "Sie war sehr neugierig, was dies alles zu bedeuten habe, und pirschte sich aus dem Wald ein wenig heran, um zu lauschen.",
+      "english": "She was very curious about what all this meant, and crept a little closer out of the woods to listen."
+    },
+    {
+      "id": 4,
+      "german": "Der Fisch-Lakai zog unter seinem Arm einen riesi- gen Brief, fast so groß wie er selbst, hervor, und den überreichte er dem anderen, wobei er in feierlichem Ton sprach: „Für die Herzogin.",
+      "english": "The fish-footman pulled out from under his arm a huge letter, almost as big as he was, and handed it to the other one, speaking in a solemn tone: “For the Duchess."
+    },
+    {
+      "id": 5,
+      "german": "Eine Einladung von der Königin, Krocket zu spielen.“ Der Frosch-Lakai wiederholte das in dem gleichen feierlichen Ton, än- derte aber die Reihenfolge der Wörter ein wenig: „Von der Königin.",
+      "english": "An invitation from the Queen to play croquet.” The frog-footman repeated this in the same solemn tone, but changed the order of the words a little: “From the Queen."
+    },
+    {
+      "id": 6,
+      "german": "Eine Einladung für die Herzogin, Krocket zu spielen.“ Dann verneigten sich beide tief, und ihre Locken verhedderten sich ineinander.",
+      "english": "An invitation for the Duchess to play croquet.” Then both bowed deeply, and their curls got tangled together."
+    },
+    {
+      "id": 7,
+      "german": "Alice lachte darüber so sehr, daß sie in den Wald zu- rückrennen mußte aus Angst, man könnte sie hören; und als sie wieder hervorlugte, war der Fisch-Lakai verschwunden und der andere saß neben der Tür auf der Erde und starrte blöde in den Himmel.",
+      "english": "Alice laughed so much at this that she had to run back into the woods for fear someone might hear her; and when she peeked out again, the fish-footman had disappeared and the other one was sitting on the ground next to the door, staring stupidly at the sky."
+    },
+    {
+      "id": 8,
+      "german": "Alice ging schüchtern zu der Tür und klopfte.",
+      "english": "Alice shyly approached the door and knocked."
+    },
+    {
+      "id": 9,
+      "german": "„Es hat keinen Zweck zu klopfen,“ sagte der Lakai, „und zwar aus zwei Gründen.",
+      "english": "“There’s no use knocking,” said the footman, “for two reasons."
+    },
+    {
+      "id": 10,
+      "german": "Erstens, weil ich auf der - selben Seite der Tür bin wie du.",
+      "english": "First, because I am on the same side of the door as you are."
+    },
+    {
+      "id": 11,
+      "german": "Zweitens, weil sie drinnen solchen Krach machen, daß dich unmöglich je- mand hören kann.“ Und in der Tat war drinnen ein höchst ungewöhnlicher Lärm zu vernehmen – ein ständi- ges Heulen und Niesen, und von Zeit zu Zeit ein großer Krach, wie wenn eine Schüssel oder ein Topf in Stü - cke zerbrach.",
+      "english": "Second, because they are making such a racket inside that no one could possibly hear you.” And indeed there was a most unusual noise coming from inside – a constant howling and sneezing, and from time to time a great crash, as if a bowl or pot were breaking into pieces."
+    },
+    {
+      "id": 12,
+      "german": "„Ach bitte,“ sagte Alice, „wie soll ich hineinkommen?“ „Dein Klopfen hätte einen Sinn,“ fuhr der Lakai fort, ohne auf ihre Frage zu achten, „wenn wir die Tür zwischen uns hätten.",
+      "english": "“Oh please,” said Alice, “how am I to get in?” “Your knocking would make sense,” the footman continued, without paying attention to her question, “if we had the door between us."
+    },
+    {
+      "id": 13,
+      "german": "Zum Beispiel, wenn du drinnen wärst, könntest du klopfen und ich könnte dich heraus- lassen, nicht wahr.“ Während er sprach, blickte er die ganze Zeit zum Himmel empor, und dies kam Alice -- 33 of 161 -- - 31 - entschieden unhöflich vor.",
+      "english": "For example, if you were inside, you could knock and I could let you out, right?” While he was speaking, he kept looking up at the sky the whole time, and this seemed decidedly rude to Alice."
+    },
+    {
+      "id": 14,
+      "german": "„Aber vielleicht kann er nichts dafür,“ sagte sie sich, „seine Augen sind so sehr weit oben am Kopf.",
+      "english": "“But perhaps he can’t help it,” she said to herself, “his eyes are so far up on his head."
+    },
+    {
+      "id": 15,
+      "german": "Aber jedenfalls könnte er auf Fragen antworten.",
+      "english": "But in any case, he could answer questions."
+    },
+    {
+      "id": 16,
+      "german": "– Wie soll ich hineinkommen?“ wieder - holte sie laut.",
+      "english": "\"How am I supposed to get in?\" she repeated loudly."
+    },
+    {
+      "id": 17,
+      "german": "„Ich werde hier sitzen,“ bemerkte der Lakai, „bis morgen –“ In diesem Moment öffnete sich die Haustür und ein großer Teller kam herausgesegelt, geradewegs auf den Kopf des Lakaien zu; er streifte knapp seine Nase und zerschellte an einem der Bäume hinter ihm.",
+      "english": "\"I will sit here,\" remarked the footman, \"until tomorrow—\" At that moment, the front door opened and a large plate came sailing out, heading straight for the footman's head; it barely grazed his nose and shattered against one of the trees behind him."
+    },
+    {
+      "id": 18,
+      "german": "„– oder vielleicht übermorgen,“ fuhr der Lakai im gleichen Ton fort, als sei nichts geschehen.",
+      "english": "\"—or maybe the day after tomorrow,\" the footman continued in the same tone as if nothing had happened."
+    },
+    {
+      "id": 19,
+      "german": "„Wie soll ich hineinkommen?“ fragte Alice wieder, diesmal lauter.",
+      "english": "\"How am I supposed to get in?\" Alice asked again, this time louder."
+    },
+    {
+      "id": 20,
+      "german": "„Sollst du überhaupt hineinkommen?“ sagte der Lakai.",
+      "english": "\"Are you even supposed to get in?\" said the footman."
+    },
+    {
+      "id": 21,
+      "german": "„Das ist nämlich die entscheidende Frage.“ Das war sie, ohne Zweifel, aber Alice wollte nicht gern darauf hingewiesen werden.",
+      "english": "\"That is indeed the crucial question.\" It was, without a doubt, but Alice did not want to be reminded of it."
+    },
+    {
+      "id": 22,
+      "german": "„Es ist wirklich schreck- lich,“ murmelte sie vor sich hin, „wie die Geschöpfe hier argumentieren.",
+      "english": "\"It is really terrible,\" she muttered to herself, \"how the creatures here argue."
+    },
+    {
+      "id": 23,
+      "german": "Es reicht, um einen verrückt zu machen.“ Der Lakai hielt es anscheinend für eine gute Gelegenheit, seine Bemerkung zu wiederholen, und zwar mit Vaiationen.",
+      "english": "It is enough to make one crazy.\" The footman apparently thought it was a good opportunity to repeat his remark, and with variations."
+    },
+    {
+      "id": 24,
+      "german": "„Ich werde,“ sagte er, „hier sitzen und sitzen, tagaus, tagein.“ „Aber was soll ich tun?“ sagte Alice.",
+      "english": "\"I will,\" he said, \"sit here and sit here, day in, day out.\" \"But what am I supposed to do?\" said Alice."
+    },
+    {
+      "id": 25,
+      "german": "„Was du willst,“ sagte der Lakai und begann zu pfeifen.",
+      "english": "\"Whatever you want,\" said the footman and began to whistle."
+    },
+    {
+      "id": 26,
+      "german": "„Ach, es hat keinen Zweck, mit ihm zu reden,“ sagte Alice verzweifelt, „er ist völlig verblödet!“ Und sie öff- nete die Tür und trat ein.",
+      "english": "\"Oh, it's no use talking to him,\" said Alice desperately, \"he's completely daft!\" And she opened the door and stepped inside."
+    },
+    {
+      "id": 27,
+      "german": "Die Tür führte direkt in eine große Küche, die von einem Ende zum anderen voll Rauch war; in der Mitte saß auf einem dreibeinigen Schemel die Herzogin und hielt ein Baby auf den Knien; die Köchin lehnte über dem Feuer und rührte in einem großen Kessel herum, der voll Suppe zu sein schien.",
+      "english": "The door led directly into a large kitchen, which was full of smoke from one end to the other; in the middle sat the Duchess on a three-legged stool, holding a baby on her lap; the cook leaned over the fire and stirred in a large cauldron that seemed to be full of soup."
+    },
+    {
+      "id": 28,
+      "german": "„Da ist bestimmt zu viel Pfeffer in der Suppe!“ sagte sich Alice, soweit sie vor lauter Niesen konnte.",
+      "english": "\"There must be too much pepper in the soup!\" Alice told herself, as far as she could manage through all the sneezing."
+    },
+    {
+      "id": 29,
+      "german": "-- 34 of 161 -- - 32 - Es war bestimmt zuviel davon in der Luft.",
+      "english": "-- 34 of 161 -- - 32 - There was certainly too much of it in the air."
+    },
+    {
+      "id": 30,
+      "german": "Sogar die Herzogin nieste gelegentlich, und was das Baby betraf, so nieste und heulte es abwechselnd ohne jede Pause.",
+      "english": "Even the Duchess sneezed occasionally, and as for the baby, it alternated between sneezing and wailing without any pause."
+    },
+    {
+      "id": 31,
+      "german": "Die beiden einzigen Geschöpfe in der Küche, die nicht niesten, waren die Köchin und eine große Katze, die am Herd lag und von einem Ohr zum anderen grinste.",
+      "english": "The only two creatures in the kitchen that were not sneezing were the cook and a large cat that lay by the stove grinning from ear to ear."
+    },
+    {
+      "id": 32,
+      "german": "„Bitte können Sie mir sagen,“ begann Alice ein wenig schüchtern, denn sie war sich nicht ganz sicher, ob es wohlerzogen war, zuerst zu sprechen, „weshalb Ihre Katze so grinst?“ „Es ist eine Cheshire-Katze,“ sagte die Herzogin, „deshalb.",
+      "english": "\"Please can you tell me,\" Alice began a little shyly, as she was not quite sure if it was polite to speak first, \"why your cat is grinning?\" \"It's a Cheshire cat,\" said the Duchess, \"that's why.\""
+    },
+    {
+      "id": 33,
+      "german": "Schwein!“ Sie stieß das letzte Wort mit solch unvermittelter Heftigkeit hervor, daß Alice richtig zusammenfuhr; aber im nächsten Moment sah sie schon, daß es an das Baby adressiert war und nicht an sie; deshalb faßte sie Mut und fing wieder an: „Ich habe nicht gewußt, daß Cheshire-Katzen immer grinsen; tatsächlich habe ich nicht gewußt, daß Katzen überhaupt grinsen können.“ „Alle können es,“ sagte die Herzogin, „und die meisten tun's.“ „Ich kenne keine, die es tut,“ sagte Alice sehr höflich und war recht erfreut, ein Gespräch in Gang gebracht zu haben.",
+      "english": "\"Pig!\" She exclaimed the last word with such sudden intensity that Alice jumped; but in the next moment, she saw that it was addressed to the baby and not to her; therefore, she gathered her courage and started again: \"I didn't know that Cheshire cats always grin; in fact, I didn't know that cats could grin at all.\" \"All can,\" said the Duchess, \"and most do.\""
+    },
+    {
+      "id": 34,
+      "german": "„Du kennst nicht viel,“ sagte die Herzogin, „und das ist eine Tatsache.“ Alice mochte den Ton dieser Bemerkung ganz und gar nicht und dachte, es sei wohl besser, ein anderes Ge - sprächsthema anzuschneiden.",
+      "english": "\"You don't know much,\" said the Duchess, \"and that's a fact.\" Alice did not like the tone of this remark at all and thought it would be better to bring up another topic of conversation."
+    },
+    {
+      "id": 35,
+      "german": "Während sie versuchte, sich eines einfallen zu lassen, nahm die Köchin den Suppenkessel vom Feuer und begann sofort, alles in ihrer Reichweite nach der Herzogin und dem Baby zu werfen – zuerst kamen die Schürhaken, dann folgte ein Hagel von Kasserollen, Tellern und Schüsseln.",
+      "english": "While she was trying to think of one, the cook took the soup pot off the fire and immediately began throwing everything within her reach at the Duchess and the baby – first came the fire irons, then a hail of saucepans, plates, and bowls."
+    },
+    {
+      "id": 36,
+      "german": "Die Herzogin nahm keine Notiz davon, selbst wenn sie getroffen wurde, und das Baby heulte ohnehin schon so stark, daß es völlig unmöglich war festzustellen, ob ihm die Treffer wehtaten oder nicht.",
+      "english": "The Duchess took no notice of it, even when she was hit, and the baby was already crying so loudly that it was completely impossible to tell whether the hits hurt it or not."
+    },
+    {
+      "id": 37,
+      "german": "„Ach bitte, achten Sie doch darauf, was Sie tun!“ rief Alice, die von Entsetzen gepeinigt auf und nieder hüpf - te.",
+      "english": "\"Oh please, pay attention to what you're doing!\" cried Alice, who was jumping up and down in distress."
+    },
+    {
+      "id": 38,
+      "german": "„Oh, sein kostbares Näschen!“, als eine ungewöhnlich große Kasserolle dicht daran vorbeiflog und es bei- nahe weggerissen hätte.",
+      "english": "\"Oh, his precious little nose!\" as an unusually large saucepan flew past it and nearly knocked it off."
+    },
+    {
+      "id": 39,
+      "german": "„Wenn sich jeder um seine eigenen Angelegenheiten kümmerte,“ knurrte die Herzogin heiser, „würde sich die Welt ein gut Teil schneller drehen.“ „Das wäre kein Vorteil,“ sagte Alice, die sehr froh über die Gelegenheit war, ein bißchen mit ihrem Wissen angeben zu können.",
+      "english": "\"If everyone took care of their own business,\" growled the Duchess hoarsely, \"the world would spin a good deal faster.\" \"That wouldn't be an advantage,\" said Alice, who was very glad of the opportunity to show off a bit of her knowledge."
+    },
+    {
+      "id": 40,
+      "german": "„Bedenken Sie doch, welche Schwierigkeiten es mit Tag und Nacht gäbe!",
+      "english": "\"Just think of the difficulties there would be with day and night!"
+    },
+    {
+      "id": 41,
+      "german": "Wie Sie wis - sen, braucht die Erde vierundzwanzig Stunden, um sich um ihre Achs–“ „Apropos Axt,“ sagte die Herzogin, „hack ihr den Kopf ab!“ Alice warf einen recht ängstlichen Blick auf die Köchin, um zu sehen, ob sie den Wink verstanden hatte, aber die Köchin war damit beschäftigt, die Suppe umzurühren, und schien nicht zuzuhören, deshalb begann sie wieder: „Vierundzwanzig Stunden, glaube ich, oder sind es zwölf?",
+      "english": "As you know, the Earth takes twenty-four hours to rotate on its axis—\" \"By the way, axe,\" said the Duchess, \"chop off its head!\" Alice cast a rather anxious glance at the cook to see if she had understood the hint, but the cook was busy stirring the soup and seemed not to be listening, so she began again: \"Twenty-four hours, I believe, or is it twelve?"
+    },
+    {
+      "id": 42,
+      "german": "Ich –“ „Ach laß mich damit in Ruhe,“ sagte die Herzogin, „Zahlen konnte ich noch nie ausstehen!“ Und mit diesen Worten begann sie wieder ihr Kind zu schaukeln, wobei sie ihm eine Art Wiegenlied vorsang und am Ende jeder Zeile einen heftigen Stoß versetzte: – „Sprich grob mit deinem kleinen Sohn Und hau ihn, wenn er niest; Er tut es ja nur dir zum Hohn Und weil es dich verdrießt.“ -- 35 of 161 -- - 33 - Refrain (in den die Köchin und das Baby einfielen): – „Wau!",
+      "english": "I—\" \"Oh leave me alone with that,\" said the Duchess, \"I've never been able to stand numbers!\" And with these words, she began rocking her child again, singing it some sort of lullaby and giving it a violent shake at the end of each line: – \"Speak roughly to your little boy And beat him when he sneezes; He only does it to annoy And because he makes you cross.\" -- 35 of 161 -- - 33 - Chorus (in which the cook and the baby joined in): – \"Wow!"
+    },
+    {
+      "id": 43,
+      "german": "Wau!",
+      "english": "Wow!"
+    },
+    {
+      "id": 44,
+      "german": "Wau!“ Während die Herzogin die zweite Strophe des Liedes sang, stieß sie das Baby weiter heftig auf und ab, und das arme kleine Ding heulte so, daß Alice kaum die Worte verstehen konnte: – „Ich spreche streng mit meinem Sohn Und hau ihn, wenn er niest; Er mag den Pfeffer nämlich schon Und ziert sich nur, das Biest!“ Refrain „Wau!",
+      "english": "Wow!\" While the Duchess sang the second verse of the song, she continued to shake the baby violently up and down, and the poor little thing cried so much that Alice could hardly understand the words: – \"I speak sternly to my son And beat him when he sneezes; He likes the pepper, you see, And only pretends, the beast!\" Chorus \"Wow!"
+    },
+    {
+      "id": 45,
+      "german": "Wau!",
+      "english": "Wow!"
+    },
+    {
+      "id": 46,
+      "german": "Wau!“ „Hier!",
+      "english": "Wow!\" \"Here!"
+    },
+    {
+      "id": 47,
+      "german": "Du kannst es eine Weile halten, wenn du willst,“ sagte die Herzogin zu Alice, indem sie ihr das Baby entgegenschleuderte.",
+      "english": "\"You can hold it for a while if you want,\" said the Duchess to Alice, throwing the baby at her."
+    },
+    {
+      "id": 48,
+      "german": "„Ich muß gehen und mich fertigmachen, um mit der Königin Krocket zu spielen,“ und sie eilte aus dem Raum.",
+      "english": "\"I must go and get ready to play croquet with the Queen,\" and she hurried out of the room."
+    },
+    {
+      "id": 49,
+      "german": "Die Köchin warf ihr eine Bratpfanne nach, verfehlte sie aber knapp.",
+      "english": "The cook threw a frying pan at her but just missed."
+    },
+    {
+      "id": 50,
+      "german": "Alice fing das Baby mit einiger Mühe auf, denn es war ein seltsam geformtes kleines Geschöpf und streckte seine Arme und Beine in alle Richtungen aus, „– genau wie ein Seestern,“ dachte Alice.",
+      "english": "Alice caught the baby with some difficulty, for it was a strangely shaped little creature and stretched its arms and legs in all directions, \"– just like a starfish,\" thought Alice."
+    },
+    {
+      "id": 51,
+      "german": "Das arme kleine Ding schnaufte wie eine Dampfmaschine, als sie es auffing, und krümmte sich zusammen und streckte sich wieder, so daß sie es im ersten Moment kaum halten konnte.",
+      "english": "The poor little thing puffed like a steam engine as she caught it, curling up and stretching out again, so that she could hardly hold it at first."
+    },
+    {
+      "id": 52,
+      "german": "Sobald sie die richtige Methode herausgefunden hatte (man mußte es zu einer Art Knoten zusammenbinden und dann am rechten Ohr und linken Fuß festhalten, damit es nicht wieder aufging), trug sie es an die frische Luft.",
+      "english": "As soon as she had figured out the right method (one had to tie it into a sort of knot and then hold it by the right ear and left foot to keep it from coming undone again), she carried it out into the fresh air."
+    },
+    {
+      "id": 53,
+      "german": "„Wenn ich dieses Kind nicht mit mir nehme,“ dachte Alice, „werden sie es sicher in ein oder zwei Ta- gen umgebracht haben.",
+      "english": "\"If I don't take this child with me,\" thought Alice, \"they will surely have it killed in a day or two."
+    },
+    {
+      "id": 54,
+      "german": "Wäre es nicht Mord, es dazulassen?“ Die letzten Worte sagte sie laut, und das kleine Ding grunzte zur Antwort (zu niesen hatte es jetzt aufgehört).",
+      "english": "Wouldn't it be murder to leave it there?\" She said the last words aloud, and the little thing grunted in response (it had stopped sneezing now)."
+    },
+    {
+      "id": 55,
+      "german": "„Grunze nicht,“ sagte Alice, „das ist keines- wegs eine angemessene Ausdrucksweise.“ Das Baby grunzte wieder, und Alice sah ihm sehr ängstlich ins Gesicht, um festzustellen, was mit ihm los sei.",
+      "english": "\"Don't grunt,\" said Alice, \"that's not at all an appropriate way to express yourself.\" The baby grunted again, and Alice looked very anxiously into its face to see what was the matter with it."
+    },
+    {
+      "id": 56,
+      "german": "Da gab es keinen Zweifel, daß es eine sehr aufgebogene Nase hatte, viel eher eine Schnauze als eine richtige Nase; auch waren seine Augen ungewöhnlich klein für ein Baby: alles in allem gefiel Alice sein Aus- sehen ganz und gar nicht.",
+      "english": "There was no doubt that it had a very turned-up nose, much more of a snout than a proper nose; its eyes were also unusually small for a baby: all in all, Alice did not like its appearance at all."
+    },
+    {
+      "id": 57,
+      "german": "„Aber vielleicht hat es nur geschluchzt,“ dachte sie und blickte wieder in seine Au - gen, um zu sehen, ob Tränen darin waren.",
+      "english": "\"But perhaps it just sobbed,\" she thought, looking again into its eyes to see if there were any tears in them."
+    },
+    {
+      "id": 58,
+      "german": "Nein, da waren keine Tränen.",
+      "english": "No, there were no tears."
+    },
+    {
+      "id": 59,
+      "german": "„Wenn du dich in ein Schwein verwandeln willst, mein Schatz,“ sagte Alice ernsthaft, „habe ich nichts mehr mit dir zu schaffen.",
+      "english": "\"If you want to turn into a pig, my dear,\" said Alice seriously, \"I have nothing more to do with you."
+    },
+    {
+      "id": 60,
+      "german": "Überleg' dir's beizeiten!“ Das arme kleine Ding schluchzte wieder (oder grunzte, das war unmöglich zu unterscheiden), und sie gingen eine Weile schwei - gend weiter.",
+      "english": "Think about it in time!\" The poor little thing sobbed again (or grunted, it was impossible to tell), and they walked on for a while in silence."
+    },
+    {
+      "id": 61,
+      "german": "Alice fing gerade an zu überlegen, „Was soll ich nur mit diesem Geschöpf machen, wenn ich es nach Hause bringe?“, als es erneut grunzte, und so heftig, daß Alice voller Angst in sein Gesicht schaute.",
+      "english": "Alice had just begun to think, \"What am I going to do with this creature when I bring it home?\" when it grunted again, so forcefully that Alice looked at its face in fear."
+    },
+    {
+      "id": 62,
+      "german": "Diesmal gab es keinen Zweifel: es war nicht mehr und nicht weniger als ein Schwein, und sie hatte das Gefühl, es wäre ziemlich unsinnig, wenn sie es noch länger herumtrüge.",
+      "english": "This time there was no doubt: it was nothing more and nothing less than a pig, and she felt it would be quite silly to carry it around any longer."
+    },
+    {
+      "id": 63,
+      "german": "-- 36 of 161 -- - 34 - So setzte sie das kleine Geschöpf ab und war recht erleichtert zu sehen, wie es still in den Wald davontrabte.",
+      "english": "So she set the little creature down and was quite relieved to see it trot quietly into the woods."
+    },
+    {
+      "id": 64,
+      "german": "„Wäre es größer geworden,“ sagte sie sich, „hätte es sich zu einem furchtbar häßlichen Kind entwickelt; aber ich glaube, es wird ein ziemlich hübsches Schwein.“ Und sie begann, an andere Kinder zu denken, die sie kannte, und die sich als Schweine recht gut gemacht hätten, und sie war gerade dabei zu sagen: „Wenn man nur die richtige Methode wüßte, sie zu verwandeln –“, da erschrak sie ein wenig, als sie die Cheshire-Katze nur wenige Meter entfernt auf einem Ast sitzen sah.",
+      "english": "\"If it had grown larger,\" she said to herself, \"it would have turned into a terribly ugly child; but I believe it will be a rather pretty pig.\" And she began to think of other children she knew who would have made quite good pigs, and she was just about to say, \"If only one knew the right method to transform them—\" when she was a little startled to see the Cheshire Cat sitting on a branch just a few feet away."
+    },
+    {
+      "id": 65,
+      "german": "-- 37 of 161 -- - 35 - Als die Katze Alice erblickte, grinste sie nur.",
+      "english": "When the cat saw Alice, it just grinned."
+    },
+    {
+      "id": 66,
+      "german": "Sie sieht gutmütig aus, dachte Alice; doch sie hatte sehr lange Krallen und mächtig viele Zähne, so daß Alice das Gefühl hatte, man müsse sie mit Respekt behandeln.",
+      "english": "It looks good-natured, thought Alice; but it had very long claws and a lot of teeth, so Alice felt that one should treat it with respect."
+    },
+    {
+      "id": 67,
+      "german": "„Cheshire-Mieze,“ begann sie recht schüchtern, denn sie wußte ja nicht, ob die Katze diese Bezeichnung mochte; die Katze grinste jedoch nur ein wenig breiter.",
+      "english": "\"Cheshire kitty,\" she began quite shyly, for she didn't know if the cat liked that name; however, the cat just grinned a little wider."
+    },
+    {
+      "id": 68,
+      "german": "„Na, soweit ist sie's zufrieden,“ dachte Alice und fuhr fort: „Würdest du mir bitte sagen, welchen Weg ich von hier einschlagen soll?“ „Das hängt vor allem davon ab, wo du hinkommen willst,“ sagte die Katze.",
+      "english": "\"Well, she's satisfied so far,\" thought Alice and continued, \"Could you please tell me which way I should go from here?\" \"That depends a great deal on where you want to get to,\" said the cat."
+    },
+    {
+      "id": 69,
+      "german": "„Das ist mir ziemlich egal –“ sagte Alice.",
+      "english": "\"I don't much care where—\" said Alice."
+    },
+    {
+      "id": 70,
+      "german": "„Dann spielt es keine Rolle, welchen Weg du einschlägst,“ sagte die Katze.",
+      "english": "\"Then it doesn't matter which way you go,\" said the cat."
+    },
+    {
+      "id": 71,
+      "german": "„– solange ich irgendwohin komme,“ fügte Alice als Erklärung hinzu.",
+      "english": "\"—as long as I get somewhere,\" Alice added as an explanation."
+    },
+    {
+      "id": 72,
+      "german": "„Oh, dessen kannst du sicher sein,“ sagte die Katze, „wenn du nur weit genug gehst.“ Alice sah ein, daß dies nicht geleugnet werden konnte, und so versuchte sie es mit einer anderen Frage.",
+      "english": "\"Oh, you can be sure of that,\" said the cat, \"if you only walk long enough.\" Alice realized that this could not be denied, so she tried another question."
+    },
+    {
+      "id": 73,
+      "german": "„Was für Leute wohnen denn in dieser Gegend?“ „In dieser Richtung,“ sagte die Katze und schwenkte die rechte Pfote, „wohnt ein Hutmacher; und in dieser Richtung,“ sie schwenkte die andere Pfote, „wohnt ein Märzhase.",
+      "english": "\"What kind of people live around here?\" \"In that direction,\" said the cat, waving its right paw, \"lives a hat maker; and in that direction,\" it waved its other paw, \"lives a March Hare."
+    },
+    {
+      "id": 74,
+      "german": "Besuche, wen du willst: verrückt sind sie beide.“ -- 38 of 161 -- - 36 - „Aber ich möchte nicht unter verrückte Leute geraten,“ bemerkte Alice.",
+      "english": "Visit whom you like: they're both mad.\" \"But I don't want to go among mad people,\" Alice remarked."
+    },
+    {
+      "id": 75,
+      "german": "„Oh, da kommst du nicht drum herum,“ sagte die Katze.",
+      "english": "\"Oh, you can't help that,\" said the cat."
+    },
+    {
+      "id": 76,
+      "german": "„Wie sind hier alle verrückt.",
+      "english": "\"Everyone here is crazy.\""
+    },
+    {
+      "id": 77,
+      "german": "Ich bin verrückt.",
+      "english": "\"I am crazy.\""
+    },
+    {
+      "id": 78,
+      "german": "Du bist verrückt.“ „Woher weißt du, daß ich verrückt bin?“ sagte Alice.",
+      "english": "\"You are crazy.\" \"How do you know that I am crazy?\" said Alice."
+    },
+    {
+      "id": 79,
+      "german": "„Du mußt es sein,“ sagte die Katze, „sonst wärst du nicht hergekommen.“ Alice hielt das keineswegs für einen Beweis; sie fuhr jedoch fort: „Und woher weißt du, daß du verrückt bist?“ „Fangen wir damit an,“ sagte die Katze, „ein Hund ist nicht verrückt.",
+      "english": "\"You must be,\" said the cat, \"otherwise you wouldn't have come here.\" Alice did not consider that a proof at all; however, she continued: \"And how do you know that you are crazy?\" \"Let's start with that,\" said the cat, \"a dog is not crazy."
+    },
+    {
+      "id": 80,
+      "german": "Gibst du's zu?“ „Na schön,“ sagte Alice.",
+      "english": "\"Do you admit it?\" \"Alright,\" said Alice."
+    },
+    {
+      "id": 81,
+      "german": "„Nun,“ fuhr die Katze fort, „du weißt, daß ein Hund knurrt, wenn er wütend ist, und mit dem Schwanz we- delt, wenn er sich freut.",
+      "english": "\"Well,\" the cat continued, \"you know that a dog growls when it is angry, and wags its tail when it is happy."
+    },
+    {
+      "id": 82,
+      "german": "Ich hingegen knurre, wenn ich mich freue, und wedele mit dem Schwanz, wenn ich wütend bin.",
+      "english": "I, on the other hand, growl when I am happy, and wag my tail when I am angry."
+    },
+    {
+      "id": 83,
+      "german": "Deshalb bin ich verrückt.“ „Ich nenne das Schnurren, nicht Knurren,“ sagte Alice.",
+      "english": "That is why I am crazy.\" \"I call that purring, not growling,\" said Alice."
+    },
+    {
+      "id": 84,
+      "german": "„Nenne es wie du willst,“ sagte die Katze.",
+      "english": "\"Call it what you like,\" said the cat."
+    },
+    {
+      "id": 85,
+      "german": "„Spielst du heute mit der Königin Krocket?“ „Ich möchte es sehr gern,“ sagte Alice, „aber ich bin noch nicht eingeladen worden.“ „Wir sehen uns dort,“ sagte die Katze und verschwand.",
+      "english": "\"Are you playing croquet with the Queen today?\" \"I would very much like to,\" said Alice, \"but I haven't been invited yet.\" \"We'll see each other there,\" said the cat and disappeared."
+    },
+    {
+      "id": 86,
+      "german": "Alice war davon nicht sehr überrascht, denn sie hatte sich schon ganz gut daran gewöhnt, daß seltsame Dinge passierten.",
+      "english": "Alice was not very surprised by that, as she had already gotten quite used to strange things happening."
+    },
+    {
+      "id": 87,
+      "german": "Während sie noch auf die Stelle schaute, wo die Katze gesessen hatte, erschien diese plötzlich wieder.",
+      "english": "While she was still looking at the spot where the cat had been sitting, it suddenly appeared again."
+    },
+    {
+      "id": 88,
+      "german": "„Übrigens, was wurde aus dem Baby?“ fragte die Katze.",
+      "english": "\"By the way, what happened to the baby?\" asked the cat."
+    },
+    {
+      "id": 89,
+      "german": "„Beinahe hätte ich vergessen zu fragen.“ „Es ist zum Schwein geworden,“ antwortete Alice ganz ruhig, als sei die Katze auf natürliche Weise zurück- gekommen.",
+      "english": "\"I almost forgot to ask.\" \"It has turned into a pig,\" Alice replied quite calmly, as if the cat had returned in a natural way."
+    },
+    {
+      "id": 90,
+      "german": "„Das habe ich mir gedacht,“ sagte die Katze und verschwand wieder.",
+      "english": "\"I thought so,\" said the cat and disappeared again."
+    },
+    {
+      "id": 91,
+      "german": "Alice wartete eine Zeitlang, weil sie mit der Rückkehr der Katze rechnete, aber sie erschien nicht, und nach ein paar Minuten schlug Alice die Richtung ein, in der der Märzhase wohnen sollte.",
+      "english": "Alice waited for a while because she expected the cat to return, but it did not appear, and after a few minutes, Alice took the direction in which the March Hare was supposed to live."
+    },
+    {
+      "id": 92,
+      "german": "„Hutmacher habe ich schon gesehen,“ sagte sie sich, „der Märzhase wird weitaus interessanter sein, und da wir jetzt Mai haben, ist er vielleicht nicht total verrückt – wenigstens nicht so verrückt, wie er im März war.“ Als sie dies sagte, blickte sie hoch, und da saß die Katze wieder auf einem Ast.",
+      "english": "\"I've already seen the Hatter,\" she said to herself, \"the March Hare will be far more interesting, and since it's now May, he might not be completely mad – at least not as mad as he was in March.\" As she said this, she looked up, and there sat the cat again on a branch."
+    },
+    {
+      "id": 93,
+      "german": "„Hast du ,Schwein´ oder ,Stein´ gesagt?“ fragte die Katze.",
+      "english": "\"Did you say 'pig' or 'stone'?\" asked the cat."
+    },
+    {
+      "id": 94,
+      "german": "„Ich habe ,Schwein´ gesagt,“ erwiderte Alice, „und ich wollte, du würdest nicht andauernd so plötzlich auf- tauchen und verschwinden.",
+      "english": "\"I said 'pig,'\" replied Alice, \"and I wish you wouldn't keep appearing and disappearing so suddenly.\""
+    },
+    {
+      "id": 95,
+      "german": "Du machst einen ganz schwindlig.“ „Na gut,“ sagte die Katze, und diesmal verschwand sie ganz langsam, indem sie mit dem Schwanzende be - gann und mit dem Grinsen aufhörte, das noch eine Weile zurückblieb, nachdem der Rest schon verschwun- den war.",
+      "english": "\"You make me quite dizzy.\" \"Well,\" said the cat, and this time it disappeared very slowly, starting with its tail and ending with the grin that lingered for a while after the rest had already vanished."
+    },
+    {
+      "id": 96,
+      "german": "„Ich habe oft eine Katze ohne Grinsen gesehen,“ dachte Alice, „aber ein Grinsen ohne Katze!",
+      "english": "\"I've often seen a cat without a grin,\" thought Alice, \"but a grin without a cat!"
+    },
+    {
+      "id": 97,
+      "german": "Das ist die selt - samste Sache, die ich je in meinem Leben gesehen habe.“ -- 39 of 161 -- - 37 - Sie war noch nicht weit gegangen, als sie das Haus des Märzhasen erblickte; sie meinte, es müsse das richtige Haus sein, denn die Schornsteine waren wie Ohren geformt und das Dach war mit Fell gedeckt.",
+      "english": "That is the strangest thing I have ever seen in my life.\" -- 39 of 161 -- - 37 - She had not gone far when she spotted the March Hare's house; she thought it must be the right house because the chimneys were shaped like ears and the roof was covered with fur."
+    },
+    {
+      "id": 98,
+      "german": "Es war ein so großes Haus, daß sie nicht näher herangehen wollte, ehe sie etwas von der linken Seite des Pilzes geknabbert hatte und rund 60 Zentimeter groß geworden war; selbst jetzt näherte sie sich ziemlich schüch- tern, indem sie sich sagte: „Vielleicht ist er noch immer völlig verrückt!",
+      "english": "It was such a large house that she did not want to approach any closer until she had nibbled a bit from the left side of the mushroom and had grown about 60 centimeters tall; even now she approached rather shyly, saying to herself, \"Maybe he is still completely mad!"
+    },
+    {
+      "id": 99,
+      "german": "Ich wünschte fast, ich wäre statt- dessen den Hutmacher besuchen gegangen!“ -- 40 of 161 --",
+      "english": "I almost wish I had gone to visit the Hatter instead!\" -- 40 of 161 --"
+    }
+  ],
+  "bookId": "alice-im-wunderland",
+  "chapterNumber": 6
+}

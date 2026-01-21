@@ -6,79 +6,80 @@
   "difficulty": "B2",
   "isMultiChapter": true,
   "translate": true,
-  "deeplApiKey": "YOUR_DEEPL_API_KEY_HERE",
+  "translationProvider": "openai",
+  "openaiApiKey": "",
   "chapters": [
     {
-      "titleGerman": "1. Hinunter in den Kaninchenbau",
-      "titleEnglish": "1. Down the Rabbit Hole",
-      "startPage": 10,
-      "endPage": 15
+      "titleGerman": "1. Das Kaninchenloch hinab",
+      "titleEnglish": "1. Down the Rabbit-Hole",
+      "startPage": 5,
+      "endPage": 9
     },
     {
-      "titleGerman": "2. Der Thränenpfuhl",
+      "titleGerman": "2. Der Tränenteich",
       "titleEnglish": "2. The Pool of Tears",
-      "startPage": 16,
-      "endPage": 22
+      "startPage": 10,
+      "endPage": 14
     },
     {
-      "titleGerman": "3. Caucus-Rennen, und was daraus wird",
+      "titleGerman": "3. Ein Nominierungswettlauf und eine traurige Geschichte",
       "titleEnglish": "3. A Caucus-Race and a Long Tale",
-      "startPage": 23,
-      "endPage": 29
+      "startPage": 15,
+      "endPage": 19
     },
     {
-      "titleGerman": "4. Die Wohnung des Kaninchens",
+      "titleGerman": "4. Das Kaninchen schickt den kleinen Bill",
       "titleEnglish": "4. The Rabbit Sends in a Little Bill",
-      "startPage": 30,
-      "endPage": 38
+      "startPage": 20,
+      "endPage": 25
     },
     {
-      "titleGerman": "5. Guter Rath von einer Raupe",
+      "titleGerman": "5. Guter Rat von einer Raupe",
       "titleEnglish": "5. Advice from a Caterpillar",
-      "startPage": 39,
-      "endPage": 47
+      "startPage": 26,
+      "endPage": 32
     },
     {
-      "titleGerman": "6. Ferkel und Pfeffer",
+      "titleGerman": "6. Pfeffer und Schwein",
       "titleEnglish": "6. Pig and Pepper",
-      "startPage": 48,
-      "endPage": 56
+      "startPage": 33,
+      "endPage": 40
     },
     {
-      "titleGerman": "7. Die tolle Theegesellschaft",
+      "titleGerman": "7. Eine verrückte Teegesellschaft",
       "titleEnglish": "7. A Mad Tea-Party",
-      "startPage": 57,
-      "endPage": 65
+      "startPage": 41,
+      "endPage": 46
     },
     {
-      "titleGerman": "8. Das Croquetfeld der Königin",
-      "titleEnglish": "8. The Queen's Croquet Ground",
-      "startPage": 66,
-      "endPage": 75
+      "titleGerman": "8. Der Krocketplatz der Königin",
+      "titleEnglish": "8. The Queen's Croquet-Ground",
+      "startPage": 47,
+      "endPage": 52
     },
     {
-      "titleGerman": "9. Die Geschichte der falschen Schildkröte",
+      "titleGerman": "9. Die Geschichte der falschen Suppenschildkröte",
       "titleEnglish": "9. The Mock Turtle's Story",
-      "startPage": 76,
-      "endPage": 86
+      "startPage": 53,
+      "endPage": 58
     },
     {
-      "titleGerman": "10. Das Hummerballet",
+      "titleGerman": "10. Die Hummer-Quadrille",
       "titleEnglish": "10. The Lobster Quadrille",
-      "startPage": 87,
-      "endPage": 95
+      "startPage": 59,
+      "endPage": 64
     },
     {
       "titleGerman": "11. Wer hat die Törtchen gestohlen?",
       "titleEnglish": "11. Who Stole the Tarts?",
-      "startPage": 96,
-      "endPage": 106
+      "startPage": 65,
+      "endPage": 69
     },
     {
-      "titleGerman": "12. Alice's Zeugenverhör",
+      "titleGerman": "12. Alice's Aussage",
       "titleEnglish": "12. Alice's Evidence",
-      "startPage": 107,
-      "endPage": 130
+      "startPage": 70,
+      "endPage": 73
     }
   ]
 }
