@@ -3,9 +3,9 @@
   "titleGerman": "Alice im Wunderland",
   "titleEnglish": "Alice in Wonderland",
   "author": "Lewis Carroll",
-  "wordCount": 25437,
+  "wordCount": 24912,
   "difficulty": "B2",
-  "sentenceCount": 981,
+  "sentenceCount": 973,
   "isMultiChapter": true,
   "chapterCount": 12,
   "chapters": [
@@ -14,47 +14,47 @@
       "chapterNumber": 1,
       "titleGerman": "Das Kaninchenloch hinab",
       "titleEnglish": "Down the Rabbit-Hole",
-      "wordCount": 2077,
-      "sentenceCount": 62
+      "wordCount": 2030,
+      "sentenceCount": 61
     },
     {
       "id": "alice-im-wunderland-ch2",
       "chapterNumber": 2,
       "titleGerman": "Der Tränenteich",
       "titleEnglish": "The Pool of Tears",
-      "wordCount": 2093,
-      "sentenceCount": 77
+      "wordCount": 2056,
+      "sentenceCount": 76
     },
     {
       "id": "alice-im-wunderland-ch3",
       "chapterNumber": 3,
       "titleGerman": "Ein Nominierungswettlauf und eine traurige Geschichte",
       "titleEnglish": "A Caucus-Race and a Long Tale",
-      "wordCount": 1687,
-      "sentenceCount": 68
+      "wordCount": 1650,
+      "sentenceCount": 67
     },
     {
       "id": "alice-im-wunderland-ch4",
       "chapterNumber": 4,
       "titleGerman": "Das Kaninchen schickt den kleinen Bill",
       "titleEnglish": "The Rabbit Sends in a Little Bill",
-      "wordCount": 2599,
-      "sentenceCount": 102
+      "wordCount": 2556,
+      "sentenceCount": 101
     },
     {
       "id": "alice-im-wunderland-ch5",
       "chapterNumber": 5,
       "titleGerman": "Guter Rat von einer Raupe",
       "titleEnglish": "Advice from a Caterpillar",
-      "wordCount": 2116,
-      "sentenceCount": 77
+      "wordCount": 2059,
+      "sentenceCount": 76
     },
     {
       "id": "alice-im-wunderland-ch6",
       "chapterNumber": 6,
       "titleGerman": "Pfeffer und Schwein",
       "titleEnglish": "Pig and Pepper",
-      "wordCount": 2589,
+      "wordCount": 2528,
       "sentenceCount": 99
     },
     {
@@ -62,23 +62,23 @@
       "chapterNumber": 7,
       "titleGerman": "Eine verrückte Teegesellschaft",
       "titleEnglish": "A Mad Tea-Party",
-      "wordCount": 2260,
-      "sentenceCount": 100
+      "wordCount": 2219,
+      "sentenceCount": 99
     },
     {
       "id": "alice-im-wunderland-ch8",
       "chapterNumber": 8,
       "titleGerman": "Der Krocketplatz der Königin",
       "titleEnglish": "The Queen's Croquet-Ground",
-      "wordCount": 2481,
-      "sentenceCount": 77
+      "wordCount": 2436,
+      "sentenceCount": 76
     },
     {
       "id": "alice-im-wunderland-ch9",
       "chapterNumber": 9,
       "titleGerman": "Die Geschichte der falschen Suppenschildkröte",
       "titleEnglish": "The Mock Turtle's Story",
-      "wordCount": 2308,
+      "wordCount": 2259,
       "sentenceCount": 90
     },
     {
@@ -86,7 +86,7 @@
       "chapterNumber": 10,
       "titleGerman": "Die Hummer-Quadrille",
       "titleEnglish": "The Lobster Quadrille",
-      "wordCount": 2021,
+      "wordCount": 1978,
       "sentenceCount": 101
     },
     {
@@ -94,7 +94,7 @@
       "chapterNumber": 11,
       "titleGerman": "Wer hat die Törtchen gestohlen?",
       "titleEnglish": "Who Stole the Tarts?",
-      "wordCount": 1845,
+      "wordCount": 1808,
       "sentenceCount": 76
     },
     {
@@ -102,8 +102,8 @@
       "chapterNumber": 12,
       "titleGerman": "Alice's Aussage",
       "titleEnglish": "Alice's Evidence",
-      "wordCount": 1361,
-      "sentenceCount": 52
+      "wordCount": 1333,
+      "sentenceCount": 51
     }
   ]
 }
