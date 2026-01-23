@@ -3,7 +3,7 @@
   "titleGerman": "Der Tränenteich",
   "titleEnglish": "The Pool of Tears",
   "author": "Lewis Carroll",
-  "wordCount": 2093,
+  "wordCount": 2056,
   "difficulty": "B2",
   "sentences": [
     {
@@ -78,7 +78,7 @@
     },
     {
       "id": 15,
-      "german": "Hör' sofort auf, sag' ich dir!“ Aber dennoch weinte sie weiter und vergoß literweise Tränen, bis sich ein großer Teich um sie herum gebildet hatte, der einen guten Meter tief war und den halben Boden des -- 10 of 161 -- - 8 - Saales bedeckte.",
+      "german": "Hör' sofort auf, sag' ich dir!“ Aber dennoch weinte sie weiter und vergoß literweise Tränen, bis sich ein großer Teich um sie herum gebildet hatte, der einen guten Meter tief war und den halben Boden des Saales bedeckte.",
       "english": "Stop it at once, I tell you!\" But still, she continued to cry and shed liters of tears until a large pool had formed around her, which was about a meter deep and covered half the floor of the hall."
     },
     {
@@ -178,8 +178,8 @@
     },
     {
       "id": 35,
-      "german": "Ich werde ,Wie sich das kleine Bienchen –´ aufsagen,“ und sie faltete die Hände vor dem Schoß, wie wenn sie ihre Schulaufgabe vortrüge, und begann, es aufzusagen, aber ihre Stimme klang heiser und fremd, -- 11 of 161 -- - 9 - und die Worte kamen nicht so heraus, wie sie sonst zu tun pflegten: „Wie sich das kleine Krokodil Den blanken Schwanz poliert, Mit Wassergüssen aus dem Nil Die goldnen Schuppen schmiert!",
-      "english": "I will recite, “How the little bee,” and she folded her hands in her lap as if she were presenting her homework and began to recite it, but her voice sounded hoarse and strange, -- 11 of 161 -- - 9 - and the words did not come out as they usually did: “How the little crocodile Polishes its shiny tail, With little streams from the Nile It smears the golden scales!"
+      "german": "Ich werde ,Wie sich das kleine Bienchen –´ aufsagen,“ und sie faltete die Hände vor dem Schoß, wie wenn sie ihre Schulaufgabe vortrüge, und begann, es aufzusagen, aber ihre Stimme klang heiser und fremd, und die Worte kamen nicht so heraus, wie sie sonst zu tun pflegten: „Wie sich das kleine Krokodil Den blanken Schwanz poliert, Mit Wassergüssen aus dem Nil Die goldnen Schuppen schmiert!",
+      "english": "I will recite, “How the little bee,” and she folded her hands in her lap as if she were presenting her homework and began to recite it, but her voice sounded hoarse and strange, and the words did not come out as they usually did: “How the little crocodile Polishes its shiny tail, With little streams from the Nile It smears the golden scales!"
     },
     {
       "id": 36,
@@ -263,8 +263,8 @@
     },
     {
       "id": 52,
-      "german": "Aber heute ist alles sonderbar!“ -- 12 of 161 -- - 10 - Da hörte sie ein Stückchen entfernt etwas plätschern und sie schwamm darauf zu, um herauszufinden, was es sei; zuerst dachte sie, es müsse ein Walroß oder ein Flußpferd sein, aber dann fiel ihr ein, wie klein sie jetzt war, und bald entdeckte sie, daß es sich um eine Maus handelte, die ebenso wie sie selbst hineingefallen war.",
-      "english": "But today everything is strange!\" -- 12 of 161 -- - 10 - Then she heard something splashing a little way off, and she swam towards it to find out what it was; at first, she thought it must be a walrus or a hippopotamus, but then she remembered how small she was now, and soon discovered that it was a mouse that had fallen in just like herself."
+      "german": "Aber heute ist alles sonderbar!“ Da hörte sie ein Stückchen entfernt etwas plätschern und sie schwamm darauf zu, um herauszufinden, was es sei; zuerst dachte sie, es müsse ein Walroß oder ein Flußpferd sein, aber dann fiel ihr ein, wie klein sie jetzt war, und bald entdeckte sie, daß es sich um eine Maus handelte, die ebenso wie sie selbst hineingefallen war.",
+      "english": "But today everything is strange!\" Then she heard something splashing a little way off, and she swam towards it to find out what it was; at first, she thought it must be a walrus or a hippopotamus, but then she remembered how small she was now, and soon discovered that it was a mouse that had fallen in just like herself."
     },
     {
       "id": 53,
@@ -323,7 +323,7 @@
     },
     {
       "id": 64,
-      "german": "Sie ist ein so liebes, stilles Ding,“ fuhr Alice fort, halb zu sich, während sie träge in dem Teich herumschwamm, -- 13 of 161 -- - 11 - „und sie sitzt so süß schnurrend am Feuer, leckt sich die Pfoten und wäscht sich das Gesicht – und sie ist so schön weich zum Schmusen – und sie ist ganz vorzüglich beim Mäusefangen – oh, ich bitte um Verzeihung,“ rief Alice wieder, denn diesmal sträubten sich der Maus sämtliche Haare, und Alice hatte das Gefühl, sie müsse wirklich gekränkt sein.",
+      "german": "Sie ist ein so liebes, stilles Ding,“ fuhr Alice fort, halb zu sich, während sie träge in dem Teich herumschwamm, „und sie sitzt so süß schnurrend am Feuer, leckt sich die Pfoten und wäscht sich das Gesicht – und sie ist so schön weich zum Schmusen – und sie ist ganz vorzüglich beim Mäusefangen – oh, ich bitte um Verzeihung,“ rief Alice wieder, denn diesmal sträubten sich der Maus sämtliche Haare, und Alice hatte das Gefühl, sie müsse wirklich gekränkt sein.",
       "english": "\"She is such a lovely, quiet thing,\" Alice continued, half to herself, as she lazily swam around in the pond, \"and she sits so sweetly purring by the fire, licking her paws and washing her face – and she is so beautifully soft to cuddle – and she is quite excellent at catching mice – oh, I beg your pardon,\" Alice exclaimed again, for this time the mouse's fur bristled, and Alice felt that she must really be offended."
     },
     {
@@ -385,11 +385,6 @@
       "id": 76,
       "german": "Alice führte sie an, und die ganze Gesellschaft schwamm ans Ufer.",
       "english": "Alice led them, and the whole company swam to the shore."
-    },
-    {
-      "id": 77,
-      "german": "-- 14 of 161 --",
-      "english": "-- 14 of 161 --"
     }
   ],
   "bookId": "alice-im-wunderland",

@@ -3,7 +3,7 @@
   "titleGerman": "Das Kaninchen schickt den kleinen Bill",
   "titleEnglish": "The Rabbit Sends in a Little Bill",
   "author": "Lewis Carroll",
-  "wordCount": 2599,
+  "wordCount": 2556,
   "difficulty": "B2",
   "sentences": [
     {
@@ -113,7 +113,7 @@
     },
     {
       "id": 22,
-      "german": "Sie setzte schnell die Flasche ab, indem sie sich sagte: „Das ist genug – ich -- 20 of 161 -- - 18 - hoffe, ich wachse nicht mehr weiter – jetzt komme ich nicht mehr zur Tür hinaus – ich wollte, ich hätte nicht soviel getrunken!“ Aber ach!",
+      "german": "Sie setzte schnell die Flasche ab, indem sie sich sagte: „Das ist genug – ich hoffe, ich wachse nicht mehr weiter – jetzt komme ich nicht mehr zur Tür hinaus – ich wollte, ich hätte nicht soviel getrunken!“ Aber ach!",
       "english": "She quickly set the bottle down, saying to herself, \"That's enough – I -- I hope I don't grow any more – now I can't get out the door – I wish I hadn't drunk so much!\" But alas!"
     },
     {
@@ -173,8 +173,8 @@
     },
     {
       "id": 34,
-      "german": "Das würde mir gar nicht gefallen!“ -- 21 of 161 -- - 19- „Ach, du dumme Alice!“ antwortete sie sich selbst.",
-      "english": "I wouldn't like that at all!\" -- 21 of 161 -- - 19- \"Oh, you silly Alice!\" she answered herself."
+      "german": "Das würde mir gar nicht gefallen!“ „Ach, du dumme Alice!“ antwortete sie sich selbst.",
+      "english": "I wouldn't like that at all!\" \"Oh, you silly Alice!\" she answered herself."
     },
     {
       "id": 35,
@@ -273,7 +273,7 @@
     },
     {
       "id": 54,
-      "german": "Diesmal gab es zwei kleine Schreie und weiteres Klirren von zerbrochenem Glas „Was für eine Menge Gurkenbeete muß es -- 22 of 161 -- - 20- hier geben!“ dachte Alice.",
+      "german": "Diesmal gab es zwei kleine Schreie und weiteres Klirren von zerbrochenem Glas „Was für eine Menge Gurkenbeete muß es hier geben!“ dachte Alice.",
       "english": "This time there were two small screams and more crashing of broken glass. \"What a lot of cucumber beds there must be here!\" thought Alice."
     },
     {
@@ -403,7 +403,7 @@
     },
     {
       "id": 80,
-      "german": "-- 23 of 161 -- - 21 - „Ein Schubkarren voll was?“ dachte Alice.",
+      "german": "„Ein Schubkarren voll was?“ dachte Alice.",
       "english": "\"A wheelbarrow full of what?\" thought Alice."
     },
     {
@@ -463,7 +463,7 @@
     },
     {
       "id": 92,
-      "german": "-- 24 of 161 -- - 22 - Sie wußte kaum, was sie tat, als sie einen kleinen Stock aufhob und ihn dem jungen Hund hinhielt: daraufhin sprang er, kläffend vor Freude, mit allen Vieren zugleich in die Luft, stürzte sich auf den Stock und tat, als wolle er ihn packen; Alice wich hinter eine große Distel aus, um nicht überrannt zu werden, und sowie sie auf der anderen Seite wieder hervorkam, stürzte sich das Hündchen abermals auf den Stock und purzelte in der Eile, es zu haschen, kopfüber; darauf lief Alice, der es wie ein Spiel mit einem Karrengaul vorkam und die jeden Augenblick erwartete, zu Boden getrampelt zu werden, wieder um die Distel herum; und der junge Hund machte eine Reihe kurzer Vorstöße gegen den Stock, indem er jedesmal, immerfort heiser bellend, ein sehr kurzes Stück nach vorn rannte und ein langes Stück nach hinten, bis er sich schließlich ein gutes Ende entfernt hinsetzte, wobei er, die großen Augen halb geschlossen, japste und die Zunge heraushängen ließ.",
+      "german": "Sie wußte kaum, was sie tat, als sie einen kleinen Stock aufhob und ihn dem jungen Hund hinhielt: daraufhin sprang er, kläffend vor Freude, mit allen Vieren zugleich in die Luft, stürzte sich auf den Stock und tat, als wolle er ihn packen; Alice wich hinter eine große Distel aus, um nicht überrannt zu werden, und sowie sie auf der anderen Seite wieder hervorkam, stürzte sich das Hündchen abermals auf den Stock und purzelte in der Eile, es zu haschen, kopfüber; darauf lief Alice, der es wie ein Spiel mit einem Karrengaul vorkam und die jeden Augenblick erwartete, zu Boden getrampelt zu werden, wieder um die Distel herum; und der junge Hund machte eine Reihe kurzer Vorstöße gegen den Stock, indem er jedesmal, immerfort heiser bellend, ein sehr kurzes Stück nach vorn rannte und ein langes Stück nach hinten, bis er sich schließlich ein gutes Ende entfernt hinsetzte, wobei er, die großen Augen halb geschlossen, japste und die Zunge heraushängen ließ.",
       "english": "She hardly knew what she was doing when she picked up a small stick and held it out to the young dog: whereupon it jumped into the air, barking with joy, with all four paws at once, pounced on the stick, and pretended to want to grab it; Alice stepped behind a large thistle to avoid being trampled, and as soon as she came out on the other side, the puppy again pounced on the stick and tumbled head over heels in its haste to catch it; then Alice, who thought it was like a game with a cart horse and expected to be trampled to the ground at any moment, ran around the thistle again; and the young dog made a series of short advances towards the stick, each time running a very short distance forward while barking hoarsely, and a long distance backward, until he finally sat down a good way off, panting with his big eyes half-closed and his tongue hanging out."
     },
     {
@@ -510,11 +510,6 @@
       "id": 101,
       "german": "Neben ihr stand ein großer Pilz, ungefähr ebenso hoch wie sie, und als sie unter ihn, neben ihn und hinter ihn ge - schaut hatte, fiel ihr ein, sie könne ebensogut nachsehen, was obendrauf war Sie stellte sich auf die Zehenspitzen und spähte über den Rand des Pilzes, und ihre Augen trafen sich unmit- telbar mit denen einer großen blauen Raupe, die mit verschränkten Armen oben saß, still eine lange Wasser - pfeife schmauchte und nicht die geringste Notiz von ihr oder sonst irgend etwas nahm.",
       "english": "Next to her stood a large mushroom, about as tall as she was, and when she had looked under it, beside it, and behind it, it occurred to her that she might as well look to see what was on top. She stood on tiptoe and peered over the edge of the mushroom, and her eyes met those of a large blue caterpillar sitting on top with its arms crossed, quietly smoking a long water pipe and taking no notice of her or anything else."
-    },
-    {
-      "id": 102,
-      "german": "-- 25 of 161 --",
-      "english": "-- 25 of 161 --"
     }
   ],
   "bookId": "alice-im-wunderland",

@@ -3,7 +3,7 @@
   "titleGerman": "Das Kaninchenloch hinab",
   "titleEnglish": "Down the Rabbit-Hole",
   "author": "Lewis Carroll",
-  "wordCount": 2077,
+  "wordCount": 2030,
   "difficulty": "B2",
   "sentences": [
     {
@@ -28,7 +28,7 @@
     },
     {
       "id": 5,
-      "german": "-- 5 of 161 -- - 3 - Das Kaninchenloch führte ein Stück geradeaus wie ein Tunnel und fiel dann plötzlich steil ab, so plötzlich, daß Alice nicht einen Augenblick daran denken konnte anzuhalten, ehe sie einen anscheinend sehr tiefen Schacht hinunterfiel.",
+      "german": "Das Kaninchenloch führte ein Stück geradeaus wie ein Tunnel und fiel dann plötzlich steil ab, so plötzlich, daß Alice nicht einen Augenblick daran denken konnte anzuhalten, ehe sie einen anscheinend sehr tiefen Schacht hinunterfiel.",
       "english": "Either the well was deep or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next."
     },
     {
@@ -148,8 +148,8 @@
     },
     {
       "id": 29,
-      "german": "Sie merkte, daß sie einschlief, und fing gerade an zu träu- men, daß sie mit Dinah Hand in Hand spazieren ging und sehr ernst zu ihr sagte: „Also, Dinah, sag' mir die -- 6 of 161 -- - 4 - Wahrheit!",
-      "english": "She noticed that she was falling asleep and had just begun to dream that she was walking hand in hand with Dinah and was saying very seriously to her: “So, Dinah, tell me the -- 6 of 161 -- - 4 - truth!"
+      "german": "Sie merkte, daß sie einschlief, und fing gerade an zu träu- men, daß sie mit Dinah Hand in Hand spazieren ging und sehr ernst zu ihr sagte: „Also, Dinah, sag' mir die Wahrheit!",
+      "english": "She noticed that she was falling asleep and had just begun to dream that she was walking hand in hand with Dinah and was saying very seriously to her: “So, Dinah, tell me the truth!"
     },
     {
       "id": 30,
@@ -218,8 +218,8 @@
     },
     {
       "id": 43,
-      "german": "Ich glaube, ich könnte es, wenn -- 7 of 161 -- - 5 - ich wüßte, wie man damit anfängt.“ Denn es waren ja bisher so viele außergewöhnliche Dinge geschehen, daß Alice bereits glaubte, wirklich unmöglich sei fast nichts.",
-      "english": "I think I could, if -- 7 of 161 -- - 5 - I knew how to begin.\" For so many extraordinary things had happened so far that Alice already believed that almost nothing was really impossible."
+      "german": "Ich glaube, ich könnte es, wenn ich wüßte, wie man damit anfängt.“ Denn es waren ja bisher so viele außergewöhnliche Dinge geschehen, daß Alice bereits glaubte, wirklich unmöglich sei fast nichts.",
+      "english": "I think I could, if I knew how to begin.\" For so many extraordinary things had happened so far that Alice already believed that almost nothing was really impossible."
     },
     {
       "id": 44,
@@ -243,7 +243,7 @@
     },
     {
       "id": 48,
-      "german": "* * * * * „Was für ein seltsames Gefühl!“ sagte Alice.",
+      "german": "„Was für ein seltsames Gefühl!“ sagte Alice.",
       "english": "\"What a strange feeling!\" said Alice."
     },
     {
@@ -263,7 +263,7 @@
     },
     {
       "id": 52,
-      "german": "-- 8 of 161 -- - 6 - Als sie nach einer Weile spürte, daß nichts mehr geschah, beschloß sie, sofort in den Garten zu gehen; aber ach!",
+      "german": "Als sie nach einer Weile spürte, daß nichts mehr geschah, beschloß sie, sofort in den Garten zu gehen; aber ach!",
       "english": "After a while, when she felt that nothing was happening anymore, she decided to go into the garden immediately; but alas!"
     },
     {
@@ -310,11 +310,6 @@
       "id": 61,
       "german": "So machte sie weiter und hatte bald den Kuchen aufgegessen.",
       "english": "She continued like this and soon finished the cake."
-    },
-    {
-      "id": 62,
-      "german": "* * * * * -- 9 of 161 --",
-      "english": "[Page 9 of 161]"
     }
   ],
   "bookId": "alice-im-wunderland",

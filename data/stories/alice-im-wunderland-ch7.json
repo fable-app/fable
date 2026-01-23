@@ -3,7 +3,7 @@
   "titleGerman": "Eine verrückte Teegesellschaft",
   "titleEnglish": "A Mad Tea-Party",
   "author": "Lewis Carroll",
-  "wordCount": 2260,
+  "wordCount": 2219,
   "difficulty": "B2",
   "sentences": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "id": 13,
-      "german": "„Ich wußte nicht, daß es Ihr Tisch ist,“ versetzte Alice, „er ist für viel mehr als drei gedeckt.“ -- 41 of 161 -- - 39- „Deine Haare müssen geschnitten werden,“ sagte der Hutmacher.",
+      "german": "„Ich wußte nicht, daß es Ihr Tisch ist,“ versetzte Alice, „er ist für viel mehr als drei gedeckt.“ „Deine Haare müssen geschnitten werden,“ sagte der Hutmacher.",
       "english": "\"I didn't know it was your table,\" said Alice, \"it’s set for much more than three.\""
     },
     {
@@ -158,8 +158,8 @@
     },
     {
       "id": 31,
-      "german": "„Zeigt deine vielleicht das Jahr an?“ -- 42 of 161 -- - 40 - „Natürlich nicht,“ versetzte Alice schlagfertig, „weil es nämlich eine so lange Zeit dasselbe Jahr bleibt.“ „Was genau der Fall bei meiner ist,“ sagte der Hutmacher.",
-      "english": "\"Does yours perhaps indicate the year?\" -- 42 of 161 -- - 40 - \"Of course not,\" Alice replied wittily, \"because it stays the same year for such a long time.\" \"Which is exactly the case with mine,\" said the Hatter."
+      "german": "„Zeigt deine vielleicht das Jahr an?“ „Natürlich nicht,“ versetzte Alice schlagfertig, „weil es nämlich eine so lange Zeit dasselbe Jahr bleibt.“ „Was genau der Fall bei meiner ist,“ sagte der Hutmacher.",
+      "english": "\"Does yours perhaps indicate the year?\" \"Of course not,\" Alice replied wittily, \"because it stays the same year for such a long time.\" \"Which is exactly the case with mine,\" said the Hatter."
     },
     {
       "id": 32,
@@ -268,7 +268,7 @@
     },
     {
       "id": 53,
-      "german": "„Es geht nämlich so weiter,“ fuhr der Hutmacher fort: -- 43 of 161 -- - 41 - „Schwebst mit hochgemutem Sinn Wie ein Teetablett dahin.",
+      "german": "„Es geht nämlich so weiter,“ fuhr der Hutmacher fort: „Schwebst mit hochgemutem Sinn Wie ein Teetablett dahin.",
       "english": "“It goes on like this,” continued the Mad Hatter: “Float along with a high-spirited mind like a tea tray."
     },
     {
@@ -368,8 +368,8 @@
     },
     {
       "id": 73,
-      "german": "„Das konnten sie wohl nicht gut,“ bemerkte Alice sanft, „sie wären ja krank geworden.“ „Das waren sie auch,“ sagte die Haselmaus, „sehr krank.“ Alice versuchte, sich ein wenig solche außergewöhnliche Lebensweise vorzustellen, aber das verwirrte sie zu sehr; deshalb fuhr sie fort: „Aber warum wohnten sie auf dem Grund eines Brunnens?“ -- 44 of 161 -- - 42 - „Nimm dir noch mehr Tee,“ sagte der Märzhase mit sehr ernster Miene zu Alice.",
-      "english": "\"They probably couldn't do that well,\" Alice gently remarked, \"they would have gotten sick.\" \"They were,\" said the Dormouse, \"very sick.\" Alice tried to imagine such an extraordinary way of life, but it confused her too much; so she continued, \"But why did they live at the bottom of a well?\" -- 44 of 161 -- - 42 - \"Take some more tea,\" said the March Hare very seriously to Alice."
+      "german": "„Das konnten sie wohl nicht gut,“ bemerkte Alice sanft, „sie wären ja krank geworden.“ „Das waren sie auch,“ sagte die Haselmaus, „sehr krank.“ Alice versuchte, sich ein wenig solche außergewöhnliche Lebensweise vorzustellen, aber das verwirrte sie zu sehr; deshalb fuhr sie fort: „Aber warum wohnten sie auf dem Grund eines Brunnens?“ „Nimm dir noch mehr Tee,“ sagte der Märzhase mit sehr ernster Miene zu Alice.",
+      "english": "\"They probably couldn't do that well,\" Alice gently remarked, \"they would have gotten sick.\" \"They were,\" said the Dormouse, \"very sick.\" Alice tried to imagine such an extraordinary way of life, but it confused her too much; so she continued, \"But why did they live at the bottom of a well?\" \"Take some more tea,\" said the March Hare very seriously to Alice."
     },
     {
       "id": 74,
@@ -453,7 +453,7 @@
     },
     {
       "id": 90,
-      "german": "-- 45 of 161 -- 43 - Inzwischen hatte die Haselmaus die Augen geschlossen und war dabei, einzudösen, aber von dem Hutmacher gezwickt, fuhr sie mit einem kleinen Schrei wieder hoch und sprach weiter: „– was mit einem A anfängt, also Abendrot und Apfelkerne und Angeberei und Anderes – du weißt, man sagt, das sei ,eins wie das andere´ – hast du jemals gepumptes Anderes gesehen?“ „Also jetzt wo du mich fragst,“ sagte Alice in großer Verwirrung, „ich denke nicht –“ „Dann solltest du auch nicht reden,“ sagte der Hutmacher.",
+      "german": "43 - Inzwischen hatte die Haselmaus die Augen geschlossen und war dabei, einzudösen, aber von dem Hutmacher gezwickt, fuhr sie mit einem kleinen Schrei wieder hoch und sprach weiter: „– was mit einem A anfängt, also Abendrot und Apfelkerne und Angeberei und Anderes – du weißt, man sagt, das sei ,eins wie das andere´ – hast du jemals gepumptes Anderes gesehen?“ „Also jetzt wo du mich fragst,“ sagte Alice in großer Verwirrung, „ich denke nicht –“ „Dann solltest du auch nicht reden,“ sagte der Hutmacher.",
       "english": "Meanwhile, the dormouse had closed her eyes and was dozing off, but pinched by the Hatter, she started up with a little shriek and went on: \"—things that begin with an A, like amber and apple-cores and ambition and other things—you know they say 'it's all the same'—did you ever see pumped other things?\" \"Now that you ask me,\" said Alice in great confusion, \"I don't think—\" \"Then you shouldn't talk,\" said the Hatter."
     },
     {
@@ -500,11 +500,6 @@
       "id": 99,
       "german": "Dann knabberte sie an dem Pilz (sie hatte noch ein Stück davon in der Tasche), bis sie ungefähr dreißig Zentimeter hoch war; dann ging sie den kleinen Gang entlang und dann – war sie zu guter Letzt in dem wunderschönen Garten, zwischen den leuchtenden Blu- menbeeten und den kühlen Springbrunnen.",
       "english": "Then she nibbled on the mushroom (she still had a piece of it in her pocket) until she was about thirty centimeters tall; then she walked down the little corridor and then - she was finally in the beautiful garden, among the bright flower beds and the cool fountains."
-    },
-    {
-      "id": 100,
-      "german": "-- 46 of 161 --",
-      "english": "-- 46 of 161 --"
     }
   ],
   "bookId": "alice-im-wunderland",

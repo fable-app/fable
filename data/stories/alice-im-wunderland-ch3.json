@@ -3,7 +3,7 @@
   "titleGerman": "Ein Nominierungswettlauf und eine traurige Geschichte",
   "titleEnglish": "A Caucus-Race and a Long Tale",
   "author": "Lewis Carroll",
-  "wordCount": 1687,
+  "wordCount": 1650,
   "difficulty": "B2",
   "sentences": [
     {
@@ -38,7 +38,7 @@
     },
     {
       "id": 7,
-      "german": "-- 15 of 161 -- - 13 - „Ahem!“ sagte die Maus mit wichtiger Miene.",
+      "german": "„Ahem!“ sagte die Maus mit wichtiger Miene.",
       "english": "\"Ahem!\" said the mouse with an important expression."
     },
     {
@@ -133,7 +133,7 @@
     },
     {
       "id": 26,
-      "german": "Als sie jedoch eine halbe Stunde oder so gerannt wa- ren und sich wieder ganz trocken fühlten, rief der Dodo plötzlich: „Das Rennen ist aus!“ und sie drängten sich japsend um ihn und fragten: „Wer hat denn gewonnen?“ -- 16 of 161 -- - 14 - Diese Frage konnte der Dodo nicht ohne längeres Nachdenken beantworten und stand eine ganze Weile da, einen Finger an die Stirn gepreßt (die Haltung, die man Shakespeare auf den Bildern gewöhnlich einnehmen sieht), während die anderen schweigend warteten.",
+      "german": "Als sie jedoch eine halbe Stunde oder so gerannt wa- ren und sich wieder ganz trocken fühlten, rief der Dodo plötzlich: „Das Rennen ist aus!“ und sie drängten sich japsend um ihn und fragten: „Wer hat denn gewonnen?“ Diese Frage konnte der Dodo nicht ohne längeres Nachdenken beantworten und stand eine ganze Weile da, einen Finger an die Stirn gepreßt (die Haltung, die man Shakespeare auf den Bildern gewöhnlich einnehmen sieht), während die anderen schweigend warteten.",
       "english": "However, when they had been running for half an hour or so and felt quite dry again, the Dodo suddenly shouted: \"The race is over!\" and they crowded around him panting and asked: \"Who won?\" — This question the Dodo could not answer without some thought and stood there for quite a while, pressing a finger to his forehead (the pose one usually sees Shakespeare in the pictures), while the others waited silently."
     },
     {
@@ -193,7 +193,7 @@
     },
     {
       "id": 38,
-      "german": "-- 17 of 161 -- - 15 - Als nächstes wurden die Fruchtbonbons gegessen; das verursachte Lärm und Durcheinander, weil die großen Vögel sich darüber beklagten, daß sie ihre Bonbons nicht schmeckten, und die kleinen verschluckten sich und mußten auf den Rücken geklopft werden.",
+      "german": "Als nächstes wurden die Fruchtbonbons gegessen; das verursachte Lärm und Durcheinander, weil die großen Vögel sich darüber beklagten, daß sie ihre Bonbons nicht schmeckten, und die kleinen verschluckten sich und mußten auf den Rücken geklopft werden.",
       "english": "Next, the fruit candies were eaten; this caused noise and chaos because the big birds complained that they couldn't taste their candies, and the little ones choked and had to be patted on the back."
     },
     {
@@ -228,7 +228,7 @@
     },
     {
       "id": 45,
-      "german": "„Wo bist du mit deinen Gedanken?“ „Ich bitte um Verzeihung,“ sagte Alice kleinlaut, „du warst bis zur fünften Biegung gekommen, glaube ich.“ -- 18 of 161 -- - 16 - „Deinetwegen habe ich jetzt den Faden verloren!“ schrie die Maus aufgebracht.",
+      "german": "„Wo bist du mit deinen Gedanken?“ „Ich bitte um Verzeihung,“ sagte Alice kleinlaut, „du warst bis zur fünften Biegung gekommen, glaube ich.“ „Deinetwegen habe ich jetzt den Faden verloren!“ schrie die Maus aufgebracht.",
       "english": "\"Where are your thoughts?\" \"I apologize,\" said Alice quietly, \"I think you had gotten to the fifth bend.\""
     },
     {
@@ -340,11 +340,6 @@
       "id": 67,
       "german": "Nach einer Weile hörte sie jedoch in der Ferne das Trappeln kleiner Füße, und sie blickte rasch auf in der Hoffnung, daß die Maus ihren Sinn geändert hatte und zurückkehrte, um ihre Ge- schichte zu beenden.",
       "english": "After a while, however, she heard in the distance the patter of little feet, and she looked up quickly in the hope that the mouse had changed its mind and would return to finish her story."
-    },
-    {
-      "id": 68,
-      "german": "-- 19 of 161 --",
-      "english": "[Page 19 of 161]"
     }
   ],
   "bookId": "alice-im-wunderland",
