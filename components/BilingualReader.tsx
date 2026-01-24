@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, NativeScrollEvent, NativeSyntheticEvent, Platform } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, NativeScrollEvent, NativeSyntheticEvent, Platform, StatusBar as RNStatusBar } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -40,6 +40,14 @@ export function BilingualReader({ story }: BilingualReaderProps) {
   const [currentChapterIndex, setCurrentChapterIndex] = useState<number>(-1);
   const [previousChapterId, setPreviousChapterId] = useState<string | null>(null);
   const [nextChapterId, setNextChapterId] = useState<string | null>(null);
+
+  // Configure StatusBar for Android
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      RNStatusBar.setTranslucent(false);
+      RNStatusBar.setBackgroundColor(colors.background.primary);
+    }
+  }, []);
 
   // Load book metadata and determine chapter navigation
   useEffect(() => {
@@ -613,7 +621,7 @@ const styles = StyleSheet.create({
   },
   headerButtonText: {
     fontFamily: 'Inter_500Medium',
-    fontSize: 22,
+    fontSize: 32,
     color: colors.text.accent,
   },
   headerTitle: {

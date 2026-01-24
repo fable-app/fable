@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Platform, StatusBar as RNStatusBar } from 'react-native';
 import { useRouter, useLocalSearchParams, useFocusEffect } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,6 +13,14 @@ export default function ChapterListScreen() {
   const { bookId } = useLocalSearchParams<{ bookId: string }>();
   const [bookMetadata, setBookMetadata] = useState<StoryMetadata | null>(null);
   const { progressMap, refreshProgress } = useAllProgress();
+
+  // Configure StatusBar for Android
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      RNStatusBar.setTranslucent(false);
+      RNStatusBar.setBackgroundColor(colors.background.primary);
+    }
+  }, []);
 
   // Refresh progress when screen comes into focus (e.g., when returning from reader)
   useFocusEffect(
