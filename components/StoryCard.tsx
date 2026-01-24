@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   chapterBadge: {
-    backgroundColor: colors.accent,
+    backgroundColor: colors.background.accent, // Light sage background
     paddingHorizontal: 8,
     paddingVertical: 3,
     borderRadius: 10,

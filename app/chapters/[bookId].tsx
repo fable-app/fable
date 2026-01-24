@@ -1,8 +1,9 @@
 import { useEffect, useState, useCallback } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Platform, StatusBar as RNStatusBar } from 'react-native';
 import { useRouter, useLocalSearchParams, useFocusEffect } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { colors, typography, spacing } from '@/design-system';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { colors, semanticColors, typography, spacing } from '@/design-system';
 import { loadStory } from '@/services/story.service';
 import { useAllProgress } from '@/hooks';
 import type { StoryMetadata, ChapterMetadata } from '@/types';
@@ -13,10 +14,23 @@ export default function ChapterListScreen() {
   const [bookMetadata, setBookMetadata] = useState<StoryMetadata | null>(null);
   const { progressMap, refreshProgress } = useAllProgress();
 
+  // Configure StatusBar for Android
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      RNStatusBar.setTranslucent(false);
+      RNStatusBar.setBackgroundColor(colors.background.primary);
+    }
+  }, []);
+
   // Refresh progress when screen comes into focus (e.g., when returning from reader)
   useFocusEffect(
     useCallback(() => {
-      refreshProgress();
+      const doRefresh = async () => {
+        // Wait for debounced saves to complete (500ms debounce + 200ms buffer)
+        await new Promise(resolve => setTimeout(resolve, 700));
+        await refreshProgress();
+      };
+      doRefresh();
     }, [refreshProgress])
   );
 
@@ -26,10 +40,13 @@ export default function ChapterListScreen() {
       const data = await loadStory(bookId);
       if (data) {
         setBookMetadata(data as any);
+        // Refresh progress when book loads
+        await refreshProgress();
       }
     }
     loadBookData();
-  }, [bookId]);
+  }, [bookId, refreshProgress]);
+
 
   const handleChapterPress = (chapterId: string) => {
     router.push(`/reader/${chapterId}`);
@@ -37,14 +54,14 @@ export default function ChapterListScreen() {
 
   if (!bookMetadata || !bookMetadata.isMultiChapter) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
         <Text style={styles.errorText}>Book not found</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
       <StatusBar style="dark" />
 
       {/* Fixed Header */}
@@ -122,7 +139,10 @@ export default function ChapterListScreen() {
                 <View
                   style={[
                     styles.progressBarFill,
-                    { width: `${chapterProgress}%` },
+                    {
+                      width: `${chapterProgress}%`,
+                      backgroundColor: isCompleted ? colors.progress.complete : colors.progress.fill,
+                    },
                   ]}
                 />
               </View>
@@ -130,7 +150,7 @@ export default function ChapterListScreen() {
           );
         })}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -232,7 +252,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   completedBadge: {
-    backgroundColor: colors.success,
+    backgroundColor: semanticColors.success,
     width: 28,
     height: 28,
     borderRadius: 14,
@@ -245,7 +265,7 @@ const styles = StyleSheet.create({
     color: colors.background.primary,
   },
   inProgressBadge: {
-    backgroundColor: colors.accent,
+    backgroundColor: colors.progress.fill, // Dusty rose for in-progress
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
@@ -257,15 +277,15 @@ const styles = StyleSheet.create({
   },
   progressBarContainer: {
     height: 4,
-    backgroundColor: colors.divider,
+    backgroundColor: colors.progress.track,
     borderRadius: 2,
     marginTop: spacing.sm,
     overflow: 'hidden',
   },
   progressBarFill: {
     height: '100%',
-    backgroundColor: colors.accent,
     borderRadius: 2,
+    // backgroundColor set inline based on completion status
   },
   errorText: {
     fontFamily: 'Inter_400Regular',

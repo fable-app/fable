@@ -47,16 +47,18 @@ export function useStoryProgress(storyId: string | undefined) {
 export function useAllProgress() {
   const [progressMap, setProgressMap] = useState<Record<string, Progress>>({});
 
-  const loadProgress = useCallback(async () => {
+  const refreshProgress = useCallback(async () => {
     const allProgress = await getAllProgress();
-    setProgressMap(allProgress);
+    // Create a new object to ensure React detects the change
+    setProgressMap({ ...allProgress });
   }, []);
 
   useEffect(() => {
-    loadProgress();
-  }, [loadProgress]);
+    console.log('[useAllProgress] Initial load');
+    refreshProgress();
+  }, []);
 
-  return { progressMap, refreshProgress: loadProgress };
+  return { progressMap, refreshProgress };
 }
 
 /**
