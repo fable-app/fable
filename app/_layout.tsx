@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Stack } from 'expo-router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts, Inter_400Regular, Inter_500Medium, Inter_600SemiBold } from '@expo-google-fonts/inter';
 import { Literata_400Regular, Literata_500Medium } from '@expo-google-fonts/literata';
 import * as SplashScreen from 'expo-splash-screen';
@@ -27,16 +28,18 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-        contentStyle: {
-          backgroundColor: '#FAFAF8', // Washi Paper background
-        },
-      }}
-    >
-      <Stack.Screen name="index" />
-      <Stack.Screen name="reader/[storyId]" />
-    </Stack>
+    <SafeAreaProvider>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: {
+            backgroundColor: '#FAFAF8', // Washi Paper background
+          },
+        }}
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen name="reader/[storyId]" />
+      </Stack>
+    </SafeAreaProvider>
   );
 }

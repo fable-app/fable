@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter, useLocalSearchParams, useFocusEffect } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors, semanticColors, typography, spacing } from '@/design-system';
 import { loadStory } from '@/services/story.service';
 import { useAllProgress } from '@/hooks';
@@ -45,14 +46,14 @@ export default function ChapterListScreen() {
 
   if (!bookMetadata || !bookMetadata.isMultiChapter) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
         <Text style={styles.errorText}>Book not found</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
       <StatusBar style="dark" />
 
       {/* Fixed Header */}
@@ -141,7 +142,7 @@ export default function ChapterListScreen() {
           );
         })}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
