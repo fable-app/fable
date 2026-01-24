@@ -15,6 +15,7 @@ export function BilingualReader({ story }: BilingualReaderProps) {
   const router = useRouter();
   const scrollViewRef = useRef<ScrollView>(null);
   const [currentSentence, setCurrentSentence] = useState(0);
+  const currentSentenceRef = useRef(0);
   const { progress, updateProgress } = useStoryProgress(story.id);
   const sentenceRefs = useRef<Map<number, View>>(new Map());
   const sentencePositions = useRef<Map<number, number>>(new Map());
@@ -42,14 +43,23 @@ export function BilingualReader({ story }: BilingualReaderProps) {
     }
   }, [progress, sentencePositions.current.size]);
 
-  // Save progress when sentence changes
+  // Update ref whenever currentSentence changes
+  useEffect(() => {
+    currentSentenceRef.current = currentSentence;
+  }, [currentSentence]);
+
+  // Save progress when sentence changes (debounced)
   useEffect(() => {
     if (currentSentence > 0) {
-      updateProgress({
-        storyId: story.id,
-        sentenceIndex: currentSentence,
-        totalSentences: story.sentences.length,
-      });
+      const timer = setTimeout(() => {
+        updateProgress({
+          storyId: story.id,
+          sentenceIndex: currentSentence,
+          totalSentences: story.sentences.length,
+        });
+      }, 500); // Debounce by 500ms to avoid rapid saves during scrolling
+
+      return () => clearTimeout(timer);
     }
   }, [currentSentence, story.id, story.sentences.length, updateProgress]);
 
@@ -141,12 +151,21 @@ export function BilingualReader({ story }: BilingualReaderProps) {
     }
   };
 
-  // Cleanup audio on unmount
+  // Cleanup audio on unmount and save final progress
   useEffect(() => {
     return () => {
       Speech.stop();
+      // Save progress on unmount using ref to get the latest value
+      const finalSentence = currentSentenceRef.current;
+      if (finalSentence > 0) {
+        updateProgress({
+          storyId: story.id,
+          sentenceIndex: finalSentence,
+          totalSentences: story.sentences.length,
+        });
+      }
     };
-  }, []);
+  }, [story.id, story.sentences.length, updateProgress]);
 
   return (
     <View style={styles.container}>
