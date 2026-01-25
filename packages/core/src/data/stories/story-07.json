@@ -1,0 +1,60 @@
+{
+  "id": "story-07",
+  "titleGerman": "Der Nachbar",
+  "titleEnglish": "The Neighbor",
+  "author": "Original",
+  "wordCount": 88,
+  "difficulty": "A2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Herr Müller wohnte allein in einer kleinen Wohnung.",
+      "english": "Mr. Müller lived alone in a small apartment."
+    },
+    {
+      "id": 2,
+      "german": "Er war schon sehr alt und konnte nicht mehr gut laufen.",
+      "english": "He was already very old and couldn't walk well anymore."
+    },
+    {
+      "id": 3,
+      "german": "Seine junge Nachbarin Maria bemerkte das.",
+      "english": "His young neighbor Maria noticed this."
+    },
+    {
+      "id": 4,
+      "german": "Sie klopfte eines Tages an seine Tür.",
+      "english": "She knocked on his door one day."
+    },
+    {
+      "id": 5,
+      "german": "Sie bot ihm an, für ihn einzukaufen.",
+      "english": "She offered to shop for him."
+    },
+    {
+      "id": 6,
+      "german": "Herr Müller war sehr dankbar für ihre Hilfe.",
+      "english": "Mr. Müller was very grateful for her help."
+    },
+    {
+      "id": 7,
+      "german": "Von da an besuchte Maria ihn jeden Tag.",
+      "english": "From then on Maria visited him every day."
+    },
+    {
+      "id": 8,
+      "german": "Sie tranken zusammen Kaffee und erzählten sich Geschichten.",
+      "english": "They drank coffee together and told each other stories."
+    },
+    {
+      "id": 9,
+      "german": "Herr Müller fühlte sich nicht mehr einsam.",
+      "english": "Mr. Müller no longer felt lonely."
+    },
+    {
+      "id": 10,
+      "german": "Eine kleine Geste hatte sein Leben verändert.",
+      "english": "A small gesture had changed his life."
+    }
+  ]
+}
