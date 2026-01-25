@@ -58,6 +58,7 @@
     "jest-expo": "~52.0.2",
     "openai": "^6.16.0",
     "pdf-parse": "^2.4.5",
+    "react-test-renderer": "19.1.0",
     "tsx": "^4.21.0",
     "typescript": "~5.9.2"
   },
