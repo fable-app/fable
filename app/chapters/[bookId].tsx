@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   },
   headerSubtitle: {
     fontFamily: 'Inter_400Regular',
-    fontSize: typography.sizes.small,
+    fontSize: typography.sizes.bodySmall,
     color: colors.text.secondary,
     marginTop: 2,
   },
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
   },
   chapterNumber: {
     fontFamily: 'Inter_500Medium',
-    fontSize: typography.sizes.small,
+    fontSize: typography.sizes.label,
     color: colors.text.accent,
     marginBottom: 4,
     textTransform: 'uppercase',
@@ -227,12 +227,12 @@ const styles = StyleSheet.create({
   },
   wordCount: {
     fontFamily: 'Inter_400Regular',
-    fontSize: typography.sizes.small,
+    fontSize: typography.sizes.bodySmall,
     color: colors.text.tertiary,
     marginBottom: spacing.xs,
   },
   completedBadge: {
-    backgroundColor: colors.success,
+    backgroundColor: colors.progress.complete,
     width: 28,
     height: 28,
     borderRadius: 14,
@@ -245,14 +245,14 @@ const styles = StyleSheet.create({
     color: colors.background.primary,
   },
   inProgressBadge: {
-    backgroundColor: colors.accent,
+    backgroundColor: colors.interactive.default,
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
   },
   inProgressText: {
     fontFamily: 'Inter_500Medium',
-    fontSize: typography.sizes.small,
+    fontSize: typography.sizes.bodySmall,
     color: colors.background.primary,
   },
   progressBarContainer: {
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
   },
   progressBarFill: {
     height: '100%',
-    backgroundColor: colors.accent,
+    backgroundColor: colors.progress.fill,
     borderRadius: 2,
   },
   errorText: {
