@@ -63,6 +63,7 @@ export async function saveProgress(update: ProgressUpdate): Promise<boolean> {
       completedAt: completedAt || undefined,
     };
 
+
     if (isWeb) {
       // Web: Use AsyncStorage
       const allProgress = await getAllProgress();
@@ -82,6 +83,7 @@ export async function saveProgress(update: ProgressUpdate): Promise<boolean> {
       );
     }
 
+    console.log('[Progress Service] Progress saved successfully');
     return true;
   } catch (error) {
     console.error('[Progress Service] Failed to save progress', error);
@@ -120,7 +122,8 @@ export async function getAllProgress(): Promise<Record<string, Progress>> {
     if (isWeb) {
       // Web: Use AsyncStorage
       const data = await AsyncStorage.getItem(PROGRESS_KEY);
-      return data ? JSON.parse(data) : {};
+      const result = data ? JSON.parse(data) : {};
+      return result;
     }
 
     // Native: Use SQLite

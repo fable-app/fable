@@ -3,7 +3,7 @@
   "titleGerman": "Der Krocketplatz der Königin",
   "titleEnglish": "The Queen's Croquet-Ground",
   "author": "Lewis Carroll",
-  "wordCount": 2481,
+  "wordCount": 2436,
   "difficulty": "B2",
   "sentences": [
     {
@@ -83,8 +83,8 @@
     },
     {
       "id": 16,
-      "german": "Nach ihnen -- 47 of 161 -- - 45 - kamen die königlichen Kinder, es gab zehn von ihnen, und die lieben Kleinen sprangen paarweise Hand in Hand daher; sie waren alle mit Herzen geschmückt.",
-      "english": "After them -- 47 of 161 -- - 45 - came the royal children, there were ten of them, and the dear little ones jumped along hand in hand in pairs; they were all adorned with hearts."
+      "german": "Nach ihnen kamen die königlichen Kinder, es gab zehn von ihnen, und die lieben Kleinen sprangen paarweise Hand in Hand daher; sie waren alle mit Herzen geschmückt.",
+      "english": "After them came the royal children, there were ten of them, and the dear little ones jumped along hand in hand in pairs; they were all adorned with hearts."
     },
     {
       "id": 17,
@@ -113,7 +113,7 @@
     },
     {
       "id": 22,
-      "german": "-- 48 of 161 -- - 46 - „Woher soll ich das wissen?“sagte Alice, überrascht von ihrer eigenen Courage.",
+      "german": "„Woher soll ich das wissen?“sagte Alice, überrascht von ihrer eigenen Courage.",
       "english": "\"How should I know?\" said Alice, surprised by her own courage."
     },
     {
@@ -218,7 +218,7 @@
     },
     {
       "id": 43,
-      "german": "-- 49 of 161 -- - 47 - „Nein!“ sagte Alice.",
+      "german": "„Nein!“ sagte Alice.",
       "english": "\"No!\" said Alice."
     },
     {
@@ -273,7 +273,7 @@
     },
     {
       "id": 54,
-      "german": "Man köpft hier die Leute so furchtbar gern; es ist ein großes Wunder, daß überhaupt noch je - mand am Leben ist!“ -- 50 of 161 -- - 48 - Sie sah sich nach einem Fluchtweg um und überlegte, wie sie entwischen könnte, ohne gesehen zu werden, als sie eine seltsame Erscheinung in der Luft wahrnahm; zuerst verwirrte es sie sehr, aber nachdem sie eine Weile hingeschaut hatte, erkannte sie es als Grinsen, und sie sagte sich: „Es ist die Cheshire-Katze; jetzt wer - de ich jemanden haben, mit dem ich mich unterhalten kann.“ „Wie kommst du zurecht?“ fragte die Katze, sobald genug Mund zum Sprechen da war.",
+      "german": "Man köpft hier die Leute so furchtbar gern; es ist ein großes Wunder, daß überhaupt noch je - mand am Leben ist!“ Sie sah sich nach einem Fluchtweg um und überlegte, wie sie entwischen könnte, ohne gesehen zu werden, als sie eine seltsame Erscheinung in der Luft wahrnahm; zuerst verwirrte es sie sehr, aber nachdem sie eine Weile hingeschaut hatte, erkannte sie es als Grinsen, und sie sagte sich: „Es ist die Cheshire-Katze; jetzt wer - de ich jemanden haben, mit dem ich mich unterhalten kann.“ „Wie kommst du zurecht?“ fragte die Katze, sobald genug Mund zum Sprechen da war.",
       "english": "They love to behead people here so terribly; it's a great wonder that anyone is still alive!\" -- She looked around for an escape route and wondered how she could slip away without being seen when she noticed a strange appearance in the air; at first, it confused her greatly, but after watching for a while, she recognized it as a grin, and she said to herself, \"It's the Cheshire Cat; now I will have someone to talk to.\" \"How are you doing?\" asked the cat as soon as there was enough mouth to speak."
     },
     {
@@ -333,7 +333,7 @@
     },
     {
       "id": 66,
-      "german": "Sie hatte schon vernommen, daß drei Spieler zur Hinrichtung verurteilt wurden, weil sie nicht gemerkt hatten, daß sie an der Reihe waren, und diese Lage der Dinge gefiel ihr gar nicht, weil -- 51 of 161 -- - 49 - das Spiel so verworren war, daß sie niemals wußte, ob sie nun an der Reihe war oder nicht.",
+      "german": "Sie hatte schon vernommen, daß drei Spieler zur Hinrichtung verurteilt wurden, weil sie nicht gemerkt hatten, daß sie an der Reihe waren, und diese Lage der Dinge gefiel ihr gar nicht, weil das Spiel so verworren war, daß sie niemals wußte, ob sie nun an der Reihe war oder nicht.",
       "english": "She had already heard that three players had been sentenced to execution because they hadn't realized it was their turn, and she didn't like this situation at all because the game was so confusing that she never knew whether it was her turn or not."
     },
     {
@@ -385,11 +385,6 @@
       "id": 76,
       "german": "Sowie er weg war, begann der Kopf der Katze zu verblassen, und als der Scharfrichter mit der Herzogin zu- rückkam, war er völlig verschwunden; der König und der Scharfrichter rannten wild hin und her, um nach ihm zu suchen, während die übrigen zum Spiel zurückkehrten.",
       "english": "As soon as he was gone, the cat's head began to fade, and when the executioner returned with the duchess, it had completely disappeared; the king and the executioner ran wildly back and forth to search for it, while the others returned to the game."
-    },
-    {
-      "id": 77,
-      "german": "-- 52 of 161 --",
-      "english": "[Page 52 of 161]"
     }
   ],
   "bookId": "alice-im-wunderland",

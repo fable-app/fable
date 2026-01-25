@@ -3,7 +3,7 @@
   "titleGerman": "Alice's Aussage",
   "titleEnglish": "Alice's Evidence",
   "author": "Lewis Carroll",
-  "wordCount": 1361,
+  "wordCount": 1333,
   "difficulty": "B2",
   "sentences": [
     {
@@ -23,7 +23,7 @@
     },
     {
       "id": 4,
-      "german": "-- 70 of 161 -- - 68 - Alice blickte auf die Geschworenenbank und bemerkte, daß sie in der Eile die Eidechse mit dem Kopf nach unten hingesetzt hatte, und das arme kleine Ding schwenkte seinen Schwanz traurig hin und her und war völlig unfähig, sich zu bewegen.",
+      "german": "Alice blickte auf die Geschworenenbank und bemerkte, daß sie in der Eile die Eidechse mit dem Kopf nach unten hingesetzt hatte, und das arme kleine Ding schwenkte seinen Schwanz traurig hin und her und war völlig unfähig, sich zu bewegen.",
       "english": "Alice looked at the jury box and noticed that in her haste she had set the lizard upside down, and the poor little thing was sadly waving its tail back and forth and was completely unable to move."
     },
     {
@@ -123,7 +123,7 @@
     },
     {
       "id": 24,
-      "german": "-- 71 of 161 -- - 69- „Ich habe es noch nicht geöffnet,“ sagte das Weiße Kaninchen, „aber es scheint ein Brief zu sein, geschrieben von dem Gefangenen an – an irgend jemand.“ „Das muß er wohl,“ sagte der König, „wenn er nicht an niemand geschrieben wurde, was ja nicht gerade üblich ist.“ „An wen ist er gerichtet?“ sagte einer der Geschworenen.",
+      "german": "„Ich habe es noch nicht geöffnet,“ sagte das Weiße Kaninchen, „aber es scheint ein Brief zu sein, geschrieben von dem Gefangenen an – an irgend jemand.“ „Das muß er wohl,“ sagte der König, „wenn er nicht an niemand geschrieben wurde, was ja nicht gerade üblich ist.“ „An wen ist er gerichtet?“ sagte einer der Geschworenen.",
       "english": "\"I haven't opened it yet,\" said the White Rabbit, \"but it seems to be a letter written by the prisoner to - to someone.\" \"It must be,\" said the king, \"if it wasn't written to no one, which is not exactly usual.\" \"Who is it addressed to?\" asked one of the jurors."
     },
     {
@@ -193,8 +193,8 @@
     },
     {
       "id": 38,
-      "german": "-- 72 of 161 -- - 70 - Wenn in die Sache, wie es heißt, Man uns verwickelt hat, Traut er dir, daß du sie befreist, Und alles geht dann glatt.",
-      "english": "-- 72 of 161 -- - 70 - If, as they say, we have been entangled in the matter, he trusts you to free them, and everything will then go smoothly."
+      "german": "Wenn in die Sache, wie es heißt, Man uns verwickelt hat, Traut er dir, daß du sie befreist, Und alles geht dann glatt.",
+      "english": "If, as they say, we have been entangled in the matter, he trusts you to free them, and everything will then go smoothly."
     },
     {
       "id": 39,
@@ -260,11 +260,6 @@
       "id": 51,
       "german": "Dann wieder – ,Ihr Anfall war noch nicht vorbei´ – ich glaube, meine Liebe, du hattest niemals Anfälle?“ sagte er zu der Kö- nigin.",
       "english": "Then again – \"Your attack was not yet over\" – I believe, my dear, you never had attacks?\" he said to the queen."
-    },
-    {
-      "id": 52,
-      "german": "-- 73 of 161 --",
-      "english": "-- 73 of 161 --"
     }
   ],
   "bookId": "alice-im-wunderland",
