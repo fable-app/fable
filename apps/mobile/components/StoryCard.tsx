@@ -4,11 +4,20 @@
  * Follows Japanese minimalist design with touch interactions
  */
 
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Pressable } from 'react-native';
-import { colors, typography, spacing } from '@fable/design-system';
-import { ProgressBar } from './ProgressBar';
-import type { StoryMetadata } from '@fable/core';
+import React from "react";
+
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Pressable,
+} from "react-native";
+
+import type { StoryMetadata } from "@fable/core";
+import { colors, typography, spacing } from "@fable/design-system";
+
+import { ProgressBar } from "./ProgressBar";
 
 interface StoryCardProps {
   story: StoryMetadata;
@@ -19,10 +28,7 @@ interface StoryCardProps {
 export function StoryCard({ story, progress, onPress }: StoryCardProps) {
   return (
     <Pressable
-      style={({ pressed }) => [
-        styles.card,
-        pressed && styles.cardPressed,
-      ]}
+      style={({ pressed }) => [styles.card, pressed && styles.cardPressed]}
       onPress={onPress}
     >
       {/* German Title with optional chapter badge */}
@@ -67,7 +73,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 8,
     elevation: 2,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
   },
   cardPressed: {
     backgroundColor: colors.background.primary,
@@ -76,12 +82,12 @@ const styles = StyleSheet.create({
     transform: [{ scale: 0.98 }],
   },
   titleRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: spacing.xs,
   },
   titleGerman: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: typography.sizes.heading,
     lineHeight: typography.sizes.heading * typography.lineHeights.normal,
     color: colors.text.primary,
@@ -95,20 +101,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   chapterBadgeText: {
-    fontFamily: 'Inter_500Medium',
+    fontFamily: "Inter_500Medium",
     fontSize: 10,
     color: colors.background.primary,
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
     letterSpacing: 0.5,
   },
   titleEnglish: {
-    fontFamily: 'Inter_400Regular',
+    fontFamily: "Inter_400Regular",
     fontSize: typography.sizes.body,
     lineHeight: 21,
     color: colors.text.secondary,
   },
   metadata: {
-    fontFamily: 'Inter_400Regular',
+    fontFamily: "Inter_400Regular",
     fontSize: typography.sizes.bodySmall,
     lineHeight: 18,
     color: colors.text.tertiary,

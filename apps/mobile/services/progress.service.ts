@@ -4,12 +4,14 @@
  * Uses SQLite on native, AsyncStorage on web
  */
 
-import { Platform } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import type { Progress, ProgressUpdate } from '@/types';
+import { Platform } from "react-native";
 
-const PROGRESS_KEY = '@fable:progress';
-const isWeb = Platform.OS === 'web';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import type { Progress, ProgressUpdate } from "@/types";
+
+const PROGRESS_KEY = "@fable:progress";
+const isWeb = Platform.OS === "web";
 
 // SQLite instance (only on native)
 let db: any = null;
@@ -19,14 +21,14 @@ let db: any = null;
  */
 export function initializeDatabase(): void {
   if (isWeb) {
-    console.log('[Progress Service] Using AsyncStorage for web');
+    console.log("[Progress Service] Using AsyncStorage for web");
     return;
   }
 
   try {
     // Dynamic import of SQLite only on native
-    const SQLite = require('expo-sqlite');
-    db = SQLite.openDatabaseSync('fable.db');
+    const SQLite = require("expo-sqlite");
+    db = SQLite.openDatabaseSync("fable.db");
 
     db.execSync(`
       CREATE TABLE IF NOT EXISTS progress (
@@ -37,9 +39,9 @@ export function initializeDatabase(): void {
         completedAt TEXT
       );
     `);
-    console.log('[Progress Service] SQLite database initialized');
+    console.log("[Progress Service] SQLite database initialized");
   } catch (error) {
-    console.error('[Progress Service] Failed to initialize database', error);
+    console.error("[Progress Service] Failed to initialize database", error);
   }
 }
 
@@ -63,7 +65,6 @@ export async function saveProgress(update: ProgressUpdate): Promise<boolean> {
       completedAt: completedAt || undefined,
     };
 
-
     if (isWeb) {
       // Web: Use AsyncStorage
       const allProgress = await getAllProgress();
@@ -79,14 +80,14 @@ export async function saveProgress(update: ProgressUpdate): Promise<boolean> {
            percentage = excluded.percentage,
            lastReadAt = excluded.lastReadAt,
            completedAt = excluded.completedAt;`,
-        [storyId, sentenceIndex, percentage, now, completedAt]
+        [storyId, sentenceIndex, percentage, now, completedAt],
       );
     }
 
-    console.log('[Progress Service] Progress saved successfully');
+    console.log("[Progress Service] Progress saved successfully");
     return true;
   } catch (error) {
-    console.error('[Progress Service] Failed to save progress', error);
+    console.error("[Progress Service] Failed to save progress", error);
     return false;
   }
 }
@@ -102,14 +103,13 @@ export function getProgress(storyId: string): Progress | null {
       return null;
     }
 
-    const result = db.getFirstSync(
-      'SELECT * FROM progress WHERE storyId = ?',
-      [storyId]
-    ) as Progress | null;
+    const result = db.getFirstSync("SELECT * FROM progress WHERE storyId = ?", [
+      storyId,
+    ]) as Progress | null;
 
     return result || null;
   } catch (error) {
-    console.error('[Progress Service] Failed to get progress', error);
+    console.error("[Progress Service] Failed to get progress", error);
     return null;
   }
 }
@@ -127,7 +127,7 @@ export async function getAllProgress(): Promise<Record<string, Progress>> {
     }
 
     // Native: Use SQLite
-    const results = db.getAllSync('SELECT * FROM progress') as Progress[];
+    const results = db.getAllSync("SELECT * FROM progress") as Progress[];
 
     // Convert array to record keyed by storyId
     const progressMap: Record<string, Progress> = {};
@@ -137,7 +137,7 @@ export async function getAllProgress(): Promise<Record<string, Progress>> {
 
     return progressMap;
   } catch (error) {
-    console.error('[Progress Service] Failed to get all progress', error);
+    console.error("[Progress Service] Failed to get all progress", error);
     return {};
   }
 }
@@ -152,11 +152,11 @@ export async function deleteProgress(storyId: string): Promise<boolean> {
       delete allProgress[storyId];
       await AsyncStorage.setItem(PROGRESS_KEY, JSON.stringify(allProgress));
     } else {
-      db.runSync('DELETE FROM progress WHERE storyId = ?', [storyId]);
+      db.runSync("DELETE FROM progress WHERE storyId = ?", [storyId]);
     }
     return true;
   } catch (error) {
-    console.error('[Progress Service] Failed to delete progress', error);
+    console.error("[Progress Service] Failed to delete progress", error);
     return false;
   }
 }
@@ -169,11 +169,11 @@ export async function clearAllProgress(): Promise<boolean> {
     if (isWeb) {
       await AsyncStorage.removeItem(PROGRESS_KEY);
     } else {
-      db.runSync('DELETE FROM progress');
+      db.runSync("DELETE FROM progress");
     }
     return true;
   } catch (error) {
-    console.error('[Progress Service] Failed to clear all progress', error);
+    console.error("[Progress Service] Failed to clear all progress", error);
     return false;
   }
 }

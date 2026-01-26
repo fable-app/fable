@@ -26,7 +26,8 @@ jobs:
 
       - name: Lint mobile app
         if: matrix.package == 'mobile'
-        run: npm run mobile:lint
+        working-directory: apps/mobile
+        run: eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 50
 
       - name: Lint SDK package
         if: matrix.package == 'sdk'

@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native';
-import { colors, typography, spacing } from '@fable/design-system';
-import type { Sentence } from '@fable/core';
+import { View, Text, StyleSheet } from "react-native";
+
+import type { Sentence } from "@fable/core";
+import { colors, typography, spacing } from "@fable/design-system";
 
 interface SentenceCardProps {
   sentence: Sentence;
@@ -28,14 +29,14 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   german: {
-    fontFamily: 'Literata_400Regular',
+    fontFamily: "Literata_400Regular",
     fontSize: typography.sizes.bodyLarge,
     lineHeight: typography.sizes.bodyLarge * typography.lineHeights.loose,
     color: colors.text.primary,
     marginBottom: spacing.md,
   },
   english: {
-    fontFamily: 'Literata_400Regular',
+    fontFamily: "Literata_400Regular",
     fontSize: typography.sizes.body,
     lineHeight: typography.sizes.body * typography.lineHeights.relaxed,
     color: colors.text.secondary,

@@ -1,10 +1,13 @@
-import { View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import { useRouter } from 'expo-router';
-import { StoryCollection } from '@/components/StoryCollection';
-import { getAllStoryMetadata } from '@fable/core';
-import type { StoryMetadata } from '@fable/core';
-import { useAllProgress, calculateBookProgress } from '@/hooks';
+import { View } from "react-native";
+
+import { useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+
+import { getAllStoryMetadata } from "@fable/core";
+import type { StoryMetadata } from "@fable/core";
+
+import { StoryCollection } from "@/components/StoryCollection";
+import { useAllProgress, calculateBookProgress } from "@/hooks";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -18,7 +21,7 @@ export default function HomeScreen() {
 
     if (story.isMultiChapter && story.chapters) {
       // Calculate average progress across all chapters
-      const chapterIds = story.chapters.map(ch => ch.id);
+      const chapterIds = story.chapters.map((ch) => ch.id);
       progress = calculateBookProgress(story.id, chapterIds, progressMap);
     } else {
       // Single story - get progress directly
@@ -47,7 +50,10 @@ export default function HomeScreen() {
   return (
     <View style={{ flex: 1 }}>
       <StatusBar style="dark" />
-      <StoryCollection stories={storiesWithProgress} onStoryPress={handleStoryPress} />
+      <StoryCollection
+        stories={storiesWithProgress}
+        onStoryPress={handleStoryPress}
+      />
     </View>
   );
 }

@@ -6,9 +6,11 @@
  * - Completed (100%)
  */
 
-import React from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
-import { colors, typography, spacing } from '@fable/design-system';
+import React from "react";
+
+import { View, Text, StyleSheet, Animated } from "react-native";
+
+import { colors, typography, spacing } from "@fable/design-system";
 
 interface ProgressBarProps {
   progress: number; // 0-100
@@ -26,17 +28,19 @@ export function ProgressBar({ progress, animated = true }: ProgressBarProps) {
 
   // Determine colors based on state
   const fillColor = isCompleted
-    ? colors.progress.complete  // Sage green for completed
-    : colors.progress.fill;      // Dusty rose for in progress
+    ? colors.progress.complete // Sage green for completed
+    : colors.progress.fill; // Dusty rose for in progress
 
   const textColor = isNotStarted
-    ? colors.text.tertiary       // Gray for 0%
+    ? colors.text.tertiary // Gray for 0%
     : isCompleted
-    ? colors.progress.complete   // Sage green for 100%
-    : colors.progress.fill;      // Dusty rose for in progress
+      ? colors.progress.complete // Sage green for 100%
+      : colors.progress.fill; // Dusty rose for in progress
 
   // Format text
-  const progressText = isCompleted ? '100% ✓' : `${Math.round(clampedProgress)}%`;
+  const progressText = isCompleted
+    ? "100% ✓"
+    : `${Math.round(clampedProgress)}%`;
 
   return (
     <View style={styles.container}>
@@ -66,24 +70,24 @@ export function ProgressBar({ progress, animated = true }: ProgressBarProps) {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: "100%",
   },
   progressText: {
-    fontFamily: 'Inter_500Medium',
+    fontFamily: "Inter_500Medium",
     fontSize: typography.sizes.label,
     lineHeight: typography.sizes.label * typography.lineHeights.normal,
     letterSpacing: typography.letterSpacing.wider,
-    textAlign: 'right',
+    textAlign: "right",
     marginBottom: spacing.xs,
   },
   track: {
     height: 6,
     backgroundColor: colors.progress.track,
     borderRadius: 3,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   fill: {
-    height: '100%',
+    height: "100%",
     borderRadius: 3,
   },
 });

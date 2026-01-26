@@ -44,13 +44,13 @@ export interface StoryMetadata {
   chapters?: ChapterMetadata[];
 }
 
-export type DifficultyLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
+export type DifficultyLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 export const DifficultyLabels: Record<DifficultyLevel, string> = {
-  A1: 'Beginner',
-  A2: 'Elementary',
-  B1: 'Intermediate',
-  B2: 'Upper Intermediate',
-  C1: 'Advanced',
-  C2: 'Proficient',
+  A1: "Beginner",
+  A2: "Elementary",
+  B1: "Intermediate",
+  B2: "Upper Intermediate",
+  C1: "Advanced",
+  C2: "Proficient",
 };

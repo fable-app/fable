@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+.expo/
+dist/
+build/
+
+# Old package directories (from pre-monorepo structure)
+packages/
+
+# Cache directories
+.cache/
+.turbo/
+
+# Test coverage
+coverage/
+
+# Environment files
+.env.local
+.env.*.local

@@ -3,9 +3,10 @@
  * React hook for loading and managing story data
  */
 
-import { useState, useEffect } from 'react';
-import { loadStory } from '@fable/core';
-import type { Story } from '@fable/core';
+import { useState, useEffect } from "react";
+
+import { loadStory } from "@fable/core";
+import type { Story } from "@fable/core";
 
 interface UseStoryResult {
   story: Story | null;
@@ -47,7 +48,9 @@ export function useStory(storyId: string | undefined): UseStoryResult {
         }
       } catch (err) {
         if (cancelled) return;
-        setError(err instanceof Error ? err : new Error('Failed to load story'));
+        setError(
+          err instanceof Error ? err : new Error("Failed to load story"),
+        );
       } finally {
         if (!cancelled) {
           setLoading(false);
