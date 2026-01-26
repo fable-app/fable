@@ -36,12 +36,12 @@ jobs:
       - name: Lint core package
         if: matrix.package == 'core'
         working-directory: packages/core
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
       - name: Lint design-system package
         if: matrix.package == 'design-system'
         working-directory: packages/design-system
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
   # Job 2: TypeScript type checking for all packages
   typecheck:
@@ -69,12 +69,12 @@ jobs:
       - name: Type check core package
         if: matrix.package == 'core'
         working-directory: packages/core
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
       - name: Type check design-system package
         if: matrix.package == 'design-system'
         working-directory: packages/design-system
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
       - name: Type check SDK package
         if: matrix.package == 'sdk'
