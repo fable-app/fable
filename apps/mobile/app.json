@@ -38,9 +38,7 @@
     "plugins": [
       "expo-router"
     ],
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "1.0.0",
     "updates": {
       "url": "https://u.expo.dev/204584cb-526e-44d3-a4b3-ae9eae98c17d"
     }
