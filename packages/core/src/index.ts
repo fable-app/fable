@@ -19,10 +19,10 @@ export {
   getProgress,
   saveProgress,
   getAllProgress,
-  updateProgress
+  deleteProgress,
+  clearAllProgress,
+  initializeDatabase
 } from './services/progress.service';
-
-export type { ProgressData } from './services/progress.service';
 
 // Data
 export { default as manifest } from './data/manifest.json';

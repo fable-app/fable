@@ -6,7 +6,7 @@
 
 import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import type { Progress, ProgressUpdate } from '@/types';
+import type { Progress, ProgressUpdate } from '../types';
 
 const PROGRESS_KEY = '@fable:progress';
 const isWeb = Platform.OS === 'web';

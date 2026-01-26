@@ -3,41 +3,41 @@
  * Handles loading and managing story data
  */
 
-import type { Story, StoryMetadata } from '@/types';
+import type { Story, StoryMetadata } from '../types';
 
 // Import manifest
-import manifestData from '@/data/manifest.json';
+import manifestData from '../data/manifest.json';
 
 // Static imports for all stories (required for Metro bundler)
-import story01 from '@/data/stories/story-01.json';
-import story02 from '@/data/stories/story-02.json';
-import story03 from '@/data/stories/story-03.json';
-import story04 from '@/data/stories/story-04.json';
-import story05 from '@/data/stories/story-05.json';
-import story06 from '@/data/stories/story-06.json';
-import story07 from '@/data/stories/story-07.json';
-import story08 from '@/data/stories/story-08.json';
-import story09 from '@/data/stories/story-09.json';
-import story10 from '@/data/stories/story-10.json';
+import story01 from '../data/stories/story-01.json';
+import story02 from '../data/stories/story-02.json';
+import story03 from '../data/stories/story-03.json';
+import story04 from '../data/stories/story-04.json';
+import story05 from '../data/stories/story-05.json';
+import story06 from '../data/stories/story-06.json';
+import story07 from '../data/stories/story-07.json';
+import story08 from '../data/stories/story-08.json';
+import story09 from '../data/stories/story-09.json';
+import story10 from '../data/stories/story-10.json';
 
 // Multi-chapter book imports
-import bookKleineGeschichten from '@/data/stories/book-kleine-geschichten.json';
-import bookKleineGeschichtenCh1 from '@/data/stories/book-kleine-geschichten-ch1.json';
-import bookKleineGeschichtenCh2 from '@/data/stories/book-kleine-geschichten-ch2.json';
+import bookKleineGeschichten from '../data/stories/book-kleine-geschichten.json';
+import bookKleineGeschichtenCh1 from '../data/stories/book-kleine-geschichten-ch1.json';
+import bookKleineGeschichtenCh2 from '../data/stories/book-kleine-geschichten-ch2.json';
 
-import aliceImWunderland from '@/data/stories/alice-im-wunderland.json';
-import aliceImWunderlandCh1 from '@/data/stories/alice-im-wunderland-ch1.json';
-import aliceImWunderlandCh2 from '@/data/stories/alice-im-wunderland-ch2.json';
-import aliceImWunderlandCh3 from '@/data/stories/alice-im-wunderland-ch3.json';
-import aliceImWunderlandCh4 from '@/data/stories/alice-im-wunderland-ch4.json';
-import aliceImWunderlandCh5 from '@/data/stories/alice-im-wunderland-ch5.json';
-import aliceImWunderlandCh6 from '@/data/stories/alice-im-wunderland-ch6.json';
-import aliceImWunderlandCh7 from '@/data/stories/alice-im-wunderland-ch7.json';
-import aliceImWunderlandCh8 from '@/data/stories/alice-im-wunderland-ch8.json';
-import aliceImWunderlandCh9 from '@/data/stories/alice-im-wunderland-ch9.json';
-import aliceImWunderlandCh10 from '@/data/stories/alice-im-wunderland-ch10.json';
-import aliceImWunderlandCh11 from '@/data/stories/alice-im-wunderland-ch11.json';
-import aliceImWunderlandCh12 from '@/data/stories/alice-im-wunderland-ch12.json';
+import aliceImWunderland from '../data/stories/alice-im-wunderland.json';
+import aliceImWunderlandCh1 from '../data/stories/alice-im-wunderland-ch1.json';
+import aliceImWunderlandCh2 from '../data/stories/alice-im-wunderland-ch2.json';
+import aliceImWunderlandCh3 from '../data/stories/alice-im-wunderland-ch3.json';
+import aliceImWunderlandCh4 from '../data/stories/alice-im-wunderland-ch4.json';
+import aliceImWunderlandCh5 from '../data/stories/alice-im-wunderland-ch5.json';
+import aliceImWunderlandCh6 from '../data/stories/alice-im-wunderland-ch6.json';
+import aliceImWunderlandCh7 from '../data/stories/alice-im-wunderland-ch7.json';
+import aliceImWunderlandCh8 from '../data/stories/alice-im-wunderland-ch8.json';
+import aliceImWunderlandCh9 from '../data/stories/alice-im-wunderland-ch9.json';
+import aliceImWunderlandCh10 from '../data/stories/alice-im-wunderland-ch10.json';
+import aliceImWunderlandCh11 from '../data/stories/alice-im-wunderland-ch11.json';
+import aliceImWunderlandCh12 from '../data/stories/alice-im-wunderland-ch12.json';
 
 // Type-cast manifest to ensure proper types
 const manifest = manifestData as { version: string; lastUpdated: string; stories: StoryMetadata[] };
