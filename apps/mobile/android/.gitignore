@@ -1,0 +1,25 @@
+# OSX
+#
+.DS_Store
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
+
+# Keystores - NEVER commit these!
+*.keystore
+*.jks
+debug.keystore
+release.keystore
+
+# Bundle artifacts
+*.jsbundle
+
+# Secrets
+secrets/
