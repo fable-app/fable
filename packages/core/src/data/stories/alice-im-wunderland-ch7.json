@@ -1,0 +1,507 @@
+{
+  "id": "alice-im-wunderland-ch7",
+  "titleGerman": "Eine verrückte Teegesellschaft",
+  "titleEnglish": "A Mad Tea-Party",
+  "author": "Lewis Carroll",
+  "wordCount": 2219,
+  "difficulty": "B2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Vor dem Haus war unter einem Baum ein Tisch gedeckt, und der Märzhase und der Hutmacher tranken dort Tee; zwischen ihnen saß fest schlafend eine Haselmaus und die beiden anderen benutzten sie als Polster, in - dem sie ihre Ellbogen auf sie stützten und sich über ihren Kopf hinweg unterhielten.",
+      "english": "A table was set under a tree in front of the house, and the March Hare and the Hatter were drinking tea there; between them sat a dormouse fast asleep, and the two others used it as a cushion, resting their elbows on it and talking over its head."
+    },
+    {
+      "id": 2,
+      "german": "„Sehr unbequem für die Haselmaus,“ dachte Alice.",
+      "english": "\"Very uncomfortable for the dormouse,\" thought Alice."
+    },
+    {
+      "id": 3,
+      "german": "„Da sie jedoch schläft, nehme ich an, daß es ihr nichts ausmacht.“ Der Tisch war groß, aber alle drei drängten sich an einer Ecke zusammen.",
+      "english": "\"But since it is sleeping, I suppose it doesn't mind.\" The table was large, but all three were crowded together at one corner."
+    },
+    {
+      "id": 4,
+      "german": "„Kein Platz!",
+      "english": "\"No room!"
+    },
+    {
+      "id": 5,
+      "german": "Kein Platz!“ riefen sie, als sie Alice kommen sahen.",
+      "english": "No room!\" they shouted when they saw Alice coming."
+    },
+    {
+      "id": 6,
+      "german": "„Hier ist genug Platz!“ sagte Alice ungehalten und setzte sich in einen gro- ßen Lehnstuhl an einem Ende des Tisches.",
+      "english": "\"There's plenty of room!\" said Alice crossly, and sat down in a large armchair at one end of the table."
+    },
+    {
+      "id": 7,
+      "german": "„Nimm dir etwas Wein,“ sagte der Märzhase in ermunterndem Ton.",
+      "english": "\"Take some wine,\" said the March Hare in an encouraging tone."
+    },
+    {
+      "id": 8,
+      "german": "Alice blickte über den ganzen Tisch, aber es stand nichts als Tee darauf.",
+      "english": "Alice looked all over the table, but there was nothing but tea on it."
+    },
+    {
+      "id": 9,
+      "german": "„Ich sehe keinen Wein,“ bemerkte sie.",
+      "english": "\"I don't see any wine,\" she remarked."
+    },
+    {
+      "id": 10,
+      "german": "„Es gibt keinen,“ sagte der Märzhase.",
+      "english": "\"There isn't any,\" said the March Hare."
+    },
+    {
+      "id": 11,
+      "german": "„Dann war es nicht sehr höflich von Ihnen, welchen anzubieten,“ erwiderte Alice verärgert.",
+      "english": "\"Then it wasn't very polite of you to offer it,\" Alice replied angrily."
+    },
+    {
+      "id": 12,
+      "german": "„Es war nicht sehr höflich von dir, dich hinzusetzen, ohne eingeladen zu sein,“ sagte der Märzhase.",
+      "english": "\"It wasn't very polite of you to sit down without being invited,\" said the March Hare."
+    },
+    {
+      "id": 13,
+      "german": "„Ich wußte nicht, daß es Ihr Tisch ist,“ versetzte Alice, „er ist für viel mehr als drei gedeckt.“ „Deine Haare müssen geschnitten werden,“ sagte der Hutmacher.",
+      "english": "\"I didn't know it was your table,\" said Alice, \"it’s set for much more than three.\""
+    },
+    {
+      "id": 14,
+      "german": "Er hatte Alice mit großer Neugier betrach- tet, und dies waren seine ersten Worte.",
+      "english": "\"Your hair needs cutting,\" said the Hatter."
+    },
+    {
+      "id": 15,
+      "german": "„Sie sollten lernen, keine persönlichen Bemerkungen zu machen,“ sagte Alice mit einiger Strenge.",
+      "english": "He had been looking at Alice with great curiosity, and these were his first words."
+    },
+    {
+      "id": 16,
+      "german": "„Das ist sehr unhöflich.“ Der Hutmacher riß seine Augen sehr weit auf, als er dies hörte, aber alles was er sagte war: „Warum gleicht ein Rabe einem Schreibtisch?“ „So, jetzt werden wir ein bißchen Spaß haben!“ dachte Alice.",
+      "english": "\"That is very rude.\" The Hatter's eyes widened very much when he heard this, but all he said was, \"Why is a raven like a writing desk?\" \"Now we will have a little fun!\" thought Alice."
+    },
+    {
+      "id": 17,
+      "german": "„Ich bin froh, daß sie mit Rätselraten angefan- gen haben – ich glaube, das kann ich erraten,“ fügte sie laut hinzu.",
+      "english": "\"I'm glad they started with riddles - I think I can guess that,\" she added aloud."
+    },
+    {
+      "id": 18,
+      "german": "„Meinst du, daß du denkst, du könntest die Antwort herausfinden?“ fragte der Märzhase.",
+      "english": "\"Do you think you think you could figure out the answer?\" asked the March Hare."
+    },
+    {
+      "id": 19,
+      "german": "„Genau das,“ sagte Alice.",
+      "english": "\"Exactly that,\" said Alice."
+    },
+    {
+      "id": 20,
+      "german": "„Dann solltest du sagen, was du meinst,“ fuhr der Märzhase fort.",
+      "english": "\"Then you should say what you mean,\" the March Hare continued."
+    },
+    {
+      "id": 21,
+      "german": "„Das tu ich ja,“ erwiderte Alice hastig, „wenigstens – wenigstens meine ich, was ich sage – das ist schließlich dasselbe.“ „Kein bißchen dasselbe!“ sagte der Hutmacher.",
+      "english": "\"I am,\" Alice replied hastily, \"at least - at least I mean what I say - that's the same after all.\" \"Not a bit the same!\" said the Hatter."
+    },
+    {
+      "id": 22,
+      "german": "„Dann könntest du ja ebensogut sagen: ,Ich sehe, was ich esse' sei dasselbe wie ,ich esse, was ich sehe´!“ „Du könntest ebensogut sagen,“ fügte der Märzhase hinzu, „daß ,ich mag, was ich bekomme´ dasselbe sei wie ,ich bekomme, was ich mag´!“ „Du könntest ebensogut sagen,“ ergänzte die Haselmaus, die im Schlaf zu sprechen schien, „daß ,ich lebe, wenn ich schlafe´ dasselbe sei wie ,ich schlafe, wenn ich lebe´!“ „Bei dir ist es dasselbe!“ sagte der Hutmacher; hier brach das Gespräch ab und die Gesellschaft saß eine Minute schweigend da, während Alice sich alles durch den Kopf gehen ließ, was sie über Raben und Schreib-tische wußte, und das war nicht viel.",
+      "english": "\"Then you might as well say: 'I see what I eat' is the same as 'I eat what I see'!\" \"You might as well say,\" the March Hare added, \"that 'I like what I get' is the same as 'I get what I like'!\" \"You might as well say,\" added the Dormouse, who seemed to be speaking in his sleep, \"that 'I live when I sleep' is the same as 'I sleep when I live'!\" \"With you, it's the same!\" said the Hatter; here the conversation broke off and the company sat in silence for a minute, while Alice let everything she knew about ravens and writing desks go through her mind, and that wasn't much."
+    },
+    {
+      "id": 23,
+      "german": "Der Hutmacher unterbrach als erster die Stille.",
+      "english": "The Hatter was the first to break the silence."
+    },
+    {
+      "id": 24,
+      "german": "„Den wievielten haben wir heute?“ fragte er an Alice ge - wandt; er hatte seine Uhr aus der Tasche gezogen und schaute unruhig auf sie, wobei er sie ab und zu schüt - telte und an sein Ohr hielt.",
+      "english": "\"What day of the month is it today?\" he asked, turning to Alice; he had pulled his watch out of his pocket and was looking at it restlessly, shaking it from time to time and holding it to his ear."
+    },
+    {
+      "id": 25,
+      "german": "Alice dachte ein wenig nach und sagte dann: „Den vierten.“ „Zwei Tage geht sie falsch!“ seufzte der Hutmacher.",
+      "english": "Alice thought for a moment and then said, \"The fourth.\" \"It’s been wrong for two days!\" sighed the Hatter."
+    },
+    {
+      "id": 26,
+      "german": "„Ich habe dir gleich gesagt, daß Butter dem Uhrwerk schadet!“ fügte er hinzu und sah den Märzhasen wütend an.",
+      "english": "\"I told you right away that butter damages the mechanism!\" he added, glaring at the March Hare."
+    },
+    {
+      "id": 27,
+      "german": "„Es war die beste Butter,“ erwiderte der Märzhase kleinlaut.",
+      "english": "\"It was the best butter,\" the March Hare replied meekly."
+    },
+    {
+      "id": 28,
+      "german": "„Ja, aber es müssen auch einige Krümel hineingeraten sein,“ knurrte der Hutmacher, „du hättest nicht das Brotmesser dazu nehmen sollen.“ Der Märzhase nahm die Uhr und sah sie düster an; dann tauchte er sie in seine Teetasse und betrachtete sie wieder, aber ihm fiel nichts Besseres ein, als seine letzte Bemerkung zu wiederholen: „Es war doch die beste Butter.“ Alice hatte voller Neugier über seine Schulter geblickt.",
+      "english": "\"Yes, but some crumbs must have gotten in,\" grumbled the Hatter, \"you shouldn't have used the bread knife.\" The March Hare took the watch and looked at it gloomily; then he dipped it into his teacup and looked at it again, but he couldn't think of anything better than to repeat his last remark: \"It was the best butter.\" Alice had looked over his shoulder with great curiosity."
+    },
+    {
+      "id": 29,
+      "german": "„Was für eine komische Uhr!“ bemerkte sie.",
+      "english": "\"What a funny watch!\" she remarked."
+    },
+    {
+      "id": 30,
+      "german": "„Sie zeigt die Tage des Monats an und nicht, wie spät es ist!“ „Warum sollte sie?“ murrte der Hutmacher.",
+      "english": "\"It tells the days of the month and not what time it is!\" \"Why should it?\" grumbled the Hatter."
+    },
+    {
+      "id": 31,
+      "german": "„Zeigt deine vielleicht das Jahr an?“ „Natürlich nicht,“ versetzte Alice schlagfertig, „weil es nämlich eine so lange Zeit dasselbe Jahr bleibt.“ „Was genau der Fall bei meiner ist,“ sagte der Hutmacher.",
+      "english": "\"Does yours perhaps indicate the year?\" \"Of course not,\" Alice replied wittily, \"because it stays the same year for such a long time.\" \"Which is exactly the case with mine,\" said the Hatter."
+    },
+    {
+      "id": 32,
+      "german": "Alice war schrecklich verwirrt.",
+      "english": "Alice was terribly confused."
+    },
+    {
+      "id": 33,
+      "german": "Die Bemerkung des Hutmachers schien ihr keinerlei Sinn zu enthalten, und doch war sie zweifellos sprachlich korrekt.",
+      "english": "The Hatter's remark seemed to contain no sense at all, and yet it was undoubtedly linguistically correct."
+    },
+    {
+      "id": 34,
+      "german": "„Ich verstehe Sie nicht ganz,“ sagte sie so höflich, wie sie konnte.",
+      "english": "\"I don't quite understand you,\" she said as politely as she could."
+    },
+    {
+      "id": 35,
+      "german": "„Die Haselmaus ist wieder eingeschlafen,“ sagte der Hutmacher und goß ihr ein wenig heißen Tee auf die Nase.",
+      "english": "\"The dormouse has fallen asleep again,\" said the Hatter, pouring a little hot tea on its nose."
+    },
+    {
+      "id": 36,
+      "german": "Die Haselmaus schüttelte unwillig den Kopf und sagte, ohne die Augen zu öffnen: „Natürlich, natürlich: ge - nau das, was ich gerade eben selber sagen wollte.“ „Hast du schon das Rätsel gelöst?“ fragte der Hutmacher und wandte sich wieder Alice zu.",
+      "english": "The dormouse shook its head unwillingly and said, without opening its eyes: \"Of course, of course: exactly what I was just about to say.\" \"Have you solved the riddle yet?\" asked the Hatter, turning back to Alice."
+    },
+    {
+      "id": 37,
+      "german": "„Nein, ich gebe es auf,“ antwortete Alice.",
+      "english": "\"No, I give up,\" replied Alice."
+    },
+    {
+      "id": 38,
+      "german": "„Wie heißt die Lösung?“ „Ich habe nicht die geringste Idee,“ sagte der Hutmacher.",
+      "english": "\"What is the solution?\" \"I haven't the slightest idea,\" said the Hatter."
+    },
+    {
+      "id": 39,
+      "german": "„Ich auch nicht,“ sagte der Märzhase.",
+      "english": "\"Neither have I,\" said the March Hare."
+    },
+    {
+      "id": 40,
+      "german": "Alice seufzte müde.",
+      "english": "Alice sighed wearily."
+    },
+    {
+      "id": 41,
+      "german": "„Ich glaube, Sie könnten etwas Besseres mit der Zeit anfangen,“ sagte sie, „als sie mit Rätseln zu verschwenden, die keine Lösung haben.“ „Wenn du die Zeit so gut kenntest wie ich,“ sagte der Hutmacher, „würdest du nicht so von ihr sprechen.“ „Ich weiß nicht, was Sie meinen,“ sagte Alice.",
+      "english": "\"I think you could do something better with your time,\" she said, \"than waste it on riddles that have no solution.\" \"If you knew time as well as I do,\" said the Hatter, \"you wouldn't speak of it that way.\" \"I don't know what you mean,\" said Alice."
+    },
+    {
+      "id": 42,
+      "german": "„Natürlich weißt du's nicht!“ sagte der Hutmacher und warf geringschätzig den Kopf zurück.",
+      "english": "\"Of course you don't!\" said the Hatter, tossing his head back contemptuously."
+    },
+    {
+      "id": 43,
+      "german": "„Ich darf wohl annehmen, daß du sogar noch nie mit der Zeit gesprochen hast.“ „Vielleicht nicht,“ erwiderte Alice vorsichtig, „aber wenn unsere Uhr die Stunden schlägt –“ „Ah!",
+      "english": "\"I may assume that you've never even spoken to Time.\" \"Maybe not,\" Alice replied cautiously, \"but when our clock strikes the hours—\" \"Ah!"
+    },
+    {
+      "id": 44,
+      "german": "Das erklärt alles,“ unterbrach sie der Hutmacher.",
+      "english": "That explains everything,\" interrupted the Hatter."
+    },
+    {
+      "id": 45,
+      "german": "„Schläge läßt sich die Zeit nicht gefallen.",
+      "english": "\"Time won't stand for strikes."
+    },
+    {
+      "id": 46,
+      "german": "Wenn du je- doch mit ihr auf gutem Fuß stehst, macht sie fast alles was du willst mit der Uhr.",
+      "english": "If you ever get on good terms with her, she will do almost anything you want with the clock."
+    },
+    {
+      "id": 47,
+      "german": "Nimm zum Beispiel an, es ist neun Uhr morgens – Zeit, zur Schule zu gehen: du brauchst der Zeit bloß ein Wörtchen zuzuflüstern, und schon rennen die Zeiger herum wie im Fluge!",
+      "english": "Just suppose it’s nine o’clock in the morning – time to go to school: you only need to whisper a word to the time, and the hands will start running around like in flight!"
+    },
+    {
+      "id": 48,
+      "german": "Halb zwei – Zeit zum Mittagessen!“ („Ich wünschte nur, es wäre soweit,“ flüsterte der Märzhase vor sich hin.) „Das wäre freilich großartig,“ sagte Alice nachdenklich, „aber, wissen Sie – ich wäre noch nicht hungrig.“ „Vielleicht nicht sofort,“ sagte der Hutmacher, „aber du könntest es so lange halb zwei sein lassen, wie du willst.“ „Machen Sie das hier so?“ fragte Alice.",
+      "english": "Half-past one – time for lunch!” (“I only wish it were so,” whispered the March Hare to himself.) “That would indeed be great,” said Alice thoughtfully, “but, you know – I’m not hungry yet.” “Maybe not right away,” said the Mad Hatter, “but you could let it be half-past one for as long as you want.” “Is that how it is done here?” asked Alice."
+    },
+    {
+      "id": 49,
+      "german": "Der Hutmacher schüttelte betrübt den Kopf.",
+      "english": "The Mad Hatter shook his head sadly."
+    },
+    {
+      "id": 50,
+      "german": "„Nicht ich!“ antwortete er.",
+      "english": "“Not me!” he replied."
+    },
+    {
+      "id": 51,
+      "german": "„Wir hatten im März Streit – gerade bevor er verrückt wurde –“ (er deutete mit dem Teelöffel auf den Märzhasen) „– es war beim großen Kon- zert, das die Herzkönigin veranstaltete, und ich mußte singen.",
+      "english": "“We had a quarrel in March – just before he went mad –” (he pointed with the teaspoon at the March Hare) “– it was at the big concert that the Queen of Hearts held, and I had to sing."
+    },
+    {
+      "id": 52,
+      "german": ",Flimmre, flimmre, Fledermaus, Worauf willst du denn hinaus?´ Vielleicht kennst du das Lied?“ „Etwas ähnliches habe ich schon mal gehört,“ sagte Alice.",
+      "english": "‘Twinkle, twinkle, bat, what are you getting at?’ Maybe you know the song?” “I’ve heard something similar before,” said Alice."
+    },
+    {
+      "id": 53,
+      "german": "„Es geht nämlich so weiter,“ fuhr der Hutmacher fort: „Schwebst mit hochgemutem Sinn Wie ein Teetablett dahin.",
+      "english": "“It goes on like this,” continued the Mad Hatter: “Float along with a high-spirited mind like a tea tray."
+    },
+    {
+      "id": 54,
+      "german": "Flimmre, flimmre –“ Hier schüttelte sich die Haselmaus und fing an, im Schlaf zu singen: „Flimmre, flimmre, flimmre, flimmre –“ und hörte nicht wieder auf, so daß man sie zwicken mußte, um sie zum Schweigen zu bringen.",
+      "english": "Twinkle, twinkle –” Here the Dormouse shook himself and began to sing in his sleep: “Twinkle, twinkle, twinkle, twinkle –” and wouldn’t stop, so that they had to pinch him to make him quiet."
+    },
+    {
+      "id": 55,
+      "german": "„Also, ich hatte kaum die erste Strophe beendet,“ sagte der Hutma- cher, „als die Königin losbrüllte: ,Er will nur die Zeit totschlagen!",
+      "english": "“Well, I had hardly finished the first verse,” said the Mad Hatter, “when the Queen roared: ‘He just wants to kill time!"
+    },
+    {
+      "id": 56,
+      "german": "Herunter mit seinem Kopf!´“ „Wie schrecklich barbarisch!“ rief Alice.",
+      "english": "Off with his head!’” “How terribly barbaric!” cried Alice."
+    },
+    {
+      "id": 57,
+      "german": "„Und seitdem,“ fuhr der Hutmacher traurig fort, „erfüllt die Zeit mir keine Bitte mehr.",
+      "english": "“And since then,” the Mad Hatter continued sadly, “time has not granted me any requests."
+    },
+    {
+      "id": 58,
+      "german": "Jetzt ist es immer sechs Uhr.“ Alice ging ein Licht auf.",
+      "english": "Now it’s always six o’clock.” A light went on for Alice."
+    },
+    {
+      "id": 59,
+      "german": "„Ist das der Grund, weshalb hier soviel Teegeschirr hingestellt ist?“ fragte sie.",
+      "english": "“Is that the reason why so much tea set is laid out here?” she asked."
+    },
+    {
+      "id": 60,
+      "german": "„Ja, das ist er,“ sagte der Hutmacher seufzend, „es ist immer Teezeit, und wir kommen nicht dazu, zwischen- durch das Geschirr abzuwaschen.“ „Dann rücken Sie um den Tisch herum, nehme ich an?“ sagte Alice.",
+      "english": "“Yes, that is it,” sighed the Mad Hatter, “it’s always tea time, and we don’t get a chance to wash the dishes in between.” “Then I suppose you move around the table?” said Alice."
+    },
+    {
+      "id": 61,
+      "german": "„Richtig,“ sagte der Hutmacher, „immer nachdem ein Gedeck benutzt ist.“ „Aber was geschieht, wenn Sie wieder beim Anfang ankommen?“ wagte Alice zu fragen.",
+      "english": "\"Right,\" said the Hatter, \"always after a place setting has been used.\" \"But what happens when you come back to the beginning?\" Alice dared to ask."
+    },
+    {
+      "id": 62,
+      "german": "„Ich schlage vor, wir reden von etwas anderem,“ unterbrach der Märzhase gähnend.",
+      "english": "\"I suggest we talk about something else,\" interrupted the March Hare, yawning."
+    },
+    {
+      "id": 63,
+      "german": "„Ich werde davon ganz müde.",
+      "english": "\"I'm getting quite tired of it.\""
+    },
+    {
+      "id": 64,
+      "german": "Ich bin dafür, daß uns die junge Dame eine Geschichte erzählt.“ „Ich fürchte, ich weiß keine,“ sagte Alice, von diesem Vorschlag ziemlich beunruhigt.",
+      "english": "\"I propose that the young lady tells us a story.\" \"I'm afraid I don't know any,\" said Alice, quite disturbed by this suggestion."
+    },
+    {
+      "id": 65,
+      "german": "„Dann soll die Haselmaus!“ riefen beide.",
+      "english": "\"Then let the Dormouse!\" both shouted."
+    },
+    {
+      "id": 66,
+      "german": "„Wach auf, Haselmaus!“ Und sie zwickten sie gleichzeitig von bei- den Seiten.",
+      "english": "\"Wake up, Dormouse!\" And they pinched her simultaneously from both sides."
+    },
+    {
+      "id": 67,
+      "german": "Die Haselmaus öffnete langsam die Augen.",
+      "english": "The Dormouse slowly opened her eyes."
+    },
+    {
+      "id": 68,
+      "german": "„Ich habe nicht geschlafen,“ sagte sie mit schwacher, heiserer Stimme.",
+      "english": "\"I haven't been sleeping,\" she said in a weak, hoarse voice."
+    },
+    {
+      "id": 69,
+      "german": "„Ich habe jedes Wort gehört, das ihr Burschen gesprochen habt.“ „Erzähl' uns eine Geschichte!“ sagte der Märzhase.",
+      "english": "\"I heard every word you fellows spoke.\" \"Tell us a story!\" said the March Hare."
+    },
+    {
+      "id": 70,
+      "german": "„Ja, bitte,“ sagte Alice.",
+      "english": "\"Yes, please,\" said Alice."
+    },
+    {
+      "id": 71,
+      "german": "„Und mach schnell damit,“ setzte der Hutmacher hinzu, „sonst schläfst du wieder ein, bevor sie fertig ist.“ „Es waren einmal drei kleine Schwestern,“ begann die Haselmaus in großer Eile, „und sie hießen Elsie, La- cie und Tillie, und sie wohnten auf dem Grund eines Brunnens –“ „Wovon lebten sie?“ fragte Alice, die an allem, was Essen und Trinken betraf, sehr interessiert war.",
+      "english": "\"And be quick about it,\" added the Hatter, \"or you'll fall asleep again before it's finished.\" \"Once upon a time there were three little sisters,\" the Dormouse began in great haste, \"and their names were Elsie, Lacie, and Tillie, and they lived at the bottom of a well—\" \"What did they live on?\" asked Alice, who was very interested in everything that had to do with food and drink."
+    },
+    {
+      "id": 72,
+      "german": "„Sie lebten von Sirup,“ sagte die Haselmaus, nachdem sie eine Weile nachgedacht hatte.",
+      "english": "\"They lived on syrup,\" said the Dormouse, after thinking for a while."
+    },
+    {
+      "id": 73,
+      "german": "„Das konnten sie wohl nicht gut,“ bemerkte Alice sanft, „sie wären ja krank geworden.“ „Das waren sie auch,“ sagte die Haselmaus, „sehr krank.“ Alice versuchte, sich ein wenig solche außergewöhnliche Lebensweise vorzustellen, aber das verwirrte sie zu sehr; deshalb fuhr sie fort: „Aber warum wohnten sie auf dem Grund eines Brunnens?“ „Nimm dir noch mehr Tee,“ sagte der Märzhase mit sehr ernster Miene zu Alice.",
+      "english": "\"They probably couldn't do that well,\" Alice gently remarked, \"they would have gotten sick.\" \"They were,\" said the Dormouse, \"very sick.\" Alice tried to imagine such an extraordinary way of life, but it confused her too much; so she continued, \"But why did they live at the bottom of a well?\" \"Take some more tea,\" said the March Hare very seriously to Alice."
+    },
+    {
+      "id": 74,
+      "german": "„Ich hatte bisher keinen,“ erwiderte Alice verärgert, „da kann ich nicht mehr nehmen.“ „Du meinst, du kannst nicht weniger nehmen,“ sagte der Hutmacher, „es ist sehr leicht, mehr als nichts zu nehmen.“ „Niemand hat Sie nach Ihrer Meinung gefragt,“ sagte Alice.",
+      "english": "\"I haven't had any so far,\" Alice replied angrily, \"so I can't take any more.\" \"You mean you can't take less,\" said the Hatter, \"it's very easy to take more than nothing.\" \"No one asked you for your opinion,\" said Alice."
+    },
+    {
+      "id": 75,
+      "german": "„Wer macht jetzt persönliche Bemerkungen?“ fragte der Hutmacher triumphierend.",
+      "english": "\"Who is making personal remarks now?\" asked the Hatter triumphantly."
+    },
+    {
+      "id": 76,
+      "german": "Alice wußte nicht recht, was sie darauf sagen sollte; deshalb nahm sie etwas Tee und Butterbrot und wandte sich an die Haselmaus, indem sie ihre Frage wiederholte: „Warum lebten sie auf dem Grund eines Brun - nens?“ Die Haselmaus dachte wieder eine Weile nach und sagte dann: „Es war ein Sirupbrunnen.“ „So etwas gibt's nicht!“ fing Alice sehr verärgert an, aber der Hutmacher und der Märzhase machten „Sch!",
+      "english": "Alice didn't quite know what to say to that; so she took some tea and a buttered bread and turned to the dormouse, repeating her question: \"Why did they live at the bottom of a well?\" The dormouse thought for a while and then said: \"It was a syrup well.\" \"Such a thing doesn't exist!\" Alice began very angrily, but the Mad Hatter and the March Hare went \"Shh! Shh!\" and the dormouse remarked grumpily: \"If you can't behave, you'd better finish the story yourself.\" \"No, please go on,\" said Alice very meekly."
+    },
+    {
+      "id": 77,
+      "german": "Sch!“ und die Haselmaus bemerkte verdrossen: „Wenn du nicht artig sein kannst, erzählst du die Geschichte besser selbst zu Ende.“ „Nein, bitte fahr' fort,“ sagte Alice sehr kleinlaut.",
+      "english": "\"I won't interrupt you again.\""
+    },
+    {
+      "id": 78,
+      "german": "„Ich werde dich nicht wieder unterbrechen.",
+      "english": "\"I do believe there may be one.\" \"One, don't make me laugh!\" said the dormouse irritably."
+    },
+    {
+      "id": 79,
+      "german": "Ich glaube ja, daß es einen geben mag.“ „Einen, daß ich nicht lache!“ sagte die Haselmaus ungehalten.",
+      "english": "However, she allowed herself to continue: \"So these three little sisters - they learned to pump - \" \"What did they pump?\" asked Alice, forgetting her promise."
+    },
+    {
+      "id": 80,
+      "german": "Sie ließ sich jedoch herbei fortzufahren: „Also diese drei kleinen Schwestern – sie lernten nämlich pumpen –“ „Was pumpten sie denn?“ fragte Alice, ihr Versprechen vergessend.",
+      "english": "\"Syrup,\" said the dormouse, this time without thinking."
+    },
+    {
+      "id": 81,
+      "german": "„Sirup,“ sagte die Haselmaus, diesmal ohne nachzudenken.",
+      "english": "\"I would like a clean cup,\" interrupted the Mad Hatter, \"let's all move one place down.\" He was already doing so while he spoke, and the dormouse followed him; the March Hare sat down in her chair, and Alice reluctantly moved to the March Hare's place."
+    },
+    {
+      "id": 82,
+      "german": "„Ich möchte eine saubere Tasse,“ unterbrach der Hutmacher, „wir wollen alle einen Platz weiterrücken.“ Das tat er schon, während er sprach, und die Haselmaus folgte ihm; der Märzhase setzte sich auf ihren Stuhl, und Alice rückte ziemlich unwillig auf den Platz des Märzhasen.",
+      "english": "The Mad Hatter was the only one who benefited from the change, and Alice was a good deal worse off than before, for the March Hare had just spilled the milk jug over his plate."
+    },
+    {
+      "id": 83,
+      "german": "Der Hutmacher war der einzige, der von dem Wechsel einen Vorteil hatte, und Alice war ein gut Teil schlechter daran als vorher, denn der Märzhase hatte gerade das Milchkännchen über seinem Teller ausgegossen.",
+      "english": "Alice didn't want to offend the dormouse again, so she began very cautiously: \"But I don't understand."
+    },
+    {
+      "id": 84,
+      "german": "Alice wollte die Haselmaus nicht abermals kränken, deshalb begann sie sehr vorsichtig: „Aber ich verstehe nicht.",
+      "english": "Who did they pump the syrup from?\" \"You can pump water from a water well,\" said the Mad Hatter, \"so you can surely pump syrup from a syrup well - can't you, dear?\" \"But they lived at the bottom of it,\" said Alice to the dormouse, deliberately ignoring the last remark."
+    },
+    {
+      "id": 85,
+      "german": "Von wem pumpten sie sich denn den Sirup?“ „Man kann Wasser aus einem Wasserbrunnen pumpen,'“ sagte der Hutmacher, „also kann man doch wohl Sirup aus einem Sirupbrunnen pumpen – nicht, Dummchen?“ „Aber sie wohnten auf dessen Grund,“ sagte Alice zu der Haselmaus und überhörte geflissentlich die letzte Bemerkung.",
+      "english": "\"Of course,\" said the dormouse, \"they lived there at the bottom.\" This answer confused poor Alice so much that she let the dormouse tell for a while without interrupting her."
+    },
+    {
+      "id": 86,
+      "german": "„Natürlich,“ sagte die Haselmaus, „auf Grund dessen wohnten sie da.“ Diese Antwort verwirrte die arme Alice so sehr, daß sie die Haselmaus eine Weile erzählen ließ, ohne sie zu unterbrechen.",
+      "english": "\"They learned to pump,\" continued the dormouse, yawning and rubbing her eyes, for she was getting very sleepy, \"and they pumped all sorts of things - everything that starts with an A - \" \"Why with an A?\" asked Alice."
+    },
+    {
+      "id": 87,
+      "german": "„Sie lernten pumpen,“ fuhr die Haselmaus fort, indem sie gähnte und sich die Augen rieb, denn sie wurde sehr schläfrig, „und sie pumpten sich alle möglichen Dinge – alles was mit einem A anfängt –“ „Warum mit einem A?“ fragte Alice.",
+      "english": "\"Why not?\" asked the March Hare."
+    },
+    {
+      "id": 88,
+      "german": "„Warum nicht?“ fragte der Märzhase.",
+      "english": "Alice was silent."
+    },
+    {
+      "id": 89,
+      "german": "Alice war still.",
+      "english": "Alice was silent."
+    },
+    {
+      "id": 90,
+      "german": "43 - Inzwischen hatte die Haselmaus die Augen geschlossen und war dabei, einzudösen, aber von dem Hutmacher gezwickt, fuhr sie mit einem kleinen Schrei wieder hoch und sprach weiter: „– was mit einem A anfängt, also Abendrot und Apfelkerne und Angeberei und Anderes – du weißt, man sagt, das sei ,eins wie das andere´ – hast du jemals gepumptes Anderes gesehen?“ „Also jetzt wo du mich fragst,“ sagte Alice in großer Verwirrung, „ich denke nicht –“ „Dann solltest du auch nicht reden,“ sagte der Hutmacher.",
+      "english": "Meanwhile, the dormouse had closed her eyes and was dozing off, but pinched by the Hatter, she started up with a little shriek and went on: \"—things that begin with an A, like amber and apple-cores and ambition and other things—you know they say 'it's all the same'—did you ever see pumped other things?\" \"Now that you ask me,\" said Alice in great confusion, \"I don't think—\" \"Then you shouldn't talk,\" said the Hatter."
+    },
+    {
+      "id": 91,
+      "german": "Diese Grobheit war mehr als Alice ertragen konnte; empört stand sie auf und ging davon; die Haselmaus schlief sofort ein, und von den anderen nahm niemand Notiz von Alice, obwohl sie ein- oder zweimal zu - rückschaute, in der vagen Hoffnung, sie würden hinter ihr herrufen; das letzte, was sie von ihnen sah, war, daß sie versuchten, die Haselmaus in die Teekanne zu stopfen.",
+      "english": "This rudeness was more than Alice could bear; outraged, she stood up and walked away; the dormouse fell asleep immediately, and none of the others took notice of Alice, although she looked back once or twice in the vague hope that they would call after her; the last thing she saw of them was that they were trying to stuff the dormouse into the teapot."
+    },
+    {
+      "id": 92,
+      "german": "„Dort werde ich auf keinen Fall wieder hingehen!“ sage Alice, während sie einen Weg durch den Wald suchte.",
+      "english": "\"I will definitely not go back there!\" said Alice as she searched for a way through the forest."
+    },
+    {
+      "id": 93,
+      "german": "„Das ist die blödeste Teegesellschaft, bei der ich je in meinem Leben gewesen bin.“ Gerade als sie dies sagte, bemerkte sie, daß einer der Bäume eine Tür hatte, die geradewegs in ihn hinein- führte.",
+      "english": "\"This is the stupidest tea party I have ever been to in my life.\" Just as she said this, she noticed that one of the trees had a door that led straight into it."
+    },
+    {
+      "id": 94,
+      "german": "„Das ist sehr seltsam!“ dachte sie.",
+      "english": "\"That is very strange!\" she thought."
+    },
+    {
+      "id": 95,
+      "german": "„Aber heu- te ist alles seltsam.",
+      "english": "\"But everything is strange today.\""
+    },
+    {
+      "id": 96,
+      "german": "Ich glaube, ich kann gleichwohl sofort hineingehen.“ Und das tat sie.",
+      "english": "I think I can go in right away anyway.\" And she did."
+    },
+    {
+      "id": 97,
+      "german": "Schon wieder befand sie sich in dem langen Saal und bei dem kleinen Glastisch.",
+      "english": "Once again, she found herself in the long hall and at the little glass table."
+    },
+    {
+      "id": 98,
+      "german": "„Jetzt werde ich es aber besser machen,“ sagte sie sich und nahm zuerst den kleinen Schlüssel und schloß die Tür zum Garten auf.",
+      "english": "\"Now I will do it better,\" she said to herself and first took the little key and unlocked the door to the garden."
+    },
+    {
+      "id": 99,
+      "german": "Dann knabberte sie an dem Pilz (sie hatte noch ein Stück davon in der Tasche), bis sie ungefähr dreißig Zentimeter hoch war; dann ging sie den kleinen Gang entlang und dann – war sie zu guter Letzt in dem wunderschönen Garten, zwischen den leuchtenden Blu- menbeeten und den kühlen Springbrunnen.",
+      "english": "Then she nibbled on the mushroom (she still had a piece of it in her pocket) until she was about thirty centimeters tall; then she walked down the little corridor and then - she was finally in the beautiful garden, among the bright flower beds and the cool fountains."
+    }
+  ],
+  "bookId": "alice-im-wunderland",
+  "chapterNumber": 7
+}

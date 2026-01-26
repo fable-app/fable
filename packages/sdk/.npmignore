@@ -1,0 +1,41 @@
+# Source files
+src/
+tsconfig.json
+
+# Documentation (keep README.md)
+docs/
+
+# Tests
+**/*.test.ts
+**/*.test.tsx
+**/__tests__/
+**/__mocks__/
+
+# Development files
+.eslintrc.js
+.prettierrc
+.gitignore
+
+# Build artifacts (keep dist/)
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node
+node_modules/

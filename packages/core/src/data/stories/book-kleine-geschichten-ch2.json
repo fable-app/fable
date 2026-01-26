@@ -1,0 +1,62 @@
+{
+  "id": "book-kleine-geschichten-ch2",
+  "titleGerman": "Der Spaziergang",
+  "titleEnglish": "The Walk",
+  "author": "Original",
+  "wordCount": 59,
+  "difficulty": "A2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Nach dem Frühstück zieht Emma ihre Jacke an.",
+      "english": "After breakfast, Emma puts on her jacket."
+    },
+    {
+      "id": 2,
+      "german": "Sie verlässt das Haus und geht in den Park.",
+      "english": "She leaves the house and goes to the park."
+    },
+    {
+      "id": 3,
+      "german": "Der Park ist heute sehr ruhig.",
+      "english": "The park is very quiet today."
+    },
+    {
+      "id": 4,
+      "german": "Nur wenige Menschen sind unterwegs.",
+      "english": "Only a few people are out."
+    },
+    {
+      "id": 5,
+      "german": "Emma setzt sich auf eine Bank.",
+      "english": "Emma sits down on a bench."
+    },
+    {
+      "id": 6,
+      "german": "Sie beobachtet die Enten am Teich.",
+      "english": "She watches the ducks at the pond."
+    },
+    {
+      "id": 7,
+      "german": "Eine Ente kommt näher.",
+      "english": "A duck comes closer."
+    },
+    {
+      "id": 8,
+      "german": "Emma hat Brot mitgebracht.",
+      "english": "Emma brought bread with her."
+    },
+    {
+      "id": 9,
+      "german": "Sie füttert die Enten.",
+      "english": "She feeds the ducks."
+    },
+    {
+      "id": 10,
+      "german": "Nach einer Weile geht sie nach Hause.",
+      "english": "After a while, she goes home."
+    }
+  ],
+  "bookId": "book-kleine-geschichten",
+  "chapterNumber": 2
+}

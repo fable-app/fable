@@ -1,0 +1,60 @@
+{
+  "id": "story-05",
+  "titleGerman": "Der Erste Schnee",
+  "titleEnglish": "The First Snow",
+  "author": "Original",
+  "wordCount": 78,
+  "difficulty": "A1",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Es war ein kalter Wintermorgen.",
+      "english": "It was a cold winter morning."
+    },
+    {
+      "id": 2,
+      "german": "Lisa sah aus dem Fenster.",
+      "english": "Lisa looked out the window."
+    },
+    {
+      "id": 3,
+      "german": "Alles war weiß vom Schnee!",
+      "english": "Everything was white from the snow!"
+    },
+    {
+      "id": 4,
+      "german": "Sie zog schnell ihre warme Jacke an.",
+      "english": "She quickly put on her warm jacket."
+    },
+    {
+      "id": 5,
+      "german": "Draußen baute sie einen großen Schneemann.",
+      "english": "Outside she built a big snowman."
+    },
+    {
+      "id": 6,
+      "german": "Der Schneemann hatte eine Karotte als Nase.",
+      "english": "The snowman had a carrot for a nose."
+    },
+    {
+      "id": 7,
+      "german": "Zwei Steine waren seine Augen.",
+      "english": "Two stones were his eyes."
+    },
+    {
+      "id": 8,
+      "german": "Lisa gab ihm einen alten Hut.",
+      "english": "Lisa gave him an old hat."
+    },
+    {
+      "id": 9,
+      "german": "Ihr Bruder kam und sie spielten im Schnee.",
+      "english": "Her brother came and they played in the snow."
+    },
+    {
+      "id": 10,
+      "german": "Es war ein wunderschöner Tag.",
+      "english": "It was a wonderful day."
+    }
+  ]
+}

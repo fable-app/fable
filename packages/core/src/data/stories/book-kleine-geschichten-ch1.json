@@ -1,0 +1,57 @@
+{
+  "id": "book-kleine-geschichten-ch1",
+  "titleGerman": "Der Morgen",
+  "titleEnglish": "The Morning",
+  "author": "Original",
+  "wordCount": 50,
+  "difficulty": "A2",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Die Sonne scheint hell durch das Fenster.",
+      "english": "The sun shines brightly through the window."
+    },
+    {
+      "id": 2,
+      "german": "Emma wacht auf und streckt sich.",
+      "english": "Emma wakes up and stretches."
+    },
+    {
+      "id": 3,
+      "german": "Es ist ein schöner Tag.",
+      "english": "It is a beautiful day."
+    },
+    {
+      "id": 4,
+      "german": "Sie steht auf und geht in die Küche.",
+      "english": "She gets up and goes to the kitchen."
+    },
+    {
+      "id": 5,
+      "german": "Dort macht sie sich einen Kaffee.",
+      "english": "There she makes herself a coffee."
+    },
+    {
+      "id": 6,
+      "german": "Der Duft ist wunderbar.",
+      "english": "The smell is wonderful."
+    },
+    {
+      "id": 7,
+      "german": "Sie trinkt langsam und schaut aus dem Fenster.",
+      "english": "She drinks slowly and looks out the window."
+    },
+    {
+      "id": 8,
+      "german": "Die Vögel singen draußen.",
+      "english": "The birds are singing outside."
+    },
+    {
+      "id": 9,
+      "german": "Emma lächelt.",
+      "english": "Emma smiles."
+    }
+  ],
+  "bookId": "book-kleine-geschichten",
+  "chapterNumber": 1
+}

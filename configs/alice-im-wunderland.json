@@ -7,7 +7,7 @@
   "isMultiChapter": true,
   "translate": true,
   "translationProvider": "openai",
-  "openaiApiKey": "",
+  "openaiApiKey": "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",
   "chapters": [
     {
       "titleGerman": "1. Das Kaninchenloch hinab",

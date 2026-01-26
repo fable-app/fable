@@ -1,0 +1,42 @@
+{
+  "id": "book-kleine-geschichten",
+  "titleGerman": "Kleine Geschichten",
+  "titleEnglish": "Small Stories",
+  "author": "Original",
+  "difficulty": "A2",
+  "chapters": [
+    {
+      "titleGerman": "Der Morgen",
+      "titleEnglish": "The Morning",
+      "germanText": "Die Sonne scheint hell durch das Fenster. Emma wacht auf und streckt sich. Es ist ein schöner Tag. Sie steht auf und geht in die Küche. Dort macht sie sich einen Kaffee. Der Duft ist wunderbar. Sie trinkt langsam und schaut aus dem Fenster. Die Vögel singen draußen. Emma lächelt.",
+      "translations": [
+        "The sun shines brightly through the window.",
+        "Emma wakes up and stretches.",
+        "It is a beautiful day.",
+        "She gets up and goes to the kitchen.",
+        "There she makes herself a coffee.",
+        "The smell is wonderful.",
+        "She drinks slowly and looks out the window.",
+        "The birds are singing outside.",
+        "Emma smiles."
+      ]
+    },
+    {
+      "titleGerman": "Der Spaziergang",
+      "titleEnglish": "The Walk",
+      "germanText": "Nach dem Frühstück zieht Emma ihre Jacke an. Sie verlässt das Haus und geht in den Park. Der Park ist heute sehr ruhig. Nur wenige Menschen sind unterwegs. Emma setzt sich auf eine Bank. Sie beobachtet die Enten am Teich. Eine Ente kommt näher. Emma hat Brot mitgebracht. Sie füttert die Enten. Nach einer Weile geht sie nach Hause.",
+      "translations": [
+        "After breakfast, Emma puts on her jacket.",
+        "She leaves the house and goes to the park.",
+        "The park is very quiet today.",
+        "Only a few people are out.",
+        "Emma sits down on a bench.",
+        "She watches the ducks at the pond.",
+        "A duck comes closer.",
+        "Emma brought bread with her.",
+        "She feeds the ducks.",
+        "After a while, she goes home."
+      ]
+    }
+  ]
+}
