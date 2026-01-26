@@ -48,10 +48,11 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Install dependencies
+      - name: Install workspace dependencies
         run: npm install --legacy-peer-deps
 
       - name: Build preview for ${{ matrix.platform }}
+        working-directory: apps/mobile
         run: eas build --platform ${{ matrix.platform }} --profile preview --non-interactive
 
       - name: Upload build artifact info
@@ -60,7 +61,7 @@ jobs:
         with:
           name: ${{ matrix.platform }}-preview-build-info
           path: |
-            eas-build-*.json
+            apps/mobile/eas-build-*.json
           retention-days: 14
 
       - name: Comment on PR

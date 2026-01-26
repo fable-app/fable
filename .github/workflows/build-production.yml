@@ -26,10 +26,11 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Install dependencies
+      - name: Install workspace dependencies
         run: npm install --legacy-peer-deps
 
       - name: Build Android production
+        working-directory: apps/mobile
         run: eas build --platform android --profile production --non-interactive
 
       - name: Upload build artifact info
@@ -38,7 +39,7 @@ jobs:
         with:
           name: android-build-info
           path: |
-            eas-build-*.json
+            apps/mobile/eas-build-*.json
           retention-days: 30
 
   build-ios:
@@ -60,10 +61,11 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Install dependencies
+      - name: Install workspace dependencies
         run: npm install --legacy-peer-deps
 
       - name: Build iOS production
+        working-directory: apps/mobile
         run: eas build --platform ios --profile production --non-interactive
 
       - name: Upload build artifact info
@@ -72,7 +74,7 @@ jobs:
         with:
           name: ios-build-info
           path: |
-            eas-build-*.json
+            apps/mobile/eas-build-*.json
           retention-days: 30
 
   notify:
