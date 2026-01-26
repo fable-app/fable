@@ -39,8 +39,9 @@ export function StoryProvider({
       titleGerman: story.titleGerman,
       titleEnglish: story.titleEnglish,
       author: story.author || 'Unknown',
-      wordCount: story.sentences?.length || 0,
+      wordCount: story.wordCount || 0,
       difficulty: story.difficulty || 'beginner',
+      sentenceCount: story.sentences?.length || 0,
       isMultiChapter: false,
     }));
 
