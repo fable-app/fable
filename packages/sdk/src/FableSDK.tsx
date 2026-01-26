@@ -6,6 +6,7 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { FableNavigator } from './navigation/Navigator';
+import { SDKProvider } from './context/SDKContext';
 import type { FableSDKProps } from './types';
 
 export function FableSDK({
@@ -15,6 +16,7 @@ export function FableSDK({
   customStories,
   useDefaultStories = true,
   analyticsProvider,
+  navigationContainerRef,
 }: FableSDKProps) {
   useEffect(() => {
     // Initialize SDK
@@ -31,8 +33,15 @@ export function FableSDK({
   }, []);
 
   return (
-    <NavigationContainer>
-      <FableNavigator />
-    </NavigationContainer>
+    <SDKProvider
+      theme={theme}
+      analyticsProvider={analyticsProvider}
+      onStoryStart={onStoryStart}
+      onStoryComplete={onStoryComplete}
+    >
+      <NavigationContainer ref={navigationContainerRef}>
+        <FableNavigator />
+      </NavigationContainer>
+    </SDKProvider>
   );
 }

@@ -9,7 +9,7 @@ export interface FableSDKProps {
   /**
    * Custom theme configuration
    */
-  theme?: FableTheme;
+  theme?: Partial<FableTheme>;
 
   /**
    * Callback fired when a story is completed
@@ -35,6 +35,11 @@ export interface FableSDKProps {
    * Analytics provider for tracking events
    */
   analyticsProvider?: AnalyticsProvider;
+
+  /**
+   * Optional ref to the NavigationContainer for deep linking
+   */
+  navigationContainerRef?: any;
 }
 
 export interface FableTheme {
