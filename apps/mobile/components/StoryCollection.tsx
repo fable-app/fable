@@ -12,7 +12,7 @@ import {
   ScrollView,
   Animated,
 } from 'react-native';
-import { colors, typography, spacing, animations } from '@fable/design-system';
+import { colors, typography, spacing, animations, animationConfigs } from '@fable/design-system';
 import { StoryCard } from './StoryCard';
 import type { StoryMetadata } from '@fable/core';
 
