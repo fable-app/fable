@@ -29,7 +29,7 @@ The project uses npm workspaces with the following structure:
 - **All Checks Passed** - Final summary job requiring all checks to succeed
 
 ### build-production.yml
-**Purpose:** Builds production-ready apps for app store release
+**Purpose:** Builds production-ready apps and deploys to app stores
 
 **Triggers:**
 - Push to `main` branch
@@ -37,10 +37,16 @@ The project uses npm workspaces with the following structure:
 - Manual trigger
 
 **Jobs:**
-- Build Android App Bundle (.aab) from `apps/mobile/`
-- Build iOS IPA from `apps/mobile/`
-- Upload build artifacts
-- Notify build status
+- **Build Android Production** - Builds Android App Bundle (.aab) from `apps/mobile/`
+- **Submit to Google Play Store** - Automatically submits Android build to Play Store
+- **Build iOS Production** - Builds iOS IPA from `apps/mobile/`
+- **Notify Deployment Status** - Final status report for all deployments
+
+**Setup Required:**
+- `EXPO_TOKEN` secret (for EAS builds)
+- `GOOGLE_SERVICE_ACCOUNT_KEY` secret (for Play Store submission)
+
+See [PLAY_STORE_SETUP.md](PLAY_STORE_SETUP.md) for detailed setup instructions.
 
 ### build-preview.yml
 **Purpose:** Builds preview versions for internal testing
