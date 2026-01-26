@@ -1,0 +1,65 @@
+{
+  "name": "@fable/sdk",
+  "version": "1.0.0",
+  "description": "White-label German learning SDK for React Native apps",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run clean && npm run build",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-native": ">=0.70.0",
+    "@react-navigation/native": "^6.0.0",
+    "@react-navigation/stack": "^6.0.0"
+  },
+  "dependencies": {
+    "@fable/core": "*",
+    "@fable/design-system": "*",
+    "react-native-gesture-handler": "~2.28.0",
+    "react-native-reanimated": "~4.1.1",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-screens": "~4.16.0",
+    "expo-speech": "~13.0.0"
+  },
+  "devDependencies": {
+    "@react-navigation/native": "^6.0.0",
+    "@react-navigation/stack": "^6.0.0",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react-native",
+    "german",
+    "language-learning",
+    "bilingual",
+    "education",
+    "sdk",
+    "white-label"
+  ],
+  "author": "Fable",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fable-app/fable.git",
+    "directory": "packages/sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/fable-app/fable/issues"
+  },
+  "homepage": "https://github.com/fable-app/fable#readme"
+}

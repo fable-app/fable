@@ -1,0 +1,11 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@fable/core": ["../../packages/core/src"],
+      "@fable/design-system": ["../../packages/design-system/src"],
+      "@/*": ["./*"]
+    }
+  }
+}

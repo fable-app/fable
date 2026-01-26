@@ -1,0 +1,60 @@
+{
+  "id": "story-06",
+  "titleGerman": "Die Reise nach Berlin",
+  "titleEnglish": "The Journey to Berlin",
+  "author": "Original",
+  "wordCount": 112,
+  "difficulty": "B1",
+  "sentences": [
+    {
+      "id": 1,
+      "german": "Sophie hatte lange davon geträumt, die Hauptstadt zu besuchen.",
+      "english": "Sophie had long dreamed of visiting the capital."
+    },
+    {
+      "id": 2,
+      "german": "Endlich hatte sie genug Geld gespart und buchte eine Zugfahrt.",
+      "english": "Finally she had saved enough money and booked a train ride."
+    },
+    {
+      "id": 3,
+      "german": "Die Fahrt dauerte vier Stunden, aber die Zeit verging schnell.",
+      "english": "The journey took four hours, but the time passed quickly."
+    },
+    {
+      "id": 4,
+      "german": "Sie las ein Buch und beobachtete die vorbeiziehende Landschaft.",
+      "english": "She read a book and watched the passing landscape."
+    },
+    {
+      "id": 5,
+      "german": "In Berlin angekommen, war sie überwältigt von der Größe der Stadt.",
+      "english": "Arriving in Berlin, she was overwhelmed by the size of the city."
+    },
+    {
+      "id": 6,
+      "german": "Sie besuchte das Brandenburger Tor und viele Museen.",
+      "english": "She visited the Brandenburg Gate and many museums."
+    },
+    {
+      "id": 7,
+      "german": "Am Abend aß sie in einem traditionellen Restaurant.",
+      "english": "In the evening she ate at a traditional restaurant."
+    },
+    {
+      "id": 8,
+      "german": "Die Menschen waren freundlich und halfen ihr bei der Orientierung.",
+      "english": "The people were friendly and helped her find her way."
+    },
+    {
+      "id": 9,
+      "german": "Nach drei unvergesslichen Tagen fuhr sie wieder nach Hause.",
+      "english": "After three unforgettable days she traveled back home."
+    },
+    {
+      "id": 10,
+      "german": "Sie wusste schon, dass sie bald zurückkehren würde.",
+      "english": "She already knew that she would return soon."
+    }
+  ]
+}
