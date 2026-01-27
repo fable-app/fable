@@ -1,13 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, NativeScrollEvent, NativeSyntheticEvent, Platform, StatusBar as RNStatusBar } from 'react-native';
-import { useRouter } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import * as Speech from 'expo-speech';
-import { colors, typography, spacing } from '@fable/design-system';
-import { useStoryProgress } from '@/hooks';
-import { loadStory, getStoryMetadata } from '@fable/core';
-import type { Story, Sentence, StoryMetadata } from '@fable/core';
+import { useEffect, useRef, useState } from "react";
+
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
+  Platform,
+  StatusBar as RNStatusBar,
+} from "react-native";
+
+import { useRouter } from "expo-router";
+import * as Speech from "expo-speech";
+import { StatusBar } from "expo-status-bar";
+
+import { loadStory, getStoryMetadata } from "@fable/core";
+import type { Story, Sentence, StoryMetadata } from "@fable/core";
+import { colors, typography, spacing } from "@fable/design-system";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { useStoryProgress } from "@/hooks";
 
 interface BilingualReaderProps {
   story: Story;
@@ -32,18 +46,20 @@ export function BilingualReader({ story }: BilingualReaderProps) {
 
   // Settings state
   const [showSettings, setShowSettings] = useState(false);
-  const [readingSpeed, setReadingSpeed] = useState(0.70); // Default reading speed
+  const [readingSpeed, setReadingSpeed] = useState(0.7); // Default reading speed
   const [germanFirst, setGermanFirst] = useState(true); // Language order
 
   // Chapter navigation
   const [bookMetadata, setBookMetadata] = useState<StoryMetadata | null>(null);
   const [currentChapterIndex, setCurrentChapterIndex] = useState<number>(-1);
-  const [previousChapterId, setPreviousChapterId] = useState<string | null>(null);
+  const [previousChapterId, setPreviousChapterId] = useState<string | null>(
+    null,
+  );
   const [nextChapterId, setNextChapterId] = useState<string | null>(null);
 
   // Configure StatusBar for Android
   useEffect(() => {
-    if (Platform.OS === 'android') {
+    if (Platform.OS === "android") {
       RNStatusBar.setTranslucent(false);
       RNStatusBar.setBackgroundColor(colors.background.primary);
     }
@@ -60,7 +76,9 @@ export function BilingualReader({ story }: BilingualReaderProps) {
           // Find current chapter index
           const chapters = (bookData as any).chapters;
           if (chapters) {
-            const currentIndex = chapters.findIndex((ch: any) => ch.id === story.id);
+            const currentIndex = chapters.findIndex(
+              (ch: any) => ch.id === story.id,
+            );
             setCurrentChapterIndex(currentIndex);
 
             // Set previous/next chapter IDs
@@ -79,7 +97,11 @@ export function BilingualReader({ story }: BilingualReaderProps) {
 
   // Scroll to last read position on mount
   useEffect(() => {
-    if (progress && !hasScrolledToProgress.current && sentencePositions.current.size > 0) {
+    if (
+      progress &&
+      !hasScrolledToProgress.current &&
+      sentencePositions.current.size > 0
+    ) {
       const lastIndex = progress.lastSentenceIndex;
       const position = sentencePositions.current.get(lastIndex);
 
@@ -166,7 +188,7 @@ export function BilingualReader({ story }: BilingualReaderProps) {
 
     // Speak with German voice
     Speech.speak(sentence.german, {
-      language: 'de-DE',
+      language: "de-DE",
       rate: readingSpeed, // User-adjustable reading speed
       pitch: 1.0,
       onStart: () => {
@@ -188,16 +210,19 @@ export function BilingualReader({ story }: BilingualReaderProps) {
           setPlayingSentence(null);
           audioQueue.current = [];
         } else {
-          console.log('[BilingualReader] Skipping reset - still navigating');
+          console.log("[BilingualReader] Skipping reset - still navigating");
         }
       },
       onError: (error) => {
-        console.error('[BilingualReader] Speech error:', error);
-        console.log('[BilingualReader] Error occurred, isNavigating:', isNavigating.current);
+        console.error("[BilingualReader] Speech error:", error);
+        console.log(
+          "[BilingualReader] Error occurred, isNavigating:",
+          isNavigating.current,
+        );
         // Only reset state if not navigating
         // Navigation errors are expected when stopping mid-speech
         if (!isNavigating.current) {
-          console.log('[BilingualReader] Resetting play state due to error');
+          console.log("[BilingualReader] Resetting play state due to error");
           setIsPlaying(false);
           setPlayingSentence(null);
           audioQueue.current = [];
@@ -231,7 +256,7 @@ export function BilingualReader({ story }: BilingualReaderProps) {
       // User pressed Play - start playback
       audioQueue.current = Array.from(
         { length: story.sentences.length - currentSentence },
-        (_, i) => currentSentence + i
+        (_, i) => currentSentence + i,
       );
       setIsPlaying(true);
       playNextSentence();
@@ -264,7 +289,7 @@ export function BilingualReader({ story }: BilingualReaderProps) {
       // Build new audio queue from the new sentence
       audioQueue.current = Array.from(
         { length: story.sentences.length - newIndex },
-        (_, i) => newIndex + i
+        (_, i) => newIndex + i,
       );
 
       // Update position
@@ -307,7 +332,7 @@ export function BilingualReader({ story }: BilingualReaderProps) {
       // Build new audio queue from the new sentence
       audioQueue.current = Array.from(
         { length: story.sentences.length - newIndex },
-        (_, i) => newIndex + i
+        (_, i) => newIndex + i,
       );
 
       // Update position
@@ -346,7 +371,7 @@ export function BilingualReader({ story }: BilingualReaderProps) {
   }, [story.id, story.sentences.length, updateProgress]);
 
   return (
-    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+    <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
       <StatusBar style="dark" />
 
       {/* Simplified Header */}
@@ -377,7 +402,7 @@ export function BilingualReader({ story }: BilingualReaderProps) {
         ref={scrollViewRef}
         style={styles.scrollView}
         contentContainerStyle={styles.contentContainer}
-        showsVerticalScrollIndicator={true}
+        showsVerticalScrollIndicator
         onScroll={handleScroll}
         scrollEventThrottle={200}
       >
@@ -442,7 +467,8 @@ export function BilingualReader({ story }: BilingualReaderProps) {
             <Text
               style={[
                 styles.floatingControlButtonText,
-                currentSentence === 0 && styles.floatingControlButtonTextDisabled,
+                currentSentence === 0 &&
+                  styles.floatingControlButtonTextDisabled,
               ]}
             >
               ←
@@ -456,7 +482,9 @@ export function BilingualReader({ story }: BilingualReaderProps) {
           style={styles.floatingAudioButton}
           activeOpacity={0.8}
         >
-          <Text style={styles.floatingAudioButtonText}>{isPlaying ? '⏸' : '▶'}</Text>
+          <Text style={styles.floatingAudioButtonText}>
+            {isPlaying ? "⏸" : "▶"}
+          </Text>
         </TouchableOpacity>
 
         {/* Next Sentence Button - Visible when playing */}
@@ -465,7 +493,8 @@ export function BilingualReader({ story }: BilingualReaderProps) {
             onPress={handleNextSentence}
             style={[
               styles.floatingControlButton,
-              currentSentence === story.sentences.length - 1 && styles.floatingControlButtonDisabled,
+              currentSentence === story.sentences.length - 1 &&
+                styles.floatingControlButtonDisabled,
             ]}
             activeOpacity={0.8}
             disabled={currentSentence === story.sentences.length - 1}
@@ -473,7 +502,8 @@ export function BilingualReader({ story }: BilingualReaderProps) {
             <Text
               style={[
                 styles.floatingControlButtonText,
-                currentSentence === story.sentences.length - 1 && styles.floatingControlButtonTextDisabled,
+                currentSentence === story.sentences.length - 1 &&
+                  styles.floatingControlButtonTextDisabled,
               ]}
             >
               →
@@ -498,7 +528,9 @@ export function BilingualReader({ story }: BilingualReaderProps) {
               <Text style={styles.settingLabel}>Reading Speed</Text>
               <View style={styles.settingControl}>
                 <TouchableOpacity
-                  onPress={() => setReadingSpeed(Math.max(0.5, readingSpeed - 0.1))}
+                  onPress={() =>
+                    setReadingSpeed(Math.max(0.5, readingSpeed - 0.1))
+                  }
                   style={styles.settingButton}
                 >
                   <Text style={styles.settingButtonText}>−</Text>
@@ -507,7 +539,9 @@ export function BilingualReader({ story }: BilingualReaderProps) {
                   {readingSpeed.toFixed(1)}x
                 </Text>
                 <TouchableOpacity
-                  onPress={() => setReadingSpeed(Math.min(1.5, readingSpeed + 0.1))}
+                  onPress={() =>
+                    setReadingSpeed(Math.min(1.5, readingSpeed + 0.1))
+                  }
                   style={styles.settingButton}
                 >
                   <Text style={styles.settingButtonText}>+</Text>
@@ -564,7 +598,9 @@ export function BilingualReader({ story }: BilingualReaderProps) {
                       onPress={() => handleNavigateChapter(previousChapterId)}
                       style={styles.navigationButton}
                     >
-                      <Text style={styles.navigationButtonText}>← Previous Chapter</Text>
+                      <Text style={styles.navigationButtonText}>
+                        ← Previous Chapter
+                      </Text>
                     </TouchableOpacity>
                   ) : (
                     <View style={styles.navigationButtonDisabled} />
@@ -574,7 +610,9 @@ export function BilingualReader({ story }: BilingualReaderProps) {
                       onPress={() => handleNavigateChapter(nextChapterId)}
                       style={styles.navigationButton}
                     >
-                      <Text style={styles.navigationButtonText}>Next Chapter →</Text>
+                      <Text style={styles.navigationButtonText}>
+                        Next Chapter →
+                      </Text>
                     </TouchableOpacity>
                   ) : (
                     <View style={styles.navigationButtonDisabled} />
@@ -605,9 +643,9 @@ const styles = StyleSheet.create({
   header: {
     height: 56,
     backgroundColor: colors.background.primary,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingHorizontal: spacing.base,
     borderBottomWidth: 1,
     borderBottomColor: colors.divider,
@@ -615,21 +653,21 @@ const styles = StyleSheet.create({
   headerButton: {
     width: 48,
     height: 48,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: 24,
   },
   headerButtonText: {
-    fontFamily: 'Inter_500Medium',
+    fontFamily: "Inter_500Medium",
     fontSize: 32,
     color: colors.text.accent,
   },
   headerTitle: {
     flex: 1,
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: typography.sizes.bodyLarge,
     color: colors.text.primary,
-    textAlign: 'center',
+    textAlign: "center",
     marginHorizontal: spacing.sm,
   },
   scrollView: {
@@ -650,7 +688,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background.accent,
   },
   germanText: {
-    fontFamily: 'Literata_400Regular',
+    fontFamily: "Literata_400Regular",
     fontSize: typography.sizes.bodyLarge,
     lineHeight: typography.sizes.bodyLarge * typography.lineHeights.loose,
     color: colors.text.primary,
@@ -658,22 +696,22 @@ const styles = StyleSheet.create({
   },
   germanTextHighlighted: {
     color: colors.text.accent,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   englishText: {
-    fontFamily: 'Literata_400Regular',
+    fontFamily: "Literata_400Regular",
     fontSize: typography.sizes.body,
     lineHeight: typography.sizes.body * typography.lineHeights.loose,
     color: colors.text.secondary,
   },
   floatingControlsBar: {
-    position: 'absolute',
+    position: "absolute",
     bottom: spacing.xl * 2,
     left: spacing.lg,
     right: spacing.lg,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     gap: spacing.base,
   },
   floatingControlButton: {
@@ -681,8 +719,8 @@ const styles = StyleSheet.create({
     height: 56,
     borderRadius: 28,
     backgroundColor: colors.background.elevated,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
@@ -711,8 +749,8 @@ const styles = StyleSheet.create({
     height: 72,
     borderRadius: 36,
     backgroundColor: colors.interactive.default,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
@@ -724,20 +762,20 @@ const styles = StyleSheet.create({
     color: colors.background.primary,
   },
   settingsOverlay: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
   },
   settingsBackdrop: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(44, 44, 44, 0.5)',
+    backgroundColor: "rgba(44, 44, 44, 0.5)",
   },
   settingsPanel: {
     backgroundColor: colors.background.elevated,
@@ -752,7 +790,7 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   settingsTitle: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: typography.sizes.heading,
     color: colors.text.primary,
     marginBottom: spacing.lg,
@@ -761,15 +799,15 @@ const styles = StyleSheet.create({
     marginBottom: spacing.lg,
   },
   settingLabel: {
-    fontFamily: 'Inter_500Medium',
+    fontFamily: "Inter_500Medium",
     fontSize: typography.sizes.body,
     color: colors.text.secondary,
     marginBottom: spacing.sm,
   },
   settingControl: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     gap: spacing.base,
   },
   settingButton: {
@@ -777,59 +815,59 @@ const styles = StyleSheet.create({
     height: 48,
     borderRadius: 24,
     backgroundColor: colors.background.accent,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   settingButtonText: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: 24,
     color: colors.text.accent,
   },
   settingValue: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: typography.sizes.bodyLarge,
     color: colors.text.primary,
     minWidth: 60,
-    textAlign: 'center',
+    textAlign: "center",
   },
   toggleButton: {
     flex: 1,
     height: 48,
     borderRadius: 12,
     backgroundColor: colors.background.accent,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     borderWidth: 2,
-    borderColor: 'transparent',
+    borderColor: "transparent",
   },
   toggleButtonActive: {
     backgroundColor: colors.interactive.default,
     borderColor: colors.interactive.default,
   },
   toggleButtonText: {
-    fontFamily: 'Inter_500Medium',
+    fontFamily: "Inter_500Medium",
     fontSize: typography.sizes.body,
     color: colors.text.secondary,
   },
   toggleButtonTextActive: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     color: colors.background.primary,
   },
   settingsCloseButton: {
     height: 48,
     borderRadius: 12,
     backgroundColor: colors.background.accent,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: spacing.base,
   },
   settingsCloseButtonText: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: typography.sizes.body,
     color: colors.text.accent,
   },
   navigationControl: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: spacing.sm,
   },
   navigationButton: {
@@ -837,11 +875,11 @@ const styles = StyleSheet.create({
     height: 48,
     borderRadius: 12,
     backgroundColor: colors.interactive.default,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   navigationButtonText: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: typography.sizes.body,
     color: colors.background.primary,
   },

@@ -44,3 +44,8 @@ yarn-error.*
 # content processing
 downloads/
 *.pdf
+
+# secrets (EAS/deployment)
+secrets/
+*.json.secret
+play-store-credentials.json

@@ -4,17 +4,20 @@
  * Follows Japanese minimalist design with touch interactions
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
+
+import { View, Text, StyleSheet, ScrollView, Animated } from "react-native";
+
+import type { StoryMetadata } from "@fable/core";
 import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  Animated,
-} from 'react-native';
-import { colors, typography, spacing, animations, animationConfigs } from '@fable/design-system';
-import { StoryCard } from './StoryCard';
-import type { StoryMetadata } from '@fable/core';
+  colors,
+  typography,
+  spacing,
+  animations,
+  animationConfigs,
+} from "@fable/design-system";
+
+import { StoryCard } from "./StoryCard";
 
 interface StoryWithProgress extends StoryMetadata {
   progress: number; // 0-100
@@ -25,28 +28,36 @@ interface StoryCollectionProps {
   onStoryPress: (storyId: string) => void;
 }
 
-export function StoryCollection({ stories, onStoryPress }: StoryCollectionProps) {
+export function StoryCollection({
+  stories,
+  onStoryPress,
+}: StoryCollectionProps) {
   // Animation refs for staggered entrance
   const animatedValues = useRef(
-    stories.map(() => new Animated.Value(0))
+    stories.map(() => new Animated.Value(0)),
   ).current;
 
   useEffect(() => {
     // Only animate first 6 cards (maxItems from design system)
-    const maxAnimated = Math.min(stories.length, animationConfigs.stagger.maxItems);
+    const maxAnimated = Math.min(
+      stories.length,
+      animationConfigs.stagger.maxItems,
+    );
 
     // Create staggered animations
-    const animations = animatedValues.slice(0, maxAnimated).map((animValue, index) => {
-      return Animated.timing(animValue, {
-        toValue: 1,
-        duration: animationConfigs.elementEntrance.duration,
-        delay: index * animationConfigs.stagger.delay,
-        useNativeDriver: true,
+    const animations = animatedValues
+      .slice(0, maxAnimated)
+      .map((animValue, index) => {
+        return Animated.timing(animValue, {
+          toValue: 1,
+          duration: animationConfigs.elementEntrance.duration,
+          delay: index * animationConfigs.stagger.delay,
+          useNativeDriver: true,
+        });
       });
-    });
 
     // Set remaining cards to visible immediately (no animation)
-    animatedValues.slice(maxAnimated).forEach(animValue => {
+    animatedValues.slice(maxAnimated).forEach((animValue) => {
       animValue.setValue(1);
     });
 
@@ -65,7 +76,7 @@ export function StoryCollection({ stories, onStoryPress }: StoryCollectionProps)
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.contentContainer}
-        showsVerticalScrollIndicator={true}
+        showsVerticalScrollIndicator
       >
         {stories.map((story, index) => {
           // Only animate first 6 cards
@@ -86,7 +97,10 @@ export function StoryCollection({ stories, onStoryPress }: StoryCollectionProps)
             : { opacity: 1 }; // No animation for cards beyond 6th
 
           return (
-            <Animated.View key={story.id} style={[styles.cardWrapper, animatedStyle]}>
+            <Animated.View
+              key={story.id}
+              style={[styles.cardWrapper, animatedStyle]}
+            >
               <StoryCard
                 story={story}
                 progress={story.progress}
@@ -108,13 +122,13 @@ const styles = StyleSheet.create({
   header: {
     height: 64,
     backgroundColor: colors.background.secondary,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     borderBottomWidth: 1,
     borderBottomColor: colors.divider,
   },
   headerTitle: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: typography.sizes.headingLarge,
     color: colors.text.primary,
     letterSpacing: typography.letterSpacing.tight,

@@ -1,12 +1,29 @@
-import { useEffect, useState, useCallback } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Platform, StatusBar as RNStatusBar } from 'react-native';
-import { useRouter, useLocalSearchParams, useFocusEffect } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { colors, semanticColors, typography, spacing } from '@fable/design-system';
-import { loadStory } from '@fable/core';
-import type { StoryMetadata, ChapterMetadata } from '@fable/core';
-import { useAllProgress } from '@/hooks';
+import { useEffect, useState, useCallback } from "react";
+
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+  Platform,
+  StatusBar as RNStatusBar,
+} from "react-native";
+
+import { useRouter, useLocalSearchParams, useFocusEffect } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+
+import { loadStory } from "@fable/core";
+import type { StoryMetadata, ChapterMetadata } from "@fable/core";
+import {
+  colors,
+  semanticColors,
+  typography,
+  spacing,
+} from "@fable/design-system";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { useAllProgress } from "@/hooks";
 
 export default function ChapterListScreen() {
   const router = useRouter();
@@ -16,7 +33,7 @@ export default function ChapterListScreen() {
 
   // Configure StatusBar for Android
   useEffect(() => {
-    if (Platform.OS === 'android') {
+    if (Platform.OS === "android") {
       RNStatusBar.setTranslucent(false);
       RNStatusBar.setBackgroundColor(colors.background.primary);
     }
@@ -27,11 +44,11 @@ export default function ChapterListScreen() {
     useCallback(() => {
       const doRefresh = async () => {
         // Wait for debounced saves to complete (500ms debounce + 200ms buffer)
-        await new Promise(resolve => setTimeout(resolve, 700));
+        await new Promise((resolve) => setTimeout(resolve, 700));
         await refreshProgress();
       };
       doRefresh();
-    }, [refreshProgress])
+    }, [refreshProgress]),
   );
 
   useEffect(() => {
@@ -47,21 +64,20 @@ export default function ChapterListScreen() {
     loadBookData();
   }, [bookId, refreshProgress]);
 
-
   const handleChapterPress = (chapterId: string) => {
     router.push(`/reader/${chapterId}`);
   };
 
   if (!bookMetadata || !bookMetadata.isMultiChapter) {
     return (
-      <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+      <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
         <Text style={styles.errorText}>Book not found</Text>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+    <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
       <StatusBar style="dark" />
 
       {/* Fixed Header */}
@@ -90,65 +106,71 @@ export default function ChapterListScreen() {
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.contentContainer}
-        showsVerticalScrollIndicator={true}
+        showsVerticalScrollIndicator
       >
-        {bookMetadata.chapters?.map((chapter: ChapterMetadata, index: number) => {
-          const chapterProgress = progressMap[chapter.id]?.percentage || 0;
-          const isCompleted = chapterProgress === 100;
-          const isStarted = chapterProgress > 0 && chapterProgress < 100;
+        {bookMetadata.chapters?.map(
+          (chapter: ChapterMetadata, index: number) => {
+            const chapterProgress = progressMap[chapter.id]?.percentage || 0;
+            const isCompleted = chapterProgress === 100;
+            const isStarted = chapterProgress > 0 && chapterProgress < 100;
 
-          return (
-            <TouchableOpacity
-              key={chapter.id}
-              style={styles.chapterCard}
-              onPress={() => handleChapterPress(chapter.id)}
-              activeOpacity={0.7}
-            >
-              <View style={styles.chapterHeader}>
-                <View style={styles.chapterInfo}>
-                  <Text style={styles.chapterNumber}>
-                    Kapitel {chapter.chapterNumber}
-                  </Text>
-                  <Text style={styles.chapterTitle} numberOfLines={2}>
-                    {chapter.titleGerman}
-                  </Text>
-                  <Text style={styles.chapterSubtitle} numberOfLines={1}>
-                    {chapter.titleEnglish}
-                  </Text>
+            return (
+              <TouchableOpacity
+                key={chapter.id}
+                style={styles.chapterCard}
+                onPress={() => handleChapterPress(chapter.id)}
+                activeOpacity={0.7}
+              >
+                <View style={styles.chapterHeader}>
+                  <View style={styles.chapterInfo}>
+                    <Text style={styles.chapterNumber}>
+                      Kapitel {chapter.chapterNumber}
+                    </Text>
+                    <Text style={styles.chapterTitle} numberOfLines={2}>
+                      {chapter.titleGerman}
+                    </Text>
+                    <Text style={styles.chapterSubtitle} numberOfLines={1}>
+                      {chapter.titleEnglish}
+                    </Text>
+                  </View>
+
+                  <View style={styles.chapterMeta}>
+                    <Text style={styles.wordCount}>
+                      {chapter.wordCount} words
+                    </Text>
+                    {isCompleted && (
+                      <View style={styles.completedBadge}>
+                        <Text style={styles.completedText}>✓</Text>
+                      </View>
+                    )}
+                    {isStarted && !isCompleted && (
+                      <View style={styles.inProgressBadge}>
+                        <Text style={styles.inProgressText}>
+                          {Math.round(chapterProgress)}%
+                        </Text>
+                      </View>
+                    )}
+                  </View>
                 </View>
 
-                <View style={styles.chapterMeta}>
-                  <Text style={styles.wordCount}>
-                    {chapter.wordCount} words
-                  </Text>
-                  {isCompleted && (
-                    <View style={styles.completedBadge}>
-                      <Text style={styles.completedText}>✓</Text>
-                    </View>
-                  )}
-                  {isStarted && !isCompleted && (
-                    <View style={styles.inProgressBadge}>
-                      <Text style={styles.inProgressText}>{Math.round(chapterProgress)}%</Text>
-                    </View>
-                  )}
+                {/* Progress bar - always visible */}
+                <View style={styles.progressBarContainer}>
+                  <View
+                    style={[
+                      styles.progressBarFill,
+                      {
+                        width: `${chapterProgress}%`,
+                        backgroundColor: isCompleted
+                          ? colors.progress.complete
+                          : colors.progress.fill,
+                      },
+                    ]}
+                  />
                 </View>
-              </View>
-
-              {/* Progress bar - always visible */}
-              <View style={styles.progressBarContainer}>
-                <View
-                  style={[
-                    styles.progressBarFill,
-                    {
-                      width: `${chapterProgress}%`,
-                      backgroundColor: isCompleted ? colors.progress.complete : colors.progress.fill,
-                    },
-                  ]}
-                />
-              </View>
-            </TouchableOpacity>
-          );
-        })}
+              </TouchableOpacity>
+            );
+          },
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -162,9 +184,9 @@ const styles = StyleSheet.create({
   header: {
     height: 80,
     backgroundColor: colors.background.primary,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingHorizontal: spacing.base,
     borderBottomWidth: 1,
     borderBottomColor: colors.divider,
@@ -172,28 +194,28 @@ const styles = StyleSheet.create({
   backButton: {
     width: 48,
     height: 48,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   backText: {
-    fontFamily: 'Inter_500Medium',
+    fontFamily: "Inter_500Medium",
     fontSize: 24,
     color: colors.text.accent,
   },
   headerContent: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     marginHorizontal: spacing.sm,
   },
   headerTitle: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: typography.sizes.bodyLarge,
     color: colors.text.primary,
-    textAlign: 'center',
+    textAlign: "center",
   },
   headerSubtitle: {
-    fontFamily: 'Inter_400Regular',
-    fontSize: typography.sizes.small,
+    fontFamily: "Inter_400Regular",
+    fontSize: typography.sizes.bodySmall,
     color: colors.text.secondary,
     marginTop: 2,
   },
@@ -215,64 +237,64 @@ const styles = StyleSheet.create({
     borderColor: colors.divider,
   },
   chapterHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
   },
   chapterInfo: {
     flex: 1,
     marginRight: spacing.sm,
   },
   chapterNumber: {
-    fontFamily: 'Inter_500Medium',
-    fontSize: typography.sizes.small,
+    fontFamily: "Inter_500Medium",
+    fontSize: typography.sizes.label,
     color: colors.text.accent,
     marginBottom: 4,
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
     letterSpacing: 0.5,
   },
   chapterTitle: {
-    fontFamily: 'Literata_500Medium',
+    fontFamily: "Literata_500Medium",
     fontSize: typography.sizes.bodyLarge,
     color: colors.text.primary,
     marginBottom: 4,
   },
   chapterSubtitle: {
-    fontFamily: 'Inter_400Regular',
+    fontFamily: "Inter_400Regular",
     fontSize: typography.sizes.body,
     color: colors.text.secondary,
   },
   chapterMeta: {
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
   },
   wordCount: {
-    fontFamily: 'Inter_400Regular',
-    fontSize: typography.sizes.small,
+    fontFamily: "Inter_400Regular",
+    fontSize: typography.sizes.bodySmall,
     color: colors.text.tertiary,
     marginBottom: spacing.xs,
   },
   completedBadge: {
-    backgroundColor: semanticColors.success,
+    backgroundColor: colors.progress.complete,
     width: 28,
     height: 28,
     borderRadius: 14,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   completedText: {
-    fontFamily: 'Inter_600SemiBold',
+    fontFamily: "Inter_600SemiBold",
     fontSize: 14,
     color: colors.background.primary,
   },
   inProgressBadge: {
-    backgroundColor: colors.progress.fill, // Dusty rose for in-progress
+    backgroundColor: colors.interactive.default,
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
   },
   inProgressText: {
-    fontFamily: 'Inter_500Medium',
-    fontSize: typography.sizes.small,
+    fontFamily: "Inter_500Medium",
+    fontSize: typography.sizes.bodySmall,
     color: colors.background.primary,
   },
   progressBarContainer: {
@@ -280,18 +302,19 @@ const styles = StyleSheet.create({
     backgroundColor: colors.progress.track,
     borderRadius: 2,
     marginTop: spacing.sm,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   progressBarFill: {
-    height: '100%',
+    height: "100%",
+    backgroundColor: colors.progress.fill,
     borderRadius: 2,
     // backgroundColor set inline based on completion status
   },
   errorText: {
-    fontFamily: 'Inter_400Regular',
+    fontFamily: "Inter_400Regular",
     fontSize: typography.sizes.body,
     color: colors.text.secondary,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: spacing.xl * 2,
   },
 });

@@ -16,6 +16,20 @@
         "buildConfiguration": "Debug"
       }
     },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_ENV": "preview"
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": false,
+        "buildConfiguration": "Release"
+      }
+    },
     "test": {
       "distribution": "internal",
       "channel": "test",
@@ -30,6 +44,7 @@
       }
     },
     "production": {
+      "autoIncrement": true,
       "channel": "production",
       "env": {
         "EXPO_PUBLIC_ENV": "production"

@@ -3,9 +3,10 @@
  * React hook for managing reading progress
  */
 
-import { useState, useEffect, useCallback } from 'react';
-import { getProgress, saveProgress, getAllProgress } from '@fable/core';
-import type { Progress, ProgressUpdate } from '@fable/core';
+import { useState, useEffect, useCallback } from "react";
+
+import { getProgress, saveProgress, getAllProgress } from "@fable/core";
+import type { Progress, ProgressUpdate } from "@fable/core";
 
 /**
  * Hook to get progress for a specific story
@@ -35,7 +36,7 @@ export function useStoryProgress(storyId: string | undefined) {
       }
       return success;
     },
-    [storyId]
+    [storyId],
   );
 
   return { progress, updateProgress };
@@ -54,7 +55,7 @@ export function useAllProgress() {
   }, []);
 
   useEffect(() => {
-    console.log('[useAllProgress] Initial load');
+    console.log("[useAllProgress] Initial load");
     refreshProgress();
   }, []);
 
@@ -71,7 +72,7 @@ export function useAllProgress() {
 export function calculateBookProgress(
   bookId: string,
   chapterIds: string[],
-  progressMap: Record<string, Progress>
+  progressMap: Record<string, Progress>,
 ): number {
   if (chapterIds.length === 0) return 0;
 

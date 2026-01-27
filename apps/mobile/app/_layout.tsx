@@ -1,9 +1,19 @@
-import { useEffect } from 'react';
-import { Stack } from 'expo-router';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useFonts, Inter_400Regular, Inter_500Medium, Inter_600SemiBold } from '@expo-google-fonts/inter';
-import { Literata_400Regular, Literata_500Medium } from '@expo-google-fonts/literata';
-import * as SplashScreen from 'expo-splash-screen';
+import { useEffect } from "react";
+
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+
+import {
+  useFonts,
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+} from "@expo-google-fonts/inter";
+import {
+  Literata_400Regular,
+  Literata_500Medium,
+} from "@expo-google-fonts/literata";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -33,7 +43,7 @@ export default function RootLayout() {
         screenOptions={{
           headerShown: false,
           contentStyle: {
-            backgroundColor: '#FAFAF8', // Washi Paper background
+            backgroundColor: "#FAFAF8", // Washi Paper background
           },
         }}
       >

@@ -3,7 +3,7 @@
  * Wrapper around AsyncStorage for key-value storage
  */
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 /**
  * Get value from storage
@@ -52,7 +52,7 @@ export async function clear(): Promise<boolean> {
     await AsyncStorage.clear();
     return true;
   } catch (error) {
-    console.error('Failed to clear storage', error);
+    console.error("Failed to clear storage", error);
     return false;
   }
 }
