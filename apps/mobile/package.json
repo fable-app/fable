@@ -7,6 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "build:web": "npx expo export --platform web",
     "extract-pdf": "tsx scripts/extract-pdf.ts",
     "process-story": "tsx scripts/process-story.ts",
     "validate-story": "tsx scripts/validate-story.ts",
