@@ -1,56 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="lenis">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fable - Learn German Through Stories</title>
+    <title>Fable - Learn new languages with subtitles for books</title>
+    <meta name="description" content="Fable - Learn new languages with subtitles for books. Netflix-like.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        @font-face {
+            font-family: 'Lustria';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lustria/v13/9oRONYodvDEyjuhOnC8zMw.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Satoshi';
+            src: url(https://framerusercontent.com/third-party-assets/fontshare/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2);
+            font-display: swap;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: 'Satoshi';
+            src: url(https://framerusercontent.com/third-party-assets/fontshare/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2);
+            font-display: swap;
+            font-style: normal;
+            font-weight: 700;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html.lenis {
+            height: auto;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #FAFAF8;
-            color: #1a1a1a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #333;
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 240px 2rem 120px;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%);
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
         }
 
-        header {
-            text-align: center;
-            padding: 4rem 0;
+        /* Sun Glow Background */
+        .sun-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .sun-blur {
+            position: absolute;
+            top: -694px;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+            width: 1097px;
+            height: 1097px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg at 50% 50%, #ff8000 0deg, #ffc300 360deg);
+            filter: blur(100px);
+            opacity: 0.8;
+            animation: sunRotate 20s linear infinite;
+        }
+
+        @keyframes sunRotate {
+            from {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            to {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        .sun-white {
+            position: absolute;
+            top: -524px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 736px;
+            height: 736px;
+            background: #ffffff;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Star Icon */
+        .star-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Content */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1216px;
+            width: 100%;
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-family: 'Lustria', serif;
+            font-size: clamp(52px, 8vw, 100px);
+            font-weight: 400;
+            color: #3b3b3b;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.05em;
+            line-height: 1.1;
         }
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: #666;
+        .h1-word {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(10px);
+            animation: wordAppear 0.6s ease-out forwards;
+        }
+
+        @keyframes wordAppear {
+            to {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        .tagline {
+            font-family: 'Satoshi', sans-serif;
+            font-size: clamp(22px, 2.5vw, 26px);
+            color: rgba(0, 0, 0, 0.65);
             margin-bottom: 3rem;
+            font-weight: 400;
+            line-height: 1.6em;
+            letter-spacing: -0.32px;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tagline-word {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(5px);
+            animation: wordAppear 0.5s ease-out forwards;
         }
 
         .cta-button {
             display: inline-block;
             background: #1a1a1a;
             color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
+            padding: 1rem 2rem;
+            border-radius: 1000px;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Satoshi', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .cta-button:hover {
@@ -58,64 +219,248 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            bottom: -258px;
+            left: -111px;
+            right: -111px;
+            height: 258px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            transition: all 0.3s ease;
         }
 
-        .feature {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        .cta-button:hover::before {
+            bottom: -200px;
         }
 
-        .feature h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        /* Story Section */
+        .story {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem;
+            text-align: center;
         }
 
-        .feature p {
-            color: #666;
+        .story-content {
+            max-width: 720px;
+            position: relative;
         }
 
+        .story .star-icon {
+            margin-bottom: 2rem;
+            animation: none;
+            opacity: 1;
+        }
+
+        .story h2 {
+            font-family: 'Bespoke Serif', 'Lustria', serif;
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.65);
+            margin-bottom: 2.5rem;
+            line-height: 1.3em;
+            letter-spacing: -0.03em;
+        }
+
+        .story p {
+            font-family: 'Bespoke Serif', 'Lustria', serif;
+            font-size: clamp(28px, 4vw, 36px);
+            color: rgba(0, 0, 0, 0.65);
+            margin-bottom: 2rem;
+            line-height: 1.3em;
+            letter-spacing: -0.03em;
+        }
+
+        .story h3 {
+            font-family: 'Bespoke Serif', 'Lustria', serif;
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.65);
+            margin: 3rem 0 2.5rem;
+            letter-spacing: -0.03em;
+            line-height: 1.3em;
+        }
+
+        /* Scroll Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: perspective(1200px) translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: perspective(1200px) translateY(0);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 0;
-            color: #999;
+            padding: 80px 2rem 40px;
+            color: rgba(17, 16, 17, 0.6);
+            font-family: 'Satoshi', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.2;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: rgba(17, 16, 17, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: rgba(17, 16, 17, 0.9);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 1.5rem 80px;
+            }
+
+            .sun-blur {
+                top: -754px;
+                width: 800px;
+                height: 800px;
+            }
+
+            .sun-white {
+                top: -324px;
+                width: 476px;
+                height: 476px;
+            }
+
+            .star-icon {
+                width: 30px;
+                height: 30px;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .story {
+                padding: 40px 1rem;
+            }
+
+            footer {
+                padding: 40px 1rem 20px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .hero {
+                padding: 160px 4rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Fable</h1>
-            <p class="subtitle">Learn German Through Interactive Stories</p>
-            <a href="/app" class="cta-button">Launch App</a>
-        </header>
-
-        <div class="features">
-            <div class="feature">
-                <h3>📖 Interactive Stories</h3>
-                <p>Read engaging bilingual stories designed for language learners at all levels.</p>
-            </div>
-
-            <div class="feature">
-                <h3>🎯 Word-by-Word Translation</h3>
-                <p>Tap any word to see instant translations and build your vocabulary naturally.</p>
-            </div>
-
-            <div class="feature">
-                <h3>🔊 Audio Support</h3>
-                <p>Listen to native pronunciation and improve your listening comprehension.</p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="sun-glow">
+            <div class="sun-blur"></div>
+            <div class="sun-white"></div>
         </div>
 
-        <footer>
-            <p>&copy; 2026 Fable. All rights reserved.</p>
-        </footer>
-    </div>
+        <div class="hero-content">
+            <!-- Star Icon SVG -->
+            <svg class="star-icon" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="starGradient" x1="0.5" x2="0.5" y1="0" y2="1">
+                        <stop offset="0" stop-color="#FA5C40"/>
+                        <stop offset="1" stop-color="#FFB95E"/>
+                    </linearGradient>
+                </defs>
+                <path d="M 0 22 C 13.984 22 22 13.984 22 0 C 22 13.984 30.016 22 44 22 C 30.016 22 22 30.016 22 44 C 22 30.016 13.984 22 0 22 Z" fill="url(#starGradient)"/>
+            </svg>
+
+            <h1>
+                <span class="h1-word" style="animation-delay: 0.1s">F</span><span class="h1-word" style="animation-delay: 0.15s">a</span><span class="h1-word" style="animation-delay: 0.2s">b</span><span class="h1-word" style="animation-delay: 0.25s">l</span><span class="h1-word" style="animation-delay: 0.3s">e</span>
+            </h1>
+
+            <p class="tagline">
+                <span class="tagline-word" style="animation-delay: 0.4s">Learn</span>
+                <span class="tagline-word" style="animation-delay: 0.45s">new</span>
+                <span class="tagline-word" style="animation-delay: 0.5s">languages</span>
+                <span class="tagline-word" style="animation-delay: 0.55s">with</span>
+                <span class="tagline-word" style="animation-delay: 0.6s">subtitles</span>
+                <span class="tagline-word" style="animation-delay: 0.65s">for</span>
+                <span class="tagline-word" style="animation-delay: 0.7s">books</span>
+                <br>
+                <span class="tagline-word" style="animation-delay: 0.75s">Netflix-like</span>
+            </p>
+
+            <a href="https://play.google.com/store/apps/details?id=com.anbuu.fable&pcampaignid=web_share" class="cta-button" target="_blank" rel="noopener">
+                Download on Android
+            </a>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="story-content">
+            <!-- Star Icon SVG -->
+            <svg class="star-icon fade-in" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="starGradient2" x1="0.5" x2="0.5" y1="0" y2="1">
+                        <stop offset="0" stop-color="#FA5C40"/>
+                        <stop offset="1" stop-color="#FFB95E"/>
+                    </linearGradient>
+                </defs>
+                <path d="M 0 22 C 13.984 22 22 13.984 22 0 C 22 13.984 30.016 22 44 22 C 30.016 22 22 30.016 22 44 C 22 30.016 13.984 22 0 22 Z" fill="url(#starGradient2)"/>
+            </svg>
+
+            <h2 class="fade-in">Why should learning new languages be a chore?</h2>
+
+            <p class="fade-in">As a non-native English speaker, I thought back to how I spent hours immersed in reading for pleasure. Why not do the same for new languages, while having helpful subtitles. Well, that's how I watch Netflix shows be it Japanese or Norwegian!</p>
+
+            <h3 class="fade-in">Why not German books then?</h3>
+
+            <a href="https://play.google.com/store/apps/details?id=com.anbuu.fable&pcampaignid=web_share" class="cta-button fade-in" target="_blank" rel="noopener">
+                Download on Android
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="fade-in">
+        <p><a href="https://anbuu.in" target="_blank" rel="noopener">Fable. Built with love. anbuu.in.</a></p>
+        <p><a href="https://babarogic.com/" target="_blank" rel="noopener">Credits - Designed by Goran Babarogic</a></p>
+    </footer>
+
+    <script>
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
