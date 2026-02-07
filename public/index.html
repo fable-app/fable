@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fable - Learn German Through Stories</title>
+    <title>Fable - Learn new languages with subtitles for books</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lustria&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,110 +15,211 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #FAFAF8;
-            color: #1a1a1a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #F5F5F0;
+            color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 4rem 0;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 100%,
+                    #FFA726 0%,
+                    #FFB74D 25%,
+                    #FFCC80 50%,
+                    #FFE0B2 75%,
+                    #F5F5F0 100%);
+            clip-path: ellipse(100% 60% at 50% 40%);
+            z-index: 0;
+        }
+
+        .star-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .star-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: #FA5C40;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-family: 'Lustria', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            color: #2D2D2D;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: #666;
+        .tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #4A4A4A;
             margin-bottom: 3rem;
+            font-weight: 400;
+            line-height: 1.5;
         }
 
         .cta-button {
             display: inline-block;
-            background: #1a1a1a;
+            background: #0D3272;
             color: white;
             padding: 1rem 2.5rem;
-            border-radius: 8px;
+            border-radius: 50px;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(13, 50, 114, 0.3);
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
+        /* Story Section */
+        .story {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            text-align: center;
         }
 
-        .feature {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        .story-content {
+            max-width: 900px;
+            position: relative;
         }
 
-        .feature h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .story h2 {
+            font-family: 'Lustria', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            color: #2D2D2D;
+            margin-bottom: 2.5rem;
+            line-height: 1.3;
         }
 
-        .feature p {
-            color: #666;
+        .story p {
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            color: #4A4A4A;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-weight: 400;
         }
 
+        .story h3 {
+            font-family: 'Lustria', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 400;
+            color: #2D2D2D;
+            margin: 3rem 0 2.5rem;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 0;
+            padding: 4rem 2rem 2rem;
             color: #999;
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .footer-credits {
+            color: #AAA;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero, .story {
+                min-height: auto;
+                padding: 3rem 1.5rem;
+            }
+
+            .star-icon {
+                width: 30px;
+                height: 30px;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="star-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L13.5 9.5L21 11L13.5 12.5L12 20L10.5 12.5L3 11L10.5 9.5L12 2Z"/>
+                </svg>
+            </div>
             <h1>Fable</h1>
-            <p class="subtitle">Learn German Through Interactive Stories</p>
-            <a href="/app" class="cta-button">Launch App</a>
-        </header>
-
-        <div class="features">
-            <div class="feature">
-                <h3>📖 Interactive Stories</h3>
-                <p>Read engaging bilingual stories designed for language learners at all levels.</p>
-            </div>
-
-            <div class="feature">
-                <h3>🎯 Word-by-Word Translation</h3>
-                <p>Tap any word to see instant translations and build your vocabulary naturally.</p>
-            </div>
-
-            <div class="feature">
-                <h3>🔊 Audio Support</h3>
-                <p>Listen to native pronunciation and improve your listening comprehension.</p>
-            </div>
+            <p class="tagline">Learn new languages with subtitles for books<br>Netflix-like</p>
+            <a href="#" class="cta-button">Download on Android</a>
         </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2026 Fable. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Story Section -->
+    <section class="story">
+        <div class="story-content">
+            <div class="star-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L13.5 9.5L21 11L13.5 12.5L12 20L10.5 12.5L3 11L10.5 9.5L12 2Z"/>
+                </svg>
+            </div>
+            <h2>Why should learning new languages be a chore?</h2>
+            <p>As a non-native English speaker, I thought back to how I spent hours immersed in reading for pleasure. Why not do the same for new languages, while having helpful subtitles. Well, that's how I watch Netflix shows be it Japanese or Norwegian!</p>
+            <h3>Why not German books then?</h3>
+            <a href="#" class="cta-button">Download on Android</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Fable. Built with love. anbuu.in.</p>
+        <p class="footer-credits">Credits - Designed by Goran Babarogic</p>
+    </footer>
 </body>
 </html>
