@@ -2,5 +2,11 @@
   "buildCommand": "bash scripts/build-vercel.sh",
   "outputDirectory": "apps/mobile/dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/app/:path((?!_expo|assets).*)*",
+      "destination": "/app/index.html"
+    }
+  ]
 }
