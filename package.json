@@ -14,6 +14,7 @@
     "mobile:lint": "cd apps/mobile && npm run lint",
     "mobile:typecheck": "cd apps/mobile && npm run typecheck",
     "mobile:test": "cd apps/mobile && npm run test",
+    "preview": "bash scripts/build-vercel.sh && cd apps/mobile/dist && npx serve -s . -p 3000",
     "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules",
     "install:all": "npm install"
   },
