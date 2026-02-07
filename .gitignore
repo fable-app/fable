@@ -49,3 +49,4 @@ downloads/
 secrets/
 *.json.secret
 play-store-credentials.json
+.vercel
