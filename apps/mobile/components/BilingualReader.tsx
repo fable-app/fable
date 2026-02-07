@@ -18,7 +18,7 @@ import { StatusBar } from "expo-status-bar";
 
 import { loadStory, getStoryMetadata } from "@fable/core";
 import type { Story, Sentence, StoryMetadata } from "@fable/core";
-import { colors, typography, spacing } from "@fable/design-system";
+import { colors, typography, spacing, layout } from "@fable/design-system";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useStoryProgress } from "@/hooks";
@@ -674,6 +674,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
+    ...layout.getResponsiveContainer(),
     paddingHorizontal: spacing.lg,
     paddingTop: spacing.xl,
     paddingBottom: spacing.xl * 2,

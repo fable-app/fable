@@ -20,6 +20,7 @@ import {
   semanticColors,
   typography,
   spacing,
+  layout,
 } from "@fable/design-system";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -226,6 +227,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
+    ...layout.getResponsiveContainer(),
     padding: spacing.base,
   },
   chapterCard: {
