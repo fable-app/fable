@@ -25,10 +25,9 @@ rmdir _temp
 
 echo "Fixing asset paths for /app base URL..."
 # Fix all HTML files to use /app prefix for assets
-find app -name "*.html" -type f -exec sed -i '' 's|href="/|href="/app/|g' {} \;
-find app -name "*.html" -type f -exec sed -i '' 's|src="/|src="/app/|g' {} \;
-find app -name "*.html" -type f -exec sed -i '' 's|href="/app/app/|href="/app/|g' {} \;
-find app -name "*.html" -type f -exec sed -i '' 's|src="/app/app/|src="/app/|g' {} \;
+# Use perl for cross-platform compatibility (works on both macOS and Linux)
+find app -name "*.html" -type f -exec perl -pi -e 's|href="/(?!app/)|href="/app/|g' {} \;
+find app -name "*.html" -type f -exec perl -pi -e 's|src="/(?!app/)|src="/app/|g' {} \;
 
 echo "Copying landing page to root..."
 cp ../../../public/index.html ./
