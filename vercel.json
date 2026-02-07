@@ -2,15 +2,5 @@
   "buildCommand": "bash scripts/build-vercel.sh",
   "outputDirectory": "apps/mobile/dist",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/app/:path*",
-      "destination": "/app/:path*"
-    },
-    {
-      "source": "/app",
-      "destination": "/app/index.html"
-    }
-  ]
+  "trailingSlash": false
 }
