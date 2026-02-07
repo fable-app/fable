@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
 
     <style>
         @font-face {
@@ -20,21 +21,6 @@
             src: url(https://fonts.gstatic.com/s/lustria/v13/9oRONYodvDEyjuhOnC8zMw.woff2) format('woff2');
         }
 
-        @font-face {
-            font-family: 'Satoshi';
-            src: url(https://framerusercontent.com/third-party-assets/fontshare/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2);
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-        }
-
-        @font-face {
-            font-family: 'Satoshi';
-            src: url(https://framerusercontent.com/third-party-assets/fontshare/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2);
-            font-display: swap;
-            font-style: normal;
-            font-weight: 700;
-        }
 
         * {
             margin: 0;
@@ -48,6 +34,22 @@
 
         html.lenis {
             height: auto;
+        }
+
+        html.lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        html.lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        html.lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        html.lenis.lenis-scrolling iframe {
+            pointer-events: none;
         }
 
         body {
@@ -136,12 +138,24 @@
             pointer-events: none;
         }
 
+        .star-header a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
         .star-header svg {
             width: 40px;
             height: 40px;
             opacity: 0;
             animation: fadeIn 0.8s ease-out 0.2s forwards;
-            pointer-events: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .star-header a:hover svg {
+            transform: scale(1.1);
         }
 
         /* Star Icon in content */
@@ -213,7 +227,7 @@
 
         .cta-button {
             display: inline-block;
-            background: #1a1a1a;
+            background: #0D3272;
             color: white;
             padding: 1rem 2rem;
             border-radius: 1000px;
@@ -221,9 +235,8 @@
             font-family: 'Satoshi', sans-serif;
             font-size: 1rem;
             font-weight: 700;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            overflow: hidden;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.6s ease-out 0.8s forwards;
@@ -238,23 +251,40 @@
 
         .cta-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(13, 50, 114, 0.3);
+            background: #0a2555;
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            border-radius: 1000px;
+            text-decoration: none;
+            font-family: 'Satoshi', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid #1a1a1a;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out 0.9s forwards;
+        }
+
+        .cta-secondary:hover {
+            background: #1a1a1a;
+            color: white;
+            transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            bottom: -258px;
-            left: -111px;
-            right: -111px;
-            height: 258px;
-            background: rgba(255, 255, 255, 0.25);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover::before {
-            bottom: -200px;
+        .button-group {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         /* Story Section */
@@ -264,14 +294,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 120px 2rem;
+            justify-content: flex-start;
+            padding: 120px 2rem 0;
             text-align: center;
         }
 
         .story-content {
             max-width: 720px;
-            position: relative;
+            position: sticky;
+            top: 0;
+            padding: 66px 32px;
+            will-change: transform;
         }
 
         .story .star-icon {
@@ -379,9 +412,15 @@
                 margin-bottom: 1.5rem;
             }
 
-            .cta-button {
+            .cta-button,
+            .cta-secondary {
                 padding: 0.9rem 2rem;
                 font-size: 0.95rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 12px;
             }
 
             .story {
@@ -402,15 +441,19 @@
 </head>
 <body>
     <!-- Fixed Star Header -->
-    <svg class="star-header" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <linearGradient id="starGradientHeader" x1="0.5" x2="0.5" y1="0" y2="1">
-                <stop offset="0" stop-color="#FA5C40"/>
-                <stop offset="1" stop-color="#FFB95E"/>
-            </linearGradient>
-        </defs>
-        <path d="M 0 22 C 13.984 22 22 13.984 22 0 C 22 13.984 30.016 22 44 22 C 30.016 22 22 30.016 22 44 C 22 30.016 13.984 22 0 22 Z" fill="url(#starGradientHeader)"/>
-    </svg>
+    <div class="star-header">
+        <a href="https://fable.anbuu.in/app" aria-label="Go to Fable App">
+            <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="starGradientHeader" x1="0.5" x2="0.5" y1="0" y2="1">
+                        <stop offset="0" stop-color="#FA5C40"/>
+                        <stop offset="1" stop-color="#FFB95E"/>
+                    </linearGradient>
+                </defs>
+                <path d="M 0 22 C 13.984 22 22 13.984 22 0 C 22 13.984 30.016 22 44 22 C 30.016 22 22 30.016 22 44 C 22 30.016 13.984 22 0 22 Z" fill="url(#starGradientHeader)"/>
+            </svg>
+        </a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -436,35 +479,34 @@
                 <span class="tagline-word" style="animation-delay: 0.75s">Netflix-like</span>
             </p>
 
-            <a href="https://play.google.com/store/apps/details?id=com.anbuu.fable&pcampaignid=web_share" class="cta-button" target="_blank" rel="noopener">
-                Download on Android
-            </a>
+            <div class="button-group">
+                <a href="https://play.google.com/store/apps/details?id=com.anbuu.fable&pcampaignid=web_share" class="cta-button" target="_blank" rel="noopener">
+                    Download on Android
+                </a>
+                <a href="https://fable.anbuu.in/app" class="cta-secondary">
+                    I like big screens
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Story Section -->
     <section class="story">
         <div class="story-content">
-            <!-- Star Icon SVG -->
-            <svg class="star-icon fade-in" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="starGradient2" x1="0.5" x2="0.5" y1="0" y2="1">
-                        <stop offset="0" stop-color="#FA5C40"/>
-                        <stop offset="1" stop-color="#FFB95E"/>
-                    </linearGradient>
-                </defs>
-                <path d="M 0 22 C 13.984 22 22 13.984 22 0 C 22 13.984 30.016 22 44 22 C 30.016 22 22 30.016 22 44 C 22 30.016 13.984 22 0 22 Z" fill="url(#starGradient2)"/>
-            </svg>
-
             <h2 class="fade-in">Why should learning new languages be a chore?</h2>
 
             <p class="fade-in">As a non-native English speaker, I thought back to how I spent hours immersed in reading for pleasure. Why not do the same for new languages, while having helpful subtitles. Well, that's how I watch Netflix shows be it Japanese or Norwegian!</p>
 
             <h3 class="fade-in">Why not German books then?</h3>
 
-            <a href="https://play.google.com/store/apps/details?id=com.anbuu.fable&pcampaignid=web_share" class="cta-button fade-in" target="_blank" rel="noopener">
-                Download on Android
-            </a>
+            <div class="button-group fade-in">
+                <a href="https://play.google.com/store/apps/details?id=com.anbuu.fable&pcampaignid=web_share" class="cta-button" target="_blank" rel="noopener">
+                    Download on Android
+                </a>
+                <a href="https://fable.anbuu.in/app" class="cta-secondary">
+                    I like big screens
+                </a>
+            </div>
         </div>
     </section>
 
@@ -474,7 +516,30 @@
         <p><a href="https://babarogic.com/" target="_blank" rel="noopener">Credits - Designed by Goran Babarogic</a></p>
     </footer>
 
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
     <script>
+        // Initialize Lenis Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
         // Scroll Animation Observer
         const observerOptions = {
             threshold: 0.1,

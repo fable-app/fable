@@ -15,6 +15,7 @@ import {
   spacing,
   animations,
   animationConfigs,
+  layout,
 } from "@fable/design-system";
 
 import { StoryCard } from "./StoryCard";
@@ -137,6 +138,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
+    ...layout.getResponsiveContainer(),
     paddingHorizontal: 20,
     paddingTop: spacing.base,
     paddingBottom: spacing.lg,
