@@ -120,15 +120,37 @@
             z-index: 1;
         }
 
-        /* Star Icon */
+        /* Fixed Star Icon Header with Fade */
+        .star-header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 100%;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(250, 250, 250, 1) 0%, rgba(250, 250, 250, 0) 100%);
+            pointer-events: none;
+        }
+
+        .star-header svg {
+            width: 40px;
+            height: 40px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.2s forwards;
+            pointer-events: auto;
+        }
+
+        /* Star Icon in content */
         .star-icon {
             width: 40px;
             height: 40px;
             margin-bottom: 2rem;
             position: relative;
             z-index: 2;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out 0.2s forwards;
         }
 
         @keyframes fadeIn {
@@ -254,8 +276,18 @@
 
         .story .star-icon {
             margin-bottom: 2rem;
-            animation: none;
             opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .star-header {
+                padding: 20px 0;
+            }
+
+            .star-header svg {
+                width: 30px;
+                height: 30px;
+            }
         }
 
         .story h2 {
@@ -369,6 +401,17 @@
     </style>
 </head>
 <body>
+    <!-- Fixed Star Header -->
+    <svg class="star-header" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="starGradientHeader" x1="0.5" x2="0.5" y1="0" y2="1">
+                <stop offset="0" stop-color="#FA5C40"/>
+                <stop offset="1" stop-color="#FFB95E"/>
+            </linearGradient>
+        </defs>
+        <path d="M 0 22 C 13.984 22 22 13.984 22 0 C 22 13.984 30.016 22 44 22 C 30.016 22 22 30.016 22 44 C 22 30.016 13.984 22 0 22 Z" fill="url(#starGradientHeader)"/>
+    </svg>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="sun-glow">
@@ -377,17 +420,6 @@
         </div>
 
         <div class="hero-content">
-            <!-- Star Icon SVG -->
-            <svg class="star-icon" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="starGradient" x1="0.5" x2="0.5" y1="0" y2="1">
-                        <stop offset="0" stop-color="#FA5C40"/>
-                        <stop offset="1" stop-color="#FFB95E"/>
-                    </linearGradient>
-                </defs>
-                <path d="M 0 22 C 13.984 22 22 13.984 22 0 C 22 13.984 30.016 22 44 22 C 30.016 22 22 30.016 22 44 C 22 30.016 13.984 22 0 22 Z" fill="url(#starGradient)"/>
-            </svg>
-
             <h1>
                 <span class="h1-word" style="animation-delay: 0.1s">F</span><span class="h1-word" style="animation-delay: 0.15s">a</span><span class="h1-word" style="animation-delay: 0.2s">b</span><span class="h1-word" style="animation-delay: 0.25s">l</span><span class="h1-word" style="animation-delay: 0.3s">e</span>
             </h1>

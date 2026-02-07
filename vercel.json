@@ -1,12 +1,6 @@
 {
-  "buildCommand": "cd apps/mobile && npm run build:web",
+  "buildCommand": "bash scripts/build-vercel.sh",
   "outputDirectory": "apps/mobile/dist",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "destination": "/index.html"
-    }
-  ]
+  "trailingSlash": false
 }
