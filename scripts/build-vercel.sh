@@ -20,7 +20,7 @@ mv _temp/* app/
 rmdir _temp
 
 echo "Copying landing page to root..."
-cp ../../../docs/index.html ./
+cp ../../../public/index.html ./
 
 echo "Build complete!"
 echo "  - Landing page: /"
