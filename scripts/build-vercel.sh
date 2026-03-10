@@ -24,11 +24,14 @@ mkdir -p l
 cp ../../../public/index.html l/
 
 # Add SDK demo at /sdk-demo/
+# expo export outputs to dist/ directory
 mkdir -p sdk-demo
 if [ -d "../../../examples/sdk-demo/dist" ]; then
   cp -r ../../../examples/sdk-demo/dist/* sdk-demo/
 else
   echo "Warning: SDK demo build not found at expected location"
+  echo "Checking for alternative locations..."
+  ls -la ../../../examples/sdk-demo/ || true
 fi
 
 echo "Build complete!"
