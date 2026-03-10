@@ -5,13 +5,15 @@ set -e
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR/.."
 
+echo "Installing workspace dependencies..."
+npm install
+
 echo "Building Expo app..."
 cd apps/mobile
 npm run build:web
 
 echo "Building SDK Demo..."
 cd ../../examples/sdk-demo
-npm install
 npm run build:web
 
 echo "Organizing build outputs..."

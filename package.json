@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "scripts": {
     "mobile": "cd apps/mobile && npm start",
