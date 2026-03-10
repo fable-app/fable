@@ -32,15 +32,15 @@ export default function App() {
 
   const addLog = (message: string) => {
     const timestamp = new Date().toLocaleTimeString();
-    setLogs(prev => [\`[\${timestamp}] \${message}\`, ...prev].slice(0, 20));
+    setLogs(prev => [`[${timestamp}] ${message}`, ...prev].slice(0, 20));
   };
 
   const handleStoryStart = (storyId: string) => {
-    addLog(\`✅ Story started: \${storyId}\`);
+    addLog(`✅ Story started: ${storyId}`);
   };
 
   const handleStoryComplete = (storyId: string, progress: any) => {
-    addLog(\`🎉 Story completed: \${storyId} (\${progress.completionPercentage}%)\`);
+    addLog(`🎉 Story completed: ${storyId} (${progress.completionPercentage}%)`);
   };
 
   // Theme configurations
@@ -175,7 +175,7 @@ export default function App() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>💻 Integration Code</Text>
           <View style={styles.codeBlock}>
-            <Text style={styles.codeText}>{\`import { FableSDK } from '@fable/sdk';
+            <Text style={styles.codeText}>{`import { FableSDK } from '@fable/sdk';
 
 function App() {
   return (
@@ -199,7 +199,7 @@ function App() {
       }}
     />
   );
-}\`}</Text>
+}`}</Text>
           </View>
         </View>
 
