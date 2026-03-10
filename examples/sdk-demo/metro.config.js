@@ -13,4 +13,10 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
+// Configure public path for deployment at /sdk-demo/
+config.transformer = {
+  ...config.transformer,
+  publicPath: '/sdk-demo',
+};
+
 module.exports = config;
