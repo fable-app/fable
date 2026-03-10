@@ -9,7 +9,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build:web": "npx expo export --platform web --public-url /sdk-demo"
+    "build:web": "npx expo export --platform web"
   },
   "dependencies": {
     "@fable/sdk": "*",

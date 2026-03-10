@@ -26,7 +26,8 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro",
-      "output": "static"
+      "output": "static",
+      "publicPath": "/sdk-demo/"
     }
   }
 }
