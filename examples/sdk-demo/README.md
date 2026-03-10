@@ -2,6 +2,8 @@
 
 Interactive demonstration app showcasing all features of the Fable white-label SDK for German learning.
 
+**📚 [→ Integration Guide](./INTEGRATION_GUIDE.md) - Copy-paste examples for quick integration**
+
 **Use this demo to:**
 - Test the SDK integration locally
 - See all available features in action

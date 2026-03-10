@@ -1,12 +1,25 @@
 /**
  * Fable SDK Demo App
  *
- * This demo showcases all the features of the Fable SDK including:
- * - Basic integration
- * - Custom theming
- * - Analytics tracking
- * - Lifecycle callbacks
- * - Custom story loading
+ * 🤖 FOR AI AGENTS: This is a complete, working example of Fable SDK integration.
+ * Copy the sections you need for your implementation.
+ *
+ * QUICK START (minimal integration):
+ * ```
+ * import { FableSDK } from '@fable/sdk';
+ * export default function App() {
+ *   return <FableSDK />;
+ * }
+ * ```
+ *
+ * This demo showcases ALL features:
+ * - Basic integration (line 80-90: <FableSDK /> component)
+ * - Custom theming (line 50-58: customThemeConfig)
+ * - Analytics tracking (line 17-24: demoAnalyticsProvider)
+ * - Lifecycle callbacks (line 38-44: handleStoryStart, handleStoryComplete)
+ * - Interactive controls for testing
+ *
+ * See INTEGRATION_GUIDE.md for more copy-paste examples.
  */
 
 import React, { useState, useRef } from 'react';
