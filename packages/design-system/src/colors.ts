@@ -1,40 +1,78 @@
 /**
  * Fable Design System - Colors
- * Japanese Minimalist Aesthetic
+ * Based on Ignite palette with warm, elegant aesthetic
  */
+
+// Base palette matching screenshot
+const palette = {
+  neutral100: "#FFFFFF",
+  neutral200: "#F4F2F1",
+  neutral300: "#D7CEC9",
+  neutral400: "#B6ACA6",
+  neutral500: "#978F8A",
+  neutral600: "#564E4A",
+  neutral700: "#3C3836",
+  neutral800: "#191015",
+  neutral900: "#000000",
+
+  primary100: "#F4E0D9",
+  primary200: "#E8C1B4",
+  primary300: "#DDA28E",
+  primary400: "#D28468",
+  primary500: "#C76542",
+  primary600: "#A54F31",
+
+  secondary100: "#DCDDE9",
+  secondary200: "#BCC0D6",
+  secondary300: "#9196B9",
+  secondary400: "#626894",
+  secondary500: "#41476E",
+
+  accent100: "#FFEED4",
+  accent200: "#FFE1B2",
+  accent300: "#FDD495",
+  accent400: "#FBC878",
+  accent500: "#FFBB50",
+
+  angry100: "#F2D6CD",
+  angry500: "#C03403",
+
+  overlay20: "rgba(25, 16, 21, 0.2)",
+  overlay50: "rgba(25, 16, 21, 0.5)",
+} as const;
 
 export const colors = {
   background: {
-    primary: '#FAFAF8',      // Washi Paper - main app background
-    secondary: '#F5F5F2',    // Slightly deeper warm white
-    elevated: '#FFFFFF',     // Pure white for cards
-    accent: '#E8EDE7',       // Very light sage for backgrounds
-    overlay: 'rgba(250, 250, 248, 0.95)',
+    primary: palette.neutral200,      // Main app background
+    secondary: palette.neutral200,    // Same as primary for consistency
+    elevated: palette.neutral100,     // Pure white for cards
+    accent: palette.accent100,        // Light accent for backgrounds
+    overlay: palette.overlay50,
   },
 
   text: {
-    primary: '#2C2C2C',      // Sumi Ink - soft black (German sentences, headings)
-    secondary: '#6B6B6B',    // Warm gray (English translations)
-    tertiary: '#9B9B98',     // Subtle gray (metadata, captions)
-    accent: '#8B9D83',       // Muted sage green (interactive elements)
+    primary: palette.neutral800,      // Main text color
+    secondary: palette.neutral600,    // Secondary text (textDim)
+    tertiary: palette.neutral500,     // Subtle gray (metadata, captions)
+    accent: palette.primary500,       // Primary color for interactive text
   },
 
   interactive: {
-    default: '#8B9D83',      // Muted sage green
-    hover: '#A8B9A0',        // Lighter sage
-    pressed: '#7A8C73',      // Darker sage
-    disabled: '#C8C8C6',     // Light gray
+    default: palette.primary500,      // Primary action color
+    hover: palette.primary400,        // Lighter on hover
+    pressed: palette.primary600,      // Darker when pressed
+    disabled: palette.neutral300,     // Light gray for disabled
   },
 
   progress: {
-    fill: '#C9ADA7',         // Dusty rose - progress fill
-    track: '#E8E0DE',        // Light dusty rose - progress track
-    complete: '#8B9D83',     // Sage green - completed state
+    fill: palette.primary500,         // Primary color for progress
+    track: palette.neutral300,        // Light track
+    complete: palette.accent500,      // Accent for completed state
   },
 
-  divider: '#E8E8E6',        // Barely-there gray
-  borderSubtle: '#EFEFED',   // Softer than divider
-  shadow: 'rgba(44, 44, 44, 0.04)', // Subtle depth
+  divider: palette.neutral300,        // Border/separator color
+  borderSubtle: palette.neutral300,   // Same as divider
+  shadow: palette.neutral800,         // Shadow color for elevation
 } as const;
 
 // Semantic color tokens for specific use cases

@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.divider,
   },
   headerTitle: {
-    fontFamily: "Inter_600SemiBold",
+    fontFamily: "SpaceGrotesk-SemiBold",
     fontSize: typography.sizes.headingLarge,
     color: colors.text.primary,
     letterSpacing: typography.letterSpacing.tight,

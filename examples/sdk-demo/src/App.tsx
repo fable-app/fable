@@ -61,17 +61,17 @@ export default function App() {
 
   const customThemeConfig = {
     colors: {
-      primary: '#8B9D83',
-      secondary: '#6B7F63',
-      accent: '#A4B89C',
-      background: '#F5F5F0',
-      text: '#2C3E2A',
-      textSecondary: '#6B7563',
+      primary: '#C76542',
+      secondary: '#41476E',
+      accent: '#FFBB50',
+      background: '#F4F2F1',
+      text: '#191015',
+      textSecondary: '#564E4A',
     },
     fonts: {
-      regular: 'System',
-      medium: 'System',
-      semibold: 'System',
+      regular: 'SpaceGrotesk-Regular',
+      medium: 'SpaceGrotesk-Medium',
+      semibold: 'SpaceGrotesk-SemiBold',
     },
     spacing: {
       sm: 8,
@@ -132,8 +132,8 @@ export default function App() {
             <Switch
               value={customTheme}
               onValueChange={setCustomTheme}
-              trackColor={{ false: '#D1D5DB', true: '#8B9D83' }}
-              thumbColor={customTheme ? '#FFFFFF' : '#F3F4F6'}
+              trackColor={{ false: '#D7CEC9', true: '#C76542' }}
+              thumbColor={customTheme ? '#FFFFFF' : '#F4F2F1'}
             />
           </View>
 
@@ -142,8 +142,8 @@ export default function App() {
             <Switch
               value={enableAnalytics}
               onValueChange={setEnableAnalytics}
-              trackColor={{ false: '#D1D5DB', true: '#8B9D83' }}
-              thumbColor={enableAnalytics ? '#FFFFFF' : '#F3F4F6'}
+              trackColor={{ false: '#E8DCC8', true: '#D4C5B0' }}
+              thumbColor={enableAnalytics ? '#FFFCF7' : '#F0E8DC'}
             />
           </View>
         </View>
@@ -233,26 +233,32 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F4F2F1', // neutral200
   },
   scrollContent: {
     paddingBottom: 40,
   },
   header: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F4F2F1',
     borderBottomWidth: 1,
-    borderBottomColor: '#E5E7EB',
+    borderBottomColor: '#D7CEC9', // neutral300
     paddingTop: 50,
     paddingHorizontal: 16,
     paddingBottom: 16,
+    shadowColor: '#191015', // neutral800
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   backButton: {
     paddingVertical: 8,
   },
   backButtonText: {
     fontSize: 16,
-    color: '#8B9D83',
-    fontWeight: '600',
+    color: '#C76542', // primary500
+    fontWeight: '500',
+    letterSpacing: 0.5,
   },
   sdkContainer: {
     flex: 1,
@@ -261,106 +267,138 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   titleContainer: {
-    marginBottom: 24,
+    marginBottom: 28,
     alignItems: 'center',
   },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#1F2937',
+    fontSize: 32,
+    fontWeight: '300',
+    color: '#191015', // neutral800 (text)
     marginBottom: 8,
+    letterSpacing: 1.2,
+    fontFamily: 'SpaceGrotesk-Regular',
   },
   subtitle: {
-    fontSize: 16,
-    color: '#6B7280',
+    fontSize: 15,
+    color: '#564E4A', // neutral600 (textDim)
     textAlign: 'center',
+    letterSpacing: 0.8,
+    fontWeight: '300',
   },
   section: {
     marginBottom: 24,
-    backgroundColor: '#F9FAFB',
-    borderRadius: 12,
-    padding: 16,
+    backgroundColor: '#FFFFFF', // neutral100
+    borderRadius: 16,
+    padding: 20,
     borderWidth: 1,
-    borderColor: '#E5E7EB',
+    borderColor: '#D7CEC9', // neutral300
+    shadowColor: '#191015', // neutral800
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#1F2937',
-    marginBottom: 12,
+    fontSize: 17,
+    fontWeight: '400',
+    color: '#191015', // neutral800 (text)
+    marginBottom: 16,
+    letterSpacing: 1,
+    fontFamily: 'SpaceGrotesk-Medium',
   },
   setting: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 12,
+    paddingVertical: 14,
     borderBottomWidth: 1,
-    borderBottomColor: '#E5E7EB',
+    borderBottomColor: '#D7CEC9', // neutral300 (separator)
   },
   settingLabel: {
-    fontSize: 16,
-    color: '#374151',
+    fontSize: 15,
+    color: '#564E4A', // neutral600 (textDim)
+    letterSpacing: 0.5,
+    fontWeight: '300',
   },
   configDisplay: {
-    gap: 8,
+    gap: 10,
   },
   configText: {
     fontSize: 14,
-    color: '#4B5563',
-    paddingVertical: 4,
-    paddingLeft: 8,
+    color: '#564E4A', // neutral600 (textDim)
+    paddingVertical: 6,
+    paddingLeft: 12,
+    letterSpacing: 0.4,
+    fontWeight: '300',
   },
   launchButton: {
-    backgroundColor: '#8B9D83',
-    borderRadius: 12,
-    paddingVertical: 16,
-    paddingHorizontal: 24,
+    backgroundColor: '#C76542', // primary500
+    borderRadius: 14,
+    paddingVertical: 18,
+    paddingHorizontal: 28,
     alignItems: 'center',
-    marginVertical: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    marginVertical: 20,
+    shadowColor: '#191015', // neutral800
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   launchButtonText: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#FFFFFF', // neutral100
+    letterSpacing: 1.5,
   },
   logContainer: {
-    backgroundColor: '#1F2937',
-    borderRadius: 8,
-    padding: 12,
+    backgroundColor: '#191015', // neutral800
+    borderRadius: 12,
+    padding: 16,
     maxHeight: 200,
+    shadowColor: '#191015',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   emptyLog: {
-    color: '#9CA3AF',
-    fontSize: 14,
+    color: '#978F8A', // neutral500
+    fontSize: 13,
     textAlign: 'center',
     padding: 20,
+    letterSpacing: 0.5,
+    fontWeight: '300',
   },
   logEntry: {
-    color: '#10B981',
+    color: '#D7CEC9', // neutral300
     fontSize: 12,
     fontFamily: 'monospace',
-    marginBottom: 4,
+    marginBottom: 6,
+    letterSpacing: 0.3,
   },
   codeBlock: {
-    backgroundColor: '#1F2937',
-    borderRadius: 8,
-    padding: 16,
+    backgroundColor: '#191015', // neutral800
+    borderRadius: 12,
+    padding: 18,
+    shadowColor: '#191015',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   codeText: {
-    color: '#E5E7EB',
+    color: '#F4F2F1', // neutral200
     fontSize: 12,
     fontFamily: 'monospace',
-    lineHeight: 18,
+    lineHeight: 20,
+    letterSpacing: 0.2,
   },
   docLink: {
     fontSize: 14,
-    color: '#8B9D83',
-    paddingVertical: 4,
-    paddingLeft: 8,
+    color: '#C76542', // primary500
+    paddingVertical: 6,
+    paddingLeft: 12,
+    letterSpacing: 0.5,
+    fontWeight: '300',
   },
 });
