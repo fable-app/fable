@@ -5,7 +5,7 @@
 
 export const typography = {
   fonts: {
-    ui: 'Inter',             // Clean sans-serif for UI elements
+    ui: 'SpaceGrotesk',      // Space Grotesk for UI elements
     reading: 'Literata',     // Serif font optimized for long-form reading
   },
 
