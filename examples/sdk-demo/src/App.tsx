@@ -132,8 +132,8 @@ export default function App() {
             <Switch
               value={customTheme}
               onValueChange={setCustomTheme}
-              trackColor={{ false: '#D1D5DB', true: '#8B9D83' }}
-              thumbColor={customTheme ? '#FFFFFF' : '#F3F4F6'}
+              trackColor={{ false: '#E8DCC8', true: '#D4C5B0' }}
+              thumbColor={customTheme ? '#FFFCF7' : '#F0E8DC'}
             />
           </View>
 
@@ -142,8 +142,8 @@ export default function App() {
             <Switch
               value={enableAnalytics}
               onValueChange={setEnableAnalytics}
-              trackColor={{ false: '#D1D5DB', true: '#8B9D83' }}
-              thumbColor={enableAnalytics ? '#FFFFFF' : '#F3F4F6'}
+              trackColor={{ false: '#E8DCC8', true: '#D4C5B0' }}
+              thumbColor={enableAnalytics ? '#FFFCF7' : '#F0E8DC'}
             />
           </View>
         </View>
@@ -233,26 +233,32 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF8F0', // Warm cream paper background
   },
   scrollContent: {
     paddingBottom: 40,
   },
   header: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF8F0',
     borderBottomWidth: 1,
-    borderBottomColor: '#E5E7EB',
+    borderBottomColor: '#E8DCC8',
     paddingTop: 50,
     paddingHorizontal: 16,
     paddingBottom: 16,
+    shadowColor: '#D4C5B0',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 4,
   },
   backButton: {
     paddingVertical: 8,
   },
   backButtonText: {
     fontSize: 16,
-    color: '#8B9D83',
-    fontWeight: '600',
+    color: '#8B7355',
+    fontWeight: '500',
+    letterSpacing: 0.5,
   },
   sdkContainer: {
     flex: 1,
@@ -261,106 +267,136 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   titleContainer: {
-    marginBottom: 24,
+    marginBottom: 28,
     alignItems: 'center',
   },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#1F2937',
+    fontSize: 32,
+    fontWeight: '300',
+    color: '#3D2F1F',
     marginBottom: 8,
+    letterSpacing: 1.2,
+    fontFamily: 'System',
   },
   subtitle: {
-    fontSize: 16,
-    color: '#6B7280',
+    fontSize: 15,
+    color: '#6B5D4F',
     textAlign: 'center',
+    letterSpacing: 0.8,
+    fontWeight: '300',
   },
   section: {
     marginBottom: 24,
-    backgroundColor: '#F9FAFB',
-    borderRadius: 12,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: '#E5E7EB',
+    backgroundColor: '#FFFCF7',
+    borderRadius: 16,
+    padding: 20,
+    borderWidth: 0,
+    shadowColor: '#D4C5B0',
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.2,
+    shadowRadius: 16,
+    elevation: 6,
   },
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#1F2937',
-    marginBottom: 12,
+    fontSize: 17,
+    fontWeight: '400',
+    color: '#3D2F1F',
+    marginBottom: 16,
+    letterSpacing: 1,
   },
   setting: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 12,
+    paddingVertical: 14,
     borderBottomWidth: 1,
-    borderBottomColor: '#E5E7EB',
+    borderBottomColor: '#F0E8DC',
   },
   settingLabel: {
-    fontSize: 16,
-    color: '#374151',
+    fontSize: 15,
+    color: '#5D4F3F',
+    letterSpacing: 0.5,
+    fontWeight: '300',
   },
   configDisplay: {
-    gap: 8,
+    gap: 10,
   },
   configText: {
     fontSize: 14,
-    color: '#4B5563',
-    paddingVertical: 4,
-    paddingLeft: 8,
+    color: '#6B5D4F',
+    paddingVertical: 6,
+    paddingLeft: 12,
+    letterSpacing: 0.4,
+    fontWeight: '300',
   },
   launchButton: {
-    backgroundColor: '#8B9D83',
-    borderRadius: 12,
-    paddingVertical: 16,
-    paddingHorizontal: 24,
+    backgroundColor: '#D4C5B0',
+    borderRadius: 14,
+    paddingVertical: 18,
+    paddingHorizontal: 28,
     alignItems: 'center',
-    marginVertical: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    marginVertical: 20,
+    shadowColor: '#B8A890',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 20,
+    elevation: 8,
   },
   launchButtonText: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#3D2F1F',
+    letterSpacing: 1.5,
   },
   logContainer: {
-    backgroundColor: '#1F2937',
-    borderRadius: 8,
-    padding: 12,
+    backgroundColor: '#3D2F1F',
+    borderRadius: 12,
+    padding: 16,
     maxHeight: 200,
+    shadowColor: '#D4C5B0',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 4,
   },
   emptyLog: {
-    color: '#9CA3AF',
-    fontSize: 14,
+    color: '#A89880',
+    fontSize: 13,
     textAlign: 'center',
     padding: 20,
+    letterSpacing: 0.5,
+    fontWeight: '300',
   },
   logEntry: {
-    color: '#10B981',
+    color: '#D4C5B0',
     fontSize: 12,
     fontFamily: 'monospace',
-    marginBottom: 4,
+    marginBottom: 6,
+    letterSpacing: 0.3,
   },
   codeBlock: {
-    backgroundColor: '#1F2937',
-    borderRadius: 8,
-    padding: 16,
+    backgroundColor: '#3D2F1F',
+    borderRadius: 12,
+    padding: 18,
+    shadowColor: '#D4C5B0',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 4,
   },
   codeText: {
-    color: '#E5E7EB',
+    color: '#F0E8DC',
     fontSize: 12,
     fontFamily: 'monospace',
-    lineHeight: 18,
+    lineHeight: 20,
+    letterSpacing: 0.2,
   },
   docLink: {
     fontSize: 14,
-    color: '#8B9D83',
-    paddingVertical: 4,
-    paddingLeft: 8,
+    color: '#8B7355',
+    paddingVertical: 6,
+    paddingLeft: 12,
+    letterSpacing: 0.5,
+    fontWeight: '300',
   },
 });
