@@ -61,12 +61,12 @@ export default function App() {
 
   const customThemeConfig = {
     colors: {
-      primary: '#8B9D83',
-      secondary: '#6B7F63',
-      accent: '#A4B89C',
-      background: '#F5F5F0',
-      text: '#2C3E2A',
-      textSecondary: '#6B7563',
+      primary: '#C76542',
+      secondary: '#41476E',
+      accent: '#FFBB50',
+      background: '#F4F2F1',
+      text: '#191015',
+      textSecondary: '#564E4A',
     },
     fonts: {
       regular: 'SpaceGrotesk-Regular',
@@ -132,8 +132,8 @@ export default function App() {
             <Switch
               value={customTheme}
               onValueChange={setCustomTheme}
-              trackColor={{ false: '#E8DCC8', true: '#D4C5B0' }}
-              thumbColor={customTheme ? '#FFFCF7' : '#F0E8DC'}
+              trackColor={{ false: '#D7CEC9', true: '#C76542' }}
+              thumbColor={customTheme ? '#FFFFFF' : '#F4F2F1'}
             />
           </View>
 
@@ -233,30 +233,30 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF8F0', // Warm cream paper background
+    backgroundColor: '#F4F2F1', // neutral200
   },
   scrollContent: {
     paddingBottom: 40,
   },
   header: {
-    backgroundColor: '#FFF8F0',
+    backgroundColor: '#F4F2F1',
     borderBottomWidth: 1,
-    borderBottomColor: '#E8DCC8',
+    borderBottomColor: '#D7CEC9', // neutral300
     paddingTop: 50,
     paddingHorizontal: 16,
     paddingBottom: 16,
-    shadowColor: '#D4C5B0',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.15,
-    shadowRadius: 12,
-    elevation: 4,
+    shadowColor: '#191015', // neutral800
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   backButton: {
     paddingVertical: 8,
   },
   backButtonText: {
     fontSize: 16,
-    color: '#8B7355',
+    color: '#C76542', // primary500
     fontWeight: '500',
     letterSpacing: 0.5,
   },
@@ -273,34 +273,35 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: '300',
-    color: '#3D2F1F',
+    color: '#191015', // neutral800 (text)
     marginBottom: 8,
     letterSpacing: 1.2,
     fontFamily: 'SpaceGrotesk-Regular',
   },
   subtitle: {
     fontSize: 15,
-    color: '#6B5D4F',
+    color: '#564E4A', // neutral600 (textDim)
     textAlign: 'center',
     letterSpacing: 0.8,
     fontWeight: '300',
   },
   section: {
     marginBottom: 24,
-    backgroundColor: '#FFFCF7',
+    backgroundColor: '#FFFFFF', // neutral100
     borderRadius: 16,
     padding: 20,
-    borderWidth: 0,
-    shadowColor: '#D4C5B0',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.2,
-    shadowRadius: 16,
-    elevation: 6,
+    borderWidth: 1,
+    borderColor: '#D7CEC9', // neutral300
+    shadowColor: '#191015', // neutral800
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   sectionTitle: {
     fontSize: 17,
     fontWeight: '400',
-    color: '#3D2F1F',
+    color: '#191015', // neutral800 (text)
     marginBottom: 16,
     letterSpacing: 1,
     fontFamily: 'SpaceGrotesk-Medium',
@@ -311,11 +312,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 14,
     borderBottomWidth: 1,
-    borderBottomColor: '#F0E8DC',
+    borderBottomColor: '#D7CEC9', // neutral300 (separator)
   },
   settingLabel: {
     fontSize: 15,
-    color: '#5D4F3F',
+    color: '#564E4A', // neutral600 (textDim)
     letterSpacing: 0.5,
     fontWeight: '300',
   },
@@ -324,44 +325,44 @@ const styles = StyleSheet.create({
   },
   configText: {
     fontSize: 14,
-    color: '#6B5D4F',
+    color: '#564E4A', // neutral600 (textDim)
     paddingVertical: 6,
     paddingLeft: 12,
     letterSpacing: 0.4,
     fontWeight: '300',
   },
   launchButton: {
-    backgroundColor: '#D4C5B0',
+    backgroundColor: '#C76542', // primary500
     borderRadius: 14,
     paddingVertical: 18,
     paddingHorizontal: 28,
     alignItems: 'center',
     marginVertical: 20,
-    shadowColor: '#B8A890',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
-    shadowRadius: 20,
-    elevation: 8,
+    shadowColor: '#191015', // neutral800
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   launchButtonText: {
     fontSize: 16,
     fontWeight: '400',
-    color: '#3D2F1F',
+    color: '#FFFFFF', // neutral100
     letterSpacing: 1.5,
   },
   logContainer: {
-    backgroundColor: '#3D2F1F',
+    backgroundColor: '#191015', // neutral800
     borderRadius: 12,
     padding: 16,
     maxHeight: 200,
-    shadowColor: '#D4C5B0',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.15,
-    shadowRadius: 12,
-    elevation: 4,
+    shadowColor: '#191015',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   emptyLog: {
-    color: '#A89880',
+    color: '#978F8A', // neutral500
     fontSize: 13,
     textAlign: 'center',
     padding: 20,
@@ -369,24 +370,24 @@ const styles = StyleSheet.create({
     fontWeight: '300',
   },
   logEntry: {
-    color: '#D4C5B0',
+    color: '#D7CEC9', // neutral300
     fontSize: 12,
     fontFamily: 'monospace',
     marginBottom: 6,
     letterSpacing: 0.3,
   },
   codeBlock: {
-    backgroundColor: '#3D2F1F',
+    backgroundColor: '#191015', // neutral800
     borderRadius: 12,
     padding: 18,
-    shadowColor: '#D4C5B0',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.15,
-    shadowRadius: 12,
-    elevation: 4,
+    shadowColor: '#191015',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12.81,
+    elevation: 16,
   },
   codeText: {
-    color: '#F0E8DC',
+    color: '#F4F2F1', // neutral200
     fontSize: 12,
     fontFamily: 'monospace',
     lineHeight: 20,
@@ -394,7 +395,7 @@ const styles = StyleSheet.create({
   },
   docLink: {
     fontSize: 14,
-    color: '#8B7355',
+    color: '#C76542', // primary500
     paddingVertical: 6,
     paddingLeft: 12,
     letterSpacing: 0.5,
