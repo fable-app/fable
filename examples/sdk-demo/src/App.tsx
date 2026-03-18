@@ -69,9 +69,9 @@ export default function App() {
       textSecondary: '#6B7563',
     },
     fonts: {
-      regular: 'System',
-      medium: 'System',
-      semibold: 'System',
+      regular: 'SpaceGrotesk-Regular',
+      medium: 'SpaceGrotesk-Medium',
+      semibold: 'SpaceGrotesk-SemiBold',
     },
     spacing: {
       sm: 8,
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     color: '#3D2F1F',
     marginBottom: 8,
     letterSpacing: 1.2,
-    fontFamily: 'System',
+    fontFamily: 'SpaceGrotesk-Regular',
   },
   subtitle: {
     fontSize: 15,
@@ -303,6 +303,7 @@ const styles = StyleSheet.create({
     color: '#3D2F1F',
     marginBottom: 16,
     letterSpacing: 1,
+    fontFamily: 'SpaceGrotesk-Medium',
   },
   setting: {
     flexDirection: 'row',
