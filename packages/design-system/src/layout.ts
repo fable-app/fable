@@ -3,7 +3,7 @@
  * Provides consistent max-width constraints for comfortable reading on large screens
  */
 
-import { Platform } from 'react-native';
+import { Platform, type ViewStyle } from 'react-native';
 
 /**
  * Maximum content width for optimal reading experience
@@ -16,12 +16,12 @@ export const MAX_CONTENT_WIDTH = 768;
  * On web with large screens, constrains width and centers content
  * On mobile or small screens, uses full width
  */
-export const getResponsiveContainerStyle = () => {
+export const getResponsiveContainerStyle = (): ViewStyle => {
   if (Platform.OS === 'web') {
     return {
       maxWidth: MAX_CONTENT_WIDTH,
-      marginLeft: 'auto' as const,
-      marginRight: 'auto' as const,
+      marginLeft: 'auto',
+      marginRight: 'auto',
       width: '100%',
     };
   }
